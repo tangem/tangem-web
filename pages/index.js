@@ -1,7 +1,11 @@
 import Head from 'next/head'
+import { useTranslation } from 'next-i18next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import styles from '../styles/Home.module.scss'
 
 export default function Home({ todo }) {
+
+  const { t } = useTranslation('common')
   
   return (
     <div className={styles.container}>
@@ -13,7 +17,7 @@ export default function Home({ todo }) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to Tangem
+          {t('h1')}
         </h1>
         <div className={styles.center}>
           <p>Todo:</p>
@@ -29,14 +33,15 @@ export default function Home({ todo }) {
   )
 }
 
-// SSG for testing purposes
-export async function getStaticProps(context) {
+// Fetching data for testing purposes
+export async function getStaticProps({ locale }) {
   const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
   const todo = await response.json()
 
   return {
     props: {
       todo,
+      ...await serverSideTranslations(locale, ['common']),
     },
   }
 }

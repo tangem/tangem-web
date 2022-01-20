@@ -1,0 +1,7 @@
+{
+  "h1": "TANGEM deutch",
+  "change-locale": "Wechseln Locale",
+  "error-with-status": "Auf dem Server ist ein Fehler ({{statusCode}}) aufgetreten",
+  "error-without-status": "Auf dem Server ist ein Fehler aufgetreten",
+  "title": "Hauptseite | next-i18next"
+}
