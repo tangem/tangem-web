@@ -8,6 +8,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.2.0",
     "next": "12.0.8",
     "next-i18next": "^10.2.0",
     "react": "17.0.2",
@@ -15,6 +16,7 @@
     "sass": "^1.49.0"
   },
   "devDependencies": {
+    "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "8.7.0",
     "eslint-config-next": "12.0.8"
   }
