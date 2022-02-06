@@ -3,23 +3,39 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export -o build",
+    "build": "next build && next export",
+    "replaceFilePaths": "node replacer.js",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@svgr/webpack": "^6.2.0",
+    "@zeit/next-sass": "^1.0.1",
     "bootstrap": "5.1.3",
+    "classnames": "^2.3.1",
+    "framer-motion": "^6.2.3",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-optipng": "^8.0.0",
+    "imagemin-svgo": "^10.0.1",
     "next": "12.0.8",
+    "next-compose-plugins": "^2.2.1",
     "next-i18next": "^10.2.0",
+    "next-images": "^1.8.4",
     "next-language-detector": "^1.0.2",
+    "next-optimized-images": "^2.6.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
-    "sass": "^1.49.0"
+    "sass": "^1.49.0",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
     "babel-plugin-inline-react-svg": "^2.0.1",
+    "css-loader": "^6.6.0",
     "eslint": "8.7.0",
-    "eslint-config-next": "12.0.8"
+    "eslint-config-next": "12.0.8",
+    "file-loader": "^6.2.0",
+    "replace-in-file": "^6.3.2",
+    "url-loader": "^4.1.1"
   }
 }
