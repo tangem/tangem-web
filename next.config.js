@@ -1,11 +1,7 @@
-const withPlugins = require('next-compose-plugins')
-const withSass = require('@zeit/next-sass')
-const withImages = require('next-images')
-
 const nextConfig = {
   assetPrefix: '.',
+  optimizeFonts: true,
   reactStrictMode: true,
-
   exportPathMap: async function(
     defaultPathMap,
     { dev, dir, outDir, distDir, buildId }
@@ -24,13 +20,4 @@ const nextConfig = {
   }
 }
 
-module.exports = withPlugins([
-  // [withSass, {
-  //   sassLoaderOptions: {
-  //     includePaths: ['./styles/']
-  //   },
-  //   cssModules: true,
-  // }],
-  // [withImages],
-  nextConfig
-])
+module.exports = nextConfig;
