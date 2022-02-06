@@ -1,4 +1,4 @@
-[Tangem.com](https://tangem.com/) project bootstrapped with [`nextjs`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5c17311b-2945-44b1-ac2f-e5cf33ff2914/deploy-status)](https://app.netlify.com/sites/tangem-staging/deploys)
 
 ## Getting Started
 
