@@ -35,7 +35,13 @@ export const Web3Compatible = () => {
           <div className={classNames(styles['web3-items'], styles['web3-items-end'])}>
             {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
               <div key={id} className={styles['web3-item']}>
-                <img src={imgPath} alt="zerion" className={styles['web3-img']} />
+                <img
+                  src={imgPath}
+                  alt={title}
+                  className={styles['web3-img']}
+                  loading='lazy'
+                  decoding='async'
+                />
                 <span className={styles['web3-text']}>{title}</span>
               </div>
             ))}
@@ -45,7 +51,13 @@ export const Web3Compatible = () => {
           <div className={classNames(styles['web3-items'], styles['web3-items-start'])}>
             {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
               <div key={id} className={styles['web3-item']}>
-                <img src={imgPath} alt="zerion" className={styles['web3-img']} />
+                <img
+                  src={imgPath}
+                  alt={title}
+                  className={styles['web3-img']}
+                  loading='lazy'
+                  decoding='async'
+                />
                 <span className={styles['web3-text']}>{title}</span>
               </div>
             ))}
@@ -55,7 +67,13 @@ export const Web3Compatible = () => {
           <div className={classNames(styles['web3-items'], styles['web3-items-end'])}>
             {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
               <div key={id} className={styles['web3-item']}>
-                <img src={imgPath} alt="zerion" className={styles['web3-img']} />
+                <img
+                  src={imgPath}
+                  alt={title}
+                  className={styles['web3-img']}
+                  loading='lazy'
+                  decoding='async'
+                />
                 <span className={styles['web3-text']}>{title}</span>
               </div>
             ))}
@@ -65,7 +83,13 @@ export const Web3Compatible = () => {
           <div className={classNames(styles['web3-items'], styles['web3-items-start'])}>
             {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
               <div key={id} className={styles['web3-item']}>
-                <img src={imgPath} alt="zerion" className={styles['web3-img']} />
+                <img
+                  src={imgPath}
+                  alt={title}
+                  className={styles['web3-img']}
+                  loading='lazy'
+                  decoding='async'
+                />
                 <span className={styles['web3-text']}>{title}</span>
               </div>
             ))}

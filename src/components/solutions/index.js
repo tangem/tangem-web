@@ -14,7 +14,12 @@ export const Solutions = () => {
           <div className={classNames('row', styles['solutions-height'])}>
             <div className="col">
               <div className={classNames(styles['solutions-img'], styles['solutions-img--left'])}>
-                <img src="./img/cards.png" alt="tangem cards" />
+                <img
+                  src='./img/cards.png'
+                  alt='tangem cards'
+                  loading='lazy'
+                  decoding='async'
+                />
               </div>
             </div>
             <div className="col">
@@ -51,7 +56,12 @@ export const Solutions = () => {
             </div>
             <div className="col">
               <div className={classNames(styles['solutions-img'], styles['solutions-img--right'])}>
-                <img src="./img/cryptos.png" alt="tangem cryptos" />
+                <img
+                  src='./img/cryptos.png'
+                  alt='tangem cryptos'
+                  loading='lazy'
+                  decoding='async'
+                />
               </div>
             </div>
           </div>

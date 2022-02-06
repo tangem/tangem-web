@@ -33,37 +33,6 @@ const Accordion = ({ head, body }) => {
   const [isActive, setIsActive] = useState(false);
 
   return (
-    // <motion.div>
-    //   <AnimatePresence>
-    //     <motion.div
-    //       key="question"
-    //       className="rounded-tr-md relative z-20 rounded-br-md shadow-sm px-1 py-2 bg-blue-200 cursor-pointer font-open border-l-2 border-yellow-500"
-    //       onClick={() => setIsOpen(!isOpen)}
-    //     >
-    //       <motion.div className="text-gray-800 font-bold ml-1">
-    //         Do you like animations?
-    //       </motion.div>
-    //     </motion.div>
-
-    //     {isOpen && (
-    //       <motion.div
-    //         key="answer"
-    //         initial={{ opacity: 0 }}
-    //         animate={{
-    //           opacity: 1,
-    //           transition: {
-    //             duration: 0.5,
-    //           },
-    //         }}
-    //         exit={{ opacity: 0 }}
-    //         className="p-2 text-lg text-gray-700 border-l border-b border-gray-300"
-    //       >
-    //         Yes, I love them!
-    //       </motion.div>
-    //     )}
-    //   </AnimatePresence>
-    // </motion.div>
-
     <>
       <div className="faq-items">
         <motion.div
@@ -101,7 +70,13 @@ export const Faq = () => {
         <div className="" style={{ display: 'flex' }}>
           <div className='' style={{ maxWidth: '455px' }}>
             <div className={styles['faq-title']}>Frequently Asked Questions</div>
-            <img src="./img/faq-papers.png" alt="tangem faq" className={styles['faq-img']} />
+            <img
+              src='./img/faq-papers.png'
+              alt='tangem faq'
+              className={styles['faq-img']}
+              loading='lazy'
+              decoding='async'
+            />
           </div>
           <div className='' style={{ maxWidth: '778px', width: '100%', marginLeft: 'auto'}}>
             {accordionData?.map(({ head, body }, idx) => (

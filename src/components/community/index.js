@@ -14,7 +14,13 @@ export const Community = () => {
     <div className={styles['community']}>
       <div className={classNames('container', styles['community-container'])}>
         <div>
-          <img src='./img/banner-community.png' className={styles['community-img']} />
+          <img
+            src='./img/banner-community.png'
+            alt='tangem community'
+            className={styles['community-img']}
+            loading='lazy'
+            decoding='async'
+          />
           <div className={classNames('row', styles['community-inner'])}>
             <div className={classNames('col', styles['community-center'])}>
               <div className={styles['community-title']}>Join the Global Community of <span>Tangem Users</span></div>

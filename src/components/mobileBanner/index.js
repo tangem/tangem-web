@@ -1,16 +1,22 @@
 import React from 'react'
 import classNames from 'classnames'
-import styles from './banner.module.scss'
+import styles from './mobileBanner.module.scss'
 
 import GoogleStoreIcon from '../../../public/svg/google_store.svg'
 import AppleStoreIcon from '../../../public/svg/ios_store.svg'
 
-export const Banner = () => {
+export const MobileBanner = () => {
   return (
     <div className={styles['banner']}>
       <div className={classNames('container', styles['banner-inner'])}>
         <div>
-          <img src='./img/banner-mobile.png' className={styles['banner-img']} />
+          <img
+            src='./img/banner-mobile.png'
+            alt='tangem mobile app'
+            className={styles['banner-img']}
+            loading='lazy'
+            decoding='async'
+          />
           <div className={classNames('row', styles['banner-height'])}>
             <div className='col'></div>
             <div className={classNames('col', styles['banner-center'])}>

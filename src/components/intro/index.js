@@ -1,9 +1,13 @@
 import React from 'react'
-import Link from 'next/link'
+import DynamicLoadable from 'next/dynamic'
 import styles from './intro.module.scss'
 import { Button } from '../button'
 
 import PlayIcon from '../../../public/svg/play.svg'
+
+const DynamicBuyButton = DynamicLoadable(() => import('../shopify/shopifyBuyButton'), {
+  ssr: false,
+})
 
 export const Intro = () => {
   return (
@@ -22,16 +26,16 @@ export const Intro = () => {
               >
                 How it works
               </Button>
-              {/* <Link href="#">
-                <div className={styles['intro-btn']}>
-                  <PlayIcon />
-                  <a className={styles['intro-how-it-works']}>How it works</a>
-                </div>
-              </Link> */}
             </div>
           </div>
           <div className='col-5 offset-md-1'>
-            <img src='./img/intro-img.png' alt="intro image" className={styles['intro-img']}/>
+            <img
+              src='./img/intro-img.png'
+              alt='intro image'
+              className={styles['intro-img']}
+              loading='lazy'
+              decoding='async'
+            />
           </div>
         </div>
       </div>  
