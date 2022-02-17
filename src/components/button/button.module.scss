@@ -12,6 +12,11 @@ $gray: #ecedee;
   margin-right: 16px;
   transition: all .3s ease-in-out;
 
+  @media (max-width: 768px) {
+    font-size: 17px;
+    padding: 12px 21px;
+  }
+
   svg {
     margin-right: 12px;
   }
@@ -28,6 +33,11 @@ $gray: #ecedee;
       align-items: center;
       padding-left: 32px;
       padding-right: 30px;
+
+      @media (max-width: 768px) {
+        font-size: 17px;
+        padding: 12px 21px;
+      }
     }
   }
   

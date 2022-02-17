@@ -65,20 +65,18 @@ const Accordion = ({ head, body }) => {
 
 export const Faq = () => {
   return (
-    <div className={styles['faq']}>
-      <div className='container g-0'>
-        <div className="" style={{ display: 'flex' }}>
-          <div className='' style={{ maxWidth: '455px' }}>
-            <div className={styles['faq-title']}>Frequently Asked Questions</div>
-            <img
-              src='./img/faq-papers.png'
-              alt='tangem faq'
-              className={styles['faq-img']}
-              loading='lazy'
-              decoding='async'
-            />
+    <div className='mt-24 lg:my-44'>
+      <div className='container mx-auto px-4 lg:px-12 xl:px-0'>
+        <div className="flex flex-wrap md:flex-nowrap md:px-12 lg:px-0">
+          <div className='max-w-md md:mr-12 xl:mr-16'>
+            <h2 className='text-6xl xl:text-8xl font-semibold mb-12'>Frequently Asked Questions</h2>
+            <picture>
+              <source media='(max-width: 767px)' srcSet='./img/faq/faq-1x.png' />
+              <source media='(min-width: 768px)' srcSet='./img/faq/faq-2x.png' />
+              <img src='./img/faq/faq-2x.png' alt='Tangem FAQ image' loading='lazy' decoding='async' className='mb-10 lg:mb-0 lg:max-w-sm' />
+            </picture>
           </div>
-          <div className='' style={{ maxWidth: '778px', width: '100%', marginLeft: 'auto'}}>
+          <div className='w-full max-w-3xl ml-auto'>
             {accordionData?.map(({ head, body }, idx) => (
               <Accordion key={idx} head={head} body={body} />
             ))}

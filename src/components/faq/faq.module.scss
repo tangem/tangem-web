@@ -46,6 +46,10 @@ $gray: #eceded;
       color: #00D49B;
       background: $white;
     }
+
+    @media (max-width: 1024px) {
+      font-size: 20px;
+    }
   }
 
   &-body {
@@ -54,6 +58,10 @@ $gray: #eceded;
     line-height: 140%;
     padding: 0 26px 26px;
     transition: all .3s ease;
+
+    @media (max-width: 768px) {
+      font-size: 17px;
+    }
   }
 
   &-img {

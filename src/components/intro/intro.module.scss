@@ -3,7 +3,6 @@ $white: #fff;
 $gray: #a6aaad;
 
 .intro {
-  padding: 90px 0;
   position: relative;
 
   &::before {
@@ -15,17 +14,33 @@ $gray: #a6aaad;
     width: 35px;
     height: 35px;
     z-index: 1;
+
+    @media (max-width: 768px) {
+      right: 50px;
+      left: auto;
+    }
   }
 
   &::after {
-    background-image: url('/img/intro-gradient.png');
+    background-image: url('/img/intro/intro-gradient-1x.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
     content: '';
     position: absolute;
-    top: -5%;
+    top: auto;
+    bottom: -8%;
     right: 0;
-    width: 740px;
-    height: 1000px;
+    width: 422px;
+    height: 530px;
     z-index: -1;
+
+    @media (min-width: 768px) {
+      background-image: url('/img/intro/intro-gradient-1x.png');
+      top: -5%;
+      bottom: auto;
+      width: 740px;
+      height: 1000px;
+    }
   }
 
   &-title {

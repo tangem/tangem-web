@@ -4,14 +4,12 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build && next export",
-    "replaceFilePaths": "node replacer.js",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "@shopify/buy-button-js": "^2.1.8",
     "@svgr/webpack": "^6.2.0",
-    "bootstrap": "5.1.3",
     "classnames": "^2.3.1",
     "framer-motion": "^6.2.3",
     "next": "12.0.8",
@@ -20,8 +18,11 @@
     "sass": "^1.49.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.2",
     "babel-plugin-inline-react-svg": "^2.0.1",
     "eslint": "8.7.0",
-    "eslint-config-next": "12.0.8"
+    "eslint-config-next": "12.0.8",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.22"
   }
 }
