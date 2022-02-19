@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        '120px': '7.5rem'
+        '32px': '2rem',
+        '120px': '7.5rem',
       },
       lineHeight: {
         '60px': '3.75rem',
@@ -17,8 +18,10 @@ module.exports = {
       },
       margin: {
         '5px': '0.313rem',
+        '32px': '2rem',
       },
       padding: {
+        '5px': '0.313rem',
         '13px': '0.813rem',
       },
       borderRadius: {

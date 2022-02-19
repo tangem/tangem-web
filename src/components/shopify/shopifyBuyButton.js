@@ -9,21 +9,26 @@ const shopifyClient = ShopifyBuy.buildClient({
 
 const ui = ShopifyBuy.UI.init(shopifyClient)
 
-export default function BuyNow({ id }) {
+const ShopifyBuyButton = ({ id }) => {
   useEffect(() => {
     ui.createComponent('product', {
       id,
       options: {
         product: {
-          buttonDestination: 'modal'
+          buttonDestination: 'checkout'
         },
         cart: {
-          startOpen: true
+          startOpen: false,
+          popup: true,
         }
       },
-      node: document.getElementById(`buy-now-${id}`),
+      node: document && document.getElementById(`buy-now-${id}`),
     })
   })
 
-  return <div id={`buy-now-${id}`}>buy</div>
+  return (
+    <div id={`buy-now-${id}`} style={{display: 'none' }} />
+  )
 }
+
+export default ShopifyBuyButton

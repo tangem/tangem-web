@@ -1,0 +1,42 @@
+.hero {
+  position: relative;
+
+  &::before {
+    background-image: url('/img/common/sparkes.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    position: absolute;
+    top: 35px;
+    left: 60px;
+    width: 35px;
+    height: 35px;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      right: 50px;
+      left: auto;
+    }
+  }
+
+  &::after {
+    background-image: url('/img/hero/hero-gradient-1x.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    content: '';
+    position: absolute;
+    top: auto;
+    bottom: -8%;
+    right: 0;
+    width: 422px;
+    height: 530px;
+    z-index: -1;
+
+    @media (min-width: 768px) {
+      top: -5%;
+      bottom: auto;
+      width: 740px;
+      height: 1000px;
+    }
+  }
+}
