@@ -18,4 +18,10 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Or, build the production-ready builds
+
+```bash
+npm run build
+# or
+yarn build
+```
