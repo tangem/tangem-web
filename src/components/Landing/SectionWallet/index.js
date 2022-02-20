@@ -6,7 +6,7 @@ const SectionWaller = () => {
   const [src, { blur }] = useProgressiveImg('./img/wallet/wallet-placeholder.png', './img/wallet/wallet-2x.png')
 
   return (
-    <div className='container mx-auto md:px-12 xl:px-0'>
+    <div className='container mx-auto md:px-0'>
       <div className='relative'>
         <picture>
           <source media='(max-width: 767px)' srcSet='./img/wallet/wallet-1x.png' />
@@ -21,6 +21,7 @@ const SectionWaller = () => {
               filter: blur ? 'blur(20px)' : 'none',
               transition: blur ? 'none' : 'filter 0.3s ease-out',
             }}
+            className='max-h-[647px] md:max-h-auto'
           />
         </picture>
         <div className="absolute top-0 left-0 md:left-2/4 lg:top-2/4 lg:translate-y-[-50%]">
