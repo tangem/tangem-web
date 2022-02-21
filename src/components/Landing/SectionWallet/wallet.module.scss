@@ -1,0 +1,23 @@
+.wallet {
+  background-image: url('/img/wallet/wallet-1x.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 674px;
+
+  @media (min-width: 480px) {
+    height: 340px;
+  }
+
+  @media (min-width: 768px) {
+    background-image: url('/img/wallet/wallet-2x.png');
+    background-size: contain;
+  }
+
+  @media (min-width: 1024px) {
+    background-size: 100% 100%;
+  }
+
+  @media (min-width: 1280px) {
+    height: 570px;
+  }
+}

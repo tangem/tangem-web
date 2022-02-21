@@ -30,18 +30,18 @@ const SectionHero = () => {
         <YoutubeModal youtubeModal={youtubeModal} handleVideoModal={handleVideoModal} />
       )}
       <div className={classNames('py-3.5', styles['hero'])}>
-        <div className='container flex flex-wrap px-4 mx-auto md:flex-nowrap mt-14 lg:px-0'>
-          <div className='lg:mt-7 md:pl-8 md:pr-8 xl:pr-0 xl:pl-0 max-w-580px w-full'>
-            <h1 className='text-6xl font-semibold xl:text-120px leading-85'>
-              Keep your crypto <span className='text-gray-400'>safe</span>
+        <div className='container flex flex-wrap px-4 mx-auto md:flex-nowrap mt-14 lg:mt-[70px] lg:px-0'>
+          <div className='lg:mt-[70px] md:pl-8 md:pr-8 xl:pr-0 xl:pl-0 max-w-[595px] w-full'>
+            <h1 className='text-[#090E13] text-6xl font-semibold xl:text-120px leading-85'>
+              Keep your crypto <span className='text-[#A6AAAD] underline decoration-1 underline-offset-8'>safe</span>
             </h1>
-            <p className='text-xl font-normal text-neutral-400 xl:text-3xl my-7 lg:mt-10 lg:mb-16'>
+            <p className='text-xl font-light text-[#A6AAAD] xl:text-3xl my-[30px] lg:mt-10 lg:mb-16 xl:mb-[72px]'>
               Tangem Wallet lets you store your crypto assets secure and easily
               accessible while keeping private keys contained in your card.
             </p>
             <div className='flex'>
               <a
-                className='w-3/6 lg:w-32 flex cursor-pointer justify-center text-base lg:text-lg font-semibold text-white 
+                className='w-3/6 lg:w-32 flex cursor-pointer justify-center text-[17px] lg:text-lg font-medium text-white 
                 bg-[#141D26] hover:bg-[#06090D] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px mr-2 lg:mr-4'
                 data-element='product.button'
                 onClick={handleBuyModal}
@@ -50,7 +50,7 @@ const SectionHero = () => {
               </a>
               <button
                 onClick={handleVideoModal}
-                className='w-3/6 lg:w-48 flex justify-center items-center text-base lg:text-lg font-semibold text-neutral-900 
+                className='w-3/6 lg:w-48 flex justify-center items-center text-base lg:text-lg font-medium text-neutral-900 
                 bg-[#ecedee] hover:bg-[#DEE0E1] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px'
               >
                 <PlayIcon className='mr-3' />

@@ -1,11 +1,13 @@
 import React from 'react'
+import classNames from 'classnames'
+import styles from './compatible.module.scss'
 import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
 
 const SectionWebCompatible = () => {
   const [src, { blur }] = useProgressiveImg('./img/compatible/compatible-placeholder.png', './img/compatible/compatible-2x.png')
 
   return (
-    <div className='mb-28 xl:mb-40'>
+    <div className={classNames(styles['compatible'], 'mb-28 xl:mb-40')}>
       <div className='md:container mx-auto'>
         <div className="text-left md:text-center max-w-4xl md:mx-auto px-4 md:px-0">
           <h2 className='text-6xl xl:text-8xl font-semibold'>Web 3.0 compatible</h2>
@@ -19,7 +21,7 @@ const SectionWebCompatible = () => {
               <img
                 src={src}
                 alt='Tangem Web 3 Compatible image'
-                className='w-full'
+                className='w-full mx-auto'
                 loading='lazy'
                 decoding='async'
                 style={{

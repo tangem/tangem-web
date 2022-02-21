@@ -1,7 +1,6 @@
 import React from 'react'
 import dynamic from 'next/dynamic'
 
-import CloseIcon from '../../../public/svg/close.svg'
 import { useLockScroll } from '../../hooks/useLockScroll'
 
 const BuyNow = dynamic(() => import('../Shopify/shopifyBuyButton'), {
@@ -28,18 +27,20 @@ const BuyModal = ({ buyModal, handleBuyModal }) => {
       className={`fixed flex items-center justify-center overflow-auto z-50 bg-[#F8F9F9] left-0 right-0 top-0 bottom-0 w-full h-full`}
     >
       <div
-        className={`bg-[#F8F9F9] w-full h-full lg:container lg:mx-auto`}
+        className={`bg-[#F8F9F9] w-full h-full lg:container lg:mx-auto relative`}
       >
         
-        <div className="relative h-12 p-5px">
-          <CloseIcon className='absolute top-1/2 right-1.5 translate-y-[-50%] cursor-pointer' onClick={handleBuyModal} />
-        </div>
+        <img
+          src='./img/common/close.png'
+          onClick={handleBuyModal}
+          className='absolute top-0 right-1.5 max-w-[36px] cursor-pointer'
+        />
 
-        <div className="text-[#090E13] text-32px text-center font-semibold mb-32px lg:mb-20">Pricing</div>
+        <div className="text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10">Pricing</div>
 
-        <div className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-7 px-4 lg:px-0">
+        <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-7 px-4 lg:px-0">
 
-          <div className="flex flex-col items-center bg-[#090E13] rounded-20px p-8 mb-[1.875rem] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
+          <div className="flex flex-col items-center bg-[#090E13] rounded-20px p-8 mb-[1.875rem] md:mb-[50px] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
             <div className='max-h-60'>
               <img src='./img/buy/3_cards.png' alt='3 pack wallet tangem' className='h-[171px] md:h-full text-center mx-auto' />
             </div>
@@ -50,7 +51,7 @@ const BuyModal = ({ buyModal, handleBuyModal }) => {
             <BuyNow iframeId="pack-3" id='6677839577154' />
           </div>
 
-          <div className="flex flex-col items-center bg-white rounded-20px p-8 mb-24 lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
+          <div className="flex flex-col items-center bg-white rounded-20px p-8 mb-24 md:mb-[50px] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
             <div className='max-h-60'>
               <img src='./img/buy/2_cards.png' alt='2 pack wallet tangem' className='h-[171px] md:h-full text-center mx-auto' />
             </div>

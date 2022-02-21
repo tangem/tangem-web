@@ -1,0 +1,20 @@
+.community {
+  background-color: #1C1C1E;
+  background-image: url('/img/community/community-1x.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+  height: 550px;
+
+  @media (min-width: 768px) {
+    background-image: url('/img/community/community-2x.png');
+    background-size: contain;
+    background-position: top center;
+    background-color: transparent;
+  }
+
+  @media (min-width: 1536px) {
+    background-image: url('/img/community/community-3x.png');
+    background-size: cover;
+  }
+}
