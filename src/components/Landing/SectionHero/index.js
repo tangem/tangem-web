@@ -32,7 +32,7 @@ const SectionHero = () => {
       <div className={classNames('py-3.5', styles['hero'])}>
         <div className='container flex flex-wrap px-4 mx-auto md:flex-nowrap mt-14 lg:mt-[70px] lg:px-0'>
           <div className='lg:mt-[70px] md:pl-8 md:pr-8 xl:pr-0 xl:pl-0 max-w-[595px] w-full'>
-            <h1 className='text-[#090E13] text-6xl font-semibold xl:text-120px leading-85'>
+            <h1 className='text-[#090E13] text-6xl font-semibold lg:text-[6rem] xl:text-[6.5rem] 2xl:text-120px leading-85'>
               Keep your crypto <span className='text-[#A6AAAD] underline decoration-1 underline-offset-8'>safe</span>
             </h1>
             <p className='text-xl font-light text-[#A6AAAD] xl:text-3xl my-[30px] lg:mt-10 lg:mb-16 xl:mb-[72px]'>
@@ -58,7 +58,7 @@ const SectionHero = () => {
               </button>
             </div>
           </div>
-          <div className='mt-14 md:mt-0 lg:ml-[8rem]'>
+          <div className='mt-14 md:mt-0 lg:ml-[160px]'>
             <picture>
               <source media='(max-width: 768px)' srcSet='./img/hero/hero-phone-1x.png' />
               <source media='(min-width: 769px)' srcSet='./img/hero/hero-phone-2x.png' />
@@ -68,10 +68,11 @@ const SectionHero = () => {
                 loading='lazy'
                 decoding='async'
                 style={{
-                  width: '577px',
+                  width: '100%',
                   filter: blur ? 'blur(20px)' : 'none',
                   transition: blur ? 'none' : 'filter 0.3s ease-out',
                 }}
+                className='max-w-[630px]'
               />
             </picture>
           </div>

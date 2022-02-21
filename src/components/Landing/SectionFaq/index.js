@@ -43,8 +43,10 @@ const Accordion = ({ head, body }) => {
         >
           <div className={classNames(styles['faq-item'], styles[`${isActive ? 'faq-item--active' : ''}`])} onClick={() => setIsActive(!isActive)}>
             <div className={classNames(styles['faq-head'], styles[`${isActive ? 'faq-head--active' : ''}`])}>
-              {head}
-              <ArrowIcon className={classNames(styles['faq-icon'], styles[`${isActive ? 'faq-icon--active' : ''}`])} />
+              <span>{head}</span>
+              <span>
+                <ArrowIcon className={classNames(styles['faq-icon'], styles[`${isActive ? 'faq-icon--active' : ''}`])} />
+              </span>
             </div>
             {isActive && (
               <motion.div
