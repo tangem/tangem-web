@@ -1,17 +1,24 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useLockScroll } from '../../hooks/useLockScroll'
 import { TANGEM_COINS_API_URI } from '../../config'
 
-import CloseIcon from '../../../public/svg/close.svg'
 import SearchIcon from '../../../public/svg/search.svg'
 
-const SearchModal = ({ searchModal, handleSearch }) => {
+const SearchModal = ({ searchModal, setSearchModal }) => {
 
   useLockScroll(searchModal)
-
+  
+  const searchRef = useRef(null)
   const [isLoading, setLoading] = useState(false)
   const [searchToken, setSearchToken] = useState('')
   const [tokenList, setTokenList] = useState([])
+
+
+  useEffect(() => {
+    if (searchRef?.current) {
+      searchRef?.current.focus()
+    }
+  }, [])
 
   const handleSearchToken = (e) => {
     setLoading(true)
@@ -25,63 +32,63 @@ const SearchModal = ({ searchModal, handleSearch }) => {
     } 
 
     fetchToken(searchedValue)
-    setLoading(false)
+
+    setTimeout(() => {
+      setLoading(false)
+    }, 500)
   }
 
   const fetchToken = async (value) => {
     if (value.length < 2) return
     const response = await fetch(`${TANGEM_COINS_API_URI}find?search=${value}`)
     const coins = await response.json()
-    setTokenList(coins.tokens)
+    setTimeout(() => {
+      setTokenList(coins.tokens)
+    }, 500)
   }
 
   return (
-    <div className='fixed flex overflow-auto z-50 bg-white left-0 right-0 top-0 bottom-0'>
-      <div className='w-full relative'>
-        <div className='w-full h-full bg-white rounded'>
-          <div className='lg:container lg:mx-auto'>
-            <span className='flex justify-end p-1.5' onClick={handleSearch}>
-              <CloseIcon />
-            </span>
+    <div className='fixed flex z-50 bg-white left-0 right-0 top-0 bottom-0'>
+      <div className='w-full'>
+        
+        <img
+          src='./img/common/close.png'
+          onClick={setSearchModal}
+          className='absolute top-0 right-1.5 max-w-[36px] cursor-pointer'
+        />
+
+        <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
+
+        {/* <div className='flex flex-col w-full h-full'> */}
+          
+          <div className='w-full flex items-center px-4 lg:px-0 lg:container lg:mx-auto'>
+            <SearchIcon className='mr-2.5' />
+            <input
+              type='text'
+              ref={searchRef}
+              value={searchToken}
+              onChange={handleSearchToken}
+              placeholder='Search in 10087 cryptocurrencies'
+              style={{ outline: 'none' }}
+              className='w-full h-[28px] text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0'
+            />
           </div>
-          <div className='lg:container lg:mx-auto'>
-            <div className='w-full flex items-center px-4 lg:px-0'>
-              <span className='w-full flex items-center'>
-                <SearchIcon className='mr-2.5' />
-                <input
-                  type="text"
-                  value={searchToken}
-                  onChange={handleSearchToken}
-                  placeholder='Search in 10087 cryptocurrencies'
-                  className='w-full text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0'
-                />
-              </span>
-            </div>
-          </div>
+
           <span className='block pb-13px border-b border-[#A6AAAD] opacity-20'></span>
+
           <div className='lg:container lg:mx-auto'>
-            <div className="px-4 lg:px-0">
+            <div className="px-4 lg:px-0 absolute overflow-y-scroll w-full h-full">
               <div className='flex flex-col'>
-                {isLoading ? (
-                  <div class="animate-pulse flex space-x-4">
-                    <div class="rounded-full bg-slate-200 h-10 w-10"></div>
-                    <div class="flex-1 space-y-6 py-1">
-                      <div class="h-2 bg-slate-200 rounded"></div>
-                      <div class="space-y-3">
-                        <div class="grid grid-cols-3 gap-4">
-                          <div class="h-2 bg-slate-200 rounded col-span-2"></div>
-                          <div class="h-2 bg-slate-200 rounded col-span-1"></div>
-                        </div>
-                        <div class="h-2 bg-slate-200 rounded"></div>
-                      </div>
-                    </div>
-                  </div>
-                  ) : tokenList?.map(({ name, symbol, images }, id) => (
+                {tokenList && !isLoading ? tokenList?.map(({ name, symbol, images }, id) => (
                   <div key={id} className='flex mt-5'>
-                    <span className='mr-3.5 w-14'>
-                      <img src={images?.large} alt={name} />
+                    <span className='block mr-3.5 w-14 basis-[15%] md:basis-[70px]'>
+                      {images?.large ? <img src={images?.large} alt={name} className='w-full h-full object-contain' /> : (
+                        <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
+                          {symbol[0]}
+                        </span>
+                      )}
                     </span>
-                    <span>
+                    <span className='flex-[2_2_0%]'>
                       <span className='text-black text-xl font-medium'>
                         {name} {symbol}
                       </span>
@@ -96,11 +103,98 @@ const SearchModal = ({ searchModal, handleSearch }) => {
                       </span>
                     </span>
                   </div>
-                ))}
+                )) : (
+                  <div className='w-full'>
+                    <div className="p-4 max-w-sm w-full mx-auto lg:mx-0">
+                      <div className="animate-pulse flex space-x-4">
+                        <div className="rounded-full bg-slate-200 h-10 w-10"></div>
+                        <div className="flex-1 space-y-6 py-1">
+                          <div className="h-2 bg-slate-200 rounded"></div>
+                          <div className="space-y-3">
+                            <div className="grid grid-cols-3 gap-4">
+                              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
+                              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
+                            </div>
+                            <div className="h-2 bg-slate-200 rounded"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 max-w-sm w-full mx-auto lg:mx-0">
+                      <div className="animate-pulse flex space-x-4">
+                        <div className="rounded-full bg-slate-200 h-10 w-10"></div>
+                        <div className="flex-1 space-y-6 py-1">
+                          <div className="h-2 bg-slate-200 rounded"></div>
+                          <div className="space-y-3">
+                            <div className="grid grid-cols-3 gap-4">
+                              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
+                              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
+                            </div>
+                            <div className="h-2 bg-slate-200 rounded"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="p-4 max-w-sm w-full mx-auto lg:mx-0">
+                      <div className="animate-pulse flex space-x-4">
+                        <div className="rounded-full bg-slate-200 h-10 w-10"></div>
+                        <div className="flex-1 space-y-6 py-1">
+                          <div className="h-2 bg-slate-200 rounded"></div>
+                          <div className="space-y-3">
+                            <div className="grid grid-cols-3 gap-4">
+                              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
+                              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
+                            </div>
+                            <div className="h-2 bg-slate-200 rounded"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+                {/* {isLoading ? (
+                  <div className="animate-pulse flex space-x-4">
+                    <div className="rounded-full bg-slate-200 h-10 w-10"></div>
+                    <div className="flex-1 space-y-6 py-1">
+                      <div className="h-2 bg-slate-200 rounded"></div>
+                      <div className="space-y-3">
+                        <div className="grid grid-cols-3 gap-4">
+                          <div className="h-2 bg-slate-200 rounded col-span-2"></div>
+                          <div className="h-2 bg-slate-200 rounded col-span-1"></div>
+                        </div>
+                        <div className="h-2 bg-slate-200 rounded"></div>
+                      </div>
+                    </div>
+                  </div>
+                  ) : tokenList?.map(({ name, symbol, images }, id) => (
+                  <div key={id} className='flex mt-5'>
+                    <span className='block mr-3.5 w-14 basis-[15%]'>
+                      {images?.large ? <img src={images?.large} alt={name} className='w-full h-full object-contain' /> : (
+                        <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
+                          {symbol[0]}
+                        </span>
+                      )}
+                    </span>
+                    <span className='flex-[2_2_0%]'>
+                      <span className='text-black text-xl font-medium'>
+                        {name} {symbol}
+                      </span>
+                      <span className='block h-4 mt-1.5'>
+                        <img
+                          src='/img/feature/coin-group.png'
+                          alt='coin group'
+                          className='h-full'
+                          loading='lazy'
+                          decoding='async'
+                        />
+                      </span>
+                    </span>
+                  </div>
+                ))} */}
               </div>
             </div>
           </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
   )

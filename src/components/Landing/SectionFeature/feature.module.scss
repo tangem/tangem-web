@@ -1,0 +1,38 @@
+.feature {
+  position: relative;
+
+  &::before {
+    background-image: url('/img/common/sparkes.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &::after {
+    background-image: url('/img/common/sparkes.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    right: 25px;
+    width: 30px;
+    height: 30px;
+    z-index: 1;
+    
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+}
