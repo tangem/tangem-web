@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from 'react'
-import { useLockScroll } from '../../hooks/useLockScroll'
-import { TANGEM_COINS_API_URI } from '../../config'
+import { useState, useEffect, useRef } from 'react'
+import { useRouter } from 'next/router'
+import { TANGEM_COINS_API_URI } from '../config'
 
-import SearchIcon from '../../../public/svg/search.svg'
+import SearchIcon from '../../public/svg/search.svg'
 
-const SearchModal = ({ searchModal, setSearchModal }) => {
+const Search = () => {
 
-  useLockScroll(searchModal)
-  
+  const router = useRouter()
+
   const searchRef = useRef(null)
   const [isLoading, setLoading] = useState(false)
   const [searchToken, setSearchToken] = useState('')
@@ -48,20 +48,20 @@ const SearchModal = ({ searchModal, setSearchModal }) => {
   }
 
   return (
-    <div className='fixed flex z-50 bg-white left-0 right-0 top-0 bottom-0'>
+    <div className=''>
       <div className='w-full'>
         
         <img
           src='./img/common/close.png'
-          onClick={setSearchModal}
+          onClick={() => router.push('/')}
           className='absolute top-0 right-1.5 max-w-[36px] cursor-pointer'
         />
 
         <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
 
-        {/* <div className='flex flex-col w-full h-full'> */}
+        <div className='flex flex-col w-full h-full'>
           
-          <div className='w-full flex items-center px-4 lg:px-0 lg:container lg:mx-auto'>
+          <div className='w-full h-full flex items-center px-4 lg:px-0 lg:container lg:mx-auto'>
             <SearchIcon className='mr-2.5' />
             <input
               type='text'
@@ -70,13 +70,13 @@ const SearchModal = ({ searchModal, setSearchModal }) => {
               onChange={handleSearchToken}
               placeholder='Search in 10087 cryptocurrencies'
               style={{ outline: 'none' }}
-              className='w-full h-[28px] text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0'
+              className='w-full bg-transparent h-[28px] text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0'
             />
           </div>
 
           <span className='block pb-13px border-b border-[#A6AAAD] opacity-20'></span>
 
-          <div className='lg:container lg:mx-auto'>
+          <div className='lg:container lg:mx-auto h-full'>
             <div className="px-4 lg:px-0 absolute overflow-y-scroll w-full h-full">
               <div className='flex flex-col'>
                 {tokenList && !isLoading ? tokenList?.map(({ name, symbol, images }, id) => (
@@ -155,10 +155,10 @@ const SearchModal = ({ searchModal, setSearchModal }) => {
               </div>
             </div>
           </div>
-        {/* </div> */}
+        </div>
       </div>
     </div>
   )
 }
 
-export default SearchModal
+export default Search

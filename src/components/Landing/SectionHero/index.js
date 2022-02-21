@@ -58,7 +58,7 @@ const SectionHero = () => {
               </button>
             </div>
           </div>
-          <div className='mt-14 md:mt-0 lg:ml-[8rem]'>
+          <div className='mt-14 md:mt-0 lg:ml-[160px]'>
             <picture>
               <source media='(max-width: 768px)' srcSet='./img/hero/hero-phone-1x.png' />
               <source media='(min-width: 769px)' srcSet='./img/hero/hero-phone-2x.png' />
@@ -68,10 +68,11 @@ const SectionHero = () => {
                 loading='lazy'
                 decoding='async'
                 style={{
-                  width: '577px',
+                  width: '100%',
                   filter: blur ? 'blur(20px)' : 'none',
                   transition: blur ? 'none' : 'filter 0.3s ease-out',
                 }}
+                className='max-w-[630px]'
               />
             </picture>
           </div>

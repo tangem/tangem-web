@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useRouter } from 'next/router'
 import classNames from 'classnames'
 import styles from './feature.module.scss'
 import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
@@ -6,9 +7,12 @@ import BuyModal from '../../modal/BuyModal'
 import SearchModal from '../../modal/SearchModal'
 
 import SearchIcon from '../../../../public/svg/search.svg'
+import { Router } from 'next/router'
 
 
 const SectionFeature = () => {
+
+  const router = useRouter()
 
   const [cardImg, { blur: cardImgBlur }] = useProgressiveImg('./img/feature/feature-card-placeholder.png', './img/feature/feature-card-2x.png')
   const [cryptoImg, { blur: cryptoImgblur }] = useProgressiveImg('./img/feature/feature-crypto-placeholder.png', './img/feature/feature-crypto-2x.png')
@@ -66,7 +70,7 @@ const SectionFeature = () => {
           <p className='lg:w-full lg:max-w-2xl text-xl xl:text-3xl text-neutral-400 my-7 md:mt-6 md:mb-12'>A hardware wallet for your Bitcoin, Ethereum and many more currencies simultaneously – all in one card.</p>
           <div className='flex'>
             <a onClick={handleBuyModal} className='cursor-pointer w-3/6 lg:w-32 flex justify-center text-[17px] lg:text-lg font-medium text-white bg-[#141D26] hover:bg-[#06090D] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px mr-2 lg:mr-4'>Buy now</a>
-            <button onClick={() => setSearchModal(!searchModal)} className='w-3/6 lg:w-48 flex justify-center items-center text-[17px] lg:text-lg font-medium text-neutral-900 bg-[#ecedee] hover:bg-[#DEE0E1] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px'>
+            <button onClick={() => router.push('/search')} className='w-3/6 lg:w-48 flex justify-center items-center text-[17px] lg:text-lg font-medium text-neutral-900 bg-[#ecedee] hover:bg-[#DEE0E1] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px'>
               <SearchIcon className='mr-3' />
               Search
             </button>
