@@ -19,7 +19,7 @@ const ShopifyBuyButton = ({ id }) => {
         },
         cart: {
           startOpen: false,
-          popup: true,
+          popup: false,
         }
       },
       node: document && document.getElementById(`buy-now-${id}`),
