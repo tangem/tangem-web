@@ -2,7 +2,15 @@
 
 ## Getting Started
 
-First, install packages:
+Create a file in the root of your project:
+
+- For development create an ```.env.developement``` file
+
+- For production create an ```.env.production``` file
+
+Then copy content of ```.env.sample``` file according to your requirement.
+
+Install packages:
 
 ```bash
 npm install
@@ -10,7 +18,7 @@ npm install
 yarn install
 ```
 
-Then, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -18,7 +26,7 @@ npm run dev
 yarn dev
 ```
 
-Or, build the production-ready builds
+Build the production:
 
 ```bash
 npm run build
