@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react'
 import { useRouter } from 'next/router'
-import { TANGEM_COINS_API_URI } from '../config'
+import { TANGEM_COINS_API_URI } from '../../config'
 
-import SearchIcon from '../../public/svg/search.svg'
+import SearchIcon from '../../../public/svg/search.svg'
 
 const Search = () => {
 
@@ -12,7 +12,6 @@ const Search = () => {
   const [isLoading, setLoading] = useState(false)
   const [searchToken, setSearchToken] = useState('')
   const [tokenList, setTokenList] = useState([])
-
 
   useEffect(() => {
     if (searchRef?.current) {
@@ -29,7 +28,7 @@ const Search = () => {
       setTokenList([])
       setLoading(false)
       return
-    } 
+    }
 
     fetchToken(searchedValue)
 
