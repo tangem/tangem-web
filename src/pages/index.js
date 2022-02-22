@@ -17,9 +17,12 @@ export const Home = () => {
         <meta name="description" content="Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tangem.com" />
+        <meta property="og:site_name" content="Tangem Wallet — hardware wallet for your crypto" />
         <meta property="og:title" content="Tangem Wallet — hardware wallet for your crypto" />
         <meta property="og:description" content="Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card." />
         <meta property="og:image" content="https://tangem-staging.netlify.app/img/hero/hero-phone-1x.png" />
+        <meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
+        <meta property="og:locale" content="en_US" />
         <title>Tangem Wallet — hardware wallet for your crypto</title>
         <link rel='shortcut icon' href='/img/favicon/favicon.png' />
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />

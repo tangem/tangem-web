@@ -32,9 +32,12 @@ const Pricing = () => {
         <meta name="description" content="Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://tangem.com" />
+        <meta property="og:site_name" content="Tangem Wallet — hardware wallet for your crypto" />
         <meta property="og:title" content="Tangem Wallet — hardware wallet for your crypto" />
         <meta property="og:description" content="Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card." />
         <meta property="og:image" content="https://tangem-staging.netlify.app/img/hero/hero-phone-1x.png" />
+        <meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
+        <meta property="og:locale" content="en_US" />
         <title>Tangem Wallet — hardware wallet for your crypto</title>
         <link rel='shortcut icon' href='/img/favicon/favicon.png' />
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
@@ -53,7 +56,7 @@ const Pricing = () => {
           <div className="text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10">Pricing</div>
           <div className="flex flex-col md:grid md:grid-cols-2 md:gap-x-7 px-4 lg:px-0">
             <div className="flex flex-col items-center bg-[#090E13] rounded-20px p-8 mb-[1.875rem] md:mb-[50px] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
-              <div className='max-h-60'>
+              <div className='max-h-60 h-full'>
                 <img src='./img/buy/3_cards.png' alt='3 pack wallet tangem' className='h-[171px] md:h-full text-center mx-auto' />
               </div>
               <div className="text-white text-3xl font-semibold lg:text-[2.5rem]">Pack of <span className='text-emerald-400'>3 Cards</span></div>
@@ -63,7 +66,7 @@ const Pricing = () => {
               <BuyNow iframeId="pack-3" id='6677839577154' />
             </div>
             <div className="flex flex-col items-center bg-white rounded-20px p-8 mb-24 md:mb-[50px] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
-              <div className='max-h-60'>
+              <div className='max-h-60 h-full'>
                 <img src='./img/buy/2_cards.png' alt='2 pack wallet tangem' className='h-[171px] md:h-full text-center mx-auto' />
               </div>
               <div className="text-[#0C1116] text-3xl font-semibold lg:text-[2.5rem]">Pack of <span className='text-[#A6A9AD]'>2 Cards</span></div>
