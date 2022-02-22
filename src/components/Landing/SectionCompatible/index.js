@@ -11,7 +11,7 @@ const SectionWebCompatible = () => {
       <div className='md:container mx-auto'>
         <div className="text-left md:text-center max-w-4xl md:mx-auto px-4 md:px-0">
           <h2 className='text-6xl xl:text-8xl font-semibold'>Web 3.0 compatible</h2>
-          <p className='my-7 md:mt-6 md:mb-20 text-xl xl:text-3xl text-neutral-400'>Exchange, buy NFT’s, make loans and deposits in more than 100 different decentralized applications with help of Wallet Connect.</p>
+          <p className='my-7 md:mt-6 md:mb-20 text-xl xl:text-3xl text-neutral-400 font-light'>Exchange, buy NFT’s, make loans and deposits in more than 100 different decentralized applications with help of Wallet Connect.</p>
         </div>
         <div>
           <div className='w-full lg:w-auto mx-auto mt-7 md:mt-0 lg:mx-0'>
