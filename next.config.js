@@ -7,6 +7,9 @@ const nextConfig = {
   ) {
     return {
       "/": { page: "/" },
+      "/pricing": { page: "/pricing" },
+      "/search": { page: "/search" },
+      "/video": { page: "/video" },
     };
   },
   
