@@ -1,9 +1,43 @@
 import { useState, useEffect, useRef } from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
+import InfiniteScroll from 'react-infinite-scroll-component'
 import { TANGEM_COINS_API_URI } from '../../config'
 
 import SearchIcon from '../../../public/svg/search.svg'
+import CloseIcon from '../../../public/svg/close.svg'
+
+import EthereumIcon from '../../../public/svg/ethereum.svg'
+import FantomIcon from '../../../public/svg/fantom.svg'
+import BinanceIcon from '../../../public/svg/binance.svg'
+import AvalancheIcon from '../../../public/svg/avalanche.svg'
+import PolygonIcon from '../../../public/svg/polygon.svg'
+import SolanaIcon from '../../../public/svg/solana.svg'
+import BscIcon from '../../../public/svg/bsc.svg'
+
+const networkIcons = {
+  'ethereum': {
+    icon: <EthereumIcon />
+  },
+  'fantom': {
+    icon: <FantomIcon />
+  },
+  'binance': {
+    icon: <BinanceIcon />
+  },
+  'avalanche': {
+    icon: <AvalancheIcon />
+  },
+  'polygon': {
+    icon: <PolygonIcon />
+  },
+  'solana': {
+    icon: <SolanaIcon />
+  },
+  'binance-smart-chain': {
+    icon: <BscIcon />
+  }
+}
 
 const Search = () => {
 
@@ -11,40 +45,106 @@ const Search = () => {
 
   const searchRef = useRef(null)
   const [isLoading, setLoading] = useState(false)
-  const [searchToken, setSearchToken] = useState('')
+  const [tokenText, setTokenText] = useState('')
+
   const [tokenList, setTokenList] = useState([])
+  const [total, setTotal] = useState(0)
+  const [offset, setOffset] = useState(0)
+  const [hasMoreTokens, setHasMoreTokens] = useState(true)
 
   useEffect(() => {
+    setLoading(true)
+    fetchCoins(20, offset)
+    
     if (searchRef?.current) {
       searchRef?.current.focus()
     }
+    setLoading(false)
   }, [])
 
-  const handleSearchToken = (e) => {
+  useEffect(() => {
+    if (tokenText?.length == 0) {
+      setHasMoreTokens(true)
+      fetchCoins(20, 0)
+    }
+  }, [tokenText])
+
+  const onSeachChange = (e) => {
     setLoading(true)
     const searchedValue = e.target.value
-    setSearchToken(searchedValue)
+    setTokenText(searchedValue)
     
-    if (searchedValue === '') {
-      setTokenList([])
+    if (searchedValue?.length == 0 || searchedValue?.length < 2) {
       setLoading(false)
       return
     }
 
-    fetchToken(searchedValue)
-
-    setTimeout(() => {
-      setLoading(false)
-    }, 500)
+    searchCoins(searchedValue)
   }
 
-  const fetchToken = async (value) => {
-    if (value.length < 2) return
-    const response = await fetch(`${TANGEM_COINS_API_URI}find?search=${value}`)
+  const fetchCoins = async (limit = 20, offset = 0) => {
+    setLoading(true)
+    const timestamp = Date.now()
+    const response = await fetch(`${TANGEM_COINS_API_URI}list?limit=${limit}&offset=${offset}&ts=${timestamp}`)
     const coins = await response.json()
-    setTimeout(() => {
-      setTokenList(coins.tokens)
-    }, 500)
+
+    setTokenList(coins.tokens)
+    setTotal(coins.tokens.length)
+    setLoading(false)
+  }
+
+  const fetchMoreCoins = async () => {
+    setLoading(true)
+
+    if (tokenText?.length !== 0) {
+      setHasMoreTokens(false)
+      setLoading(false)
+      return
+    }
+
+    if (tokenList?.length < total) {
+      setHasMoreTokens(false)
+      return
+    }
+
+    const newOffset = offset + 20
+    setOffset(newOffset)
+
+    const timestamp = Date.now()
+    const response = await fetch(`${TANGEM_COINS_API_URI}list?limit=20&offset=${newOffset}&ts=${timestamp}`)
+    const coins = await response.json()
+
+    const newList = [...tokenList, ...coins.tokens]
+
+    setTokenList(newList)
+    setLoading(false)
+  }
+
+  const searchCoins = async (coin) => {
+
+    const response = await fetch(`${TANGEM_COINS_API_URI}find?search=${coin}`)
+    const coins = await response.json()
+
+    setHasMoreTokens(false)
+    setTokenList(coins.tokens)
+    setTotal(coins.total)
+    setLoading(false)
+  }
+
+  const Loader = () => {
+    {return [...Array(10).keys()].map((_, id) => (
+      <div key={id} className='w-full'>
+        <div className="w-full mt-5 mx-auto lg:mx-0">
+          <div className="animate-pulse flex space-x-[14px]">
+            <div className="rounded-full bg-slate-200 h-[56px] w-[56px]"></div>
+            <div className="flex flex-1 flex-col justify-center py-1 space-y-3">
+              <div className="h-2 bg-slate-200 rounded"></div>
+              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ))}
   }
 
   return (
@@ -66,109 +166,77 @@ const Search = () => {
         <link rel='shortcut icon' href='/img/favicon/favicon.png' />
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
       </Head>
-      <div className='w-full'>
-        
-        <img
-          src='./img/common/close.png'
-          onClick={() => router.push('/')}
-          className='absolute top-0 right-1.5 max-w-[36px] cursor-pointer'
-        />
-
-        <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
-
-        <div className='flex flex-col w-full h-full'>
+      <div className='fixed bg-white left-0 right-0 top-0 bottom-0 overflow-hidden'>
+        <div className='w-full h-full overscroll-contain'>
           
-          <div className='w-full h-full flex items-center px-4 lg:px-0 lg:container lg:mx-auto'>
-            <SearchIcon className='mr-2.5' />
-            <input
-              type='text'
-              ref={searchRef}
-              value={searchToken}
-              onChange={handleSearchToken}
-              placeholder='Search in 10087 cryptocurrencies'
-              style={{ outline: 'none' }}
-              className='w-full bg-transparent h-[28px] text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0'
-            />
-          </div>
+          <CloseIcon
+            className='absolute top-1 right-4 max-w-[36px] cursor-pointer'
+            onClick={() => router.push('/')}
+          />
+          <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
 
-          <span className='block pb-13px border-b border-[#A6AAAD] opacity-20'></span>
+          <div className='flex flex-col w-full h-full'>
 
-          <div className='lg:container lg:mx-auto h-full'>
-            <div className="px-4 lg:px-0 absolute overflow-y-scroll w-full h-full">
-              <div className='flex flex-col'>
-                {tokenList && !isLoading ? tokenList?.map(({ name, symbol, images }, id) => (
-                  <div key={id} className='flex mt-5'>
-                    <span className='block mr-3.5 w-14 basis-[15%] md:basis-[70px]'>
-                      {images?.large ? <img src={images?.large} alt={name} className='w-full h-full object-contain' /> : (
-                        <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
-                          {symbol[0]}
-                        </span>
-                      )}
-                    </span>
-                    <span className='flex-[2_2_0%]'>
-                      <span className='text-black text-xl font-medium'>
-                        {name} {symbol}
-                      </span>
-                      <span className='block h-4 mt-1.5'>
-                        <img
-                          src='/img/feature/coin-group.png'
-                          alt='coin group'
-                          className='h-full'
-                          loading='lazy'
-                          decoding='async'
-                        />
-                      </span>
-                    </span>
+            <div className='sticky top-0'>
+              <div className='w-full h-full flex items-center px-4 lg:px-0 lg:container lg:mx-auto'>
+                <SearchIcon className='mr-2.5' />
+                <input
+                  type='text'
+                  ref={searchRef}
+                  value={tokenText}
+                  onChange={onSeachChange}
+                  placeholder='Search in 10087 cryptocurrencies'
+                  className='w-full bg-transparent text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0 outline-none outline-offset-0'
+                />
+              </div>
+            </div>
+
+            <span className='block pb-13px border-b border-[#A6AAAD] opacity-20'></span>
+
+            <div className='lg:container lg:mx-auto h-full relative'>
+              <div className="px-4 lg:px-0 absolute left-0 right-0 max-w-[100%] w-full h-full">
+                <div className='flex flex-col h-[100vh]'>
+                  <div className='overscroll-contain'>
+                    <InfiniteScroll
+                      dataLength={tokenList.length}
+                      next={fetchMoreCoins}
+                      hasMore={hasMoreTokens}
+                      height={'calc(100vh - 80px)'}
+                      loader={<Loader />}
+                      endMessage={
+                        <p style={{ textAlign: "center" }}>
+                          <b>Yay! You have seen it all</b>
+                        </p>
+                      }
+                    >
+                      {tokenList?.map(({ name, symbol, images, networks }, id) => (
+                        <div key={id} className='flex mt-5'>
+                          <span className='block mr-3.5 w-14 basis-[56px] md:basis-[70px]'>
+                            {images?.large ? <img src={images?.large} alt={name} className='w-full h-full object-contain' /> : (
+                              <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
+                                {symbol[0]}
+                              </span>
+                            )}
+                          </span>
+                          <span className='flex-[2_2_0%]'>
+                            <span className='text-black text-xl font-medium'>
+                              {name} {symbol}
+                            </span>
+                            <span className='flex h-4 mt-1.5 space-x-1.5'>
+                              {networks?.length ? networks?.map((network, id) => {
+                                return (
+                                  <span key={id}>{networkIcons[network]?.icon}</span>
+                                )
+                              }) : (
+                                <span key={id}>{networkIcons[0]?.icon}</span>
+                              )}
+                            </span>
+                          </span>
+                        </div>
+                      ))}
+                    </InfiniteScroll>
                   </div>
-                )) : (
-                  <div className='w-full'>
-                    <div className="p-4 max-w-sm w-full mx-auto lg:mx-0">
-                      <div className="animate-pulse flex space-x-4">
-                        <div className="rounded-full bg-slate-200 h-10 w-10"></div>
-                        <div className="flex-1 space-y-6 py-1">
-                          <div className="h-2 bg-slate-200 rounded"></div>
-                          <div className="space-y-3">
-                            <div className="grid grid-cols-3 gap-4">
-                              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-                              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-                            </div>
-                            <div className="h-2 bg-slate-200 rounded"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4 max-w-sm w-full mx-auto lg:mx-0">
-                      <div className="animate-pulse flex space-x-4">
-                        <div className="rounded-full bg-slate-200 h-10 w-10"></div>
-                        <div className="flex-1 space-y-6 py-1">
-                          <div className="h-2 bg-slate-200 rounded"></div>
-                          <div className="space-y-3">
-                            <div className="grid grid-cols-3 gap-4">
-                              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-                              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-                            </div>
-                            <div className="h-2 bg-slate-200 rounded"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="p-4 max-w-sm w-full mx-auto lg:mx-0">
-                      <div className="animate-pulse flex space-x-4">
-                        <div className="rounded-full bg-slate-200 h-10 w-10"></div>
-                        <div className="flex-1 space-y-6 py-1">
-                          <div className="h-2 bg-slate-200 rounded"></div>
-                          <div className="space-y-3">
-                            <div className="grid grid-cols-3 gap-4">
-                              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
-                              <div className="h-2 bg-slate-200 rounded col-span-1"></div>
-                            </div>
-                            <div className="h-2 bg-slate-200 rounded"></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                )}
+                </div>
               </div>
             </div>
           </div>
