@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { TANGEM_COINS_API_URI } from '../../config'
 
-import CloseIcon from '../../../public/svg/close.svg'
 import SearchIcon from '../../../public/svg/search.svg'
 import CloseIcon from '../../../public/svg/close.svg'
 
@@ -167,12 +166,14 @@ const Search = () => {
         <link rel='shortcut icon' href='/img/favicon/favicon.png' />
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
       </Head>
-      <div className='w-full'>
+      <div className='fixed bg-white left-0 right-0 top-0 bottom-0 overflow-hidden'>
+        <div className='w-full h-full overscroll-contain'>
           
-        <CloseIcon
-          onClick={() => router.push('/')}
-          className='absolute top-[20px] right-[20px] max-w-[36px] cursor-pointer'
-        />
+          <CloseIcon
+            className='absolute top-1 right-4 max-w-[36px] cursor-pointer'
+            onClick={() => router.push('/')}
+          />
+          <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
 
           <div className='flex flex-col w-full h-full'>
 
@@ -192,7 +193,7 @@ const Search = () => {
 
             <span className='block pb-13px border-b border-[#A6AAAD] opacity-20'></span>
 
-            <div className='lg:container lg:mx-auto h-full relative'>
+            <div className='lg:container lg:mx-auto w-full h-full relative'>
               <div className="px-4 lg:px-0 absolute left-0 right-0 max-w-[100%] w-full h-full">
                 <div className='flex flex-col h-[100vh]'>
                   <div className='overscroll-contain'>
