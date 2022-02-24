@@ -7,24 +7,24 @@ import ArrowIcon from '../../../../public/svg/faq_arrow.svg'
 
 const accordionData = [
   {
-    head: 'How do I apply for a Tangem Card?',
-    body: `We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier. We will provide all these details in the Tangem.com Card Terms and Conditions when you apply for your card. We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier.`
+    head: "What is a Tangem Wallet?",
+    body: "Tangem Wallet is the safest hardware wallet in the world. Tangem Wallet keeps your Bitcoin, Ethereum, and more than 1000 additional cryptocurrencies completely safe. The card is the key to your wallet, and using your funds requires taping the card to your phone."
   },
   {
-    head: 'How do I top-up my card?',
-    body: `We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier. We will provide all these details in the Tangem.com Card Terms and Conditions when you apply for your card. We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier.`
+    head: "What can I do with Tangem Wallet?",
+    body: "Tangem Wallet allows you to buy and sell cryptocurrencies using Apple Pay, Google Pay and credit cards. Additionally, it has access to hundreds of decentralized services, which allow trading on exchanges, issuing loans, borrowing funds, working with NFTs and much more."
   },
   {
-    head: 'Which exchange rate will you use?',
-    body: `We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier. We will provide all these details in the Tangem.com Card Terms and Conditions when you apply for your card. We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier.`
+    head: "Where are the keys to my wallet kept?",
+    body: "The wallet's keys are generated and stored in the card as the top secret. For any operations with your wallet, you will need one of the cards connected to it."
   },
   {
-    head: 'Are there any fees I should be aware of?',
-    body: `We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier. We will provide all these details in the Tangem.com Card Terms and Conditions when you apply for your card. We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier.`
+    head: "What happens if I lose the card?",
+    body: "Tangem Wallet allows connecting up to 3 cards to a single wallet. All 3 cards are equal in capabilities and can be used with your wallet. To protect your wallet from unauthorized access, you can also set an access code for your card. If you forget the access code, you can restore it with an additional previously connected card."
   },
   {
-    head: 'What is the difference between Tangem Note and Wallet Cards?',
-    body: `We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier. We will provide all these details in the Tangem.com Card Terms and Conditions when you apply for your card. We have competitive exchange rates for both fiat and cryptocurrencies. The exact rates depend on your jurisdiction and card tier.`
+    head: "How reliable and safe is it?",
+    body: "Tangem Wallet is the most safe and reliable crypto wallet in the world. The chip in your card is a microcomputer. It has been certified by Common Criteria at EAL6+ level -- the same level of chip protection used in passports. It is completely safe from dust, water, and hacking attempts. The card reliably performs in temperatures between -35C and +85C, with the chip useful life beyond 25 years of service."
   },
 ];
 
@@ -68,8 +68,8 @@ const Accordion = ({ head, body }) => {
 const SectionFaq = () => {
   return (
     <div className='mt-24 lg:my-44'>
-      <div className='container mx-auto px-4 lg:px-12 xl:px-0'>
-        <div className="flex flex-wrap md:flex-nowrap md:px-12 lg:px-0">
+      <div className='container mx-auto px-4 xl:px-0 2xl:max-w-[1300px]'>
+        <div className="flex flex-wrap md:flex-nowrap md:px-0">
           <div className='max-w-md md:mr-12 xl:mr-16'>
             <h2 className='text-6xl xl:text-8xl font-semibold mb-12'>Frequently Asked Questions</h2>
             <picture>

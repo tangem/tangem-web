@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { TANGEM_COINS_API_URI } from '../../config'
 
+import CloseIcon from '../../../public/svg/close.svg'
 import SearchIcon from '../../../public/svg/search.svg'
 
 const Search = () => {
@@ -67,11 +68,10 @@ const Search = () => {
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
       </Head>
       <div className='w-full'>
-        
-        <img
-          src='./img/common/close.png'
+          
+        <CloseIcon
           onClick={() => router.push('/')}
-          className='absolute top-0 right-1.5 max-w-[36px] cursor-pointer'
+          className='absolute top-[20px] right-[20px] max-w-[36px] cursor-pointer'
         />
 
         <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>

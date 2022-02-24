@@ -7,6 +7,8 @@ import SectionWallet from '../components/Landing/SectionWallet'
 import SectionFaq from '../components/Landing/SectionFaq'
 import SectionCommunity from '../components/Landing/SectionCommunity'
 
+import PlayIcon from '../../public/svg/play.svg'
+
 export const Home = () => {
   return (
     <>

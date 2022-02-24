@@ -14,10 +14,16 @@
   }
 
   @media (min-width: 1024px) {
-    background-size: 100% 100%;
+    background-size: cover;
   }
 
   @media (min-width: 1280px) {
     height: 570px;
+    background-size: 100%;
+  }
+
+  @media (min-width: 1400px) {
+    background-size: contain;
+    background-position: center;
   }
 }

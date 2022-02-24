@@ -1,8 +1,6 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import classNames from 'classnames'
 import styles from './feature.module.scss'
-import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
 
 import SearchIcon from '../../../../public/svg/search.svg'
 
@@ -10,77 +8,121 @@ const SectionFeature = () => {
 
   const router = useRouter()
 
-  const [cardImg, { blur: cardImgBlur }] = useProgressiveImg('./img/feature/feature-card-placeholder.png', './img/feature/feature-card-2x.png')
-  const [cryptoImg, { blur: cryptoImgblur }] = useProgressiveImg('./img/feature/feature-crypto-placeholder.png', './img/feature/feature-crypto-2x.png')
-
   return (
-    <>
-      <div className={classNames('mt-16 mb-28 xl:mt-0 xl:mb-32', styles['feature'])}>
-        <div className="flex flex-wrap md:flex-nowrap justify-between lg:justify-start mx-auto">
-          <div className='md:order-last px-4 md:px-12 lg:pl-0 lg:ml-36 md:flex md:flex-col md:justify-center max-w-2xl'>
-            <h2 className='text-6xl xl:text-8xl font-semibold leading-95'>Ultra secure backup</h2>
-            <p className='lg:w-full lg:max-w-2xl text-xl xl:text-3xl text-neutral-400 my-7 md:mt-6 md:mb-12 font-light max-w-[583px]'>You can connect up to three cards to one wallet, so you'll always have a way to use wallet if your main card is lost, stolen, or damaged.</p>
-            <div className='flex'>
-              <button onClick={() => router.push('/pricing')} className='cursor-pointer w-full lg:w-32 flex justify-center text-[17px] lg:text-lg font-medium text-white bg-[#141D26] hover:bg-[#06090D] transition ease-in-out duration-300 py-3 rounded-20px'>Buy now</button>
-              {/* <Link href='#'>
-                <a className='w-3/6 lg:w-48 flex justify-center text-[17px] lg:text-lg font-medium text-neutral-900 bg-[#ecedee] hover:bg-[#DEE0E1] transition ease-in-out duration-300 py-3 rounded-20px'>Learn more</a>
-              </Link> */}
-            </div>
-          </div>
-          <div className='w-full lg:w-auto mx-auto mt-7 md:mt-0 lg:mx-0 max-w-[696px]'>
-            <picture>
-              <source media='(max-width: 768px)' srcSet='./img/feature/feature-card-2x.png' />
-              <source media='(min-width: 769px)' srcSet='./img/feature/feature-card-2x.png' />
-              <source media='(min-width: 1800px)' srcSet='./img/feature/feature-card-3x.png' />
-              <img
-                src={cardImg}
-                alt='Tangem Card image'
-                className='w-full'
-                loading='lazy'
-                decoding='async'
-                style={{
-                  width: '799px',
-                  filter: cardImgBlur ? 'blur(20px)' : 'none',
-                  transition: cardImgBlur ? 'none' : 'filter 0.3s ease-out',
-                }}
-              />
-            </picture>
-          </div>
+    <section>
+      <div
+        className='flex flex-col md:flex-row lg:items-center lg:mt-[100px]'
+      >
+        {/* Left Side */}
+        <div className='order-last md:order-first md:w-5/12 mt-[37px] lg:w-1/2 lg:mt-0 xl:w-[47%]'>
+          <picture>
+            <source
+              srcSet='./img/feature/feature-card-3x.png'
+              media='(min-width: 1536px)'
+            />
+            <source
+              srcSet='./img/feature/feature-card-2x.png'
+              media='(min-width: 768px)'
+            />
+            <source
+              srcSet='./img/feature/feature-card-1x.png'
+              media='(min-width: 300px)'
+            />
+            <img 
+              alt='Tangem card image'
+              src='./img/feature/feature-card-2x.png'
+              className='w-full'
+            />
+          </picture>
+        </div>
+        {/* Right Side */}
+        <div className='container px-4 mx-auto mt-[6.25rem]
+          md:w-1/2 md:mt-[50px] lg:w-[40%] lg:mt-0 xl:w-[44%] xl:max-w-[583px] xl:ml-[8%] xl:px-0'
+        >
+          <h2 className='text-[60px] leading-[54px] font-semibold text-primary
+            lg:max-w-[400px] xl:max-w-full xl:text-[100px] xl:leading-[95px]'
+          >
+            Ultra secure backup
+          </h2>
+          <p
+            className='text-secondary text-xl leading-6 font-normal my-[1.875rem]
+            xl:text-3xl xl:leading-9 xl:font-light xl:mt-6 xl:mb-[50px]'
+          >
+            You can connect up to three cards to one wallet, so you'll always have a way to use wallet if your main card is lost, stolen, or damaged.</p>
+          <button
+            onClick={() => router.push('/pricing')}
+            className='w-full sm:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
+            text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
+            sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
+          >
+            Buy now
+          </button>
         </div>
       </div>
-      <div className='mb-4 xl:mb-32'>
-        <div className="flex flex-wrap md:flex-nowrap justify-between lg:justify-start mx-auto">
-          <div className='px-4 md:px-12 lg:pl-0 lg:ml-28 md:flex md:flex-col md:justify-center max-w-2xl'>
-            <h2 className='text-6xl xl:text-8xl font-semibold leading-95'>Thousands of currencies</h2>
-            <p className='lg:w-full text-xl xl:text-3xl text-neutral-400 my-7 md:mt-6 md:mb-12 font-light max-w-[550px]'>A hardware wallet for your Bitcoin, Ethereum and many more currencies simultaneously – all in one card.</p>
-            <div className='flex'>
-              <a onClick={() => router.push('/pricing')} className='cursor-pointer w-3/6 lg:w-32 flex justify-center text-[17px] lg:text-lg font-medium text-white bg-[#141D26] hover:bg-[#06090D] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px mr-2 lg:mr-4'>Buy now</a>
-              <button onClick={() => router.push('/search')} className='w-3/6 lg:w-48 flex justify-center items-center text-[17px] lg:text-lg font-medium text-neutral-900 bg-[#ecedee] hover:bg-[#DEE0E1] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px'>
-                <SearchIcon className='mr-3' />
-                Search
-              </button>
-            </div>
-          </div>
-          <div className='md:order-last w-full lg:w-auto mx-auto mt-7 md:mt-0 lg:mx-0'>
-            <picture>
-              <source media='(max-width: 768px)' srcSet='./img/feature/feature-crypto-1x.png' />
-              <source media='(min-width: 769px)' srcSet='./img/feature/feature-crypto-2x.png' />
-              <source media='(min-width: 1800px)' srcSet='./img/feature/feature-crypto-3x.png' />
-              <img
-                src={cryptoImg}
-                alt='Tangem Card image'
-                className='w-full'
-                style={{
-                  width: '799px',
-                  filter: cryptoImgblur ? 'blur(20px)' : 'none',
-                  transition: cryptoImgblur ? 'none' : 'filter 0.3s ease-out',
-                }}
-              />
-            </picture>
+
+      <div
+        className='flex flex-col mt-[100px] md:flex-row md:mt-[100px] lg:items-center'
+      >
+        
+        {/* Left Side */}
+        <div className='container md:w-1/2 px-4 mx-auto md:mt-[15px] md:pl-[30px] lg:w-[40%] lg:mt-0 xl:w-[43%] xl:px-0 xl:ml-[3%] 2xl:ml-[5%] 3xl:ml-[5%]'>
+          <h2 className='max-w-[345px] text-[60px] leading-[54px] font-semibold text-primary
+            lg:max-w-[400px] xl:max-w-[550px] xl:text-[100px] xl:leading-[95px]'
+          >
+            Thousands of currencies
+          </h2>
+          <p
+            className='text-secondary text-xl leading-6 font-normal my-[1.875rem]
+            xl:text-3xl xl:leading-9 xl:font-light xl:max-w-[550px] xl:mt-6 xl:mb-[50px]'
+          >
+            A hardware wallet for your Bitcoin, Ethereum and many more currencies simultaneously - all in one card.
+          </p>
+            <div className='max-w-[345px] xl:max-w-full flex justify-between sm:justify-start'>
+            <button
+              onClick={() => router.push('/pricing')}
+              className='w-[168px] md:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
+              text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
+              sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
+            >
+              Buy now
+            </button>
+            <button
+              onClick={() => router.push('/search')}
+              className='w-[168px] md:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
+              text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
+              xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px]'
+            >
+              <SearchIcon className='mr-3' />
+              Search
+            </button>
           </div>
         </div>
+        
+        {/* Right Side */}
+        <div className='md:w-1/2 lg:w-3/5 xl:w-[55%]'>
+          <picture>
+            <source
+              srcSet='./img/feature/feature-crypto-3x.png'
+              media='(min-width: 1536px)'
+            />
+            <source
+              srcSet='./img/feature/feature-crypto-2x.png'
+              media='(min-width: 768px)'
+            />
+            <source
+              srcSet='./img/feature/feature-crypto-1x.png'
+              media='(min-width: 300px)'
+            />
+            <img 
+              alt='Tangem crcard image'
+              src='./img/feature/feature-crypto-2x.png'
+              className='w-full'
+            />
+          </picture>
+        </div>
+        
       </div>
-    </>
+    </section>
   )
 }
 
