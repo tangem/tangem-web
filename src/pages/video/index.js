@@ -2,6 +2,8 @@ import React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 
+import CloseIcon from '../../../public/svg/close.svg'
+
 const Video = ({ }) => {
   const router = useRouter()
 
@@ -30,10 +32,9 @@ const Video = ({ }) => {
         <div
           className={`bg-[#F8F9F9] w-full h-full lg:container lg:mx-auto relative`}
         >
-          <img
-            src='./img/common/close.png'
+          <CloseIcon
+            className='absolute top-[20px] right-[20px] max-w-[36px] cursor-pointer'
             onClick={() => router.push('/')}
-            className='absolute top-0 right-1.5 max-w-[36px] cursor-pointer'
           />
           <div className="text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10">How it works</div>
           <div className="flex flex-col px-4 lg:px-0">

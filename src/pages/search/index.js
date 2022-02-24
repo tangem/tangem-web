@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import InfiniteScroll from 'react-infinite-scroll-component'
 import { TANGEM_COINS_API_URI } from '../../config'
 
+import CloseIcon from '../../../public/svg/close.svg'
 import SearchIcon from '../../../public/svg/search.svg'
 import CloseIcon from '../../../public/svg/close.svg'
 
@@ -166,14 +167,12 @@ const Search = () => {
         <link rel='shortcut icon' href='/img/favicon/favicon.png' />
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
       </Head>
-      <div className='fixed bg-white left-0 right-0 top-0 bottom-0 overflow-hidden'>
-        <div className='w-full h-full overscroll-contain'>
+      <div className='w-full'>
           
-          <CloseIcon
-            className='absolute top-1 right-4 max-w-[36px] cursor-pointer'
-            onClick={() => router.push('/')}
-          />
-          <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
+        <CloseIcon
+          onClick={() => router.push('/')}
+          className='absolute top-[20px] right-[20px] max-w-[36px] cursor-pointer'
+        />
 
           <div className='flex flex-col w-full h-full'>
 

@@ -1,65 +1,67 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import classNames from 'classnames'
 import styles from './hero.module.scss'
-import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
 
 import PlayIcon from '../../../../public/svg/play.svg'
 
 const SectionHero = () => {
   const router = useRouter()
-  const [src, { blur }] = useProgressiveImg('./img/hero/hero-placeholder.png', './img/hero/hero-phone-2x.png')
 
   return (
-    <div className={classNames('py-3.5', styles['hero'])}>
-      <div className='container flex flex-wrap px-4 mx-auto md:flex-nowrap mt-14 lg:mt-[70px] lg:px-0'>
-        <div className='lg:mt-[70px] md:pl-8 md:pr-8 xl:pr-0 xl:pl-0 max-w-[595px] w-full'>
-          <h1 className='text-[#090E13] text-6xl font-semibold lg:text-[6rem] xl:text-[6.5rem] 2xl:text-120px leading-85'>
-            Keep your crypto <span className='text-[#A6AAAD] underline decoration-1 underline-offset-8'>safe</span>
+    <section className={styles['hero']}>
+
+      <div className='container mx-auto grid grid-cols-1 content-center px-4 mt-[50px]
+        md:grid-cols-2 md:gap-x-[1rem] lg:gap-x-[6rem] xl:gap-x-[8rem] 2xl:gap-x-[10rem] xl:px-0 xl:mt-[5.625rem]'
+      >
+        {/* Left Side */}
+        <div className='self-center max-w-[343px] sm:max-w-full lg:max-w-[595px] lg:self-start lg:mt-[72px]'>
+          <h1
+            className='text-[60px] leading-[54px] font-semibold text-primary
+            lg:max-w-[400px] xl:max-w-full xl:text-[120px] xl:leading-[102px]'
+          >
+            Keep your crypto <span className='text-secondary underline underline-offset-8 decoration-1'>safe</span>
           </h1>
-          <p className='text-xl font-light text-[#A6AAAD] xl:text-3xl my-[30px] lg:mt-10 lg:mb-16 xl:mb-[72px]'>
-            Tangem Wallet lets you store your crypto assets secure and easily
-            accessible while keeping private keys contained in your card.
+          <p
+            className='text-secondary text-xl leading-6 font-normal my-[1.875rem]
+            xl:text-3xl xl:leading-9 xl:font-light xl:mt-10 xl:mb-[70px]'
+          >
+            Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card.
           </p>
-          <div className='flex'>
+          <div className='flex justify-between sm:justify-start'>
             <button
-              className='w-3/6 lg:w-32 flex cursor-pointer justify-center text-[17px] lg:text-lg font-medium text-white 
-              bg-[#141D26] hover:bg-[#06090D] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px mr-2 lg:mr-4'
-              data-element='product.button'
               onClick={() => router.push('/pricing')}
+              className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
+              text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
+              sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
             >
               Buy now
             </button>
             <button
               onClick={() => router.push('/video')}
-              className='w-3/6 lg:w-48 flex justify-center items-center text-base lg:text-lg font-medium text-neutral-900 
-              bg-[#ecedee] hover:bg-[#DEE0E1] transition ease-in-out duration-300 py-3 rounded-18px lg:rounded-20px'
+              className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
+              text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
+              xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px]'
             >
               <PlayIcon className='mr-3' />
               How it works
             </button>
           </div>
         </div>
-        <div className='mt-14 md:mt-0 lg:ml-[160px]'>
-          <picture>
-            <source media='(max-width: 768px)' srcSet='./img/hero/hero-phone-1x.png' />
-            <source media='(min-width: 769px)' srcSet='./img/hero/hero-phone-2x.png' />
-            <img
-              src={src}
-              alt='Tangem Hero image'
-              loading='lazy'
-              decoding='async'
-              style={{
-                width: '100%',
-                filter: blur ? 'blur(20px)' : 'none',
-                transition: blur ? 'none' : 'filter 0.3s ease-out',
-              }}
-              className='max-w-[630px]'
-            />
-          </picture>
+
+        {/* Right Side */}
+        <div className='mt-[60px] xl:mt-0 md:justify-self-center'>
+          <img 
+            alt='Tangem hero image'
+            src='./img/hero/hero-phone-2x.png'
+            srcSet='
+            ./img/hero/hero-phone-1x.png 1x,
+            ./img/hero/hero-phone-2x.png 2x,'
+            className='w-full mx-auto max-w-[345px] xl:max-w-[630px]'
+          />
         </div>
+
       </div>
-    </div>
+    </section>
   )
 }
 
