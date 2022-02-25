@@ -11,6 +11,15 @@
     background-size: contain;
     background-position: top center;
     background-color: transparent;
+    height: auto;
+  }
+
+  @media (min-width: 1024px) {
+    height: 400px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 550px;
   }
 
   @media (min-width: 1536px) {
