@@ -28,7 +28,7 @@ const networkIcons = {
   'avalanche': {
     icon: <AvalancheIcon />
   },
-  'polygon': {
+  'polygon-pos': {
     icon: <PolygonIcon />
   },
   'solana': {
@@ -46,6 +46,8 @@ const Search = () => {
   const searchRef = useRef(null)
   const [isLoading, setLoading] = useState(false)
   const [tokenText, setTokenText] = useState('')
+
+  const [tokenTotal, setTokenTotal] = useState(0)
 
   const [tokenList, setTokenList] = useState([])
   const [total, setTotal] = useState(0)
@@ -88,6 +90,7 @@ const Search = () => {
     const response = await fetch(`${TANGEM_COINS_API_URI}list?limit=${limit}&offset=${offset}&ts=${timestamp}`)
     const coins = await response.json()
 
+    setTokenTotal(coins.total)
     setTokenList(coins.tokens)
     setTotal(coins.tokens.length)
     setLoading(false)
@@ -104,6 +107,7 @@ const Search = () => {
 
     if (tokenList?.length < total) {
       setHasMoreTokens(false)
+      setLoading(false)
       return
     }
 
@@ -167,7 +171,7 @@ const Search = () => {
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
       </Head>
       <div className='fixed bg-white left-0 right-0 top-0 bottom-0 overflow-hidden'>
-        <div className='w-full h-full overscroll-contain'>
+        <div className='w-full h-full overscroll-contain relative lg:container lg:mx-auto'>
           
           <CloseIcon
             className='absolute top-1 right-4 max-w-[36px] cursor-pointer'
@@ -185,7 +189,7 @@ const Search = () => {
                   ref={searchRef}
                   value={tokenText}
                   onChange={onSeachChange}
-                  placeholder='Search in 10087 cryptocurrencies'
+                  placeholder={`Search in ${tokenTotal} cryptocurrencies`}
                   className='w-full bg-transparent text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0 outline-none outline-offset-0'
                 />
               </div>
@@ -211,7 +215,7 @@ const Search = () => {
                     >
                       {tokenList?.map(({ name, symbol, images, networks }, id) => (
                         <div key={id} className='flex mt-5'>
-                          <span className='block mr-3.5 w-14 basis-[56px] md:basis-[70px]'>
+                          <span className='block mr-3.5 w-14 h-14 md:w-[70px] md:h-[70px] basis-[56px] md:basis-[70px]'>
                             {images?.large ? <img src={images?.large} alt={name} className='w-full h-full object-contain' /> : (
                               <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
                                 {symbol[0]}
@@ -220,16 +224,15 @@ const Search = () => {
                           </span>
                           <span className='flex-[2_2_0%]'>
                             <span className='text-black text-xl font-medium'>
-                              {name} {symbol}
+                              {name} <span className='text-[#A1A1A4]'>{symbol}</span>
                             </span>
                             <span className='flex h-4 mt-1.5 space-x-1.5'>
-                              {networks?.length ? networks?.map((network, id) => {
+                              {networks?.map((network, id) => {
+                                if (networkIcons[network]?.icon === undefined) return
                                 return (
                                   <span key={id}>{networkIcons[network]?.icon}</span>
                                 )
-                              }) : (
-                                <span key={id}>{networkIcons[0]?.icon}</span>
-                              )}
+                              })}
                             </span>
                           </span>
                         </div>
