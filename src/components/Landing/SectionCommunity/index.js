@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import classNames from 'classnames'
 import styles from './community.module.scss'
 // import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
@@ -17,40 +16,28 @@ const SectionCommunity = () => {
 
   return (
     <div className={classNames('md:container mt-14 mb-14 md:mx-[26px] md:mb-24 xl:mx-auto 2xl:max-w-[1300px]', styles['community'])}>
-      <div className='pt-8 px-4 md:p-8 lg:pt-8 lg:pb-0 lg:px-0 xl:pt-24'>
+      <div className='pt-8 px-4 md:py-8 lg:pt-8 lg:pb-0 lg:px-0 xl:pt-24'>
         <h2 className='text-[46px] leading-[46px] md:text-2xl xl:text-6xl font-semibold text-white md:text-center'>Join the Global Community <br /> of <span className='text-emerald-400'>Tangem Users</span></h2>
         <p className='text-xl md:text-base xl:text-2xl text-neutral-400 md:text-center my-7 md:mb-6 lg:mb-12 max-w-[840px] mx-auto font-light'>Tangem is trusted by clients and leading market players from all around the globe today. We have established presence in 108 countries on 5 continents, except Antarctica.</p>
         <div className='flex justify-between md:justify-evenly lg:justify-center'>
-          <Link href="https://twitter.com/tangem">
-            <a className='lg:mr-[60px]'>
-              <TwitterIcon />
-            </a>
-          </Link>
-          <Link href="https://m.facebook.com/TangemCards/">
-            <a className='lg:mr-[60px]'>
-              <FacebookIcon />
-            </a>
-          </Link>
-          <Link href="https://instagram.com/tangemcards">
-            <a className='lg:mr-[60px]'>
-              <InstaIcon />
-            </a>
-          </Link>
-          <Link href="https://github.com/tangem">
-            <a className='lg:mr-[60px]'>
-              <GithubIcon />
-            </a>
-          </Link>
-          <Link href="https://youtube.com/channel/UCFGwLS7yggzVkP6ozte0m1w">
-            <a className='lg:mr-[60px]'>
-              <YoutubeIcon />
-            </a>
-          </Link>
-          <Link href="https://www.linkedin.com/company/tangem">
-            <a className='lg:mr-[60px]'>
-              <LinkedinIcon />
-            </a>
-          </Link>
+          <a href="https://twitter.com/tangem" target="_blank" rel="noopener noreferrer" className='lg:mr-[60px]'>
+            <TwitterIcon />
+          </a>
+          <a href="https://m.facebook.com/TangemCards/" target="_blank" rel="noopener noreferrer" className='lg:mr-[60px]'>
+            <FacebookIcon />
+          </a>
+          <a href="https://instagram.com/tangemcards" target="_blank" rel="noopener noreferrer" className='lg:mr-[60px]'>
+            <InstaIcon />
+          </a>
+          <a href="https://github.com/tangem" target="_blank" rel="noopener noreferrer" className='lg:mr-[60px]'>
+            <GithubIcon />
+          </a>
+          <a href="https://youtube.com/channel/UCFGwLS7yggzVkP6ozte0m1w" target="_blank" rel="noopener noreferrer" className='lg:mr-[60px]'>
+            <YoutubeIcon />
+          </a>
+          <a href="https://www.linkedin.com/company/tangem" target="_blank" rel="noopener noreferrer" className='lg:mr-[60px]'>
+            <LinkedinIcon />
+          </a>
         </div>
       </div>
     </div>

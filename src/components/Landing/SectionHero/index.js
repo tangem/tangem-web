@@ -50,7 +50,9 @@ const SectionHero = () => {
 
         {/* Right Side */}
         <div className='mt-[60px] xl:mt-0 md:justify-self-center'>
-          <img 
+          <img
+            loading='lazy'
+            decoding='async'
             alt='Tangem hero image'
             src='./img/hero/hero-phone-2x.png'
             srcSet='

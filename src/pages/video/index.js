@@ -33,7 +33,7 @@ const Video = ({ }) => {
           className={`bg-[#F8F9F9] w-full h-full lg:container lg:mx-auto relative`}
         >
           <CloseIcon
-            className='absolute top-[20px] right-[20px] max-w-[36px] cursor-pointer'
+            className='absolute top-[30px] right-[40px] max-w-[36px] cursor-pointer'
             onClick={() => router.push('/')}
           />
           <div className="text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10">How it works</div>

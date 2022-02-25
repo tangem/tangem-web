@@ -28,7 +28,9 @@ const SectionFeature = () => {
               srcSet='./img/feature/feature-card-1x.png'
               media='(min-width: 300px)'
             />
-            <img 
+            <img
+              loading='lazy'
+              decoding='async'
               alt='Tangem card image'
               src='./img/feature/feature-card-2x.png'
               className='w-full'
@@ -113,7 +115,9 @@ const SectionFeature = () => {
               srcSet='./img/feature/feature-crypto-1x.png'
               media='(min-width: 300px)'
             />
-            <img 
+            <img
+              loading='lazy'
+              decoding='async'
               alt='Tangem crcard image'
               src='./img/feature/feature-crypto-2x.png'
               className='w-full'

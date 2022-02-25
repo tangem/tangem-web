@@ -14,7 +14,12 @@
   }
 
   @media (min-width: 1024px) {
-    background-size: cover;
+    background-size: contain;
+    height: 500px;
+  }
+
+  @media (min-width: 1200px) {
+    margin: 0 auto;
   }
 
   @media (min-width: 1280px) {

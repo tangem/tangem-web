@@ -49,19 +49,17 @@ const Search = () => {
 
   const [tokenTotal, setTokenTotal] = useState(0)
 
+  const [imageHost, setImageHost] = useState('')
+
   const [tokenList, setTokenList] = useState([])
   const [total, setTotal] = useState(0)
   const [offset, setOffset] = useState(0)
   const [hasMoreTokens, setHasMoreTokens] = useState(true)
 
   useEffect(() => {
-    setLoading(true)
-    fetchCoins(20, offset)
-    
     if (searchRef?.current) {
       searchRef?.current.focus()
     }
-    setLoading(false)
   }, [])
 
   useEffect(() => {
@@ -80,7 +78,6 @@ const Search = () => {
       setLoading(false)
       return
     }
-
     searchCoins(searchedValue)
   }
 
@@ -90,6 +87,7 @@ const Search = () => {
     const response = await fetch(`${TANGEM_COINS_API_URI}list?limit=${limit}&offset=${offset}&ts=${timestamp}`)
     const coins = await response.json()
 
+    setImageHost(coins.imageHost)
     setTokenTotal(coins.total)
     setTokenList(coins.tokens)
     setTotal(coins.tokens.length)
@@ -135,15 +133,35 @@ const Search = () => {
     setLoading(false)
   }
 
+  const buildImage = (id) => {
+    let isBroken = false
+
+    const imageSrc = `${imageHost}large/${id}.png`
+    let image = new Image()
+    
+    image.src = imageSrc
+
+    image.addEventListener('load', () => {
+      isBroken = false
+    }, false)
+    
+    image.addEventListener('error', () => {
+      console.log(isBroken)
+      isBroken = true
+    }, false)
+    
+    return isBroken
+  }
+
   const Loader = () => {
     {return [...Array(10).keys()].map((_, id) => (
       <div key={id} className='w-full'>
-        <div className="w-full mt-5 mx-auto lg:mx-0">
-          <div className="animate-pulse flex space-x-[14px]">
-            <div className="rounded-full bg-slate-200 h-[56px] w-[56px]"></div>
-            <div className="flex flex-1 flex-col justify-center py-1 space-y-3">
-              <div className="h-2 bg-slate-200 rounded"></div>
-              <div className="h-2 bg-slate-200 rounded col-span-2"></div>
+        <div className='w-full mt-5 mx-auto lg:mx-0'>
+          <div className='animate-pulse flex space-x-[14px]'>
+            <div className='rounded-full bg-slate-200 h-[56px] w-[56px] md:w-[70px] md:h-[70px]'></div>
+            <div className='flex flex-1 flex-col justify-center py-1 space-y-3'>
+              <div className='h-2 bg-slate-200 rounded'></div>
+              <div className='h-2 bg-slate-200 rounded col-span-2'></div>
             </div>
           </div>
         </div>
@@ -174,7 +192,7 @@ const Search = () => {
         <div className='w-full h-full overscroll-contain relative lg:container lg:mx-auto'>
           
           <CloseIcon
-            className='absolute top-1 right-4 max-w-[36px] cursor-pointer'
+            className='absolute top-0 right-[40px] max-w-[36px] cursor-pointer'
             onClick={() => router.push('/')}
           />
           <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
@@ -189,7 +207,7 @@ const Search = () => {
                   ref={searchRef}
                   value={tokenText}
                   onChange={onSeachChange}
-                  placeholder={`Search in ${tokenTotal} cryptocurrencies`}
+                  placeholder={`${tokenTotal ? `Search in ${tokenTotal} cryptocurrencies` : 'Search'}`}
                   className='w-full bg-transparent text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0 outline-none outline-offset-0'
                 />
               </div>
@@ -205,22 +223,21 @@ const Search = () => {
                       dataLength={tokenList.length}
                       next={fetchMoreCoins}
                       hasMore={hasMoreTokens}
-                      height={'calc(100vh - 80px)'}
+                      height={'calc(100vh - 90px)'}
                       loader={<Loader />}
-                      endMessage={
-                        <p style={{ textAlign: "center" }}>
-                          <b>Yay! You have seen it all</b>
-                        </p>
-                      }
                     >
-                      {tokenList?.map(({ name, symbol, images, networks }, id) => (
+                      {tokenList?.map(({ id, name, symbol, networks }) => (
                         <div key={id} className='flex mt-5'>
                           <span className='block mr-3.5 w-14 h-14 md:w-[70px] md:h-[70px] basis-[56px] md:basis-[70px]'>
-                            {images?.large ? <img src={images?.large} alt={name} className='w-full h-full object-contain' /> : (
-                              <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
-                                {symbol[0]}
-                              </span>
-                            )}
+                            {
+                              buildImage(id) === false ? (
+                                <img src={`${imageHost}large/${id}.png`} alt={name} className='animate-fade-in-down w-full h-full object-contain' />
+                              ) : (
+                                <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
+                                  {symbol[0]}
+                                </span>
+                              )
+                            }
                           </span>
                           <span className='flex-[2_2_0%]'>
                             <span className='text-black text-xl font-medium'>

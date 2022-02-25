@@ -24,7 +24,7 @@ const accordionData = [
   },
   {
     head: "How reliable and safe is it?",
-    body: "Tangem Wallet is the most safe and reliable crypto wallet in the world. The chip in your card is a microcomputer. It has been certified by Common Criteria at EAL6+ level -- the same level of chip protection used in passports. It is completely safe from dust, water, and hacking attempts. The card reliably performs in temperatures between -35C and +85C, with the chip useful life beyond 25 years of service."
+    body: "Tangem Wallet is the most safe and reliable crypto wallet in the world. The chip in your card is a microcomputer. It has been certified by Common Criteria at EAL6+ level — the same level of chip protection used in passports. It is completely safe from dust, water, and hacking attempts. The card reliably performs in temperatures between -35℃ (-31.℉) and +85℃ (185℉), with the chip useful life beyond 25 years of service."
   },
 ];
 
