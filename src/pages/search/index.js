@@ -14,6 +14,7 @@ import AvalancheIcon from '../../../public/svg/avalanche.svg'
 import PolygonIcon from '../../../public/svg/polygon.svg'
 import SolanaIcon from '../../../public/svg/solana.svg'
 import BscIcon from '../../../public/svg/bsc.svg'
+import Network from '../../../public/svg/network.svg'
 
 const networkIcons = {
   'ethereum': {
@@ -38,7 +39,7 @@ const networkIcons = {
     icon: <BscIcon />
   },
 	'blockchain': {
-		icon: <span className='block h-{18} border border-gray-500 box-border rounded-lg tracking-tight px-1 font-medium text-xs'>NETWORK</span>
+		icon: <Network />
 	}
 }
 
@@ -226,15 +227,15 @@ const Search = () => {
                       dataLength={tokenList.length}
                       next={fetchMoreCoins}
                       hasMore={hasMoreTokens}
-                      height={'calc(100vh - 90px)'}
+                      height={'calc(100vh - 162px)'}
                       loader={<Loader />}
                     >
                       {tokenList?.map(({ id, name, symbol, networks }) => (
-                        <div key={id} className='flex mt-5 select-none'>
+                        <div key={id} className='flex mt-5 select-none '>
                           <span className='block mr-3.5 w-14 h-14 md:w-[70px] md:h-[70px] basis-[56px] md:basis-[70px]'>
                             {
                               buildImage(id) === false ? (
-                                <img src={`${imageHost}large/${id}.png`} alt={name} className='animate-fade-in-down w-full h-full object-contain' />
+                                <img src={`${imageHost}large/${id}.png`} alt={name} className='w-full h-full object-contain' />
                               ) : (
                                 <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
                                   {symbol[0]}
@@ -246,7 +247,7 @@ const Search = () => {
                             <span className='text-black text-xl font-medium'>
                               {name} <span className='text-[#A1A1A4]'>{symbol}</span>
                             </span>
-                            <span className='flex h-4 mt-1.5 space-x-1.5'>
+                            <span className='flex h-{18} mt-1.5 space-x-1.5 items-center'>
                               {networks?.map((network, id) => {
                                 if (networkIcons[network]?.icon === undefined) return
                                 return (
