@@ -5,6 +5,8 @@
   background-size: contain;
   background-position: bottom;
   height: 550px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
 
   @media (min-width: 768px) {
     background-image: url('/img/community/community-2x.png');
@@ -12,6 +14,8 @@
     background-position: top center;
     background-color: transparent;
     height: 400px;
+    box-shadow: none;
+    border-radius: 0;
   }
 
   @media (min-width: 1024px) {

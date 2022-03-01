@@ -36,7 +36,10 @@ const networkIcons = {
   },
   'binance-smart-chain': {
     icon: <BscIcon />
-  }
+  },
+	'blockchain': {
+		icon: <span className='block h-{18} border border-gray-500 box-border rounded-lg tracking-tight px-1 font-medium text-xs'>NETWORK</span>
+	}
 }
 
 const Search = () => {
@@ -63,18 +66,18 @@ const Search = () => {
   }, [])
 
   useEffect(() => {
-    if (tokenText?.length == 0) {
+    if (tokenText?.length === 0) {
       setHasMoreTokens(true)
       fetchCoins(20, 0)
     }
   }, [tokenText])
 
-  const onSeachChange = (e) => {
+  const onSearchChange = (e) => {
     setLoading(true)
     const searchedValue = e.target.value
     setTokenText(searchedValue)
-    
-    if (searchedValue?.length == 0 || searchedValue?.length < 2) {
+
+    if (searchedValue?.length === 0 || searchedValue?.length < 2) {
       setLoading(false)
       return
     }
@@ -138,18 +141,18 @@ const Search = () => {
 
     const imageSrc = `${imageHost}large/${id}.png`
     let image = new Image()
-    
+
     image.src = imageSrc
 
     image.addEventListener('load', () => {
       isBroken = false
     }, false)
-    
+
     image.addEventListener('error', () => {
       console.log(isBroken)
       isBroken = true
     }, false)
-    
+
     return isBroken
   }
 
@@ -190,7 +193,7 @@ const Search = () => {
       </Head>
       <div className='fixed bg-white left-0 right-0 top-0 bottom-0 overflow-hidden'>
         <div className='w-full h-full overscroll-contain relative lg:container lg:mx-auto'>
-          
+
           <CloseIcon
             className='absolute top-0 right-[40px] max-w-[36px] cursor-pointer'
             onClick={() => router.push('/')}
@@ -206,7 +209,7 @@ const Search = () => {
                   type='text'
                   ref={searchRef}
                   value={tokenText}
-                  onChange={onSeachChange}
+                  onChange={onSearchChange}
                   placeholder={`${tokenTotal ? `Search in ${tokenTotal} cryptocurrencies` : 'Search'}`}
                   className='w-full bg-transparent text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0 outline-none outline-offset-0'
                 />
@@ -227,7 +230,7 @@ const Search = () => {
                       loader={<Loader />}
                     >
                       {tokenList?.map(({ id, name, symbol, networks }) => (
-                        <div key={id} className='flex mt-5'>
+                        <div key={id} className='flex mt-5 select-none'>
                           <span className='block mr-3.5 w-14 h-14 md:w-[70px] md:h-[70px] basis-[56px] md:basis-[70px]'>
                             {
                               buildImage(id) === false ? (

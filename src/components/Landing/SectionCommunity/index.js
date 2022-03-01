@@ -15,7 +15,7 @@ const SectionCommunity = () => {
   // const [src, { blur }] = useProgressiveImg('./img/community/community-placeholder.png', './img/community/community-2x.png')
 
   return (
-    <div className={classNames('md:container mt-14 mb-14 md:mx-[26px] md:mb-24 xl:mx-auto 2xl:max-w-[1300px]', styles['community'])}>
+    <div className={classNames('md:container mt-14 mb-14 md:mb-24 mx-auto 2xl:max-w-[1300px]', styles['community'])}>
       <div className='pt-8 px-4 md:py-8 lg:pt-8 lg:pb-0 lg:px-0 xl:pt-24'>
         <h2 className='text-[46px] leading-[46px] md:text-2xl xl:text-6xl font-semibold text-white md:text-center'>Join the Global Community <br /> of <span className='text-emerald-400'>Tangem Users</span></h2>
         <p className='text-xl md:text-base xl:text-2xl text-neutral-400 md:text-center my-7 md:mb-6 lg:mb-12 max-w-[840px] mx-auto font-light'>Tangem is trusted by clients and leading market players from all around the globe today. We have established presence in 108 countries on 5 continents, except Antarctica.</p>
