@@ -1,12 +1,8 @@
 import React from 'react'
-import { useRouter } from 'next/router'
-import styles from './feature.module.scss'
 
 import SearchIcon from '../../../../public/svg/search.svg'
 
-const SectionFeature = () => {
-
-  const router = useRouter()
+const SectionFeature = ({ toggleSearch, toggleBuy }) => {
 
   return (
     <section>
@@ -52,7 +48,7 @@ const SectionFeature = () => {
           >
             You can connect up to three cards to one wallet, so you'll always have a way to use wallet if your main card is lost, stolen, or damaged.</p>
           <button
-            onClick={() => router.push('/pricing')}
+            onClick={toggleBuy}
             className='w-full sm:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
             text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
             sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
@@ -65,7 +61,7 @@ const SectionFeature = () => {
       <div
         className='flex flex-col mt-[100px] md:flex-row md:mt-[100px] lg:items-center'
       >
-        
+
         {/* Left Side */}
         <div className='container md:w-1/2 px-4 mx-auto md:mt-[15px] md:pl-[30px] lg:w-[40%] lg:mt-0 xl:w-[43%] xl:px-0 xl:ml-[3%] 2xl:ml-[5%] 3xl:ml-[5%]'>
           <h2 className='max-w-[345px] text-[60px] leading-[54px] font-semibold text-primary
@@ -81,7 +77,7 @@ const SectionFeature = () => {
           </p>
             <div className='max-w-[345px] xl:max-w-full flex justify-between sm:justify-start'>
             <button
-              onClick={() => router.push('/pricing')}
+              onClick={toggleBuy}
               className='w-[168px] md:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
               text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
               sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
@@ -89,7 +85,7 @@ const SectionFeature = () => {
               Buy now
             </button>
             <button
-              onClick={() => router.push('/search')}
+              onClick={toggleSearch}
               className='w-[168px] md:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
               text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
               xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px]'
@@ -99,7 +95,7 @@ const SectionFeature = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Right Side */}
         <div className='md:w-1/2 lg:w-3/5 xl:w-[55%]'>
           <picture>
@@ -124,7 +120,7 @@ const SectionFeature = () => {
             />
           </picture>
         </div>
-        
+
       </div>
     </section>
   )

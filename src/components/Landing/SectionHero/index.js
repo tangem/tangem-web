@@ -1,11 +1,9 @@
 import React from 'react'
-import { useRouter } from 'next/router'
 import styles from './hero.module.scss'
 
 import PlayIcon from '../../../../public/svg/play.svg'
 
-const SectionHero = () => {
-  const router = useRouter()
+const SectionHero = ({ toggleBuy, toggleVideo}) => {
 
   return (
     <section className={styles['hero']}>
@@ -29,7 +27,7 @@ const SectionHero = () => {
           </p>
           <div className='flex justify-between sm:justify-start'>
             <button
-              onClick={() => router.push('/pricing')}
+              onClick={toggleBuy}
               className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
               text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
               sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
@@ -37,7 +35,7 @@ const SectionHero = () => {
               Buy now
             </button>
             <button
-              onClick={() => router.push('/video')}
+              onClick={toggleVideo}
               className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
               text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
               xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px]'

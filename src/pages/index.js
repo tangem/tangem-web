@@ -6,8 +6,18 @@ import SectionWebCompatible from '../components/Landing/SectionCompatible'
 import SectionWallet from '../components/Landing/SectionWallet'
 import SectionFaq from '../components/Landing/SectionFaq'
 import SectionCommunity from '../components/Landing/SectionCommunity'
+import React from "react";
+import Modal from "../components/Landing/Modal";
+import Search from "../components/Landing/Search";
+import useModal from "../hooks/useModal";
+import Pricing from "../components/Landing/Pricing";
+import Video from "../components/Landing/Video";
 
 export const Home = () => {
+	const {isShowing: isSearchShowing, toggle: toggleSearch} = useModal()
+	const {isShowing: isBuyShowing, toggle: toggleBuy} = useModal()
+	const {isShowing: isVideoShowing, toggle: toggleVideo} = useModal()
+
   return (
     <>
       <Head>
@@ -27,14 +37,35 @@ export const Home = () => {
         <link rel='shortcut icon' href='/img/favicon/favicon.png' />
         <link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
       </Head>
-      <Header />
+      <Header toggleBuy={toggleBuy} />
       <main>
-        <SectionHero />
-        <SectionFeature />
+        <SectionHero
+	        toggleBuy={toggleBuy}
+	        toggleVideo={toggleVideo}
+        />
+        <SectionFeature
+	        toggleBuy={toggleBuy}
+	        toggleSearch={toggleSearch}
+        />
         <SectionWebCompatible />
         <SectionWallet />
         <SectionFaq />
         <SectionCommunity />
+	      <Modal
+		      isShowing={isSearchShowing}
+		      hide={toggleSearch}
+	      >
+		      <Search hide={toggleSearch} />
+	      </Modal>
+	      <Modal
+		      isShowing={isBuyShowing}
+		      hide={toggleBuy}
+	      >
+		      <Pricing hide={toggleBuy} />
+				</Modal>
+	      <Modal isShowing={isVideoShowing}>
+		      <Video hide={toggleVideo} />
+				</Modal>
       </main>
     </>
   )
