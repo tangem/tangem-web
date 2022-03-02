@@ -199,7 +199,7 @@ const Search = () => {
             className='absolute top-0 right-[40px] max-w-[36px] cursor-pointer'
             onClick={() => router.push('/')}
           />
-          <div className='text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10'>Search</div>
+          <div className='text-[#090E13] text-32px text-center font-semibold my-10'>Search</div>
 
           <div className='flex flex-col w-full h-full'>
 
@@ -227,7 +227,7 @@ const Search = () => {
                       dataLength={tokenList.length}
                       next={fetchMoreCoins}
                       hasMore={hasMoreTokens}
-                      height={'calc(100vh - 162px)'}
+                      height={'calc(100vh - 11.125rem)'}
                       loader={<Loader />}
                     >
                       {tokenList?.map(({ id, name, symbol, networks }) => (
