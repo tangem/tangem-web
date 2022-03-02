@@ -7,12 +7,9 @@ const nextConfig = {
   ) {
     return {
       "/": { page: "/" },
-      "/pricing": { page: "/pricing" },
-      "/search": { page: "/search" },
-      "/video": { page: "/video" },
     };
   },
-  
+
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/,
