@@ -25,10 +25,6 @@
   z-index: 100;
   background: white;
   position: relative;
-  margin: 1.75rem auto;
-  border-radius: 3px;
-  max-width: 500px;
-  padding: 2rem;
 }
 
 .modal-header {
@@ -36,12 +32,3 @@
   justify-content: flex-end;
 }
 
-.modal-close-button {
-  font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1;
-  color: #000;
-  opacity: .3;
-  cursor: pointer;
-  border: none;
-}
