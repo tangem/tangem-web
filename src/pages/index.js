@@ -14,7 +14,7 @@ export default function Home() {
 		const { pathname, asPath } = router;
 		if (pathname === '/' && lang !== defaultLanguage) {
 			console.log(router)
-			router.push(`/${lang}${asPath}`);
+			//router.push(`/${lang}${asPath}`);
 		}
 	}, []);
 
