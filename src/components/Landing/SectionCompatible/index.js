@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import styles from './compatible.module.scss'
 import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
+import {t} from "i18next";
 
 const SectionWebCompatible = () => {
   const [src, { blur }] = useProgressiveImg('./img/compatible/compatible-placeholder.png', './img/compatible/compatible-2x.png')
@@ -10,8 +11,10 @@ const SectionWebCompatible = () => {
     <div className={classNames(styles['compatible'], 'mb-28 md:mt-[100px] xl:mb-40')}>
       <div className='xl:container xl:mx-auto'>
         <div className="text-left md:text-center max-w-4xl md:mx-auto px-4 md:px-0">
-          <h2 className='text-primary text-6xl xl:text-8xl font-semibold'>DeFi compatible</h2>
-          <p className='my-7 md:mt-6 md:mb-[50px] xl:mb-20 text-xl xl:text-3xl text-secondary font-normal xl:font-light'>Exchange, buy NFT’s, make loans and deposits in more than 100 different decentralized applications with help of Wallet Connect.</p>
+          <h2 className='text-primary text-6xl xl:text-8xl font-semibold'>{ t('sections.compatible.title') }</h2>
+          <p className='my-7 md:mt-6 md:mb-[50px] xl:mb-20 text-xl xl:text-3xl text-secondary font-normal xl:font-light'>
+	          { t('sections.compatible.description') }
+          </p>
         </div>
         <div>
           <div className='w-full lg:w-auto mx-auto mt-7 md:mt-0 lg:mx-0'>
@@ -32,79 +35,7 @@ const SectionWebCompatible = () => {
               />
             </picture>
           </div>
-          {/* <div className='mt-10 xl:mt-16'>
-            <Link href='#'>
-              <a className='w-3/6 lg:w-48 flex justify-center mx-auto text-base lg:text-lg font-semibold text-neutral-900 bg-[#ecedee] hover:bg-[#DEE0E1] transition ease-in-out duration-300 py-3 rounded-2xl'>See all dapps</a>
-            </Link>
-          </div> */}
         </div>
-        {/* <div className="row">
-          <div className={classNames(styles['web3-items'], styles['web3-items-end'])}>
-            {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
-              <div key={id} className={styles['web3-item']}>
-                <img
-                  src={imgPath}
-                  alt={title}
-                  className={styles['web3-img']}
-                  loading='lazy'
-                  decoding='async'
-                />
-                <span className={styles['web3-text']}>{title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="row">
-          <div className={classNames(styles['web3-items'], styles['web3-items-start'])}>
-            {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
-              <div key={id} className={styles['web3-item']}>
-                <img
-                  src={imgPath}
-                  alt={title}
-                  className={styles['web3-img']}
-                  loading='lazy'
-                  decoding='async'
-                />
-                <span className={styles['web3-text']}>{title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="row">
-          <div className={classNames(styles['web3-items'], styles['web3-items-end'])}>
-            {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
-              <div key={id} className={styles['web3-item']}>
-                <img
-                  src={imgPath}
-                  alt={title}
-                  className={styles['web3-img']}
-                  loading='lazy'
-                  decoding='async'
-                />
-                <span className={styles['web3-text']}>{title}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="row">
-          <div className={classNames(styles['web3-items'], styles['web3-items-start'])}>
-            {coins?.length !== 0 && coins.map(({ id, title, imgPath }) => (
-              <div key={id} className={styles['web3-item']}>
-                <img
-                  src={imgPath}
-                  alt={title}
-                  className={styles['web3-img']}
-                  loading='lazy'
-                  decoding='async'
-                />
-                <span className={styles['web3-text']}>{title}</span>
-              </div>
-            ))}
-          </div>
-        </div> */}
-        {/* <div className={styles['web3-cta']}>
-          <Button type='secondary' href='#'>See all dapp</Button>
-        </div> */}
       </div>
     </div>
   )

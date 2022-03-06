@@ -14,7 +14,7 @@ module.exports = {
       'xl': '1300px',
       '2xl': '1400px',
       '3xl': '1680px'
-      
+
     //   'xs': {'min': '479px'},
     //   // => @media (min-width: 0px and max-width: 479px) { ... }
 
@@ -35,19 +35,17 @@ module.exports = {
     },
     extend: {
       keyframes: {
-        'fade-in-down': {
+        'fade-in': {
           '0%': {
             opacity: '0',
-            transform: 'translateY(-10px)'
           },
           '100%': {
             opacity: '1',
-            transform: 'translateY(0)'
           },
         }
       },
       animation: {
-        'fade-in-down': 'fade-in-down 0.5s ease-out'
+        'fade-in': 'fade-in 0.5s ease-out'
       },
       colors: {
         'foreground': '#f8f9f9',

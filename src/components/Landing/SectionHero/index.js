@@ -1,7 +1,9 @@
 import React from 'react'
 import styles from './hero.module.scss'
+import { t } from 'i18next';
 
 import PlayIcon from '../../../../public/svg/play.svg'
+import {Selected} from "../Selected";
 
 const SectionHero = ({ toggleBuy, toggleVideo}) => {
 
@@ -17,31 +19,35 @@ const SectionHero = ({ toggleBuy, toggleVideo}) => {
             className='text-[60px] leading-[54px] font-semibold text-primary
             lg:max-w-[400px] xl:max-w-full xl:text-[120px] xl:leading-[102px]'
           >
-            Keep your crypto <span className='text-secondary underline underline-offset-8 decoration-1'>safe</span>
+	          <Selected
+		          text={t('sections.safe.title') }
+		          selected={t('sections.safe.selected')}
+		          classes='text-secondary underline underline-offset-8 decoration-1'
+	          />
           </h1>
           <p
             className='text-secondary text-xl leading-6 font-normal my-[1.875rem]
             xl:text-3xl xl:leading-9 xl:font-light xl:mt-10 xl:mb-[70px]'
           >
-            Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card.
+	          { t('sections.safe.description') }
           </p>
           <div className='flex justify-between sm:justify-start'>
             <button
               onClick={toggleBuy}
               className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
               text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
-              sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
+              sm:mr-4 xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px] w-[168px]'
             >
-              Buy now
+	            { t('buttons.buy-now') }
             </button>
             <button
               onClick={toggleVideo}
               className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
               text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
-              xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px]'
+              xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px] w-[168px]'
             >
               <PlayIcon className='mr-3' />
-              How it works
+	            { t('buttons.how-it-works') }
             </button>
           </div>
         </div>

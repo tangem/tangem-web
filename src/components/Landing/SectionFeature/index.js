@@ -1,6 +1,7 @@
 import React from 'react'
 
 import SearchIcon from '../../../../public/svg/search.svg'
+import {t} from "i18next";
 
 const SectionFeature = ({ toggleSearch, toggleBuy }) => {
 
@@ -40,20 +41,20 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
           <h2 className='text-[60px] leading-[54px] font-semibold text-primary
             lg:max-w-[400px] xl:max-w-full xl:text-[100px] xl:leading-[95px]'
           >
-            Ultra secure backup
+	          { t('sections.backup.title')}
           </h2>
           <p
             className='text-secondary text-xl leading-6 font-normal my-[1.875rem]
             xl:text-3xl xl:leading-9 xl:font-light xl:mt-6 xl:mb-[50px]'
           >
-            You can connect up to three cards to one wallet, so you'll always have a way to use wallet if your main card is lost, stolen, or damaged.</p>
+	          { t('sections.backup.description')}</p>
           <button
             onClick={toggleBuy}
             className='w-full sm:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
             text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
-            sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
+            sm:mr-4 xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
           >
-            Buy now
+	          { t('buttons.buy-now') }
           </button>
         </div>
       </div>
@@ -67,31 +68,32 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
           <h2 className='max-w-[345px] text-[60px] leading-[54px] font-semibold text-primary
             lg:max-w-[400px] xl:max-w-[550px] xl:text-[100px] xl:leading-[95px]'
           >
-            Thousands of currencies
+	          {t('sections.currencies.title')}
           </h2>
           <p
             className='text-secondary text-xl leading-6 font-normal my-[1.875rem]
             xl:text-3xl xl:leading-9 xl:font-light xl:max-w-[550px] xl:mt-6 xl:mb-[50px]'
           >
-            A hardware wallet for your Bitcoin, Ethereum and many more currencies simultaneously - all in one card.
+	          { t('sections.currencies.description') }
           </p>
             <div className='max-w-[345px] xl:max-w-full flex justify-between sm:justify-start'>
             <button
               onClick={toggleBuy}
               className='w-[168px] md:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
               text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
-              sm:mr-4 xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
+              sm:mr-4 xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px]'
             >
-              Buy now
+	            { t('buttons.buy-now') }
             </button>
             <button
               onClick={toggleSearch}
               className='w-[168px] md:w-auto flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
               text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
-              xl:w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px]'
+              xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px]'
             >
               <SearchIcon className='mr-3' />
-              Search
+	            <span className='block lg:hidden'> { t('buttons.assets-short') }</span>
+	            <span className='hidden lg:block'> { t('buttons.assets') }</span>
             </button>
           </div>
         </div>

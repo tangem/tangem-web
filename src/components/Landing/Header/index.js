@@ -2,8 +2,10 @@ import React from 'react'
 import Link from 'next/link'
 
 import Logo from '../../../../public/svg/tangem-logo.svg'
+import i18next from 'i18next';
 
 const Header = ( {toggleBuy} ) => {
+	const { t } = i18next;
 
   return (
     <header
@@ -23,7 +25,7 @@ const Header = ( {toggleBuy} ) => {
           text-white bg-[#141D26] hover:bg-[#06090D] transition ease-in-out duration-300 rounded-[12px]
           md:rounded-[14px] md:h-[38px] md:text-[18px] md:leading-[18px] md:px-[20px] md:py-10px'
         >
-          Buy now
+	        { t('buttons.buy-now')}
         </button>
       </div>
     </header>

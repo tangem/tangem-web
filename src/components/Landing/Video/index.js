@@ -1,6 +1,7 @@
 import React from 'react'
 
 import CloseIcon from '../../../../public/svg/close.svg'
+import {t} from "i18next";
 
 const Video = ({ hide }) => {
 
@@ -16,7 +17,9 @@ const Video = ({ hide }) => {
 	          className='absolute top-[30px] right-[40px] max-w-[36px] cursor-pointer'
 	          onClick={hide}
 	        />
-	        <div className="text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10">How it works</div>
+	        <div className="text-[#090E13] text-32px text-center font-semibold mt-[40px] mb-32px lg:mb-10">
+		        { t('video.title') }
+					</div>
 	        <div className="flex flex-col px-4 lg:px-0">
 	          <iframe
 							width='100%'

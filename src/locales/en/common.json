@@ -1,0 +1,84 @@
+{
+  "title": "Tangem Wallet — Hardware Wallet For Your Crypto",
+  "description": "Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card.",
+  "sections": {
+    "safe": {
+      "title": "Keep your crypto safe",
+      "selected": "safe",
+      "description": "Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card."
+    },
+    "backup": {
+      "title": "Ultra secure backup",
+      "description": "You can connect up to three cards to one wallet, so you'll always have a way to use your wallet if your main card is lost, stolen, or damaged."
+    },
+    "currencies": {
+      "title": "Thousands of currencies",
+      "description": "A hardware wallet for your Bitcoin, Ethereum and many more currencies simultaneously - all in one card."
+    },
+    "compatible": {
+      "title": "DeFi compatible",
+      "description": "Exchange, buy NFT’s, make loans and deposits in more than 100 different decentralized applications with help of Wallet Connect."
+    },
+    "mobile": {
+      "title": "Your phone is all you need",
+      "description": "No wires or batteries. Just download the Tangem app to your phone and tap the card.",
+      "selected": "all"
+    },
+    "community": {
+      "title": "Join the Global \n Community of Tangem Users",
+      "description": "Tangem is trusted by clients and leading market players from all around the globe today. We have established presence in 108 countries on 5 continents, except Antarctica.",
+      "selected": "Tangem Users"
+    }
+  },
+  "buttons": {
+    "buy-now": "Buy now",
+    "assets": "Crypto assets",
+    "assets-short": "Assets",
+    "how-it-works": "How it works"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "items": [
+      {
+        "question": "What is a Tangem Wallet?",
+        "answer": "Tangem Wallet is the safest hardware wallet in the world. Tangem Wallet keeps your Bitcoin, Ethereum, and more than 1000 additional cryptocurrencies completely safe. The card is the key to your wallet, and using your funds requires taping the card to your phone."
+      },
+      {
+        "question": "What can I do with Tangem Wallet?",
+        "answer": "Tangem Wallet allows you to buy and sell cryptocurrencies using Apple Pay, Google Pay and credit cards. Additionally, it has access to hundreds of decentralized services, which allow trading on exchanges, issuing loans, borrowing funds, working with NFTs and much more."
+      },
+      {
+        "question": "Where are the keys to my wallet kept?",
+        "answer": "The wallet's keys are generated and stored in the card as the top secret. For any operations with your wallet, you will need one of the cards connected to it."
+      },
+      {
+        "question": "What happens if I lose the card?",
+        "answer": "Tangem Wallet allows connecting up to 3 cards to a single wallet. All 3 cards are equal in capabilities and can be used with your wallet. To protect your wallet from unauthorized access, you can also set an access code for your card. If you forget the access code, you can restore it with an additional previously connected card."
+      },
+      {
+        "question": "How reliable and safe is it?",
+        "answer": "Tangem Wallet is the most safe and reliable crypto wallet in the world. The chip in your card is a microcomputer. It has been certified by Common Criteria at EAL6+ level — the same level of chip protection used in passports. It is completely safe from dust, water, and hacking attempts. The card reliably performs in temperatures between -35℃ (-31.℉) and +85℃ (185℉), with the chip useful life beyond 25 years of service."
+      }
+    ]
+  },
+  "video": {
+    "title": "How it works"
+  },
+  "search": {
+    "title": "Search",
+    "placeholder": "Search in {{ total }} cryptocurrencies"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "pack3": {
+      "title": "Pack of 3 Cards",
+      "selected": "3 Cards",
+      "description": "For the best security, there are 3 Tangem cards to one wallet. Ultimate backup!"
+    },
+    "pack2": {
+      "title": "Pack of 2 Cards",
+      "selected": "2 Cards",
+      "description": "2 Tangem cards to one wallet. One for you, one for backup!"
+    }
+  }
+}

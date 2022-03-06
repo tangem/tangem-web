@@ -13,31 +13,40 @@ import PolygonIcon from '../../../../public/svg/polygon.svg'
 import SolanaIcon from '../../../../public/svg/solana.svg'
 import BscIcon from '../../../../public/svg/bsc.svg'
 import Network from '../../../../public/svg/network.svg'
+import {t} from "i18next";
 
 const networkIcons = {
 	'ethereum': {
-		icon: <EthereumIcon />
+		icon: <EthereumIcon />,
+		title: 'Ethereum'
 	},
 	'fantom': {
-		icon: <FantomIcon />
+		icon: <FantomIcon />,
+		title: 'Fantom'
 	},
 	'binance': {
-		icon: <BinanceIcon />
+		icon: <BinanceIcon />,
+		title: 'Binance'
 	},
 	'avalanche': {
-		icon: <AvalancheIcon />
+		icon: <AvalancheIcon />,
+		title: 'Avalanche'
 	},
 	'polygon-pos': {
-		icon: <PolygonIcon />
+		icon: <PolygonIcon />,
+		title: 'Polygon'
 	},
 	'solana': {
-		icon: <SolanaIcon />
+		icon: <SolanaIcon />,
+		title: 'Solana'
 	},
 	'binance-smart-chain': {
-		icon: <BscIcon />
+		icon: <BscIcon />,
+		title: "Binance Smart Chain"
 	},
 	'blockchain': {
-		icon: <Network />
+		icon: <Network />,
+		title: ''
 	}
 }
 
@@ -146,7 +155,6 @@ const Search = ({ hide }) => {
 		}, false)
 
 		image.addEventListener('error', () => {
-			console.log(isBroken)
 			isBroken = true
 		}, false)
 
@@ -178,7 +186,9 @@ const Search = ({ hide }) => {
 						className='absolute top-0 right-[40px] max-w-[36px] cursor-pointer'
 						onClick={ hide }
 					/>
-					<div className='text-[#090E13] text-32px text-center font-semibold my-10'>Search</div>
+					<div className='text-[#090E13] text-32px text-center font-semibold my-10'>
+						{ t('search.title') }
+					</div>
 
 					<div className='flex flex-col w-full h-full'>
 
@@ -190,7 +200,7 @@ const Search = ({ hide }) => {
 									ref={searchRef}
 									value={tokenText}
 									onChange={onSearchChange}
-									placeholder={`${tokenTotal ? `Search in ${tokenTotal} cryptocurrencies` : 'Search'}`}
+									placeholder={`${tokenTotal ? t('search.placeholder', { total: tokenTotal} ) : t('search.title')}`}
 									className='w-full bg-transparent text-xl xl:text-3xl text-[#A6AAAD] font-light outline-0 outline-none outline-offset-0'
 								/>
 							</div>
@@ -214,7 +224,7 @@ const Search = ({ hide }) => {
                           <span className='block mr-3.5 w-14 h-14 md:w-[70px] md:h-[70px] basis-[56px] md:basis-[70px]'>
                             {
 	                            buildImage(id) === false ? (
-		                            <img src={`${imageHost}large/${id}.png`} alt={name} className='w-full h-full object-contain' />
+		                            <img src={`${imageHost}large/${id}.png`} alt={name} className='animate-fade-in w-full h-full object-contain' />
 	                            ) : (
 		                            <span className='flex justify-center items-center font-bold text-xl rounded-full bg-white border border-[#ECECEC] w-[56px] h-[56px]'>
                                   {symbol[0]}
@@ -230,7 +240,7 @@ const Search = ({ hide }) => {
                               {networks?.map((network, id) => {
 	                              if (networkIcons[network]?.icon === undefined) return
 	                              return (
-		                              <span key={id}>{networkIcons[network]?.icon}</span>
+		                              <span key={id} title={networkIcons[network]?.title}>{networkIcons[network]?.icon}</span>
 	                              )
                               })}
                             </span>
