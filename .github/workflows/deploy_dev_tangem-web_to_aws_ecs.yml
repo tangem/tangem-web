@@ -42,6 +42,20 @@ jobs:
           NEXT_PUBLIC_TANGEM_COINS_API_URI=${{ secrets.NEXT_PUBLIC_TANGEM_COINS_API_URI }}
           EOF
 
+     - name: Create nginx config
+       run:
+          |
+          cat << EOF > default.conf
+          ${{ secrets.NGINX_DEV_CONF }}
+          EOF
+
+     - name: Create nginx secret
+       run:
+          |
+          cat << EOF > .htpasswd
+          ${{ secrets.NGINX_DEV_SECRET }}
+          EOF
+
      - name: Install node v12
        uses: actions/setup-node@v2
        with:
