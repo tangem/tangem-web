@@ -7,6 +7,8 @@ const nextConfig = {
   ) {
     return {
       "/": { page: "/" },
+      "/ru": { page: "/ru" },
+      "/en": { page: "/en" },
     };
   },
 
