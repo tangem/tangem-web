@@ -1,16 +1,7 @@
 const nextConfig = {
   assetPrefix: '.',
   optimizeFonts: true,
-  exportPathMap: async function(
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      "/": { page: "/" },
-      "/ru": { page: "/ru" },
-      "/en": { page: "/en" },
-    };
-  },
+
 
   webpack(config) {
     config.module.rules.push({
