@@ -1,6 +1,7 @@
 const nextConfig = {
-  assetPrefix: '.',
+
   optimizeFonts: true,
+	trailingSlash: true,
 
   webpack(config) {
     config.module.rules.push({

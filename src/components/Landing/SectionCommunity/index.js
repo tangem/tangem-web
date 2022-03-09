@@ -14,7 +14,7 @@ import {t} from "i18next";
 
 const SectionCommunity = () => {
 
-  // const [src, { blur }] = useProgressiveImg('./img/community/community-placeholder.png', './img/community/community-2x.png')
+  // const [src, { blur }] = useProgressiveImg('/img/community/community-placeholder.png', '/img/community/community-2x.png')
 
   return (
     <div className={classNames('md:container mt-14 mx-auto 2xl:max-w-[1300px]', styles['community'])}>

@@ -40,7 +40,7 @@ const Pricing = ( { hide } ) => {
 
 						<div className="flex flex-col items-center bg-white rounded-20px p-8 mb-[1.875rem] md:mb-[50px] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
 							<div className='max-h-60 h-[171px] md:h-[241px]'>
-								<img src='./img/buy/card-3.png' alt={t('pricing.pack3.title')} className='h-[171px] md:h-full text-center mx-auto' />
+								<img src='/img/buy/card-3.png' alt={t('pricing.pack3.title')} className='h-[171px] md:h-full text-center mx-auto' />
 							</div>
 							<div className="text-[#0C1116] text-3xl font-semibold lg:text-[2.5rem]">
 								<Selected
@@ -59,7 +59,7 @@ const Pricing = ( { hide } ) => {
 
 						<div className="flex flex-col items-center bg-white rounded-20px p-8 mb-24 md:mb-[50px] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
 							<div className='max-h-60 h-[171px] md:h-[241px]'>
-								<img src='./img/buy/card-2.png' alt={t('pricing.pack2.title')} className='h-[171px] md:h-full text-center mx-auto' />
+								<img src='/img/buy/card-2.png' alt={t('pricing.pack2.title')} className='h-[171px] md:h-full text-center mx-auto' />
 							</div>
 							<div className="text-[#0C1116] text-3xl font-semibold lg:text-[2.5rem]">
 								<Selected

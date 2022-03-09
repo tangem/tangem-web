@@ -55,14 +55,14 @@ const SectionHero = ({ toggleBuy, toggleVideo}) => {
         {/* Right Side */}
         <div className='mt-[60px] xl:mt-0 md:justify-self-center'>
 	        <picture>
-		        <source srcSet="./img/hero/hero-phone@1x.avif 1x, ./img/hero/hero-phone@2x.avif 2x" type="image/avif" />
-		        <source srcSet="./img/hero/hero-phone@1x.webp 1x, ./img/hero/hero-phone@2x.webp 2x" type="image/webp" />
+		        <source srcSet="/img/hero/hero-phone@1x.avif 1x, /img/hero/hero-phone@2x.avif 2x" type="image/avif" />
+		        <source srcSet="/img/hero/hero-phone@1x.webp 1x, /img/hero/hero-phone@2x.webp 2x" type="image/webp" />
 	          <img
 	            loading='lazy'
 	            decoding='async'
 	            alt='Tangem hero image'
-	            src='./img/hero/hero-phone@1x.png'
-	            srcSet="./img/hero/hero-phone@2x.png 2x"
+	            src='/img/hero/hero-phone@1x.png'
+	            srcSet="/img/hero/hero-phone@2x.png 2x"
 	            className='w-full mx-auto max-w-[345px] xl:max-w-[630px]'
 	          />
 	        </picture>

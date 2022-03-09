@@ -7,7 +7,7 @@ import {t} from "i18next";
 // import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
 
 const SectionWallet = () => {
-  // const [src, { blur }] = useProgressiveImg('./img/wallet/wallet-placeholder.png', './img/wallet/wallet-2x.png')
+  // const [src, { blur }] = useProgressiveImg('/img/wallet/wallet-placeholder.png', '/img/wallet/wallet-2x.png')
 
   return (
     <div className={classNames('md:container mx-auto md:px-12  xl:px-0 relative', styles['wallet'])}>
@@ -26,12 +26,12 @@ const SectionWallet = () => {
           <div className='flex'>
             <Link href="https://apps.apple.com/ru/app/tangem/id1354868448?l=en">
               <a>
-                <img src='./img/wallet/icon-apple.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xs:w-[172px] mr-5 lg:mr-7' loading='lazy' decoding='async' />
+                <img src='/img/wallet/icon-apple.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xs:w-[172px] mr-5 lg:mr-7' loading='lazy' decoding='async' />
               </a>
             </Link>
             <Link href="https://play.google.com/store/apps/details?id=com.tangem.wallet&hl=en&gl=US">
               <a>
-                <img src='./img/wallet/icon-google.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xs:w-[172px]' loading='lazy' decoding='async' />
+                <img src='/img/wallet/icon-google.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xs:w-[172px]' loading='lazy' decoding='async' />
               </a>
             </Link>
           </div>

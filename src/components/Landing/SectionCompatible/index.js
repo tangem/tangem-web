@@ -5,7 +5,7 @@ import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
 import {t} from "i18next";
 
 const SectionWebCompatible = () => {
-  const [src, { blur }] = useProgressiveImg('./img/compatible/compatible-placeholder.png', './img/compatible/compatible-2x.png')
+  const [src, { blur }] = useProgressiveImg('/img/compatible/compatible-placeholder.png', '/img/compatible/compatible-2x.png')
 
   return (
     <div className={classNames(styles['compatible'], 'mb-28 md:mt-[100px] xl:mb-40')}>
@@ -19,8 +19,8 @@ const SectionWebCompatible = () => {
         <div>
           <div className='w-full lg:w-auto mx-auto mt-7 md:mt-0 lg:mx-0'>
             <picture>
-              <source media='(max-width: 768px)' srcSet='./img/compatible/compatible-1x.png' />
-              <source media='(min-width: 769px)' srcSet='./img/compatible/compatible-2x.png' />
+              <source media='(max-width: 768px)' srcSet='/img/compatible/compatible-1x.png' />
+              <source media='(min-width: 769px)' srcSet='/img/compatible/compatible-2x.png' />
               <img
                 src={src}
                 alt='Tangem Web 3 Compatible image'
