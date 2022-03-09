@@ -9,7 +9,7 @@ on:
 env:
   AWS_REGION: ${{ secrets.AWS_REGION }}
   ECR_REPOSITORY: tangem-web
-  ECS_SERVICE: tangem-web
+  ECS_SERVICE: Tangem-web
   ECS_CLUSTER: Tangem-web
   ECS_TASK_DEFINITION: tangem-web
   CONTAINER_NAME: tangem-web
