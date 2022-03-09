@@ -42,7 +42,7 @@ const detection = {
 };
 
 i18next.use(LanguageDetector).init({
-	detection: detection,
+	detection: false,
 	fallbackLng: defaultLanguage,
 	resources: locales,
 	ns: ['translations'],
