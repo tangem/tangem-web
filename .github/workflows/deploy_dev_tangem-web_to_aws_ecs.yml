@@ -2,8 +2,8 @@ name: Deploy develop tangem-web to ECS
 
 on:
    push:
-#    branches:
-#     - main
+    branches:
+     - develop
    workflow_dispatch:
 
 env:
