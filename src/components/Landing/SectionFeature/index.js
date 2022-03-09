@@ -14,22 +14,22 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
         <div className='order-last md:order-first md:w-5/12 mt-[37px] lg:w-1/2 lg:mt-0 xl:w-[47%]'>
           <picture>
             <source
-              srcSet='./img/feature/feature-card-3x.png'
+              srcSet='/img/feature/feature-card-3x.png'
               media='(min-width: 1536px)'
             />
             <source
-              srcSet='./img/feature/feature-card-2x.png'
+              srcSet='/img/feature/feature-card-2x.png'
               media='(min-width: 768px)'
             />
             <source
-              srcSet='./img/feature/feature-card-1x.png'
+              srcSet='/img/feature/feature-card-1x.png'
               media='(min-width: 300px)'
             />
             <img
               loading='lazy'
               decoding='async'
               alt='Tangem card image'
-              src='./img/feature/feature-card-2x.png'
+              src='/img/feature/feature-card-2x.png'
               className='w-full'
             />
           </picture>
@@ -102,22 +102,22 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
         <div className='md:w-1/2 lg:w-3/5 xl:w-[55%]'>
           <picture>
             <source
-              srcSet='./img/feature/feature-crypto-3x.png'
+              srcSet='/img/feature/feature-crypto-3x.png'
               media='(min-width: 1536px)'
             />
             <source
-              srcSet='./img/feature/feature-crypto-2x.png'
+              srcSet='/img/feature/feature-crypto-2x.png'
               media='(min-width: 768px)'
             />
             <source
-              srcSet='./img/feature/feature-crypto-1x.png'
+              srcSet='/img/feature/feature-crypto-1x.png'
               media='(min-width: 300px)'
             />
             <img
               loading='lazy'
               decoding='async'
               alt='Tangem crcard image'
-              src='./img/feature/feature-crypto-2x.png'
+              src='/img/feature/feature-crypto-2x.png'
               className='w-full'
             />
           </picture>

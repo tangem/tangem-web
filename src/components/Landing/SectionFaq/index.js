@@ -58,7 +58,7 @@ const SectionFaq = () => {
           <div className='max-w-md md:mr-12 xl:mr-16'>
             <h2 className='text-6xl xl:text-7xl font-semibold mb-12'>{ t('faq.title') }</h2>
             <picture>
-              <img src='./img/faq/faq.svg' alt='Tangem FAQ image' loading='lazy' decoding='async' className='mb-10 lg:mb-0 lg:max-w-sm' />
+              <img src='/img/faq/faq.svg' alt='Tangem FAQ image' loading='lazy' decoding='async' className='mb-10 lg:mb-0 lg:max-w-sm' />
             </picture>
           </div>
           <div className='w-full max-w-3xl ml-auto'>
