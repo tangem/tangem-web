@@ -11,7 +11,7 @@ const SectionHero = ({ toggleBuy, toggleVideo}) => {
     <section className={styles['hero']}>
 
       <div className='container mx-auto grid grid-cols-1 content-center px-4 mt-[50px]
-        md:grid-cols-2 md:gap-x-[1rem] lg:gap-x-[6rem] xl:gap-x-[8rem] 2xl:gap-x-[10rem] xl:px-0 xl:mt-[5.625rem]'
+        md:grid-cols-2 md:gap-x-[1rem] lg:gap-x-[6rem] xl:gap-x-[8rem] xl:px-0 xl:mt-[5.625rem]'
       >
         {/* Left Side */}
         <div className='self-center max-w-[343px] sm:max-w-full lg:max-w-[595px] lg:self-start lg:mt-[72px]'>
