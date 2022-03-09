@@ -1,5 +1,4 @@
 import i18next from 'i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
 
 import { languages, defaultLanguage } from './config';
 
@@ -41,8 +40,7 @@ const detection = {
 	cookieOptions: { path: '/', sameSite: 'strict' },
 };
 
-i18next.use(LanguageDetector).init({
-	detection: false,
+i18next.init({
 	fallbackLng: defaultLanguage,
 	resources: locales,
 	ns: ['translations'],
