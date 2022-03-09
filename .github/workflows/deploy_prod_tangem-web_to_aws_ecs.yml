@@ -1,9 +1,9 @@
 name: Deploy production tangem-web to ECS
 
 on:
-#   push:
-#    branches:
-#     - main
+   push:
+    branches:
+     - main
    workflow_dispatch:
 
 env:
@@ -78,6 +78,6 @@ jobs:
        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
        with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-#          service: ${{ env.ECS_SERVICE }}
+          service: ${{ env.ECS_SERVICE }}
           cluster: ${{ env.ECS_CLUSTER }}
-#          wait-for-service-stability: true
+          wait-for-service-stability: true
