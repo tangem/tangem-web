@@ -80,5 +80,8 @@
       "selected": "2 карт",
       "description": "2 карты к одному кошельку. Одну с собой, другую в укромное место!"
     }
+  },
+  "socials": {
+    "telegram": "https://t.me/tangem_ru"
   }
 }
