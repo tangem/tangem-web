@@ -41,7 +41,7 @@ export const LangHome = ({ language }) => {
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
 			</Head>
-			<Header toggleBuy={toggleBuy} />
+			<Header/>
 			<main>
 				<SectionHero
 					toggleBuy={toggleBuy}
