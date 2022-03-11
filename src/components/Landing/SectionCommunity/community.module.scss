@@ -7,6 +7,11 @@
   height: 550px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 
+  & a > img {
+    width: 36px;
+    height: 36px;
+  }
+
   @media (min-width: 768px) {
     background-image: url('/img/community/community-2x.png');
     background-size: contain;
@@ -15,6 +20,11 @@
     height: 400px;
     box-shadow: none;
     border-radius: 0;
+
+    & a > img {
+      width: 52px;
+      height: 52px;
+    }
   }
 
   @media (min-width: 1024px) {
