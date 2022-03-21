@@ -3,15 +3,16 @@ import Link from 'next/link'
 
 import Logo from '../../../../public/svg/tangem-logo.svg'
 import i18next from 'i18next';
+import styles from './header.module.scss'
 
-const Header = ( {toggleBuy} ) => {
-	const { t } = i18next;
+const Header = () => {
+	const { language } = i18next;
 
   return (
     <header
       className='sticky top-0 z-50 bg-foreground border-b-[1px] border-[rgba(0, 0, 0, 0.05)]'>
-      <div
-        className='container mx-auto flex justify-between items-center h-[47px] px-4
+      <nav
+        className='container mx-auto flex justify-between md:justify-start items-center h-[47px] px-4
         md:h-[70px] xl:px-2'
       >
         <Link href="/">
@@ -19,15 +20,21 @@ const Header = ( {toggleBuy} ) => {
             <Logo />
           </a>
         </Link>
-        <button
-          onClick={toggleBuy}
-          className='flex cursor-pointer justify-center items-center text-[15px] leading-[22px] font-semibold px-[12px] py-[4.5px]
-          text-white bg-[#141D26] hover:bg-[#06090D] transition ease-in-out duration-300 rounded-[12px]
-          md:rounded-[14px] md:h-[38px] md:text-[18px] md:leading-[18px] md:px-[20px] md:py-10px'
-        >
-	        { t('buttons.buy-now')}
-        </button>
-      </div>
+	      { language !== 'ru' && (
+					<div className={styles.menu}>
+			      <input id="toggle" type="checkbox"/>
+			      <label htmlFor="toggle">
+				      <span/>
+			      </label>
+			      <ul>
+				      <li className={styles.active}>Personal</li>
+				      <li><a href="https://business.tangem.com">Business</a></li>
+				      <li><a href="https://developers.tangem.com">Developers</a></li>
+			      </ul>
+		      </div>
+		      )
+				}
+      </nav>
     </header>
   )
 }
