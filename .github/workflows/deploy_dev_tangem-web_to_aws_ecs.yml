@@ -42,11 +42,18 @@ jobs:
           NEXT_PUBLIC_TANGEM_COINS_API_URI=${{ secrets.NEXT_PUBLIC_TANGEM_COINS_API_URI }}
           EOF
 
-     - name: Create nginx config
+     - name: Create nginx default.conf
        run:
           |
           cat << EOF > default.conf
           ${{ secrets.NGINX_DEV_CONF }}
+          EOF
+
+     - name: Create nginx nginx.conf
+       run:
+          |
+          cat << EOF > nginx.conf
+          ${{ secrets.NGINX_DEV_NGINX_CONF }}
           EOF
 
      - name: Create nginx secret
