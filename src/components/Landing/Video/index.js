@@ -5,6 +5,8 @@ import {t} from "i18next";
 
 const Video = ({ hide }) => {
 
+	const link = `https://www.youtube.com/embed/${ t('video.id') }`
+
   return (
 	  <div className='fixed bg-white left-0 right-0 top-0 bottom-0 overflow-hidden'>
 	    <div
@@ -24,7 +26,7 @@ const Video = ({ hide }) => {
 	          <iframe
 							width='100%'
 							height='500px'
-							src='https://www.youtube.com/embed/ST4jvcaE_UU'
+							src= { link }
 							title='YouTube video player'
 							frameBorder='0'
 							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
