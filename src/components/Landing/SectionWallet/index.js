@@ -12,7 +12,7 @@ const SectionWallet = () => {
   return (
     <div className={classNames('md:container mx-auto md:px-12  xl:px-0 relative', styles['wallet'])}>
       <div className="md:absolute md:top-2/4 md:left-2/4 md:translate-y-[-50%]">
-        <div className='pt-8 px-4 md:pt-4 lg:px-0 md:max-w-[370px] lg:max-w-[430px] xl:max-w-[520px]'>
+        <div className='pt-8 px-4 md:pt-4 lg:px-0 md:max-w-[370px] lg:max-w-[430px] xl:max-w-[546px]'>
           <h2 className='text-[46px] md:text-3xl xl:text-6xl font-semibold text-white leading-[46px] lg:text-left'>
 	          <Selected
 		          classes='text-emerald-400'
@@ -25,16 +25,26 @@ const SectionWallet = () => {
 					</p>
           <div className='flex'>
             <Link href="https://apps.apple.com/ru/app/tangem/id1354868448?l=en">
-              <a>
-                <img src='/img/wallet/icon-apple.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xs:w-[172px] mr-5 lg:mr-7' loading='lazy' decoding='async' />
+              <a className='mr-2 lg:mr-4'>
+                <img src='/img/wallet/icon-apple.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xl:w-[172px]' loading='lazy' decoding='async' />
               </a>
             </Link>
             <Link href="https://play.google.com/store/apps/details?id=com.tangem.wallet&hl=en&gl=US">
-              <a>
-                <img src='/img/wallet/icon-google.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xs:w-[172px]' loading='lazy' decoding='async' />
+              <a className='mr-2 lg:mr-4'>
+                <img src='/img/wallet/icon-google.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xl:w-[172px]' loading='lazy' decoding='async' />
               </a>
             </Link>
+	          <Link href="https://github.com/tangem/tangem-binaries/blob/master/app-release.apk">
+		          <a>
+			          <img src='/img/wallet/android-apk.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xl:w-[172px]' loading='lazy' decoding='async' />
+		          </a>
+	          </Link>
           </div>
+	        <div className='text-lg md:text-base xl:text-xl text-[#A6AAAD] xl:mt-[76px] md:mt-10 mt-2 sm:mt-4 font-normal'>
+		        <span>The applications are open source, available on </span>
+		        <img width="24" height="24" src='/svg/github-svgrepo-com.svg' alt='GitHub' className='mx-2 inline'/>
+		        <span className='text-white'>GitHub</span>
+					</div>
         </div>
       </div>
     </div>
