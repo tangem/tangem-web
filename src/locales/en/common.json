@@ -22,7 +22,8 @@
     "mobile": {
       "title": "Your phone is all you need",
       "description": "No wires or batteries. Just download the Tangem app to your phone and tap the card.",
-      "selected": "all"
+      "selected": "all",
+      "on-github": "The applications are open source, available on"
     },
     "community": {
       "title": "Join the Global \n Community of Tangem Users",

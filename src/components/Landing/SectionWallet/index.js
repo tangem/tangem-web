@@ -11,16 +11,16 @@ const SectionWallet = () => {
 
   return (
     <div className={classNames('md:container mx-auto md:px-12  xl:px-0 relative', styles['wallet'])}>
-      <div className="md:absolute md:top-2/4 md:left-2/4 md:translate-y-[-50%]">
-        <div className='pt-8 px-4 md:pt-4 lg:px-0 md:max-w-[370px] lg:max-w-[430px] xl:max-w-[546px]'>
-          <h2 className='text-[46px] md:text-3xl xl:text-6xl font-semibold text-white leading-[46px] lg:text-left'>
+      <div className="md:absolute md:top-2/4 md:left-2/4 md:translate-y-[-50%] lg:translate-y-[-50%]">
+        <div className='pt-8 px-4 md:pt-0 lg:xl-4 lg:px-0 md:max-w-[370px] lg:max-w-[430px] xl:max-w-[548px]'>
+          <h2 className='text-[46px] md:text-4xl lg:text-5xl xl:text-6xl font-semibold text-white leading-[46px] lg:text-left'>
 	          <Selected
 		          classes='text-emerald-400'
 		          text={t('sections.mobile.title')}
 		          selected={t('sections.mobile.selected')}
 	          />
 					</h2>
-          <p className='text-xl md:text-lg xl:text-2xl text-neutral-400 my-[30px] lg:mb-12 lg:text-left font-light max-w-[500px]'>
+          <p className='leading-5 md:leading-6 text-xl md:text-lg xl:text-2xl text-neutral-400 md:my-4 my-[30px] lg:mb-12 lg:text-left font-light max-w-[500px]'>
 	          { t('sections.mobile.description') }
 					</p>
           <div className='flex'>
@@ -36,13 +36,13 @@ const SectionWallet = () => {
             </Link>
 	          <Link href="https://github.com/tangem/tangem-binaries/blob/master/app-release.apk">
 		          <a>
-			          <img src='/img/wallet/android-apk.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xl:w-[172px]' loading='lazy' decoding='async' />
+			          <img src='/img/wallet/icon-android-apk.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xl:w-[172px]' loading='lazy' decoding='async' />
 		          </a>
 	          </Link>
           </div>
-	        <div className='text-lg md:text-base xl:text-xl text-[#A6AAAD] xl:mt-[76px] md:mt-10 mt-2 sm:mt-4 font-normal'>
-		        <span>The applications are open source, available on </span>
-		        <img width="24" height="24" src='/svg/github-svgrepo-com.svg' alt='GitHub' className='mx-2 inline'/>
+	        <div className='sm:leading-6 text-base xl:text-xl text-[#A6AAAD] xl:mt-16 mt-2 font-normal'>
+		        <span>{ t('sections.mobile.on-github') }</span>
+		        <img width="24" height="24" src='/svg/github-svgrepo-com.svg' alt='GitHub' className='mx-2 inline align-text-bottom'/>
 		        <span className='text-white'>GitHub</span>
 					</div>
         </div>
