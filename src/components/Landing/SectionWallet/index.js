@@ -34,7 +34,7 @@ const SectionWallet = () => {
                 <img src='/img/wallet/icon-google.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xl:w-[172px]' loading='lazy' decoding='async' />
               </a>
             </Link>
-	          <Link href="https://github.com/tangem/tangem-binaries/blob/master/app-release.apk">
+	          <Link href="https://github.com/tangem/tangem-binaries/raw/master/app-release.apk">
 		          <a>
 			          <img src='/img/wallet/icon-android-apk.png' alt='Tangem Mobile App image' className='w-[166px] md:w-[130px] xl:w-[172px]' loading='lazy' decoding='async' />
 		          </a>
