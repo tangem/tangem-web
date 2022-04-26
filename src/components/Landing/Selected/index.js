@@ -7,7 +7,7 @@ export const Selected = ({ text, selected, classes }) => {
 	const titleEnd = index >= 0 ? text.substring(index + selected.length) : '';
 	return (
 		<>
-			{ titleStart } {titleSelected && (<span className={classes}>{ titleSelected }</span>)} { titleEnd }
+			{ titleStart } {titleSelected && (<span className={classes}>{ titleSelected }</span>)}{ titleEnd }
 		</>
 	)
 
