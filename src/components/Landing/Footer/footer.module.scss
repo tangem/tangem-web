@@ -3,7 +3,7 @@ $white: #fff;
 $gray: #6e7275;
 
 .footer {
-  margin: 80px 1rem 32px;
+  margin: 80px 1rem 48px;
 
   &-copyright {
     color: $gray;
@@ -14,17 +14,19 @@ $gray: #6e7275;
 }
 
 .madeIn{
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  padding: 17px 18px 13px 54px;
-  background: rgba(255, 255, 255, 0.6) no-repeat;
-  backdrop-filter: blur(50px);
-  border-radius: 20px 0 0 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.2;
-  letter-spacing: -0.02em;
+  @media (min-width: 768px) {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 17px 18px 13px 54px;
+    background: rgba(255, 255, 255, 0.6) no-repeat;
+    backdrop-filter: blur(50px);
+    border-radius: 20px 0 0 0;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
 
   &::after {
     content: '';
