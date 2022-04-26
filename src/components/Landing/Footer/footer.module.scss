@@ -12,3 +12,26 @@ $gray: #6e7275;
     white-space: pre-line;
   }
 }
+
+.madeIn{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  padding: 17px 18px 13px 54px;
+  background: rgba(255, 255, 255, 0.6) no-repeat;
+  backdrop-filter: blur(50px);
+  border-radius: 20px 0 0 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+
+  &::after {
+    content: '';
+    background-image: url('/svg/swiss.svg');
+    position: absolute;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+  }
+}
