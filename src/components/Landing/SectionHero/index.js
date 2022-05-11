@@ -36,7 +36,7 @@ const SectionHero = ({ toggleBuy, toggleVideo}) => {
               onClick={toggleBuy}
               className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
               text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
-              sm:mr-4 xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px] w-[168px]'
+              sm:mr-4 xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px] w-[168px] xl:w-auto'
             >
 	            { t('buttons.buy-now') }
             </button>
@@ -44,7 +44,7 @@ const SectionHero = ({ toggleBuy, toggleVideo}) => {
               onClick={toggleVideo}
               className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
               text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
-              xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px] w-[168px]'
+              xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px] w-[168px] xl:w-auto'
             >
               <PlayIcon className='mr-3' />
 	            { t('buttons.how-it-works') }
