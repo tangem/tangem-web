@@ -1,0 +1,89 @@
+{
+  "title": "Tangem Wallet — Una Billetera Hardware Para Tus Criptos",
+  "description": "La Tangem Wallet te permite guardar tus criptoactivos de forma segura, al tiempo que podrás tener un fácil acceso a tu monedero. Además, podrás mantener tus claves privadas en tu tarjeta.",
+  "sections": {
+    "safe": {
+      "title": "Manten tus criptoactivos seguros",
+      "selected": "seguros",
+      "description": "La Tangem Wallet te permite guardar tus criptoactivos de forma segura, al tiempo que podrás tener un fácil acceso a tu monedero. Además, podrás mantener tus claves privadas en tu tarjeta."
+    },
+    "backup": {
+      "title": "Backup ultra seguro",
+      "description": "Puede conectar hasta tres tarjetas a una solo billetera, por lo que siempre tendrá acceso a su billetera si su tarjeta principal se extravía, es robada o se daña."
+    },
+    "currencies": {
+      "title": "Respalda cientos de monedas",
+      "description": "Una hardware wallet para tu Bitcoin, Ethereum y muchas más monedas. Todo en una sola tarjeta."
+    },
+    "compatible": {
+      "title": "Compatible con DeFi",
+      "description": "Puedes intercambiar, comprar NFT, realizar préstamos y depósitos en más de 100 aplicaciones descentralizadas diferentes con la ayuda de Wallet Connect."
+    },
+    "mobile": {
+      "title": "Tu teléfono es todo lo que necesitas",
+      "description": "Sin cables ni pilas. Simplemente descarga la aplicación Tangem en tu teléfono y toca la tarjeta.",
+      "selected": "todo",
+      "on-github": "Las aplicaciones son de código abierto y están disponibles"
+    },
+    "community": {
+      "title": "Únete a la \n comunidad global Tangem",
+      "description": "Tangem cuenta con la confianza de entusiastas del mercado cripto alrededor del mundo. Nuestra billetera es usada en 108 países en los 5 continentes, a excepción de Antártida.",
+      "selected": "Tangem"
+    }
+  },
+  "buttons": {
+    "buy-now": "Comprar ahora",
+    "assets": "Criptoactivos",
+    "assets-short": "Activos",
+    "how-it-works": "¿Cómo funciona?"
+  },
+  "faq": {
+    "title": "Preguntas frecuentes",
+    "items": [
+      {
+        "question": "¿Que es la Tangem Wallet?",
+        "answer": "La Tangem Wallet es la billetera hardware más segura del mundo. La Tangem Wallet respalda Bitcoin, Ethereum y más de 1.000 criptomonedas adicionales de manera completamente segura. La tarjeta es la clave de tu billetera y para usar tus fondos solo necesitas pegar la tarjeta a tu teléfono."
+      },
+      {
+        "question": "¿Qué puedo hacer con la Tangem Wallet?",
+        "answer": "La Tangem Wallet te permite comprar y vender criptomonedas utilizando Apple Pay, Google Pay y tarjetas de crédito. Además, tienes acceso a cientos de servicios descentralizados, que permiten hacer trading en bolsas, emitir préstamos, pedir préstamos, trabajar con NFT y mucho más."
+      },
+      {
+        "question": "¿Dónde se guardan las llaves de mi billetera?",
+        "answer": "Las claves de la billetera se generan y almacenan en la tarjeta con los más altos estándares de seguridad. Para cualquier operación con tu billetera, necesitarás una de las tarjetas conectadas a ella."
+      },
+      {
+        "question": "¿Qué pasa si pierdo la tarjeta?",
+        "answer": "La Tangem Wallet permite conectar hasta 3 tarjetas a una sola billetera. Las 3 tarjetas tienen la misma capacidad y se pueden usar con tu billetera. Para proteger tu billetera del acceso no autorizado, también puedes configurar un código de acceso para la tarjeta. Si olvida el código de acceso, puede restaurarlo con una tarjeta adicional previamente conectada."
+      },
+      {
+        "question": "¿Qué tan confiable y seguro es?",
+        "answer": "La Tangem Wallet es la criptobilletera más segura y confiable del mundo. El chip de su tarjeta es una microcomputadora. Ha sido certificado por la Common Criteria en el nivel EAL6+, el mismo nivel de protección del chip utilizado en los pasaportes. Está completamente a salvo del polvo, el agua y los intentos de hacking. La tarjeta funciona de manera confiable en temperaturas entre -35°C (-31°F) y +85°C (185°F), mientras que el chip tiene una vida útil de más de 25 años."
+      }
+    ]
+  },
+  "video": {
+    "title": "¿Cómo funciona?",
+    "id": "w0myOn7pzx8"
+  },
+  "search": {
+    "title": "Buscar",
+    "placeholder": "Buscar en {{ total }} criptomonedas"
+  },
+  "pricing": {
+    "title": "Precios",
+    "pack3": {
+      "title": "Kit de 3 Tarjetas",
+      "selected": "3 Tarjetas",
+      "description": "Para mayor seguridad, 3 tarjetas Tangem para una billetera. ¡Última copia de seguridad!"
+    },
+    "pack2": {
+      "title": "Kit de 2 Tarjetas",
+      "selected": "2 Tarjetas",
+      "description": "2 tarjetas Tangem para una billetera. ¡Una para ti, una de respaldo!"
+    }
+  },
+  "socials": {
+    "telegram": "https://t.me/TangemCards"
+  }
+}

@@ -20,7 +20,7 @@ const Header = () => {
             <Logo />
           </a>
         </Link>
-	      { language !== 'ru' && (
+	      { language === 'en' && (
 					<div className={styles.menu}>
 			      <input id="toggle" type="checkbox"/>
 			      <label htmlFor="toggle">
