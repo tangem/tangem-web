@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document'
+import {t} from "i18next";
 
 export default function Document() {
   return (
@@ -24,7 +25,18 @@ export default function Document() {
 						      offset: {
 							      vertical: '50px'
 							    }  
-					      }
+					      },
+			          chat: {
+					        title: {
+					          '*': '${t('zendesk.chat.title')}',
+					        },
+					        concierge: {
+					          name: '${t('zendesk.concierge.name')}',
+					          title: {
+					            '*': '${t('zendesk.concierge.title')}',
+					          },
+					        }
+					      },
 				      }
             `,
 		      }}
