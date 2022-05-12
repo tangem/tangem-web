@@ -85,5 +85,14 @@
   },
   "socials": {
     "telegram": "https://t.me/TangemCards"
+  },
+  "zendesk" : {
+    "chat": {
+      "title": "Help Desk"
+    },
+    "concierge": {
+      "name": "Tangem Live Agent",
+      "title": "Ask a question"
+    }
   }
 }
