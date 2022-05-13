@@ -97,6 +97,9 @@
     "launcher" : {
       "label": "Поддержка",
       "chatLabel": "Чат"
+    },
+    "offlineForm": {
+      "greeting": ""
     }
   }
 }

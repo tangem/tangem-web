@@ -4,6 +4,7 @@ import i18next, {t} from "i18next";
 
 export default function Document() {
 	const { language } = i18next;
+	const offlineFormGreeting = language !== 'ru' ? `greeting: { '*': '${t('zendesk.offlineForm.greeting')}' },` : '';
 
   return (
     <Html lang={language}>
@@ -43,7 +44,10 @@ export default function Document() {
 					          title: {
 					            '*': '${t('zendesk.concierge.title')}',
 					          },
-					        }
+					        },
+					        offlineForm: {
+					          ${offlineFormGreeting}
+					        }  
 					      },
 					      launcher: {
 						      label: {
