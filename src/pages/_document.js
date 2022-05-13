@@ -37,6 +37,14 @@ export default function Document() {
 					          },
 					        }
 					      },
+					      launcher: {
+						      label: {
+						        '*': '${t('zendesk.launcher.label')}',
+						      },
+					        chatLabel: {
+					          '*': '${t('zendesk.launcher.chatLabel')}',
+					        }
+					      }
 				      }
             `,
 		      }}

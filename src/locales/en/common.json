@@ -93,6 +93,10 @@
     "concierge": {
       "name": "Tangem Live Agent",
       "title": "Ask a question"
+    },
+    "launcher" : {
+      "label": "Support",
+      "chatLabel": "Chat"
     }
   }
 }
