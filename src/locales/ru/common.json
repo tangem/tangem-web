@@ -85,5 +85,21 @@
   },
   "socials": {
     "telegram": "https://t.me/tangem_ru"
+  },
+  "zendesk" : {
+    "chat": {
+      "title": "Служба Поддержки"
+    },
+    "concierge": {
+      "name": "Консультант Tangem",
+      "title": "Задайте ваш вопрос"
+    },
+    "launcher" : {
+      "label": "Поддержка",
+      "chatLabel": "Чат"
+    },
+    "offlineForm": {
+      "greeting": ""
+    }
   }
 }

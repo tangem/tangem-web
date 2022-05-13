@@ -85,5 +85,21 @@
   },
   "socials": {
     "telegram": "https://t.me/TangemCards"
+  },
+  "zendesk" : {
+    "chat": {
+      "title": "Help Desk"
+    },
+    "concierge": {
+      "name": "Tangem Live Agent",
+      "title": "Ask a question"
+    },
+    "launcher" : {
+      "label": "Support",
+      "chatLabel": "Chat"
+    },
+    "offlineForm": {
+      "greeting": "We are currently offline. Please leave your message in the form below and we will contact you via email as soon as possible."
+    }
   }
 }
