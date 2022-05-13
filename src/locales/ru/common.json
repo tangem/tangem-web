@@ -93,6 +93,10 @@
     "concierge": {
       "name": "Консультант Tangem",
       "title": "Задайте ваш вопрос"
+    },
+    "launcher" : {
+      "label": "Поддержка",
+      "chatLabel": "Чат"
     }
   }
 }
