@@ -6,7 +6,7 @@ import {t} from "i18next";
 const SectionFeature = ({ toggleSearch, toggleBuy }) => {
 
   return (
-    <section>
+    <section className='max-w-[1680px] m-auto'>
       <div
         className='flex flex-col md:flex-row lg:items-center lg:mt-[100px]'
       >
@@ -99,28 +99,15 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
         </div>
 
         {/* Right Side */}
-        <div className='md:w-1/2 lg:w-3/5 xl:w-[55%]'>
-          <picture>
-            <source
-              srcSet='/img/feature/feature-crypto-3x.png'
-              media='(min-width: 1536px)'
-            />
-            <source
-              srcSet='/img/feature/feature-crypto-2x.png'
-              media='(min-width: 768px)'
-            />
-            <source
-              srcSet='/img/feature/feature-crypto-1x.png'
-              media='(min-width: 300px)'
-            />
+        <div className='md:w-1/2 lg:w-3/5 xl:w-[55%] overflow-hidden flex justify-center md:block'>
+
             <img
               loading='lazy'
               decoding='async'
-              alt='Tangem crcard image'
-              src='/img/feature/feature-crypto-2x.png'
-              className='w-full'
+              alt='Tangem card image'
+              src='/svg/tokens.svg'
+              className='w-full ml-0 lg:ml-[12%] 3xl:ml-0 min-w-[575px] max-w-[906px]'
             />
-          </picture>
         </div>
 
       </div>
