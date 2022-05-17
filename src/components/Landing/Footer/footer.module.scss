@@ -14,7 +14,10 @@ $gray: #6e7275;
 }
 
 .madeIn{
+  display: none;
+
   @media (min-width: 768px) {
+    display: block;
     position: fixed;
     right: 0;
     bottom: 0;
