@@ -106,7 +106,7 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
               decoding='async'
               alt='Tangem card image'
               src='/svg/tokens.svg'
-              className='w-full ml-0 md:ml-[12%] 3xl:ml-0 min-w-[575px] max-w-[906px]'
+              className='w-full ml-0 lg:ml-[12%] 3xl:ml-0 min-w-[575px] max-w-[906px]'
             />
         </div>
 
