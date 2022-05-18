@@ -88,18 +88,18 @@
   },
   "zendesk" : {
     "chat": {
-      "title": "Help Desk"
+      "title": "Mesa de ayuda"
     },
     "concierge": {
-      "name": "Tangem Live Agent",
-      "title": "Ask a question"
+      "name": "agente en vivo Tangem",
+      "title": "Has una pregunta"
     },
     "launcher" : {
-      "label": "Support",
+      "label": "Ayuda",
       "chatLabel": "Chat"
     },
     "offlineForm": {
-      "greeting": "We are currently offline. Please leave your message in the form below and we will contact you via email as soon as possible."
+      "greeting": "Por el momento estamos fuera de línea. Por favor deja un mensaje en la forma de abajo y nos pondremos en contacto con usted vía mail lo antes posible."
     }
   }
 }
