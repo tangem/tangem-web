@@ -3,13 +3,15 @@ import dynamic from 'next/dynamic'
 
 import CloseIcon from '../../../../public/svg/close.svg'
 import {Selected} from "../Selected";
-import {t} from "i18next";
+import i18next, {t} from "i18next";
 
 const BuyNow = dynamic(() => import('../../../components/Shopify/ShopifyBuyButton'), {
 	ssr: false,
 })
 
 const Pricing = ( { hide } ) => {
+	const { language } = i18next;
+	const useBuyButton = language !== 'ru'
 
 	const handleBuy = (cardId) => {
 
@@ -52,9 +54,29 @@ const Pricing = ( { hide } ) => {
 							<div className='mt-3 mb-[2.375rem] lg:mb-14 text-[1.063rem] lg:text-2xl text-center text-secondary lg:max-w-[437px]'>
 								{t('pricing.pack3.description')}
 							</div>
-							<a href="#" onClick={() => handleBuy('buy-now-6677839577154')} className='block w-full bg-primary text-white text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px]'>Buy now $69.90</a>
-							<div className='text-[#DD1919] text-[1.063rem] lg:text-lg font-semibold mt-6 lg:mt-[1.125rem]'>50% OFF <span className='text-[#757575] line-through'>$148.49</span></div>
-							<BuyNow iframeId="pack-3" id='6677839577154' />
+							{ !useBuyButton &&
+								<a
+									href='https://www.mvideo.ru/products/kriptovalutnyi-koshelek-tangem-wallet-nabor-iz-3-kart-10030608'
+									className='block w-full bg-primary text-white text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px] mb-10'
+								>
+									Купить сейчас
+								</a>
+							}
+							{useBuyButton &&
+								<>
+									<button
+										type="button"
+										onClick={() => handleBuy('buy-now-6677839577154')}
+										className='block w-full bg-primary text-white text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px]'
+									>
+										Buy now $69.90
+									</button>
+									<div className='text-[#DD1919] text-[1.063rem] lg:text-lg font-semibold mt-6 lg:mt-[1.125rem]'>
+										50% OFF <span className='text-[#757575] line-through'>$148.49</span>
+									</div>
+									<BuyNow iframeId="pack-3" id='6677839577154' />
+								</>
+							}
 						</div>
 
 						<div className="flex flex-col items-center bg-white rounded-20px p-8 mb-24 md:mb-[50px] lg:mb-0 shadow-[0_30px_100px_-15px_rgba(0,0,0,0.15)]">
@@ -71,9 +93,29 @@ const Pricing = ( { hide } ) => {
 							<div className='mt-3 mb-[2.375rem] lg:mb-14 text-[1.063rem] lg:text-2xl text-center text-secondary lg:max-w-[377px]'>
 								{t('pricing.pack2.description')}
 							</div>
-							<a href="#" onClick={() => handleBuy('buy-now-6677836693570')} className='block w-full bg-[#ECEDED] text-primary text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px]'>Buy now $54.90</a>
-							<div className='text-[#DD1919] text-[1.063rem] lg:text-lg font-semibold mt-6 lg:mt-[1.125rem]'>50% OFF <span className='text-[#757575] line-through'>$104.99</span></div>
-							<BuyNow iframeID="pack-2" id="6677836693570" />
+							{ !useBuyButton &&
+								<a
+									href='https://www.mvideo.ru/products/kriptovalutnyi-koshelek-tangem-wallet-nabor-iz-2-kart-10030607'
+									className='block w-full bg-[#ECEDED] text-primary text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px] mb-10'
+								>
+									Купить сейчас
+								</a>
+							}
+							{ useBuyButton &&
+								<>
+									<button
+										type='button'
+										onClick={() => handleBuy('buy-now-6677836693570')}
+										className='block w-full bg-[#ECEDED] text-primary text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px]'
+									>
+										Buy now $54.90
+									</button>
+									<div className='text-[#DD1919] text-[1.063rem] lg:text-lg font-semibold mt-6 lg:mt-[1.125rem]'>
+										50% OFF <span className='text-[#757575] line-through'>$104.99</span>
+									</div>
+									<BuyNow iframeID="pack-2" id="6677836693570" />
+								</>
+							}
 						</div>
 
 					</div>
