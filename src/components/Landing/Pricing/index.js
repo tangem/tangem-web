@@ -56,7 +56,7 @@ const Pricing = ( { hide } ) => {
 							</div>
 							{ !useBuyButton &&
 								<a
-									href='https://www.mvideo.ru/products/kriptovalutnyi-koshelek-tangem-wallet-nabor-iz-3-kart-10030608'
+									href='https://www.mvideo.ru/products/kriptovalutnyi-koshelek-tangem-wallet-nabor-iz-3-kart-10030608?utm_source=tangemcomru3х&utm_medium=cpm&utm_campaign=Vendor_Tangem_Flight_E-Р_Tangem_Wallet_26.04-31.12.2022'
 									className='block w-full bg-primary text-white text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px] mb-10'
 								>
 									Купить сейчас
@@ -95,7 +95,7 @@ const Pricing = ( { hide } ) => {
 							</div>
 							{ !useBuyButton &&
 								<a
-									href='https://www.mvideo.ru/products/kriptovalutnyi-koshelek-tangem-wallet-nabor-iz-2-kart-10030607'
+									href='https://www.mvideo.ru/products/kriptovalutnyi-koshelek-tangem-wallet-nabor-iz-2-kart-10030607?utm_source=tangemcomru2х&utm_medium=cpm&utm_campaign=Vendor_Tangem_Flight_E-Р_Tangem_Wallet_26.04-31.12.2022'
 									className='block w-full bg-[#ECEDED] text-primary text-[1.375rem] lg:text-lg font-semibold rounded-[1.125rem] py-3 lg:py-4 text-center max-w-[277px] mb-10'
 								>
 									Купить сейчас
