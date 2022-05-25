@@ -13,8 +13,11 @@ import useModal from "../../hooks/useModal";
 import Pricing from "../../components/Landing/Pricing";
 import Video from "../../components/Landing/Video";
 import i18next from 'i18next';
+import {t} from "i18next";
 import { getAllLanguageSlugs, getLanguage } from '../../lib/lang';
 import Footer from "../../components/Landing/Footer";
+import PricingNew from "../../components/Landing/PricingNew";
+import ModalNew from "../../components/Landing/ModalNew";
 
 
 export const LangHome = ({ language }) => {
@@ -34,7 +37,7 @@ export const LangHome = ({ language }) => {
 				<meta property="og:site_name" content={ i18next.t('title') } />
 				<meta property="og:title" content={ i18next.t('title') } />
 				<meta property="og:description" content={ i18next.t('description') } />
-				<meta property="og:image" content="https://tangem-staging.netlify.app/img/hero/hero-phone-1x.png" />
+				<meta property="og:image" content="https://tangem.com/img/hero/hero-phone@1x.png" />
 				<meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
 				<meta property="og:locale" content="en_US" />
 				<title>Tangem Wallet — Hardware Wallet For Your Crypto</title>
@@ -61,12 +64,23 @@ export const LangHome = ({ language }) => {
 				>
 					<Search hide={toggleSearch} />
 				</Modal>
-				<Modal
-					isShowing={isBuyShowing}
-					hide={toggleBuy}
-				>
-					<Pricing hide={toggleBuy} />
-				</Modal>
+				{language === 'ru' &&
+					<ModalNew
+						isShowing={isBuyShowing}
+						hide={toggleBuy}
+						title={t('pricing.title')}
+					>
+						<PricingNew />
+					</ModalNew>
+				}
+				{language !== 'ru' &&
+					<Modal
+						isShowing={isBuyShowing}
+						hide={toggleBuy}
+					>
+						<Pricing hide={toggleBuy}/>
+					</Modal>
+				}
 				<Modal isShowing={isVideoShowing}>
 					<Video hide={toggleVideo} />
 				</Modal>

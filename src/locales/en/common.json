@@ -72,6 +72,12 @@
   },
   "pricing": {
     "title": "Pricing",
+    "choose": "Choose your pack",
+    "stores": "Available stores",
+    "buy": {
+      "title": "Buy Tangem wallet",
+      "description": "Choose your multicurrency hardware wallet to manage various crypto with access to DeFi, NFT, DeEx and more – all in one card."
+    },
     "pack3": {
       "title": "Pack of 3 Cards",
       "selected": "3 Cards",
@@ -81,6 +87,11 @@
       "title": "Pack of 2 Cards",
       "selected": "2 Cards",
       "description": "2 Tangem cards to one wallet. One for you, one for backup!"
+    },
+    "features": {
+      "delivery": "Free delivery worldwide",
+      "return": "Free and easy returns",
+      "support": "Outstanding Customer Support"
     }
   },
   "socials": {
