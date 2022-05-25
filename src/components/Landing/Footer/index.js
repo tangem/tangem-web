@@ -1,5 +1,6 @@
 import React from 'react'
-import styles from './footer.module.scss'
+import * as styles from './footer.module.scss'
+import Zendesk from "../Zendesk";
 
 const Footer = () => {
 
@@ -12,6 +13,7 @@ const Footer = () => {
         Copyright © {(new Date()).getFullYear()} Tangem. All Rights Reserved.{"\n"}
         Global Headquarters, Tangem AG, Baarerstrasse 10, 6300 Zug, Switzerland
       </div>
+	    <Zendesk />
     </footer>
   )
 }
