@@ -24,12 +24,12 @@ export default function Document() {
 	      <script
 		      dangerouslySetInnerHTML={{
 			      __html: `
-			      zE('webWidget', 'setLocale', '${language}');
-			      zE('webWidget', 'hide');
-						zE('webWidget:on', 'close', function() {
-						  zE('webWidget', 'hide');
-						  document.querySelector('#myLauncher').style.opacity = 1;
-						})
+				      zE('webWidget', 'setLocale', '${language}');
+				      zE('webWidget', 'hide');
+							zE('webWidget:on', 'close', function() {
+							  zE('webWidget', 'hide');
+							  document.querySelector('#myLauncher').style.opacity = 1;
+							})
 			      `
 		      }}
 		    />
