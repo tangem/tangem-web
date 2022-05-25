@@ -23,7 +23,14 @@ export default function Document() {
 	      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=95555692-81ca-451d-bc01-8b9185ea22c4"> </script>
 	      <script
 		      dangerouslySetInnerHTML={{
-			      __html: `zE('webWidget', 'setLocale', '${language}')`
+			      __html: `
+				      zE('webWidget', 'setLocale', '${language}');
+				      zE('webWidget', 'hide');
+							zE('webWidget:on', 'close', function() {
+							  zE('webWidget', 'hide');
+							  document.querySelector('#myLauncher').style.opacity = 1;
+							})
+			      `
 		      }}
 		    />
 	      <script
