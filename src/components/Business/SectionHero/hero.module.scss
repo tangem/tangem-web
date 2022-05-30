@@ -1,0 +1,44 @@
+@use "./public/styles/colors" as *;
+
+.hero {
+  position: relative;
+  min-height: 870px;
+  background-color: $color-header-bg-dark;
+  width: 100%;
+  color: $color-header-text-dark;
+  display: flex;
+  flex-direction: row;
+  padding-left: 220px;
+}
+
+.title {
+  font-weight: 400;
+
+  h1 {
+    font-size: 80px;
+    line-height: 0.95;
+  }
+}
+
+.image {
+  position: relative;
+
+  img {
+    position: relative;
+    z-index: 1;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 105.2%;
+    height: 80.7%;
+    top: 5.75%;
+    left: -20.3%;
+    filter: blur(100px);
+    background-image: url('/svg/business-hero-gradient.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}
+

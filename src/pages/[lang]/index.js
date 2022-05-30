@@ -39,7 +39,7 @@ export const LangHome = ({ language }) => {
 				<meta property="og:locale" content="en_US" />
 				<title>Tangem Wallet — Hardware Wallet For Your Crypto</title>
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
-				<link rel='apple-touch-icon' href='/img/favicon/favicon_180.png' />
+				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
 			</Head>
 			<Header/>
 			<main>
