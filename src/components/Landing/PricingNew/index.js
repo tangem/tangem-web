@@ -93,18 +93,8 @@ const PricingNew = ( ) => {
 
 	return (
 		<div className={styles.card}>
-			<div className={styles.about}>
-				<div className={styles.picture}>
-					{ packs[currentPack].image }
-				</div>
-				<div className={styles.props}>
-					{ features.map(({id, icon, text}) => (
-						<div key={id} className={styles.prop}>
-							{icon}
-							<p>{text}</p>
-						</div>
-					)) }
-				</div>
+			<div className={styles.picture}>
+				{ packs[currentPack].image }
 			</div>
 			<div className={styles.choice}>
 				<h3>{ t('pricing.buy.title')}</h3>
@@ -142,6 +132,14 @@ const PricingNew = ( ) => {
 					))
 					}
 				</ul>
+			</div>
+			<div className={styles.props}>
+				{ features.map(({id, icon, text}) => (
+					<div key={id} className={styles.prop}>
+						{icon}
+						<p>{text}</p>
+					</div>
+				)) }
 			</div>
 		</div>
 	)

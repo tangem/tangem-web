@@ -11,40 +11,55 @@
 .wrapper {
   position: fixed;
   top: 0;
+  right: 0;
   left: 0;
+  bottom: 0;
   z-index: 1050;
-  width: calc(100% - 2rem);
-  max-width: 1400px;
   height: auto;
   min-height: 100px;
   overflow-x: hidden;
   overflow-y: auto;
-  outline: 0;
   background: #F8F9F9;
-  border-radius: 20px;
-  margin-inline: max(1rem, calc(50% - 700px));
-  margin-top: 60px;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    bottom: auto;
+    border-radius: 20px;
+    margin-inline: max(1rem, calc(50% - 700px));
+    margin-top: 60px;
+    width: calc(100% - 2rem);
+    max-width: 1400px;
+    outline: 0;
+  }
 }
 
 .modal {
   position: relative;
   z-index: 100;
   box-sizing: border-box;
-  height: 50%;
-  margin: 40px 0;
+  height: auto;
   background: rgb(248 249 249);
+
+  @media (min-width: 768px) {
+    margin: 40px 0;
+  }
 }
 
 .close {
   position: absolute;
-  top: 23px;
-  right: 25px;
+  top: 15px;
+  right: 20px;
   z-index: 1060;
   width: 16px;
   height: 16px;
   padding: 0;
   background: transparent;
   border: none;
+
+  @media (min-width: 768px) {
+    top: 23px;
+    right: 25px;
+  }
 
   img {
     width: 100%;
@@ -62,13 +77,22 @@
 }
 
 .title {
-  font-weight: 500;
-  font-size: 24px;
-  line-height: 1;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
   color: #000000;
   display: block;
   width: 100%;
-  padding: 20px 24px;
-  border-bottom: 0.5px solid #CACACA;
+  padding: 12px 24px;
   box-sizing: border-box;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 500;
+    text-align: start;
+    padding: 20px 24px;
+    border-bottom: 0.5px solid #CACACA;
+  }
 }
