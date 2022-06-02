@@ -32,7 +32,7 @@
 
 .title {
   width: 100%;
-  padding: 30px 16px 0;
+  padding: 30px 19px 0;
   text-align: center;
   z-index: 1;
   position: relative;
@@ -52,6 +52,7 @@
     letter-spacing: -0.02em;
     color: #000000;
     margin-bottom: 24px;
+    white-space: break-spaces;
 
     @media (min-width: 768px) {
       font-size: 60px;
@@ -76,7 +77,7 @@
 
 .counter {
   position: absolute;
-  top: 60%;
+  top: 80%;
   left: 25%;
   font-weight: 600;
   font-size: 16px;
@@ -114,10 +115,10 @@
   overflow: hidden;
   height: 358px;
   max-height: 358px;
-  position: relative;
   width: 100%;
   display: flex;
   justify-items: center;
+  border-radius: 40px;
 
   @media (min-width: 768px) {
     position: absolute;
@@ -129,25 +130,26 @@
   }
 
   picture {
-    margin-top: -120px;
     min-height: 479px;
     min-width: 736px;
-    left: min(0px, calc(50vw - 330px));
-    position: relative;
 
     @media (min-width: 768px) {
-      left: auto;
       min-height: auto;
       min-width: auto;
-      margin-top: 0;
     }
   }
 
-
   img {
+    min-height: 479px;
+    min-width: 736px;
+    margin-top: -120px;
+    margin-left: min(0px, calc(50vw - 330px));
+
     @media (min-width: 768px) {
       height: auto;
       width: 1300px;
+      margin: 0;
+      min-height: auto;
     }
   }
 }
@@ -167,16 +169,13 @@
     position: relative;
     max-height: 653px;
 
-
     @media (min-width: 768px) {
       flex: 0 1 581px;
       margin: 56px 32px;
       position: static;
       align-self: center;
     }
-
   }
-
 }
 
 
