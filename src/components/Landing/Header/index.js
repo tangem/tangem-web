@@ -38,7 +38,6 @@ const Header = ({isDark}) => {
 		      <ul>
 			      { links.map(({name, href, slug}) => {
 							const [slugFromRouter = ''] = router.asPath.split('/').filter(i => !!i & i !== language).reverse();
-							console.log(slugFromRouter);
 							return (
 					      <li key={name} className={slugFromRouter === slug ? styles.active : null} >
 						      { router.asPath !== href && (

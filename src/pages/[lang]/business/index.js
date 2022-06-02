@@ -1,10 +1,13 @@
 import Head from "next/head";
 import i18next from "i18next";
 import Header from "../../../components/Landing/Header";
-import Footer from "../../../components/Landing/Footer";
 import React from "react";
 import SectionHero from "../../../components/Business/SectionHero";
 import {getAllLanguageSlugs, getLanguage} from "../../../lib/lang";
+import SectionReseller from "../../../components/Business/SectionReseller";
+import SectionAffiliate from "../../../components/Business/SectionAffiliate";
+import SectionWorld from "../../../components/Business/SectionWorld";
+import FooterNew from "../../../components/Landing/FooterNew";
 
 const LangBusiness = () => {
 	return (
@@ -29,8 +32,11 @@ const LangBusiness = () => {
 			<Header isDark={true} />
 			<main>
 				<SectionHero />
+				<SectionReseller />
+				<SectionAffiliate />
+				<SectionWorld />
 			</main>
-			<Footer />
+			<FooterNew />
 		</>
 	)
 }

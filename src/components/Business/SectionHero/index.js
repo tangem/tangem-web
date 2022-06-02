@@ -1,15 +1,14 @@
 import React from 'react';
-import * as styles from './hero.module.scss'
+import * as styles from './hero.module.scss';
+import {t} from "i18next";
 
 const SectionHero = () => {
 	return (
 		<section className={styles.hero}>
 			<div className={styles.title}>
-				<button>
-					Partner Programs
-				</button>
-				<h1>Grow your business with Tangem</h1>
-				<p>Take your business to the next level by joining our growing network of partners.</p>
+				<span>{ t('sections.business.label') }</span>
+				<h1>{ t('sections.business.title') }</h1>
+				<p>{ t('sections.business.description') }</p>
 			</div>
 			<div className={styles.image}>
 				<picture>
