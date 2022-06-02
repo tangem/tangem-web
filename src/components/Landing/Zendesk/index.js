@@ -7,6 +7,7 @@ const Zendesk = () => {
 		zE('webWidget', 'show');
 		zE('webWidget', 'open');
 		document.querySelector('#myLauncher').style.opacity = 0;
+		console.log(zE('webWidget:get', 'display'));
 	}
 
 	return (
