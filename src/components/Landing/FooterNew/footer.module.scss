@@ -16,6 +16,7 @@ $gray: #6e7275;
 
 .madeIn{
   display: none;
+  z-index: 1000;
 
   @media (min-width: 768px) {
     display: block;
