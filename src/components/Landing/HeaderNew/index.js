@@ -7,7 +7,7 @@ import i18next from 'i18next';
 import styles from './header.module.scss'
 import classNames from 'classnames'
 
-const Header = ({isDark}) => {
+const HeaderNew = ({isDark}) => {
 	const { language } = i18next;
 
 	const router = useRouter();
@@ -20,7 +20,7 @@ const Header = ({isDark}) => {
 
   return (
     <header
-	    className='sticky top-0 z-50 bg-foreground border-b-[1px] border-[rgba(0, 0, 0, 0.05)]'>
+      className={classNames(styles.header, isDark ? styles.dark : styles.light)}>
       <nav
         className='container mx-auto flex justify-between md:justify-start items-center h-[47px] px-4
         md:h-[70px] xl:px-2'
@@ -59,4 +59,4 @@ const Header = ({isDark}) => {
   )
 }
 
-export default Header
+export default HeaderNew

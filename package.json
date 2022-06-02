@@ -2,9 +2,9 @@
   "name": "tangem",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3330",
+    "dev": "next dev -p 3330 -H 0.0.0.0",
     "build": "NODE_ENV=production next build && NODE_ENV=production next export -o build",
-    "start": "NODE_ENV=production next start",
+    "start": "NODE_ENV=production next start -p 3333 -H 0.0.0.0",
     "lint": "next lint"
   },
   "dependencies": {

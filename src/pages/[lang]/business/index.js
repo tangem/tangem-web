@@ -1,6 +1,6 @@
 import Head from "next/head";
 import i18next from "i18next";
-import Header from "../../../components/Landing/Header";
+import HeaderNew from "../../../components/Landing/HeaderNew";
 import React from "react";
 import SectionHero from "../../../components/Business/SectionHero";
 import {getAllLanguageSlugs, getLanguage} from "../../../lib/lang";
@@ -29,7 +29,7 @@ const LangBusiness = () => {
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
 			</Head>
-			<Header isDark={true} />
+			<HeaderNew isDark={true} />
 			<main>
 				<SectionHero />
 				<SectionReseller />
