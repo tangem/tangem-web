@@ -6,9 +6,9 @@
   right: 0;
   left: 0;
   z-index: 50;
-  position: sticky;
+  position: fixed;
   backdrop-filter: blur(40px);
-  background: $color-header-bg-light;
+  background: rgba($color-header-bg-light, 0.2);
 }
 .dark {
   background: rgba($color-header-bg-dark, 0.5);

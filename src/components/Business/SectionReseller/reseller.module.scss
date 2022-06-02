@@ -92,7 +92,7 @@
 
 .list {
   max-width: 100%;
-  overflow: auto;
+  overflow: auto hidden;
 
   @media (min-width: 768px) {
     margin-left: max(0px, calc(50% - 630px - 1rem));
