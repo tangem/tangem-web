@@ -1,6 +1,11 @@
 {
   "title": "Tangem Wallet — Hardware Wallet For Your Crypto",
   "description": "Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card.",
+  "menu": {
+    "personal": "Personal",
+    "business": "Business",
+    "developers": "Developers"
+  },
   "sections": {
     "safe": {
       "title": "Keep your crypto safe",
@@ -80,12 +85,12 @@
       }
     },
     "world": {
-      "title": "Bringing Crypto to the world together",
+      "title": "Bringing Crypto to\nthe world together",
       "description": "More than 400,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
       "cards": "400,000 cards"
     },
     "delivery": {
-      "title": "Does’t matter where to buy",
+      "title": "Does’t matter\nwhere to buy",
       "description": "Cards are secure by design and nothing can be done to them before it reaches your customer. Tangem app further ensures product security at activation."
     }
   },

@@ -1,9 +1,6 @@
 import React from 'react';
 import * as styles from './world.module.scss';
-
 import i18next, {t} from "i18next";
-
-
 
 const SectionWorld = () => {
 	const { language } = i18next;
@@ -35,7 +32,7 @@ const SectionWorld = () => {
 						<img
 							loading='lazy'
 							decoding='async'
-							alt='Tangem hero image'
+							alt={ t('sections.world.title') }
 							src={`/img/business/${srcMap}-mobile@1x.png`}
 							srcSet={`/img/business/${srcMap}-mobile@2x.png 2x`}
 						/>
@@ -65,9 +62,9 @@ const SectionWorld = () => {
 						<img
 							loading='lazy'
 							decoding='async'
-							alt='Tangem hero image'
+							alt={ t('sections.delivery.title') }
 							src="/img/business/delivery-mobile@1x.png"
-							srcSet="/img/business/delivery-mobile@1x.png 1x /img/business/delivery@2x.png 2x"
+							srcSet="/img/business/delivery@2x.png 2x"
 						/>
 					</picture>
 				</div>

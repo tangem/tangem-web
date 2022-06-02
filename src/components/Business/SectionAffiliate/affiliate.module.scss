@@ -125,6 +125,14 @@
 .image {
   margin-bottom: 80px;
 
+  img {
+    max-height: 68px;
+
+    @media (min-width: 768px) {
+      max-height: 68px;
+    }
+  }
+
 }
 
 .index {

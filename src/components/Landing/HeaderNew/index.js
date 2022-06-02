@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 import Logo from '../../../../public/svg/tangem-logo.svg'
-import i18next from 'i18next';
+import i18next, {t} from "i18next";
 import styles from './header.module.scss'
 import classNames from 'classnames'
 
@@ -13,9 +13,9 @@ const HeaderNew = ({isDark}) => {
 	const router = useRouter();
 
 	const links = [
-		{ name: 'Personal', slug: '', href: `/${language}/`},
-		{ name: 'Business', slug: 'business', href: `/${language}/business/`},
-		{ name: 'Developers', slug: 'developers', href: 'https://developers.tangem.com'},
+		{ name: t('menu.personal'), slug: '', href: `/${language}/`},
+		{ name: t('menu.business'), slug: 'business', href: `/${language}/business/` },
+		...(language !== 'ru' ? [{ name: t('menu.developers'), slug: 'developers', href: 'https://developers.tangem.com'}]: []),
 	]
 
   return (

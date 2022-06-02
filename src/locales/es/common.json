@@ -1,6 +1,11 @@
 {
   "title": "Tangem Wallet — Una Billetera Hardware Para Tus Criptos",
   "description": "La Tangem Wallet te permite guardar tus criptoactivos de forma segura, al tiempo que podrás tener un fácil acceso a tu monedero. Además, podrás mantener tus claves privadas en tu tarjeta.",
+  "menu": {
+    "personal": "Personal",
+    "business": "Business",
+    "developers": "Developers"
+  },
   "sections": {
     "safe": {
       "title": "Manten tus criptoactivos seguros",
