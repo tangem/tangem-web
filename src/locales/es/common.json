@@ -90,7 +90,7 @@
       "cards": "400,000 cards"
     },
     "delivery": {
-      "title": "Does’t matter where to buy",
+      "title": "Doesn’t matter where to buy",
       "description": "Cards are secure by design and nothing can be done to them before it reaches your customer. Tangem app further ensures product security at activation."
     }
   },
@@ -136,6 +136,12 @@
   },
   "pricing": {
     "title": "Precios",
+    "choose": "Choose your pack",
+    "stores": "Available stores",
+    "buy": {
+      "title": "Buy Tangem wallet",
+      "description": "Choose your multicurrency hardware wallet to manage various crypto with access to DeFi, NFT, DeEx and more – all in one card."
+    },
     "pack3": {
       "title": "Kit de 3 Tarjetas",
       "selected": "3 Tarjetas",
@@ -145,6 +151,11 @@
       "title": "Kit de 2 Tarjetas",
       "selected": "2 Tarjetas",
       "description": "2 tarjetas Tangem para una billetera. ¡Una para ti, una de respaldo!"
+    },
+    "features": {
+      "delivery": "Free delivery worldwide",
+      "return": "Free and easy returns",
+      "support": "Outstanding Customer Support"
     }
   },
   "socials": {
@@ -164,6 +175,41 @@
     },
     "offlineForm": {
       "greeting": "Por el momento estamos fuera de línea. Por favor deja un mensaje en la forma de abajo y nos pondremos en contacto con usted vía mail lo antes posible."
+    }
+  },
+  "contactUs": {
+    "reseller": {
+      "title": "Apply for reseller program"
+    },
+    "affiliate": {
+      "title": "Apply for affiliate program"
+    },
+    "legend": "Please provide the following information below so we can contact you as soon as possible.",
+    "name": {
+      "label":"Name:",
+      "placeholder": "Jack",
+      "error": "Fill in this field"
+    },
+    "email": {
+      "label":"Email:",
+      "placeholder": "jack@tangem.com",
+      "error": "Fill in this field"
+    },
+    "phone": {
+      "label":"Phone number:",
+      "placeholder": "+1(213)373-4253",
+      "error": "Fill in this field"
+    },
+    "message": {
+      "label":"Message:",
+      "placeholder": "Message (Include any additional URLs as necessary)",
+      "error": "Fill in this field"
+    },
+    "button": "submit",
+    "result": {
+      "success": "Your message has been sent.",
+      "failed": "",
+      "error": ""
     }
   }
 }

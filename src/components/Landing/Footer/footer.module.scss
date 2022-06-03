@@ -7,7 +7,7 @@ $gray: #6e7275;
 
   &-copyright {
     color: $gray;
-    font-weight: 400;
+    font-weight: normal;
     text-align: center;
     white-space: pre-line;
   }
@@ -25,7 +25,7 @@ $gray: #6e7275;
     background: rgba(255, 255, 255, 0.6) no-repeat;
     backdrop-filter: blur(50px);
     border-radius: 20px 0 0 0;
-    font-weight: 400;
+    font-weight: normal;
     font-size: 18px;
     line-height: 1.2;
     letter-spacing: -0.02em;

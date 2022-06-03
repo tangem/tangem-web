@@ -61,6 +61,7 @@ export default function Document() {
             `,
 		      }}
 	      />
+	      <title></title>
       </Head>
       <body>
         <noscript>
@@ -72,6 +73,7 @@ export default function Document() {
 	        />
 				</noscript>
         <Main />
+        <div id="portal" />
         <NextScript />
       </body>
     </Html>

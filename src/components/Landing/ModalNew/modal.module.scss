@@ -1,0 +1,98 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1040;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1050;
+  height: auto;
+  min-height: 100px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: #F8F9F9;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    bottom: auto;
+    border-radius: 20px;
+    margin-inline: auto;
+    margin-top: 60px;
+    max-width: min(1400px, 100% - 2rem);
+    outline: 0;
+    width: fit-content;
+  }
+}
+
+.modal {
+  position: relative;
+  z-index: 100;
+  box-sizing: border-box;
+  height: auto;
+  background: rgb(248 249 249);
+
+  @media (min-width: 768px) {
+    margin: 40px 0;
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  z-index: 1060;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  background: transparent;
+  border: none;
+
+  @media (min-width: 768px) {
+    top: 23px;
+    right: 25px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover,
+  &:focus {
+    cursor: pointer;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline-color: #F8F9F9;
+  }
+}
+
+.title {
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 22px;
+  color: #000000;
+  display: block;
+  width: 100%;
+  padding: 12px 24px;
+  box-sizing: border-box;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 500;
+    text-align: start;
+    padding: 20px 24px;
+    border-bottom: 0.5px solid #CACACA;
+  }
+}

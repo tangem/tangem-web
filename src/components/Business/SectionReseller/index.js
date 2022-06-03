@@ -5,10 +5,13 @@ import PriceIcon from '../../../../public/svg/price.svg';
 import PersonIcon from '../../../../public/svg/person.svg';
 import MaterialsIcon from '../../../../public/svg/book-open.svg';
 import DeliveryIcon from '../../../../public/svg/delivery.svg';
-
+import ModalNew from "../../Landing/ModalNew";
+import ContactForm from "../ContactForm";
+import useModal from "../../../hooks/useModal";
 
 const SectionReseller = () => {
 
+	const { isShowing: isFormShowing, toggle: toggleForm } = useModal('contactUsReseller');
 	const features = [
 		{
 			id: "price",
@@ -27,7 +30,7 @@ const SectionReseller = () => {
 			id: "delivery",
 			icon: <DeliveryIcon />
 		}
-	]
+	];
 
 	return (
 		<section className={styles.section}>
@@ -35,7 +38,7 @@ const SectionReseller = () => {
 				<div className={styles.title}>
 					<h2>{ t('sections.reseller.title')}</h2>
 					<p>{ t('sections.reseller.description')}</p>
-					<button type="button">{ t('buttons.contact-us')}</button>
+					<button type="button" onClick={toggleForm}>{ t('buttons.contact-us')}</button>
 				</div>
 				<picture className={styles.image}>
 					<source srcSet="/img/business/cart@1x.avif 1x, /img/business/cart@2x.avif 2x" type="image/avif" />
@@ -65,8 +68,10 @@ const SectionReseller = () => {
 					}
 				</ul>
 			</div>
+			<ModalNew isShowing={isFormShowing} hide={toggleForm} title={t('contactUs.reseller.title')}>
+				<ContactForm program='reseller' />
+			</ModalNew>
 		</section>
-
 	)
 }
 

@@ -12,6 +12,7 @@
 .affiliate {
   display: grid;
   position: relative;
+  row-gap: 60px;
   flex-direction: column;
   justify-content: space-between;
   margin-inline: max(1rem, calc(50% - 620px));
@@ -77,21 +78,20 @@
 
     @media (min-width: 768px) {
       font-size: 80px;
-      font-weight: 400;
+      font-weight: normal;
       line-height: 1;
-      letter-spacing: normal;
+      letter-spacing: 0;
       max-width: 560px;
     }
   }
 
   p {
-    font-weight: 400;
+    font-weight: normal;
     font-size: 18px;
     line-height: 1.3;
-    letter-spacing: -0.02em;
-    color: #BDBDBD;
+    letter-spacing: 0;
+    color: #808080;
     width: 100%;
-    margin-bottom: 40px;
 
     @media (min-width: 768px) {
       font-size: 24px;
@@ -100,7 +100,6 @@
     }
   }
 
-
 }
 
 .button {
@@ -108,12 +107,13 @@
     padding: 15px 34px;
     background: #FFFFFF;
     border-radius: 100px;
-    font-weight: 400;
+    font-weight: normal;
     font-size: 20px;
     line-height: 1.1;
     text-align: center;
     color: #000000;
     margin-bottom: 80px;
+    letter-spacing: 0;
 
     @media (min-width: 768px) {
       margin-bottom: 100px;
@@ -123,13 +123,17 @@
 }
 
 .image {
-  margin-bottom: 80px;
+  align-self: center;
 
   img {
     max-height: 68px;
+    position: relative;
+    z-index: 2;
 
     @media (min-width: 768px) {
-      max-height: 68px;
+      max-height: 80px;
+      width: 275px;
+
     }
   }
 
@@ -150,7 +154,7 @@
 
 .feature {
   position: relative;
-  font-weight: 400;
+  font-weight: normal;
   line-height: 1.2;
   padding: 2rem;
   overflow: hidden;
@@ -165,19 +169,14 @@
     font-size: 24px;
     color: #FFFFFF;
     margin-block: 16px;
-    @media (min-width: 768px) {
-      font-size: 30px;
-    }
+    letter-spacing: 0;
+    line-height: 1.3;
   }
 
   p {
     font-size: 18px;
-    font-feature-settings: 'salt' on, 'liga' off;
-    color: rgba(255, 255, 255, 0.6);
-
-    @media (min-width: 768px) {
-      color: #686868;
-    }
+    color: #808080;
+    letter-spacing: 0;
   }
 }
 
@@ -187,7 +186,7 @@
   overflow: auto;
 
   @media (min-width: 768px) {
-    margin-left: max(0px, calc(50% - 630px - 1rem));
+    margin-left: max(0px, calc(50% - 620px - 1rem));
   }
 
   ul {
