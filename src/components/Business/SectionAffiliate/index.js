@@ -5,9 +5,13 @@ import SellIcon from "../../../../public/svg/sell.svg";
 import DeliveryIcon from "../../../../public/svg/delivery2.svg";
 import RevenueIcon from "../../../../public/svg/revenue.svg";
 import {t} from "i18next";
+import ModalNew from "../../Landing/ModalNew";
+import ContactForm from "../ContactForm";
+import useModal from "../../../hooks/useModal";
 
 const SectionAffiliate = () => {
 
+	const { isShowing: isFormShowing, toggle: toggleForm } = useModal('contactUsAffiliate');
 	const features = [
 		{
 			id: "promote",
@@ -47,7 +51,7 @@ const SectionAffiliate = () => {
 					/>
 				</picture>
 				<div className={styles.button} >
-					<button type='button'>{ t('buttons.contact-us')}</button>
+					<button type='button' onClick={toggleForm}>{ t('buttons.contact-us')}</button>
 				</div>
 			</div>
 			<div className={styles.list}>
@@ -68,6 +72,9 @@ const SectionAffiliate = () => {
 					}
 				</ul>
 			</div>
+			<ModalNew isShowing={isFormShowing} hide={toggleForm} title={t('contactUs.affiliate.title')}>
+				<ContactForm program='affiliate' />
+			</ModalNew>
 		</section>
 	);
 }
