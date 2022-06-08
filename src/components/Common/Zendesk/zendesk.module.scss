@@ -1,4 +1,4 @@
-.block{
+.block {
   height: 50px;
   width: 50px;
   position: fixed;
@@ -11,6 +11,7 @@
   align-items: center;
   opacity: 1;
   animation: zd-move 5s;
+  z-index: 10;
 
   @media (min-width: 768px) {
     bottom: 72px;

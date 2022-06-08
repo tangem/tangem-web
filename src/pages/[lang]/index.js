@@ -11,8 +11,7 @@ import Modal from "../../components/Landing/Modal";
 import Search from "../../components/Landing/Search";
 import useModal from "../../hooks/useModal";
 import Pricing from "../../components/Landing/Pricing";
-import Video from "../../components/Landing/Video";
-import i18next from 'i18next';
+import i18next, {t} from 'i18next';
 import { getAllLanguageSlugs, getLanguage } from '../../lib/lang';
 import Footer from "../../components/Common/Footer";
 
@@ -36,7 +35,7 @@ export const LangHome = ({ language }) => {
 				<meta property="og:image" content="https://tangem.com/img/hero/hero-phone@1x.png" />
 				<meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
 				<meta property="og:locale" content="en_US" />
-				<title>Tangem Wallet — Hardware Wallet For Your Crypto</title>
+				<title>{ t('title')}</title>
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
 			</Head>

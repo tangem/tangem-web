@@ -3,7 +3,6 @@ import i18next, {t} from "i18next";
 
 export default function Document() {
 	const { language } = i18next;
-	const offlineFormGreeting = language !== 'ru' ? `greeting: { '*': '${t('zendesk.offlineForm.greeting')}' },` : '';
 
   return (
     <Html lang={language}>
@@ -19,56 +18,6 @@ export default function Document() {
             `,
           }}
         />
-	      {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-	      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=95555692-81ca-451d-bc01-8b9185ea22c4"> </script>
-	      <script
-		      dangerouslySetInnerHTML={{
-			      __html: `
-				      zE('webWidget', 'setLocale', '${language}');
-				      zE('webWidget', 'hide');
-							zE('webWidget:on', 'close', function() {
-							  zE('webWidget', 'hide');
-							  document.querySelector('#myLauncher').style.opacity = 1;
-							})
-			      `
-		      }}
-		    />
-	      <script
-		      dangerouslySetInnerHTML={{
-			      __html: `
-							window.zESettings = {
-					      webWidget: {
-						      offset: {
-							      vertical: '50px'
-							    }  
-					      },
-			          chat: {
-					        title: {
-					          '*': '${t('zendesk.chat.title')}',
-					        },
-					        concierge: {
-					          name: '${t('zendesk.concierge.name')}',
-					          title: {
-					            '*': '${t('zendesk.concierge.title')}',
-					          },
-					        },
-					        offlineForm: {
-					          ${offlineFormGreeting}
-					        }  
-					      },
-					      launcher: {
-						      label: {
-						        '*': '${t('zendesk.launcher.label')}',
-						      },
-					        chatLabel: {
-					          '*': '${t('zendesk.launcher.chatLabel')}',
-					        }
-					      }
-				      }
-            `,
-		      }}
-	      />
-	      <title></title>
       </Head>
       <body>
         <noscript>
