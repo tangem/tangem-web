@@ -1,75 +1,72 @@
-import React from 'react'
-import styles from './hero.module.scss'
+import React, {useState} from 'react';
+import styles from './hero.module.scss';
 import { t } from 'i18next';
 
-import PlayIcon from '../../../../public/svg/play.svg'
-import {Selected} from "../Selected";
+const SectionHero = ({ toggleBuy }) => {
 
-const SectionHero = ({ toggleBuy, toggleVideo}) => {
+	const link = `https://www.youtube.com/embed/${ t('video.id') }?autoplay=1`;
+
+	const [videoStarted, setVideoStarted] = useState(false);
 
   return (
-    <section className={styles['hero']}>
-
-      <div className='container mx-auto grid grid-cols-1 content-center px-4 mt-[50px]
-        md:grid-cols-2 md:gap-x-[1rem] lg:gap-x-[6rem] xl:gap-x-[8rem] xl:px-0 xl:mt-[5.625rem]'
-      >
-        {/* Left Side */}
-        <div className='self-center max-w-[343px] sm:max-w-full lg:max-w-[595px] lg:self-start lg:mt-[72px]'>
-          <h1
-            className='text-[60px] leading-[54px] font-semibold text-primary
-            lg:max-w-[400px] xl:max-w-full xl:text-[120px] xl:leading-[102px]'
-          >
-	          <Selected
-		          text={t('sections.safe.title') }
-		          selected={t('sections.safe.selected')}
-		          classes='text-secondary underline underline-offset-8 decoration-1'
-	          />
-          </h1>
-          <p
-            className='text-secondary text-xl leading-6 font-normal my-[1.875rem]
-            xl:text-3xl xl:leading-9 xl:font-light xl:mt-10 xl:mb-[70px]'
-          >
-	          { t('sections.safe.description') }
-          </p>
-          <div className='flex justify-between sm:justify-start'>
-            <button
-              onClick={toggleBuy}
-              className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[51.5px] py-[12px]
-              text-white rounded-[18px] bg-[#141d26] hover:bg-[#06090d] transition ease-in-out duration-300
-              sm:mr-4 xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[61.5px] w-[168px] xl:w-auto'
-            >
-	            { t('buttons.buy-now') }
-            </button>
-            <button
-              onClick={toggleVideo}
-              className='flex cursor-pointer justify-center items-center text-[17px] leading-[22px] font-semibold px-[21px] py-[12px]
-              text-primary rounded-[18px] bg-[#ecedee] hover:bg-[#dee0e1] transition ease-in-out duration-300
-              xl:min-w-[192px] xl:text-[18px] xl:py-4 xl:px-[30px] w-[168px] xl:w-auto'
-            >
-              <PlayIcon className='mr-3' />
-	            { t('buttons.how-it-works') }
-            </button>
-          </div>
-        </div>
-
-        {/* Right Side */}
-        <div className='mt-[60px] xl:mt-0 md:justify-self-center'>
-	        <picture>
-		        <source srcSet="/img/hero/hero-phone@1x.avif 1x, /img/hero/hero-phone@2x.avif 2x" type="image/avif" />
-		        <source srcSet="/img/hero/hero-phone@1x.webp 1x, /img/hero/hero-phone@2x.webp 2x" type="image/webp" />
-	          <img
-	            loading='lazy'
-	            decoding='async'
-	            alt='Tangem hero image'
-	            src='/img/hero/hero-phone@1x.png'
-	            srcSet="/img/hero/hero-phone@2x.png 2x"
-	            className='w-full mx-auto max-w-[345px] xl:max-w-[630px]'
-	          />
-	        </picture>
-        </div>
-
-      </div>
-    </section>
+		<section className={styles.hero}>
+			<div className={styles.grid}>
+		    <div className={styles.title}>
+			    <h1>{ t('sections.safe.title') }</h1>
+			    <p>{ t('sections.safe.description') }</p>
+			    <button onClick={toggleBuy}>{ t('buttons.buy-now') }</button>
+				</div>
+				<div className={styles.phone}>
+					<picture>
+						<source media='(min-width: 768px)' srcSet="/img/hero/phone@1x.avif 1x, /img/hero/phone@2x.avif 2x" type="image/avif" />
+						<source media='(min-width: 768px)' srcSet="/img/hero/phone@1x.webp 1x, /img/hero/phone@2x.webp 2x" type="image/webp" />
+						<source media='(min-width: 768px)' srcSet="/img/hero/phone@1x.png 1x, /img/hero/phone@2x.png 2x" type="image/png" />
+						<source srcSet="/img/hero/phone-mobile@1x.avif 1x, /img/hero/phone-mobile@2x.avif 2x" type="image/avif" />
+						<source srcSet="/img/hero/phone-mobile@1x.webp 1x, /img/hero/phone-mobile@2x.webp 2x" type="image/webp" />
+						<img
+							loading='lazy'
+							decoding='async'
+							alt='Tangem hero image'
+							src='/img/hero/phone-mobile@1x.png'
+							srcSet="/img/hero/phone-mobile@2x.png 2x"
+						/>
+					</picture>
+				</div>
+			</div>
+			<div className={styles.video}>
+				<div className={styles.frame}>
+					{!videoStarted ?
+						<>
+							<picture>
+								<source media='(min-width: 768px)' srcSet="/img/hero/video-cover@1x.avif 1x, /img/hero/video-cover@2x.avif 2x" type="image/avif" />
+								<source media='(min-width: 768px)' srcSet="/img/hero/video-cover@1x.webp 1x, /img/hero/video-cover@2x.webp 2x" type="image/webp" />
+								<source media='(min-width: 768px)' srcSet="/img/hero/video-cover@1x.png 1x, /img/hero/video-cover@2x.png 2x" type="image/png" />
+								<source srcSet="/img/hero/video-cover-mobile@1x.avif 1x, /img/hero/video-cover-mobile@2x.avif 2x" type="image/avif" />
+								<source srcSet="/img/hero/video-cover-mobile@1x.webp 1x, /img/hero/video-cover-mobile@2x.webp 2x" type="image/webp" />
+								<img
+									loading='lazy'
+									decoding='async'
+									alt='Tangem hero image'
+									src='/img/hero/video-cover-mobile@1x.png'
+									srcSet="/img/hero/video-cover-mobile@2x.png 2x"
+								/>
+							</picture>
+							<button className={styles.play} onClick={() => setVideoStarted(true)}>
+								<img src='/svg/play.svg' alt='play' loading='lazy' />
+							</button>
+						</>:
+						<iframe
+							width='100%'
+							height='100%'
+							src= { link }
+							title='YouTube video player'
+							allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+							allowFullScreen
+						/>
+					}
+				</div>
+			</div>
+		</section>
   )
 }
 

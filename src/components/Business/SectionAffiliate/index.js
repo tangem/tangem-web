@@ -5,7 +5,7 @@ import SellIcon from "../../../../public/svg/sell.svg";
 import DeliveryIcon from "../../../../public/svg/delivery2.svg";
 import RevenueIcon from "../../../../public/svg/revenue.svg";
 import {t} from "i18next";
-import ModalNew from "../../Landing/ModalNew";
+import ModalNew from "../../Common/Modal";
 import ContactForm from "../ContactForm";
 import useModal from "../../../hooks/useModal";
 

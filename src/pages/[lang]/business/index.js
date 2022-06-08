@@ -1,13 +1,13 @@
 import Head from "next/head";
 import i18next from "i18next";
-import HeaderNew from "../../../components/Landing/HeaderNew";
+import Header from "../../../components/Common/Header";
 import React from "react";
 import SectionHero from "../../../components/Business/SectionHero";
 import {getAllLanguageSlugs, getLanguage} from "../../../lib/lang";
 import SectionReseller from "../../../components/Business/SectionReseller";
 import SectionAffiliate from "../../../components/Business/SectionAffiliate";
 import SectionWorld from "../../../components/Business/SectionWorld";
-import FooterNew from "../../../components/Landing/FooterNew";
+import Footer from "../../../components/Common/Footer";
 
 const LangBusiness = () => {
 	return (
@@ -29,14 +29,14 @@ const LangBusiness = () => {
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
 			</Head>
-			<HeaderNew isDark={true} />
+			<Header isDark={true} />
 			<main>
 				<SectionHero />
 				<SectionReseller />
 				<SectionAffiliate />
 				<SectionWorld />
 			</main>
-			<FooterNew />
+			<Footer />
 		</>
 	)
 }

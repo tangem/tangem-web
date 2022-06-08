@@ -127,7 +127,7 @@ const PricingNew = ( ) => {
 					{ resellers.map((item) => (
 						<li key={item.id}>
 								{ item.icon }
-								<a target='_blank' href={item[currentPack]}>Buy</a>
+								<a target='_blank' href={item[currentPack]} rel="noreferrer">Buy</a>
 						</li>
 					))
 					}

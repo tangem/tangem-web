@@ -104,7 +104,7 @@
 
 .button {
   button {
-    padding: 15px 34px;
+    padding: 12px 30px;
     background: #FFFFFF;
     border-radius: 100px;
     font-weight: normal;
@@ -117,6 +117,7 @@
 
     @media (min-width: 768px) {
       margin-bottom: 100px;
+      padding: 15px 34px;
     }
   }
 

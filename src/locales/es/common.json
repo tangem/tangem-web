@@ -32,7 +32,7 @@
     },
     "community": {
       "title": "Únete a la \n comunidad global Tangem",
-      "description": "Tangem cuenta con la confianza de entusiastas del mercado cripto alrededor del mundo. Nuestra billetera es usada en 108 países en los 5 continentes, a excepción de Antártida.",
+      "description": "Tangem cuenta con la confianza de entusiastas del mercado cripto alrededor del mundo. Nuestra billetera es usada en 170 países en los 5 continentes, a excepción de Antártida.",
       "selected": "Tangem"
     },
     "business": {
@@ -122,7 +122,7 @@
       },
       {
         "question": "¿Qué tan confiable y seguro es?",
-        "answer": "La Tangem Wallet es la criptobilletera más segura y confiable del mundo. El chip de su tarjeta es una microcomputadora. Ha sido certificado por la Common Criteria en el nivel EAL6+, el mismo nivel de protección del chip utilizado en los pasaportes. Está completamente a salvo del polvo, el agua y los intentos de hacking. La tarjeta funciona de manera confiable en temperaturas entre -35°C (-31°F) y +85°C (185°F), mientras que el chip tiene una vida útil de más de 25 años."
+        "answer": "La Tangem Wallet es la criptobilletera más segura y confiable del mundo. El chip de su tarjeta es una microcomputadora. Ha sido certificado por la Common Criteria en el nivel EAL6+, el mismo nivel de protección del chip utilizado en los pasaportes. Está completamente a salvo del polvo, el agua y los intentos de hacking. La tarjeta funciona de manera confiable en temperaturas entre -25°C (-13°F) y +55°C (131°F), mientras que el chip tiene una vida útil de más de 25 años."
       }
     ]
   },

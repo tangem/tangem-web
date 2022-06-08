@@ -5,7 +5,7 @@ import PriceIcon from '../../../../public/svg/price.svg';
 import PersonIcon from '../../../../public/svg/person.svg';
 import MaterialsIcon from '../../../../public/svg/book-open.svg';
 import DeliveryIcon from '../../../../public/svg/delivery.svg';
-import ModalNew from "../../Landing/ModalNew";
+import ModalNew from "../../Common/Modal";
 import ContactForm from "../ContactForm";
 import useModal from "../../../hooks/useModal";
 

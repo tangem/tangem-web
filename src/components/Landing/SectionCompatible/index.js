@@ -8,13 +8,11 @@ const SectionWebCompatible = () => {
   const [src, { blur }] = useProgressiveImg('/img/compatible/compatible-placeholder.png', '/img/compatible/compatible-2x.png')
 
   return (
-    <div className={classNames(styles['compatible'], 'mb-28 md:mt-[100px] xl:mb-40')}>
+    <div className={classNames(styles.compatible, 'mb-28 md:mt-[100px] xl:mb-40')}>
       <div className='xl:container xl:mx-auto'>
-        <div className="text-left md:text-center max-w-4xl md:mx-auto px-4 md:px-0">
-          <h2 className='text-primary text-6xl xl:text-8xl font-semibold'>{ t('sections.compatible.title') }</h2>
-          <p className='my-7 md:mt-6 md:mb-[50px] xl:mb-20 text-xl xl:text-3xl text-secondary font-normal xl:font-light'>
-	          { t('sections.compatible.description') }
-          </p>
+        <div className={`text-center md:text-center max-w-4xl md:mx-auto px-4 md:px-0 ${styles.title}`}>
+          <h2>{ t('sections.compatible.title') }</h2>
+          <p>{ t('sections.compatible.description') }</p>
         </div>
         <div>
           <div className='w-full lg:w-auto mx-auto mt-7 md:mt-0 lg:mx-0'>
