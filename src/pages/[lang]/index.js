@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import Header from '../../components/Landing/Header'
+import Header from '../../components/Common/Header'
 import SectionHero from '../../components/Landing/SectionHero'
 import SectionFeature from '../../components/Landing/SectionFeature'
 import SectionWebCompatible from '../../components/Landing/SectionCompatible'
-import SectionWallet from '../../components/Landing/SectionWallet'
+import SectionSecure from '../../components/Landing/SectionSecure'
 import SectionFaq from '../../components/Landing/SectionFaq'
 import SectionCommunity from '../../components/Landing/SectionCommunity'
 import React from "react";
@@ -14,13 +14,12 @@ import Pricing from "../../components/Landing/Pricing";
 import Video from "../../components/Landing/Video";
 import i18next from 'i18next';
 import { getAllLanguageSlugs, getLanguage } from '../../lib/lang';
-import Footer from "../../components/Landing/Footer";
+import Footer from "../../components/Common/Footer";
 
 
 export const LangHome = ({ language }) => {
 	const { isShowing: isSearchShowing, toggle: toggleSearch } = useModal('search')
 	const { isShowing: isBuyShowing, toggle: toggleBuy } = useModal('pricing')
-	const { isShowing: isVideoShowing, toggle: toggleVideo } = useModal('video')
 
 	return (
 		<>
@@ -34,25 +33,24 @@ export const LangHome = ({ language }) => {
 				<meta property="og:site_name" content={ i18next.t('title') } />
 				<meta property="og:title" content={ i18next.t('title') } />
 				<meta property="og:description" content={ i18next.t('description') } />
-				<meta property="og:image" content="https://tangem-staging.netlify.app/img/hero/hero-phone-1x.png" />
+				<meta property="og:image" content="https://tangem.com/img/hero/hero-phone@1x.png" />
 				<meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
 				<meta property="og:locale" content="en_US" />
 				<title>Tangem Wallet — Hardware Wallet For Your Crypto</title>
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
 			</Head>
-			<Header/>
+			<Header isDark={false} toggleBuy={toggleBuy}/>
 			<main>
 				<SectionHero
 					toggleBuy={toggleBuy}
-					toggleVideo={toggleVideo}
 				/>
 				<SectionFeature
 					toggleBuy={toggleBuy}
 					toggleSearch={toggleSearch}
 				/>
 				<SectionWebCompatible />
-				<SectionWallet />
+				<SectionSecure />
 				<SectionFaq />
 				<SectionCommunity />
 				<Modal
@@ -66,9 +64,6 @@ export const LangHome = ({ language }) => {
 					hide={toggleBuy}
 				>
 					<Pricing hide={toggleBuy} />
-				</Modal>
-				<Modal isShowing={isVideoShowing}>
-					<Video hide={toggleVideo} />
 				</Modal>
 			</main>
 			<Footer />

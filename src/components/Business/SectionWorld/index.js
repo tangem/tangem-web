@@ -64,7 +64,7 @@ const SectionWorld = () => {
 							decoding='async'
 							alt={ t('sections.delivery.title') }
 							src="/img/business/delivery-mobile@1x.png"
-							srcSet="/img/business/delivery@2x.png 2x"
+							srcSet="/img/business/delivery-mobile@2x.png 2x"
 						/>
 					</picture>
 				</div>

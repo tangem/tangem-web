@@ -1,7 +1,6 @@
 import { Html, Head, Main, NextScript } from 'next/document'
 import i18next, {t} from "i18next";
 
-
 export default function Document() {
 	const { language } = i18next;
 	const offlineFormGreeting = language !== 'ru' ? `greeting: { '*': '${t('zendesk.offlineForm.greeting')}' },` : '';
@@ -20,6 +19,7 @@ export default function Document() {
             `,
           }}
         />
+	      {/* eslint-disable-next-line @next/next/no-sync-scripts */}
 	      <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=95555692-81ca-451d-bc01-8b9185ea22c4"> </script>
 	      <script
 		      dangerouslySetInnerHTML={{
@@ -68,6 +68,7 @@ export default function Document() {
             `,
 		      }}
 	      />
+	      <title></title>
       </Head>
       <body>
         <noscript>
@@ -79,6 +80,7 @@ export default function Document() {
 	        />
 				</noscript>
         <Main />
+        <div id="portal" />
         <NextScript />
       </body>
     </Html>

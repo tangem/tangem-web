@@ -1,0 +1,43 @@
+$black: #090e13;
+$white: #fff;
+$gray: #6e7275;
+
+.footer {
+  padding: 80px 1rem 48px;
+
+  &-copyright {
+    color: $gray;
+    font-weight: normal;
+    text-align: center;
+    white-space: pre-line;
+  }
+}
+
+.madeIn{
+  display: none;
+  z-index: 1000;
+
+  @media (min-width: 768px) {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 17px 18px 13px 54px;
+    background: rgba(255, 255, 255, 0.6) no-repeat;
+    backdrop-filter: blur(50px);
+    border-radius: 20px 0 0 0;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+
+  &::after {
+    content: '';
+    background-image: url('/svg/swiss.svg');
+    position: absolute;
+    left: 20px;
+    width: 24px;
+    height: 24px;
+  }
+}

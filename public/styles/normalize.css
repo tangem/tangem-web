@@ -24,12 +24,11 @@ html {
 body {
   padding: 0;
   margin: 0;
-  background: #f8f9f9;
+  background: linear-gradient(90deg, #F2F2F2 0%, #F8F8F8 100%);
   font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
-  letter-spacing: -0.02em;
   box-sizing: border-box;
 }
 
