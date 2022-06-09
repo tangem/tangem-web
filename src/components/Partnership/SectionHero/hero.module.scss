@@ -109,7 +109,7 @@
     }
   }
 
-  &:before {
+  &::before {
     filter: blur(75px);
     content: '';
     position: absolute;
@@ -133,7 +133,7 @@
     }
   }
 
-  &:after {
+  &::after {
     position: absolute;
     content:"";
     height:100%;

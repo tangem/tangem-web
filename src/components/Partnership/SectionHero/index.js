@@ -6,9 +6,9 @@ const SectionHero = () => {
 	return (
 		<section className={styles.hero}>
 			<div className={styles.title}>
-				<span>{ t('sections.business.label') }</span>
-				<h1>{ t('sections.business.title') }</h1>
-				<p>{ t('sections.business.description') }</p>
+				<span>{ t('sections.partnership.label') }</span>
+				<h1>{ t('sections.partnership.title') }</h1>
+				<p>{ t('sections.partnership.description') }</p>
 			</div>
 			<div className={styles.image}>
 				<picture>

@@ -62,12 +62,12 @@
       & ~ label > span {
         transform: rotate(45deg);
 
-        &:before {
+        &::before {
           top: 0;
           transform: rotate(0);
         }
 
-        &:after {
+        &::after {
           top: 0;
           transform: rotate(90deg);
         }
@@ -178,7 +178,7 @@
     &.active {
       opacity: 1;
 
-      &:before {
+      &::before {
         content: '';
         position: absolute;
         left: -6px;

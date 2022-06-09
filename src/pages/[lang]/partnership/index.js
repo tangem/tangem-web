@@ -2,14 +2,19 @@ import Head from "next/head";
 import i18next from "i18next";
 import Header from "../../../components/Common/Header";
 import React from "react";
-import SectionHero from "../../../components/Business/SectionHero";
+import SectionHero from "../../../components/Partnership/SectionHero";
 import {getAllLanguageSlugs, getLanguage} from "../../../lib/lang";
-import SectionReseller from "../../../components/Business/SectionReseller";
-import SectionAffiliate from "../../../components/Business/SectionAffiliate";
-import SectionWorld from "../../../components/Business/SectionWorld";
+import SectionReseller from "../../../components/Partnership/SectionReseller";
+import SectionAffiliate from "../../../components/Partnership/SectionAffiliate";
+import SectionWorld from "../../../components/Partnership/SectionWorld";
 import Footer from "../../../components/Common/Footer";
+import Modal from "../../../components/Landing/Modal";
+import Pricing from "../../../components/Landing/Pricing";
+import useModal from "../../../hooks/useModal";
 
-const LangBusiness = () => {
+const LangPartnership = () => {
+	const { isShowing: isBuyShowing, toggle: toggleBuy } = useModal('pricing')
+
 	return (
 		<>
 			<Head>
@@ -29,12 +34,18 @@ const LangBusiness = () => {
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
 			</Head>
-			<Header isDark={true} />
+			<Header isDark={true} toggleBuy={toggleBuy} />
 			<main>
 				<SectionHero />
 				<SectionReseller />
 				<SectionAffiliate />
 				<SectionWorld />
+				<Modal
+					isShowing={isBuyShowing}
+					hide={toggleBuy}
+				>
+					<Pricing hide={toggleBuy} />
+				</Modal>
 			</main>
 			<Footer />
 		</>
@@ -58,4 +69,4 @@ export async function getStaticProps({ params }) {
 	};
 }
 
-export default LangBusiness;
+export default LangPartnership;

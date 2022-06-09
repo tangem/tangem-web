@@ -34,8 +34,8 @@ $gray: #eceded;
   height: 30px;
   display: block;
 
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     display: block;
     position: absolute;
@@ -52,7 +52,7 @@ $gray: #eceded;
     }
   }
 
-  &:after {
+  &::after {
     transform: rotate(90deg);
   }
 
@@ -66,8 +66,8 @@ $gray: #eceded;
   .active & {
     background: #E9E9E9;
 
-    &:after,
-    &:before {
+    &::after,
+    &::before {
       transform: rotate(180deg);
       transition-duration: .25s;
     }

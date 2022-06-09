@@ -2,8 +2,8 @@
   "title": "Tangem Wallet — Una Billetera Hardware Para Tus Criptos",
   "description": "La Tangem Wallet te permite guardar tus criptoactivos de forma segura, al tiempo que podrás tener un fácil acceso a tu monedero. Además, podrás mantener tus claves privadas en tu tarjeta.",
   "menu": {
-    "personal": "Personal",
-    "business": "Business",
+    "wallet": "Wallet",
+    "partnership": "Partnership",
     "developers": "Developers"
   },
   "sections": {
@@ -35,7 +35,7 @@
       "description": "Tangem cuenta con la confianza de entusiastas del mercado cripto alrededor del mundo. Nuestra billetera es usada en 170 países en los 5 continentes, a excepción de Antártida.",
       "selected": "Tangem"
     },
-    "business": {
+    "partnership": {
       "title": "Grow your business with Tangem",
       "description": "Take your business to the next level by joining our growing network of partners",
       "label": "Partner Programs"
@@ -86,8 +86,8 @@
     },
     "world": {
       "title": "Bringing Crypto to the world together",
-      "description": "More than 400,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
-      "cards": "400,000 cards"
+      "description": "More than 500,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
+      "cards": "500,000 cards"
     },
     "delivery": {
       "title": "Doesn’t matter where to buy",

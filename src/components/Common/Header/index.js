@@ -13,8 +13,8 @@ const Header = ({isDark, toggleBuy}) => {
 	const router = useRouter();
 
 	const links = [
-		{ name: t('menu.personal'), slug: '', href: `/${language}/`},
-		{ name: t('menu.business'), slug: 'business', href: `/${language}/business/` },
+		{ name: t('menu.wallet'), slug: '', href: `/${language}/`},
+		{ name: t('menu.partnership'), slug: 'partnership', href: `/${language}/partnership/` },
 		...(language !== 'ru' ? [{ name: t('menu.developers'), slug: 'developers', href: 'https://developers.tangem.com'}]: []),
 	]
 
