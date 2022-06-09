@@ -6,6 +6,11 @@
     "partnership": "Партнерство",
     "developers": "Developers"
   },
+  "pages": {
+    "partnership": {
+      "title": "Партнерские программы - Tangem"
+    }
+  },
   "sections": {
     "safe": {
       "title": "Надежный крипто кошелек для всех",
