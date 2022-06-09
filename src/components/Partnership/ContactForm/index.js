@@ -143,7 +143,7 @@ const ContactForm = ({ program }) => {
 				className={classNames(styles.submit, {[styles.loading]: isLoading})}
 				onClick={handleSubmit}
 			>
-				Submit
+				{ t("buttons.submit")}
 			</button>
 			{isSent && !isFailure && <span className={styles.success}>{t('contactUs.result.success')}</span>}
 			{isFailure && <span className={styles.failure}>{t('contactUs.result.success')}</span>}
