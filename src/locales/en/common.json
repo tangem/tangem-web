@@ -6,6 +6,11 @@
     "partnership": "Partnership",
     "developers": "Developers"
   },
+  "pages": {
+    "partnership": {
+      "title": "Partnership program - Tangem"
+    }
+  },
   "sections": {
     "safe": {
       "title": "The safest crypto wallet for everyone",
