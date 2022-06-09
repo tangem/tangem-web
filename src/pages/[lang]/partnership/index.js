@@ -27,7 +27,7 @@ const LangPartnership = () => {
 				<meta property="og:site_name" content={ t('title') } />
 				<meta property="og:title" content={ t('title') } />
 				<meta property="og:description" content={ t('description') } />
-				<meta property="og:image" content="https://tangem-staging.netlify.app/img/hero/hero-phone-1x.png" />
+				<meta property="og:image" content="https://tangem.com/img/hero/phone@1x.png" />
 				<meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
 				<meta property="og:locale" content="en_US" />
 				<title>{t('pages.partnership.title')}</title>
