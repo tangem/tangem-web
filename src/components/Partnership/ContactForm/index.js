@@ -3,17 +3,24 @@ import * as styles from './form.module.scss';
 import ClearIcon from '../../../../public/svg/delete.svg';
 import {t} from "i18next";
 import {TANGEM_EMAIL_URI} from "../../../config";
+import classNames from "classnames";
 
 const ContactForm = ({ program }) => {
 	const [isSent, setIsSent] = useState(false);
 	const [isFailure, setIsFailure] = useState(false);
 	const [isCheck, setIsCheck] = useState(false);
+	const [isLoading, setIsLoading] = useState(false)
+
 	const refName = useRef();
 	const refPhone = useRef();
 	const refEmail= useRef();
 	const refMessage= useRef();
 
 	async function handleSubmit() {
+		if (isLoading) {
+			return;
+		}
+		setIsLoading(true);
 		setIsCheck(true);
 		const name = refName.current.value;
 		const	phone = refPhone.current.value;
@@ -47,6 +54,7 @@ const ContactForm = ({ program }) => {
 		} catch (e) {
 			setIsFailure(true);
 		}
+		setIsLoading(false)
 	}
 
   return (
@@ -132,7 +140,13 @@ const ContactForm = ({ program }) => {
 					<span className={styles.error}>{t('contactUs.message.error')} </span>
 				</label>
 			</fieldset>
-			<button type="button" className={styles.submit} onClick={handleSubmit}>Submit</button>
+			<button
+				type="button"
+				className={classNames(styles.submit, {[styles.loading]: isLoading})}
+				onClick={handleSubmit}
+			>
+				Submit
+			</button>
 			{isSent && !isFailure && <span className={styles.success}>{t('contactUs.result.success')}</span>}
 			{isFailure && <span className={styles.failure}>{t('contactUs.result.success')}</span>}
 		</form>
