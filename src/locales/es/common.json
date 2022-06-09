@@ -207,8 +207,8 @@
     },
     "button": "submit",
     "result": {
-      "success": "Your message has been sent",
-      "failed": "Your message has not been sent",
+      "success": "Your message has been successfully sent.",
+      "failed": "The message could not be sent.",
       "error": ""
     }
   }
