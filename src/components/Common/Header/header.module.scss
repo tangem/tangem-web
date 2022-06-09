@@ -217,6 +217,11 @@
   margin-left: 16px;
   margin-right: max(1rem, calc(50% - 620px));
 
+  .dark & {
+    color: #000000;
+    background: #FFFFFF;
+  }
+
   @media (min-width: 768px) {
     font-size: 17px;
     padding: 6px 14px;
