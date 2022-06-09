@@ -25,7 +25,7 @@ const ContactForm = ({ program }) => {
 			return;
 		}
 
-		const url = `${TANGEM_EMAIL_URI}partner`;
+		const url = TANGEM_EMAIL_URI;
 		try {
 			const response = await fetch(url, {
 				method: 'POST',
@@ -42,8 +42,7 @@ const ContactForm = ({ program }) => {
 				})
 			});
 			const { success = false} = await response.json();
-			console.log(success);
-			setIsFailure(false);
+			setIsFailure(!success);
 			setIsSent(true);
 		} catch (e) {
 			setIsFailure(true);
@@ -134,7 +133,7 @@ const ContactForm = ({ program }) => {
 				</label>
 			</fieldset>
 			<button type="button" className={styles.submit} onClick={handleSubmit}>Submit</button>
-			{isSent && <span className={styles.success}>{t('contactUs.result.success')}</span>}
+			{isSent && !isFailure && <span className={styles.success}>{t('contactUs.result.success')}</span>}
 			{isFailure && <span className={styles.failure}>{t('contactUs.result.success')}</span>}
 		</form>
   )
