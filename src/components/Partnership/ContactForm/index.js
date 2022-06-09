@@ -17,20 +17,18 @@ const ContactForm = ({ program }) => {
 	const refMessage= useRef();
 
 	async function handleSubmit() {
-		if (isLoading) {
-			return;
-		}
-		setIsLoading(true);
 		setIsCheck(true);
 		const name = refName.current.value;
 		const	phone = refPhone.current.value;
 		const	email = refEmail.current.value;
 		const	message = refMessage.current.value;
 		if(
-			!name || !phone || !email || !message
+			!name || !phone || !email || !message || isLoading
 		) {
 			return;
 		}
+
+		setIsLoading(true);
 
 		const url = TANGEM_EMAIL_URI;
 		try {
