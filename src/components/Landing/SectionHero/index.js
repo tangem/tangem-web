@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import styles from './hero.module.scss';
-import { t } from 'i18next';
+import i18next, {t} from 'i18next';
+import classNames from "classnames";
 
 const SectionHero = ({ toggleBuy }) => {
 
@@ -8,10 +9,13 @@ const SectionHero = ({ toggleBuy }) => {
 
 	const [videoStarted, setVideoStarted] = useState(false);
 
+	const { language } = i18next;
+
+
   return (
 		<section className={styles.hero}>
 			<div className={styles.grid}>
-		    <div className={styles.title}>
+		    <div className={classNames(styles.title, {[styles.long]: true })}>
 			    <h1>{ t('sections.safe.title') }</h1>
 			    <p>{ t('sections.safe.description') }</p>
 			    <button onClick={toggleBuy}>{ t('buttons.buy-now') }</button>

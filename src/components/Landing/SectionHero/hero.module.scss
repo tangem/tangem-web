@@ -16,7 +16,7 @@
 
   }
 
-  &:before {
+  &::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -60,9 +60,16 @@
   @media (min-width: 768px) {
     padding-top: 160px;
     text-align: start;
-    max-width: 500px;
     flex: 0 1 500px;
   }
+
+  &.long {
+    @media (min-width: 768px) {
+      flex-basis: 590px;
+    }
+  }
+
+
 
   h1 {
     margin-bottom: 24px;
@@ -145,7 +152,7 @@
     background-position: center;
   }
 
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     top: -32px
@@ -167,6 +174,7 @@
     position: relative;
     min-height: calc(100% + 64px);
     min-width: 100%;
+    z-index: 1;
 
     @media (min-width: 768px) {
       left: -45px;
@@ -187,6 +195,13 @@
   z-index: 5;
   top: 50%;
   bottom: 50%;
+  width: 64px;
+  height: 64px;
+
+  @media (min-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
 
   img {
     width: 64px;

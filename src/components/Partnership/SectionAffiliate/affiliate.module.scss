@@ -26,7 +26,7 @@
     justify-items: start;
   }
 
-  &:before {
+  &::before {
     content: '';
     background: radial-gradient(50% 50% at 50% 50%, #FFB876 0%, rgba(255, 184, 118, 0) 100%);
     opacity: 0.3;
@@ -43,7 +43,7 @@
     }
   }
 
-  &:after {
+  &::after {
     content: '';
     position: absolute;
     width: 388px;

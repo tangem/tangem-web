@@ -5,13 +5,14 @@ import i18next, {t} from "i18next";
 const SectionWorld = () => {
 	const { language } = i18next;
 	const srcMap = language === 'ru' ? 'map-ru' : 'map';
+	const srcDelivery = language === 'ru' ? 'delivery-ru' : 'delivery';
 
   return (
 		<section className={styles.section}>
 			<div className={styles.banner}>
 				<div className={styles.title}>
 					<h3>{ t('sections.world.title') }</h3>
-					<p>{ t('sections.world.description') }</p>
+					<p>{ t('sections.world.description').replace('0 0', "0\u00a00") }</p>
 				</div>
 				<div className={styles.world}>
 					<picture>
@@ -48,23 +49,25 @@ const SectionWorld = () => {
 					</div>
 					<picture>
 						<source
-							srcSet="/img/business/delivery@1x.avif 1x, /img/business/delivery@2x.avif 2x"
+							srcSet={`/img/business/${srcDelivery}@1x.avif 1x, /img/business/${srcDelivery}@2x.avif 2x`}
 							type="image/avif"
 							media='(min-width: 768px)'
 						/>
 						<source
-							srcSet="/img/business/delivery@1x.png 1x, /img/business/delivery@2x.png 2x" type="image/png"
+							srcSet={`/img/business/${srcDelivery}@1x.png 1x, /img/business/${srcDelivery}@2x.png 2x`}
+							type="image/png"
 							media='(min-width: 768px)'
 						/>
 						<source
-							srcSet="/img/business/delivery-mobile@1x.avif 1x, /img/business/delivery-mobile@2x.avif 2x" type="image/avif"
+							srcSet={`/img/business/${srcDelivery}-mobile@1x.avif 1x, /img/business/${srcDelivery}-mobile@2x.avif 2x`}
+							type="image/avif"
 						/>
 						<img
 							loading='lazy'
 							decoding='async'
 							alt={ t('sections.delivery.title') }
-							src="/img/business/delivery-mobile@1x.png"
-							srcSet="/img/business/delivery-mobile@2x.png 2x"
+							src={`/img/business/${srcDelivery}-mobile@1x.png`}
+							srcSet={`/img/business/${srcDelivery}-mobile@2x.png 2x`}
 						/>
 					</picture>
 				</div>

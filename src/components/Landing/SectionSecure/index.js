@@ -40,7 +40,7 @@ const SectionSecure = () => {
 						</div>
 					</div>
 				</div>
-				<picture>
+				<picture className={styles.qrcode}>
 					<source media='(min-width: 768px)' srcSet="/img/secure/secure@1x.avif 1x, /img/secure/secure@2x.avif 2x" type="image/avif" />
 					<source media='(min-width: 768px)' srcSet="/img/secure/secure@1x.webp 1x, /img/secure/secure@2x.webp 2x" type="image/webp" />
 					<source media='(min-width: 768px)' srcSet="/img/secure/secure@1x.png 1x, /img/secure/secure@2x.png 2x" type="image/png" />
@@ -54,13 +54,6 @@ const SectionSecure = () => {
 						srcSet="/img/secure/secure-mobile@2x.png 2x"
 					/>
 				</picture>
-				<img
-					loading='lazy'
-					decoding='async'
-					alt='Tangem hero image'
-					src='/svg/qr.svg'
-					className={styles.qrcode}
-				/>
 			</div>
 		</section>
   )
