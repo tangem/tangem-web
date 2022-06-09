@@ -36,7 +36,7 @@
     },
     "partnership": {
       "title": "Grow your business with Tangem",
-      "description": "Take your business to the next level by joining our growing network of partners",
+      "description": "Take your business to the next level by joining our growing network of partners.",
       "label": "Partner Programs"
     },
     "reseller": {
@@ -207,8 +207,8 @@
     },
     "button": "submit",
     "result": {
-      "success": "Your message has been sent",
-      "failed": "Your message has not been sent",
+      "success": "Your message has been successfully sent.",
+      "failed": "The message could not be sent.",
       "error": ""
     }
   }
