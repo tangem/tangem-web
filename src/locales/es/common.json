@@ -101,10 +101,12 @@
   },
   "buttons": {
     "buy-now": "Comprar ahora",
+    "buy": "Comprar",
     "assets": "Criptoactivos",
     "assets-short": "Activos",
     "how-it-works": "¿Cómo funciona?",
-    "contact-us": "Contact Us"
+    "contact-us": "Contact Us",
+    "submit": "Submit"
   },
   "faq": {
     "title": "Preguntas frecuentes",

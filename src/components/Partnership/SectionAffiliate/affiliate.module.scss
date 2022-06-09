@@ -99,7 +99,6 @@
       max-width: 550px;
     }
   }
-
 }
 
 .button {
@@ -114,6 +113,8 @@
     color: #000000;
     margin-bottom: 80px;
     letter-spacing: 0;
+    position: relative;
+    z-index: 10;
 
     @media (min-width: 768px) {
       margin-bottom: 100px;
