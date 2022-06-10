@@ -1,20 +1,51 @@
 .compatible {
   position: relative;
+}
 
-  &::before {
-    background-image: url('/img/common/sparkes.png');
-    background-repeat: no-repeat;
-    background-size: contain;
-    content: '';
-    position: absolute;
-    top: -40px;
-    right: 25px;
-    width: 30px;
-    height: 30px;
-    z-index: 1;
+.title {
+  margin-top: 92px;
+  text-align: center;
+  position: relative;
+
+  @media (min-width: 768px) {
+    margin-top: 145px;
+    max-width: 730px;
+
+  }
+
+  h2 {
+    margin-bottom: 24px;
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: #090E13;
+    width: 100%;
+    padding-inline: 35px;
 
     @media (min-width: 768px) {
-      display: none;
+      font-weight: 500;
+      font-size: 80px;
+      line-height: 0.9;
+      color: #000000;
+      letter-spacing: 0;
+      padding-inline: 0;
+    }
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: #686868;
+    padding-inline: 35px;
+    width: 100%;
+    margin-bottom: 56px;
+
+    @media (min-width: 768px) {
+      padding-inline: 0;
+      font-size: 24px;
+      margin-bottom: 80px;
     }
   }
 }

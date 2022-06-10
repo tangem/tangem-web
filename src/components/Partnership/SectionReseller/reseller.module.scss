@@ -1,0 +1,144 @@
+.section {
+  width: 100%;
+  background: linear-gradient(90deg, #F2F2F2 0%, #F8F8F8 100%);
+  padding-block: 80px;
+  overflow: hidden;
+
+  @media (min-width: 768px) {
+    padding-block: 150px;
+  }
+}
+
+.reseller {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-inline: max(1rem, calc(50% - 620px));
+  width: calc(100% - 2rem);
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    max-width: 1240px;
+  }
+}
+
+.title {
+  text-align: center;
+
+  @media (min-width: 768px) {
+    text-align: start;
+  }
+
+  h2 {
+    font-weight: 500;
+    font-size: 46px;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: #090E13;
+    margin-bottom: 24px;
+
+    @media (min-width: 768px) {
+      font-size: 80px;
+      font-weight: normal;
+      line-height: 1;
+      letter-spacing: normal;
+    }
+  }
+
+  p {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    color: #686868;
+    width: 100%;
+    margin-bottom: 40px;
+
+    @media (min-width: 768px) {
+      font-size: 24px;
+      letter-spacing: normal;
+      max-width: 604px;
+      margin-bottom: 60px;
+    }
+  }
+
+  button {
+    padding: 12px 30px;
+    background: #000000;
+    border-radius: 100px;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 1.1;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 80px;
+    letter-spacing: 0;
+
+    @media (min-width: 768px) {
+      margin-bottom: 100px;
+      padding: 15px 34px;
+    }
+  }
+}
+
+.image {
+  align-self: center;
+  flex: 0 0 248px;
+  margin-bottom: 80px;
+
+  @media (min-width: 768px) {
+    flex-basis: 349px;
+    margin: 0;
+    align-self: start;
+  }
+}
+
+.list {
+  max-width: 100%;
+  overflow: auto hidden;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: 768px) {
+    margin-left: max(0px, calc(50% - 620px - 1rem));
+  }
+
+  ul {
+    display: grid;
+    width: fit-content;
+    grid-template-columns: repeat(4, 250px);
+    margin: 0 1rem;
+    padding: 0;
+    gap: 50px;
+
+    @media (min-width: 768px) {
+      gap: 80px;
+    }
+  }
+}
+
+.feature {
+  font-weight: normal;
+  line-height: 1.2;
+
+  h4 {
+    font-size: 24px;
+    color: #090E13;
+    margin-block: 16px;
+    letter-spacing: 0;
+
+    @media (min-width: 768px) {
+      font-size: 30px;
+    }
+  }
+
+  p {
+    font-size: 18px;
+    font-feature-settings: 'salt' on, 'liga' off;
+    color: #686868;
+    letter-spacing: 0;
+  }
+}

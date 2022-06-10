@@ -1,10 +1,19 @@
 {
   "title": "Tangem Wallet — Hardware Wallet For Your Crypto",
   "description": "Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card.",
+  "menu": {
+    "wallet": "Wallet",
+    "partnership": "Partnership",
+    "developers": "Developers"
+  },
+  "pages": {
+    "partnership": {
+      "title": "Partnership program - Tangem"
+    }
+  },
   "sections": {
     "safe": {
-      "title": "Keep your crypto safe",
-      "selected": "safe",
+      "title": "The safest crypto wallet for everyone",
       "description": "Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card."
     },
     "backup": {
@@ -20,22 +29,83 @@
       "description": "Exchange, buy NFT’s, make loans and deposits in more than 100 different decentralized applications with help of Wallet Connect."
     },
     "mobile": {
-      "title": "Your phone is all you need",
+      "title": "Manage your wallet from mobile",
       "description": "No wires or batteries. Just download the Tangem app to your phone and tap the card.",
       "selected": "all",
       "on-github": "The applications are open source, available on"
     },
     "community": {
-      "title": "Join the Global \n Community of Tangem Users",
-      "description": "Tangem is trusted by clients and leading market players from all around the globe today. We have established presence in 108 countries on 5 continents, except Antarctica.",
+      "title": "Join the Tangem Community",
+      "description": "Tangem is trusted by clients and leading market players from all around the globe today. We have established presence in 170 countries on 5 continents, except Antarctica.",
       "selected": "Tangem Users"
+    },
+    "partnership": {
+      "title": "Grow your business with Tangem",
+      "description": "Take your business to the next level by joining our growing network of partners.",
+      "label": "Partner Programs"
+    },
+    "reseller": {
+      "title": "Reseller Program",
+      "description": "Do you own a store or an online shop? Join our Reseller Program by filling out a brief form and we will reach out to discuss further cooperation.",
+      "features": {
+        "price" : {
+          "title": "Best price",
+          "description": "The best deals on the market for you"
+        },
+        "personal": {
+          "title": "Personal account\nmanager",
+          "description": "Our specialist is always in touch and ready to help"
+        },
+        "materials": {
+          "title": "Marketing materials",
+          "description": "We provide full comprehensive  sales materials and product information"
+        },
+        "delivery": {
+          "title": "Free delivery to\nyour warehouse",
+          "description": "You do not need to pay anything, we will bring the product to the warehouse ourselves"
+        }
+      }
+    },
+    "affiliate": {
+      "title": "Affiliate Program",
+      "description": "Promote Tangem products through your audience and we will do all the rest.",
+      "features": {
+        "promote" : {
+          "title": "You promote",
+          "description": "Tell your audience about Tangem products"
+        },
+        "sell": {
+          "title": "We sell",
+          "description": "Our team take care of the entire sales process"
+        },
+        "delivery": {
+          "title": "We deliver",
+          "description": "We will control the whole process from packaging to receiving"
+        },
+        "revenue": {
+          "title": "Revenue shared",
+          "description": "Take your benefits from collaboration"
+        }
+      }
+    },
+    "world": {
+      "title": "Bringing Crypto to\nthe world together",
+      "description": "More than 500,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
+      "cards": "500,000 cards"
+    },
+    "delivery": {
+      "title": "Doesn’t matter\nwhere to buy",
+      "description": "Cards are secure by design and nothing can be done to them before it reaches your customer. Tangem app further ensures product security at activation."
     }
   },
   "buttons": {
     "buy-now": "Buy now",
-    "assets": "Crypto assets",
+    "buy": "Buy",
+    "assets": "Browse all assets",
     "assets-short": "Assets",
-    "how-it-works": "How it works"
+    "how-it-works": "How it works",
+    "contact-us": "Contact Us",
+    "submit": "Submit"
   },
   "faq": {
     "title": "Frequently Asked Questions",
@@ -58,7 +128,7 @@
       },
       {
         "question": "How reliable and safe is it?",
-        "answer": "Tangem Wallet is the most safe and reliable crypto wallet in the world. The chip in your card is a microcomputer. It has been certified by Common Criteria at EAL6+ level — the same level of chip protection used in passports. It is completely safe from dust, water, and hacking attempts. The card reliably performs in temperatures between -35℃ (-31.℉) and +85℃ (185℉), with the chip useful life beyond 25 years of service."
+        "answer": "Tangem Wallet is the most safe and reliable crypto wallet in the world. The chip in your card is a microcomputer. It has been certified by Common Criteria at EAL6+ level — the same level of chip protection used in passports. It is completely safe from dust, water, and hacking attempts. The card reliably performs in temperatures between -25℃ (-13.℉) and +55℃ (131℉), with the chip useful life beyond 25 years of service."
       }
     ]
   },
@@ -72,6 +142,12 @@
   },
   "pricing": {
     "title": "Pricing",
+    "choose": "Choose your pack",
+    "stores": "Available stores",
+    "buy": {
+      "title": "Buy Tangem wallet",
+      "description": "Choose your multicurrency hardware wallet to manage various crypto with access to DeFi, NFT, DeEx and more – all in one card."
+    },
     "pack3": {
       "title": "Pack of 3 Cards",
       "selected": "3 Cards",
@@ -81,6 +157,11 @@
       "title": "Pack of 2 Cards",
       "selected": "2 Cards",
       "description": "2 Tangem cards to one wallet. One for you, one for backup!"
+    },
+    "features": {
+      "delivery": "Free delivery worldwide",
+      "return": "Free and easy returns",
+      "support": "Outstanding Customer Support"
     }
   },
   "socials": {
@@ -100,6 +181,41 @@
     },
     "offlineForm": {
       "greeting": "We are currently offline. Please leave your message in the form below and we will contact you via email as soon as possible."
+    }
+  },
+  "contactUs": {
+    "reseller": {
+      "title": "Apply for reseller program"
+    },
+    "affiliate": {
+      "title": "Apply for affiliate program"
+    },
+    "legend": "Please provide the following information below so we can contact you as soon as possible.",
+    "name": {
+      "label":"Name:",
+      "placeholder": "Jack",
+      "error": "Fill in this field"
+    },
+    "email": {
+      "label":"Email:",
+      "placeholder": "jack@tangem.com",
+      "error": "Fill in this field"
+    },
+    "phone": {
+      "label":"Phone number:",
+      "placeholder": "+1(213)373-4253",
+      "error": "Fill in this field"
+    },
+    "message": {
+      "label":"Message:",
+      "placeholder": "Message (Include any additional URLs as necessary)",
+      "error": "Fill in this field"
+    },
+    "button": "submit",
+    "result": {
+      "success": "Your message has been successfully sent.",
+      "failed": "The message could not be sent.",
+      "error": ""
     }
   }
 }

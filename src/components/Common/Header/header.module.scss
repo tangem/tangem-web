@@ -1,0 +1,230 @@
+@use "../../../../public/styles/colors" as *;
+@use "sass:color";
+
+.header {
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 50;
+  position: fixed;
+  backdrop-filter: blur(40px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark {
+  background: rgba($color-header-bg-dark, 0.5);
+  color: $color-header-text-dark;
+}
+
+.light {
+  color: $color-header-text-light;
+  background: rgba(248, 249, 249, 0.7);
+
+  @media (min-width: 768px) {
+    background: rgba($color-header-bg-light, 0.2);
+  }
+
+}
+
+.nav {
+  width: 100%;
+  padding-left: max(1rem, calc(50% - 620px));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 47px;
+  max-width: calc(100% - 2rem);
+
+  @media (min-width: 768px) {
+    width: 100%;
+    justify-content: start;
+    height: 60px;
+  }
+}
+
+.menu {
+  display: flex;
+  @media (min-width: 768px) {
+    height: 100%;
+  }
+
+  input {
+    opacity: 0;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &:checked {
+      & ~ label > span {
+        transform: rotate(45deg);
+
+        &::before {
+          top: 0;
+          transform: rotate(0);
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
+      }
+
+      & ~ ul {
+        visibility: visible;
+        right: 0;
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    z-index: 1;
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  label > span,
+  label > span::before,
+  label > span::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: $color-header-text-light;
+    transition-duration: .25s;
+
+    .dark & {
+      background-color: $color-header-text-dark;
+    }
+  }
+  label > span::before {
+    content: '';
+    top: -8px;
+  }
+  label > span::after {
+    content: '';
+    top: 8px;
+  }
+
+  ul {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    right: -100%;
+    width: 10rem;
+    height: 100vh;
+    margin: 0;
+    padding: 3rem 0;
+    list-style: none;
+    background-color: $color-header-bg-light;
+    box-shadow: 1px 0 6px rgba($color-header-text-light, .2);
+    transition-duration: .25s;
+
+    .dark & {
+      background-color: $color-header-bg-dark;
+      box-shadow: 1px 0 6px rgba($color-header-text-dark, .2);
+
+      @media (min-width: 768px) {
+        box-shadow: none;
+        background: transparent;
+      }
+    }
+
+    @media (min-width: 768px) {
+      height: 100%;
+      box-shadow: none;
+      position: relative;
+      right: auto;
+      background: transparent;
+      transition-duration: unset;
+      display: flex;
+      flex-direction: row;
+      visibility: visible;
+      padding: 0 50px;
+    }
+  }
+
+  li {
+    display: flex;
+    position: relative;
+    letter-spacing: unset;
+    margin-inline: 16px 20px;
+    padding-block: 16px;
+    font-size: 17px;
+    opacity: 0.5;
+    line-height: 1;
+    font-weight: 400;
+    font-style: normal;
+    text-decoration: none;
+    transition-duration: .25s;
+
+    @media (min-width: 768px) {
+      height: 100%;
+      align-items: center;
+    }
+
+    &.active {
+      opacity: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -6px;
+        right: -6px;
+        bottom: -1px;
+        background: $color-header-text-light;
+        height: 2px;
+
+        .dark & {
+          background: $color-header-text-dark;
+        }
+      }
+    }
+  }
+}
+
+.logo {
+  margin-top: 3px;
+
+  svg {
+    fill: #090E13;
+  }
+  .dark & svg {
+    fill: #FFFFFF;
+  }
+}
+
+.buy {
+  font-size: 15px;
+  line-height: 1;
+  color: #FFFFFF;
+  background: #000000;
+  backdrop-filter: blur(30px);
+  border-radius: 100px;
+  padding: 5.5px 11px;
+  margin-left: 16px;
+  margin-right: max(1rem, calc(50% - 620px));
+
+  .dark & {
+    color: #000000;
+    background: #FFFFFF;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 17px;
+    padding: 6px 14px;
+    height: 30px;
+  }
+}

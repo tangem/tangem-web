@@ -1,6 +1,16 @@
 {
   "title": "Tangem Wallet — Una Billetera Hardware Para Tus Criptos",
   "description": "La Tangem Wallet te permite guardar tus criptoactivos de forma segura, al tiempo que podrás tener un fácil acceso a tu monedero. Además, podrás mantener tus claves privadas en tu tarjeta.",
+  "menu": {
+    "wallet": "Wallet",
+    "partnership": "Partnership",
+    "developers": "Developers"
+  },
+  "pages": {
+    "partnership": {
+      "title": "Partnership program - Tangem"
+    }
+  },
   "sections": {
     "safe": {
       "title": "Manten tus criptoactivos seguros",
@@ -27,15 +37,76 @@
     },
     "community": {
       "title": "Únete a la \n comunidad global Tangem",
-      "description": "Tangem cuenta con la confianza de entusiastas del mercado cripto alrededor del mundo. Nuestra billetera es usada en 108 países en los 5 continentes, a excepción de Antártida.",
+      "description": "Tangem cuenta con la confianza de entusiastas del mercado cripto alrededor del mundo. Nuestra billetera es usada en 170 países en los 5 continentes, a excepción de Antártida.",
       "selected": "Tangem"
+    },
+    "partnership": {
+      "title": "Grow your business with Tangem",
+      "description": "Take your business to the next level by joining our growing network of partners",
+      "label": "Partner Programs"
+    },
+    "reseller": {
+      "title": "Reseller Program",
+      "description": "Do you own a store or an online shop? Join our Reseller Program by filling out a brief form and we will reach out to discuss further cooperation.",
+      "features": {
+        "price" : {
+          "title": "Best price",
+          "description": "The best deals on the market for you."
+        },
+        "personal": {
+          "title": "Personal account\nmanager",
+          "description": "Our specialist is always in touch and ready to help."
+        },
+        "materials": {
+          "title": "Marketing materials",
+          "description": "We provide full comprehensive  sales materials and product information."
+        },
+        "delivery": {
+          "title": "Free delivery to\nyour warehouse",
+          "description": "You do not need to pay anything, we will bring the product to the warehouse ourselves."
+        }
+      }
+    },
+    "affiliate": {
+      "title": "Affiliate Program",
+      "description": "Promote Tangem products through your audience and we will do all the rest.",
+      "features": {
+        "promote" : {
+          "title": "You promote",
+          "description": "Tell your audience about Tangem products."
+        },
+        "sell": {
+          "title": "We sell",
+          "description": "Our team take care of the entire sales process."
+        },
+        "delivery": {
+          "title": "We deliver",
+          "description": "We will control the whole process from packaging to receiving."
+        },
+        "revenue": {
+          "title": "Revenue shared",
+          "description": "Take your benefits from collaboration."
+        }
+      }
+    },
+    "world": {
+      "title": "Bringing Crypto to the world together",
+      "description": "More than 500,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
+      "cards": "500,000 cards"
+    },
+    "delivery": {
+      "title": "Doesn’t matter where to buy",
+      "description": "Cards are secure by design and nothing can be done to them before it reaches your customer. Tangem app further ensures product security at activation."
     }
   },
   "buttons": {
     "buy-now": "Comprar ahora",
+    "buy": "Comprar",
     "assets": "Criptoactivos",
     "assets-short": "Activos",
-    "how-it-works": "¿Cómo funciona?"
+    "how-it-works": "¿Cómo funciona?",
+    "contact-us": "Contact Us",
+    "submit": "Submit"
   },
   "faq": {
     "title": "Preguntas frecuentes",
@@ -58,7 +129,7 @@
       },
       {
         "question": "¿Qué tan confiable y seguro es?",
-        "answer": "La Tangem Wallet es la criptobilletera más segura y confiable del mundo. El chip de su tarjeta es una microcomputadora. Ha sido certificado por la Common Criteria en el nivel EAL6+, el mismo nivel de protección del chip utilizado en los pasaportes. Está completamente a salvo del polvo, el agua y los intentos de hacking. La tarjeta funciona de manera confiable en temperaturas entre -35°C (-31°F) y +85°C (185°F), mientras que el chip tiene una vida útil de más de 25 años."
+        "answer": "La Tangem Wallet es la criptobilletera más segura y confiable del mundo. El chip de su tarjeta es una microcomputadora. Ha sido certificado por la Common Criteria en el nivel EAL6+, el mismo nivel de protección del chip utilizado en los pasaportes. Está completamente a salvo del polvo, el agua y los intentos de hacking. La tarjeta funciona de manera confiable en temperaturas entre -25°C (-13°F) y +55°C (131°F), mientras que el chip tiene una vida útil de más de 25 años."
       }
     ]
   },
@@ -72,6 +143,12 @@
   },
   "pricing": {
     "title": "Precios",
+    "choose": "Choose your pack",
+    "stores": "Available stores",
+    "buy": {
+      "title": "Buy Tangem wallet",
+      "description": "Choose your multicurrency hardware wallet to manage various crypto with access to DeFi, NFT, DeEx and more – all in one card."
+    },
     "pack3": {
       "title": "Kit de 3 Tarjetas",
       "selected": "3 Tarjetas",
@@ -81,6 +158,11 @@
       "title": "Kit de 2 Tarjetas",
       "selected": "2 Tarjetas",
       "description": "2 tarjetas Tangem para una billetera. ¡Una para ti, una de respaldo!"
+    },
+    "features": {
+      "delivery": "Free delivery worldwide",
+      "return": "Free and easy returns",
+      "support": "Outstanding Customer Support"
     }
   },
   "socials": {
@@ -100,6 +182,41 @@
     },
     "offlineForm": {
       "greeting": "Por el momento estamos fuera de línea. Por favor deja un mensaje en la forma de abajo y nos pondremos en contacto con usted vía mail lo antes posible."
+    }
+  },
+  "contactUs": {
+    "reseller": {
+      "title": "Apply for reseller program"
+    },
+    "affiliate": {
+      "title": "Apply for affiliate program"
+    },
+    "legend": "Please provide the following information below so we can contact you as soon as possible.",
+    "name": {
+      "label":"Name:",
+      "placeholder": "Jack",
+      "error": "Fill in this field"
+    },
+    "email": {
+      "label":"Email:",
+      "placeholder": "jack@tangem.com",
+      "error": "Fill in this field"
+    },
+    "phone": {
+      "label":"Phone number:",
+      "placeholder": "+1(213)373-4253",
+      "error": "Fill in this field"
+    },
+    "message": {
+      "label":"Message:",
+      "placeholder": "Message (Include any additional URLs as necessary)",
+      "error": "Fill in this field"
+    },
+    "button": "submit",
+    "result": {
+      "success": "Your message has been successfully sent.",
+      "failed": "The message could not be sent.",
+      "error": ""
     }
   }
 }
