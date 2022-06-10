@@ -137,6 +137,13 @@
     flex: 0 1 520px;
   }
 }
+.youtube {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  z-index: 5;
+}
 
 .video {
   max-height: 987px;
@@ -160,6 +167,12 @@
   }
 }
 
+.player {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  max-width: 1680px;
+}
+
 .frame {
   aspect-ratio: 16 / 9;
   width: 100%;
@@ -168,7 +181,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-
 
   picture {
     position: relative;
