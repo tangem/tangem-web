@@ -1,5 +1,5 @@
 import Head from "next/head";
-import i18next, {t} from 'i18next';
+import {t} from 'i18next';
 import Header from "../../../components/Common/Header";
 import React from "react";
 import SectionHero from "../../../components/Partnership/SectionHero";
@@ -8,8 +8,8 @@ import SectionReseller from "../../../components/Partnership/SectionReseller";
 import SectionAffiliate from "../../../components/Partnership/SectionAffiliate";
 import SectionWorld from "../../../components/Partnership/SectionWorld";
 import Footer from "../../../components/Common/Footer";
-import Modal from "../../../components/Landing/Modal";
-import Pricing from "../../../components/Landing/Pricing";
+import Modal from "../../../components/Home/Modal";
+import Pricing from "../../../components/Home/Pricing";
 import useModal from "../../../hooks/useModal";
 
 const LangPartnership = () => {

@@ -1,7 +1,5 @@
 import React from 'react'
-import classNames from 'classnames'
 import styles from './community.module.scss'
-import { Selected } from "../Selected";
 import { t } from "i18next";
 
 const SectionCommunity = () => {

@@ -41,7 +41,7 @@ $gray: #eceded;
     position: absolute;
     width: 16px;
     height: 2px;
-    background-color: #000000;;
+    background-color: #000000;
     transition-duration: .25s;
     top: calc(50% - 1px);
     left: calc(50% - 8px);
@@ -52,7 +52,7 @@ $gray: #eceded;
     }
   }
 
-  &::after {
+  &::before {
     transform: rotate(90deg);
   }
 
@@ -66,9 +66,8 @@ $gray: #eceded;
   .active & {
     background: #E9E9E9;
 
-    &::after,
     &::before {
-      transform: rotate(180deg);
+      background-color: #E9E9E9;
       transition-duration: .25s;
     }
   }
@@ -82,10 +81,7 @@ $gray: #eceded;
 
 .item {
   cursor: pointer;
-
-  &:not(:last-child) {
-    border-bottom: 1px solid #E9E9E9;
-  }
+  border-bottom: 1px solid #E9E9E9;
 }
 
 .head {
@@ -97,34 +93,37 @@ $gray: #eceded;
   justify-content: space-between;
   transition: all .1s ease;
   font-size: 18px;
-  padding: 18px 0;
+  padding-top: 18px;
 
   @media (min-width: 768px) {
     font-size: 30px;
     letter-spacing: -0.02em;
     color: #000000;
-    padding: 40px 0;
-  }
-
-  .active & {
-    padding-bottom: 18px;
-
-    @media (min-width: 768px) {
-      padding-bottom: 30px;
-    }
+    padding-top: 40px;
   }
 }
 
 .body {
   line-height: 1.4;
-  padding-bottom: 18px;
   transition: all .3s ease;
   font-size: 15px;
   letter-spacing: -0.02em;
   color: #000000;
+  overflow: hidden;
+  max-height: 0;
+  margin-bottom: 18px;
 
   @media (min-width: 768px) {
     font-size: 20px;
-    padding-bottom: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  .active & {
+    margin-top: 18px;
+
+    @media (min-width: 768px) {
+      margin-top: 30px;
+    }
   }
 }

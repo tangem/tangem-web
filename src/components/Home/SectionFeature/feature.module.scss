@@ -60,7 +60,7 @@
     padding-inline: 35px;
     width: 100%;
     margin-bottom: 40px;
-    white-space: break-spaces;
+    white-space: pre-line;
 
     @media (min-width: 768px) {
       padding-inline: 0;
@@ -70,29 +70,10 @@
   }
 
   button {
-    padding: 12px 30px;
-    border-radius: 100px;
-    font-weight: normal;
-    font-size: 20px;
-    line-height: 1.1;
-    text-align: center;
-
     margin-bottom: 60px;
-    letter-spacing: 0;
 
     @media (min-width: 768px) {
       margin-bottom: 0;
-      padding: 15px 34px;
     }
   }
-}
-
-.primary {
-  color: #FFFFFF;
-  background: #000;
-}
-
-.secondary {
-  color: #000000;
-  border: 1px solid #000000;
 }
