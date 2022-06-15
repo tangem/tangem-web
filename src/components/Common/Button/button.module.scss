@@ -1,23 +1,49 @@
 @use "../../../styles/colors";
 
 .button {
-  padding: 12px 30px;
-  background: #000;
   border-radius: 100px;
   font-weight: normal;
-  font-size: 20px;
-  line-height: 1.1;
   text-align: center;
-  color: #FFFFFF;
   letter-spacing: 0;
   transition: 0.25s;
 
-  @media (min-width: 768px) {
-    padding: 15px 34px;
+  &.small {
+    font-size: 15px;
+    line-height: 1;
+    padding: 5.5px 11px;
+
+    @media (min-width: 768px) {
+      font-size: 17px;
+      padding: 6px 14px;
+      height: 30px;
+    }
   }
 
-  &:hover {
-    background: #333;
+  &.medium {
+    font-size: 17px;
+    line-height: 22px;
+    padding: 12px 30px;
+
+    @media (min-width: 768px) {
+      padding: 15px 34px;
+      font-size: 20px;
+    }
+  }
+
+  &.primary {
+    &.light {
+      color: #FFFFFF;
+      background: #000;
+
+      &:hover {
+        background: #333;
+      }
+    }
+
+    &.dark {
+      background: #FFFFFF;
+      color: #000;
+    }
   }
 
   &.secondary {
