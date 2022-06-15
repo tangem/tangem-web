@@ -1,16 +1,16 @@
 import Head from 'next/head'
 import Header from '../../components/Common/Header'
-import SectionHero from '../../components/Landing/SectionHero'
-import SectionFeature from '../../components/Landing/SectionFeature'
-import SectionWebCompatible from '../../components/Landing/SectionCompatible'
-import SectionSecure from '../../components/Landing/SectionSecure'
-import SectionFaq from '../../components/Landing/SectionFaq'
-import SectionCommunity from '../../components/Landing/SectionCommunity'
+import SectionHero from '../../components/Home/SectionHero'
+import SectionFeature from '../../components/Home/SectionFeature'
+import SectionWebCompatible from '../../components/Home/SectionCompatible'
+import SectionSecure from '../../components/Home/SectionSecure'
+import SectionFaq from '../../components/Home/SectionFaq'
+import SectionCommunity from '../../components/Home/SectionCommunity'
 import React from "react";
-import Modal from "../../components/Landing/Modal";
-import Search from "../../components/Landing/Search";
+import Modal from "../../components/Home/Modal";
+import Search from "../../components/Home/Search";
 import useModal from "../../hooks/useModal";
-import Pricing from "../../components/Landing/Pricing";
+import Pricing from "../../components/Home/Pricing";
 import i18next, {t} from 'i18next';
 import { getAllLanguageSlugs, getLanguage } from '../../lib/lang';
 import Footer from "../../components/Common/Footer";

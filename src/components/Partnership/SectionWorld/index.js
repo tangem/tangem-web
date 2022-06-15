@@ -38,7 +38,9 @@ const SectionWorld = () => {
 							srcSet={`/img/business/${srcMap}-mobile@2x.png 2x`}
 						/>
 					</picture>
-					<div className={styles.counter}>{ t('sections.world.cards') }</div>
+					<div className={styles.counter}>
+						<span className={styles.number}>{ t('sections.world.cards-number') }</span> <span>{ t('sections.world.cards') }</span>
+					</div>
 				</div>
 			</div>
 			<div className={styles.banner}>

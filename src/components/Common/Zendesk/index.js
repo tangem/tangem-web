@@ -18,11 +18,11 @@ const Zendesk = () => {
 		? { greeting: { '*': t('zendesk.offlineForm.greeting') }}
 		: undefined;
 
-	function  handleLoad(e) {
+	function handleLoad(e) {
 		zE('webWidget', 'setLocale', language);
 		zE('webWidget', 'hide');
 		zE('webWidget:on', 'close', function() {
-			zE('webWidget', 'hide');
+			setTimeout(()=> {zE('webWidget', 'hide');}, 0);
 			document.querySelector('#myLauncher').style.opacity = 1;
 		});
 
@@ -65,6 +65,10 @@ const Zendesk = () => {
 				strategy="lazyOnload"
 				onLoad={handleLoad}
 			/>
+			<Script id="ze-settings" dangerouslySetInnerHTML= {{ __html: `
+			` }}>
+
+			</Script>
 		</>
 	)
 }

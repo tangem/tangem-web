@@ -92,7 +92,8 @@
     "world": {
       "title": "Bringing Crypto to the world together",
       "description": "More than 500,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
-      "cards": "500,000 cards"
+      "cards": "cards",
+      "cards-number": "500,000"
     },
     "delivery": {
       "title": "Doesn’t matter where to buy",

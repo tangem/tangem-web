@@ -1,32 +1,30 @@
-import React, { useState} from 'react'
+import React, {useEffect, useRef, useState} from 'react'
 import classNames from 'classnames'
-import { motion } from 'framer-motion'
 import styles from './faq.module.scss'
-
-import ArrowIcon from '../../../../public/svg/faq_arrow.svg'
 import {t} from "i18next";
 
 const Accordion = ({ head, body }) => {
 
   const [isActive, setIsActive] = useState(false);
+	const ref = useRef();
+
+	useEffect(() => {
+		if(!ref.current) {
+			return function empty() {
+				//
+			}
+		}
+		ref.current.style.maxHeight = isActive ? ref.current.scrollHeight + "px" : null;
+	}, [isActive]);
 
   return (
     <>
-      <div className={classNames(styles.item, isActive && styles.active )} onClick={() => setIsActive(!isActive)}>
+      <div className={classNames(styles.item, isActive && styles.active )} onClick={() => setIsActive((v) => !v)}>
         <div className={styles.head}>
           <span>{head}</span>
           <button className={styles.button}></button>
         </div>
-        {isActive && (
-          <motion.div
-            initial={{ scale: 1, opacity: 0.7 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.95, opacity: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className={styles.body}>{body}</div>
-          </motion.div>
-        )}
+	      <div ref={ref} className={styles.body}>{body}</div>
       </div>
     </>
   );

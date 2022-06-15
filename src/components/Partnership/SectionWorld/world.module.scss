@@ -52,7 +52,7 @@
     letter-spacing: 0;
     color: #000000;
     margin-bottom: 24px;
-    white-space: break-spaces;
+    white-space: pre-line;
 
     @media (min-width: 768px) {
       font-size: 60px;
@@ -79,7 +79,6 @@
   position: absolute;
   top: 80%;
   left: 25%;
-  font-weight: 600;
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -89,15 +88,17 @@
   color: #000000;
   background: #FFFFFF;
   border-radius: 16px;
-  filter: drop-shadow(0px 20px 60px rgba(0, 0, 0, 0.12));
-  backdrop-filter: blur(80px);
-
+  box-shadow: 0 20px 60px 0 rgb(0 0 0 / 12%);
 
   @media (min-width: 768px) {
     font-size: 22px;
     padding: 19px 28px;
     top: 65%;
     left: 57%;
+  }
+
+  .number {
+    font-weight: 600;
   }
 
   &::before {
