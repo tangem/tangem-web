@@ -24,9 +24,7 @@ const SectionHero = ({ toggleBuy }) => {
 						<source srcSet="/img/hero/phone-mobile@1x.avif 1x, /img/hero/phone-mobile@2x.avif 2x" type="image/avif" />
 						<source srcSet="/img/hero/phone-mobile@1x.webp 1x, /img/hero/phone-mobile@2x.webp 2x" type="image/webp" />
 						<img
-							loading='lazy'
-							decoding='async'
-							alt='Tangem hero image'
+							alt={t('sections.safe.title')}
 							src='/img/hero/phone-mobile@1x.png'
 							srcSet="/img/hero/phone-mobile@2x.png 2x"
 						/>
