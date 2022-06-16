@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import * as styles from "./zendesk.module.scss";
 import ChatIcon from '../../../../public/svg/chat.svg';
 import i18next, {t} from "i18next";
@@ -14,11 +14,23 @@ const Zendesk = () => {
 		document.querySelector('#myLauncher').style.opacity = 0;
 	}
 
-	const offlineForm = language !== 'ru'
-		? { greeting: { '*': t('zendesk.offlineForm.greeting') }}
-		: undefined;
+	useEffect(()=> {
+		if (typeof window !== 'undefined' && typeof zE !== 'undefined') {
+			setLoaded(true);
+		}
+	},[]);
 
-	function handleLoad(e) {
+	useEffect(()=> {
+		if(!loaded) {
+			return function empty() {
+				//
+			}
+		}
+
+		const offlineForm = language !== 'ru'
+			? { greeting: { '*': t('zendesk.offlineForm.greeting') }}
+			: undefined;
+
 		zE('webWidget', 'setLocale', language);
 		zE('webWidget', 'hide');
 		zE('webWidget:on', 'close', function() {
@@ -53,8 +65,7 @@ const Zendesk = () => {
 				}
 			}
 		}
-		setLoaded(true);
-	}
+	},[loaded, language]);
 
 	return (
 		<>
@@ -63,12 +74,8 @@ const Zendesk = () => {
 				id="ze-snippet"
 				src="https://static.zdassets.com/ekr/snippet.js?key=95555692-81ca-451d-bc01-8b9185ea22c4"
 				strategy="lazyOnload"
-				onLoad={handleLoad}
+				onLoad={() => setLoaded(true)}
 			/>
-			<Script id="ze-settings" dangerouslySetInnerHTML= {{ __html: `
-			` }}>
-
-			</Script>
 		</>
 	)
 }
