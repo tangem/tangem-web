@@ -2,7 +2,10 @@ import React from 'react'
 import styles from './footer.module.scss'
 import dynamic from 'next/dynamic'
 
-const DynamicZendesk = dynamic(() => import('../Zendesk'))
+const DynamicZendesk = dynamic(
+	() => import('../Zendesk'),
+	{ ssr: false }
+)
 
 const Footer = () => {
 
