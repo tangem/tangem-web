@@ -113,6 +113,7 @@
 .phone {
   align-self: center;
   padding-top: 43px;
+  min-height: 293px;
 
   @media (min-width: 768px) {
     padding-top: 88px;
@@ -136,6 +137,8 @@
   position: relative;
   z-index: 4;
   min-height: 275px;
+  top: 32px;
+  bottom: 40px;
 
   @media (min-width: 768px) {
     background-size: 1771px 987px;
@@ -185,7 +188,6 @@
   display: flex;
   justify-content: center;
   position: relative;
-  background: linear-gradient(90deg, #F2F2F2 0%, #F8F8F8 100%);
   margin-bottom: 64px;
 
   &::before {

@@ -21,6 +21,16 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
               srcSet='/img/feature/feature-card-2x.png'
               media='(min-width: 768px)'
             />
+	          <source
+		          srcSet='/img/feature/feature-card-1x.avif'
+		          media='(min-width: 300px)'
+		          type="image/avif"
+	          />
+	          <source
+		          srcSet='/img/feature/feature-card-1x.webp'
+		          media='(min-width: 300px)'
+		          type="image/webp"
+	          />
             <source
               srcSet='/img/feature/feature-card-1x.png'
               media='(min-width: 300px)'
