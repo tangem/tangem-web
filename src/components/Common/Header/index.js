@@ -29,7 +29,7 @@ const Header = ({isDark, toggleBuy}) => {
           </a>
         </Link>
 				<div className={styles.menu}>
-		      <input id="toggle" type="checkbox"/>
+		      <input id="toggle" type="checkbox" className={styles.toggle} />
 		      <label htmlFor="toggle">
 			      <span/>
 		      </label>

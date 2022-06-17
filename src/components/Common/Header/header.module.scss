@@ -17,7 +17,7 @@
 
 .dark {
   color: colors.$header-text-dark;
-  background: rgb(colors.$header-bg-dark 0.5);
+  background: rgb(0 0 0 / 50%);
 }
 
 .light {
@@ -25,7 +25,7 @@
   background: rgb(248 249 249 / 70%);
 
   @media (min-width: 768px) {
-    background: rgb(colors.$header-bg-light 0.2);
+    background: rgb(255 255 255 / 20%);
   }
 }
 
@@ -66,16 +66,6 @@
     }
   }
 
-  label > span::before {
-    top: -8px;
-    content: "";
-  }
-
-  label > span::after {
-    top: 8px;
-    content: "";
-  }
-
   label > span,
   label > span::before,
   label > span::after {
@@ -105,7 +95,7 @@
     padding: 3rem 0;
     list-style: none;
     background-color: colors.$header-bg-light;
-    box-shadow: 1px 0 6px rgb(colors.$header-text-light 0.2);
+    box-shadow: 1px 0 6px rgb(9 14 19 / 20%);
     visibility: hidden;
 
     @include mixins.motion {
@@ -114,7 +104,7 @@
 
     .dark & {
       background-color: colors.$header-bg-dark;
-      box-shadow: 1px 0 6px rgb(colors.$header-text-dark 0.2);
+      box-shadow: 1px 0 6px rgb(255 255 255 / 20%);
 
       @media (min-width: 768px) {
         background: transparent;
@@ -175,33 +165,33 @@
         }
       }
     }
+  }
 
-    input {
-      opacity: 0;
+  .toggle {
+    opacity: 0;
 
-      @media (min-width: 768px) {
-        display: none;
+    @media (min-width: 768px) {
+      display: none;
+    }
+
+    &:checked {
+      ~ label > span {
+        transform: rotate(45deg);
+
+        &::before {
+          top: 0;
+          transform: rotate(0);
+        }
+
+        &::after {
+          top: 0;
+          transform: rotate(90deg);
+        }
       }
 
-      &:checked {
-        ~ label > span {
-          transform: rotate(45deg);
-
-          &::before {
-            top: 0;
-            transform: rotate(0);
-          }
-
-          &::after {
-            top: 0;
-            transform: rotate(90deg);
-          }
-        }
-
-        ~ ul {
-          right: 0;
-          visibility: visible;
-        }
+      ~ ul {
+        right: 0;
+        visibility: visible;
       }
     }
   }
