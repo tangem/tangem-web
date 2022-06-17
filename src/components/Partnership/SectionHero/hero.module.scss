@@ -1,13 +1,13 @@
-@use "./public/styles/colors" as *;
+@use "../../../styles/colors";
 
 .hero {
   position: relative;
   min-height: 690px;
   max-width: 100vh;
   overflow: hidden;
-  background-color: $color-header-bg-dark;
+  background-color: colors.$header-bg-dark;
   width: 100%;
-  color: $color-header-text-dark;
+  color: colors.$header-text-dark;
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
@@ -24,7 +24,7 @@
   z-index: 3;
   padding-top: 366px;
   text-align: center;
-  white-space: break-spaces;
+  white-space: pre-line;
 
   @media (min-width: 768px) {
     padding-top: 220px;

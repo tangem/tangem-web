@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://tangem.com/en/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://tangem.com/ru/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://tangem.com/es/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://tangem.com/en/partnership/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/partnership/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/partnership/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/partnership/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://tangem.com/ru/partnership/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/partnership/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/partnership/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/partnership/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://tangem.com/es/partnership/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/partnership/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/partnership/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/partnership/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+</urlset>

@@ -1,6 +1,7 @@
 import React from 'react'
 import * as styles from './feature.module.scss';
 import {t} from "i18next";
+import Button from "../../Common/Button";
 
 const SectionFeature = ({ toggleSearch, toggleBuy }) => {
 
@@ -20,6 +21,16 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
               srcSet='/img/feature/feature-card-2x.png'
               media='(min-width: 768px)'
             />
+	          <source
+		          srcSet='/img/feature/feature-card-1x.avif'
+		          media='(min-width: 300px)'
+		          type="image/avif"
+	          />
+	          <source
+		          srcSet='/img/feature/feature-card-1x.webp'
+		          media='(min-width: 300px)'
+		          type="image/webp"
+	          />
             <source
               srcSet='/img/feature/feature-card-1x.png'
               media='(min-width: 300px)'
@@ -39,9 +50,9 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
         >
           <h2>{ t('sections.backup.title')}</h2>
           <p>{ t('sections.backup.description') }</p>
-          <button className={styles.primary} onClick={toggleBuy}>
-	          { t('buttons.buy-now') }
-          </button>
+	        <Button onClick={toggleBuy} appearance='primary'>
+		        { t('buttons.buy-now') }
+					</Button>
         </div>
       </div>
       <div
@@ -52,7 +63,9 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
         <div className={styles.title}>
           <h2>{t('sections.currencies.title')}</h2>
           <p>{ t('sections.currencies.description') }</p>
-	        <button className={styles.secondary} onClick={toggleSearch}>{ t('buttons.assets') }</button>
+	        <Button onClick={toggleSearch} appearance='secondary'>
+		        { t('buttons.assets') }
+	        </Button>
         </div>
 
         {/* Right Side */}
@@ -69,7 +82,6 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
 		        />
 	        </picture>
         </div>
-
       </div>
     </section>
   )

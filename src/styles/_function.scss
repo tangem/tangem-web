@@ -1,0 +1,20 @@
+@use "./variables" as *;
+@use "sass:map";
+@use "sass:math";
+
+@function calc-clamp($min-size, $max-size) {
+  $diff: map.get($breakpoints, "large") - map.get($breakpoints, "small");
+  $rem-part: math.div(
+    $min-size * map.get($breakpoints, "large"),
+    $diff
+  ) - math.div(
+    $max-size * map.get($breakpoints, "small"),
+    $diff
+  );
+  $vw-part: math.div(
+    math.div($max-size - $min-size, 1rem) * 16px * 100vw,
+    $diff
+  );
+
+  @return clamp(#{$min-size + 0rem}, calc(#{$rem-part} + #{$vw-part}), #{$max-size + 0rem});
+}

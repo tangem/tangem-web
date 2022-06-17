@@ -6,6 +6,7 @@ import Logo from '../../../../public/svg/tangem-logo.svg'
 import i18next, {t} from "i18next";
 import styles from './header.module.scss'
 import classNames from 'classnames'
+import Button from "../Button";
 
 const Header = ({isDark, toggleBuy}) => {
 	const { language } = i18next;
@@ -52,7 +53,7 @@ const Header = ({isDark, toggleBuy}) => {
 		      </ul>
 	      </div>
       </nav>
-	    <button className={styles.buy} onClick={toggleBuy}>{ t('buttons.buy') }</button>
+	    <Button theme={isDark ? 'dark' : 'light'} size='small' className={styles.buy} onClick={toggleBuy}>{ t('buttons.buy') }</Button>
     </header>
   )
 }

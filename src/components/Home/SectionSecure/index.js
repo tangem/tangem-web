@@ -16,18 +16,18 @@ const SectionSecure = () => {
 						<p>{ t('sections.mobile.description') }</p>
 						<div className={styles.links} >
 							<Link href="https://apps.apple.com/ru/app/tangem/id1354868448?l=en">
-								<a>
-									<img src='/img/secure/icon-apple.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
+								<a rel="nofollow">
+									<img src='/img/secure/appstore-icon.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
 								</a>
 							</Link>
 							<Link href="https://play.google.com/store/apps/details?id=com.tangem.wallet&hl=en&gl=US">
-								<a>
-									<img src='/img/secure/icon-google.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
+								<a rel="nofollow">
+									<img src='/img/secure/google-play-icon.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
 								</a>
 							</Link>
 							<Link href="https://github.com/tangem/tangem-binaries/raw/master/app-release.apk">
-								<a>
-									<img src='/img/secure/icon-android-apk.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
+								<a rel="nofollow">
+									<img src='/img/secure/android-apk-icon.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
 								</a>
 							</Link>
 						</div>
@@ -35,7 +35,9 @@ const SectionSecure = () => {
 					<div className={styles.github}>
 						<span>{ t('sections.mobile.on-github') }</span>
 						<div className={styles.ghname}>
-							<img width="24" height="24" src='/svg/github-repo.svg' alt='GitHub'/>
+							<a href="https://github.com/tangem" target="_blank" rel="nofollow noopener noreferrer">
+								<img width="24" height="24" src='/svg/github-repo.svg' alt='GitHub'/>
+							</a>
 							<span>GitHub</span>
 						</div>
 					</div>

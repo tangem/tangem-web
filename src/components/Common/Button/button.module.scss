@@ -1,0 +1,59 @@
+@use "../../../styles/colors";
+
+.button {
+  border-radius: 100px;
+  font-weight: normal;
+  text-align: center;
+  letter-spacing: 0;
+  transition: 0.25s;
+
+  &.small {
+    font-size: 15px;
+    line-height: 1;
+    padding: 5.5px 11px;
+
+    @media (min-width: 768px) {
+      font-size: 17px;
+      padding: 6px 14px;
+      height: 30px;
+    }
+  }
+
+  &.medium {
+    font-size: 17px;
+    line-height: 22px;
+    padding: 12px 30px;
+
+    @media (min-width: 768px) {
+      padding: 15px 34px;
+      font-size: 20px;
+    }
+  }
+
+  &.primary {
+    &.light {
+      color: #FFFFFF;
+      background: #000;
+
+      &:hover {
+        background: #333;
+      }
+    }
+
+    &.dark {
+      background: #FFFFFF;
+      color: #000;
+    }
+  }
+
+  &.secondary {
+    color: #000;
+    border: 1px solid #000;
+    background: none;
+
+    &:hover {
+      background: #333;
+      color: #FFF;
+    }
+  }
+}

@@ -3,6 +3,7 @@ import styles from './hero.module.scss';
 import {t} from 'i18next';
 import classNames from "classnames";
 import YouTubeVideo from "../../Common/YouTubeVideo";
+import Button from "../../Common/Button";
 
 const SectionHero = ({ toggleBuy }) => {
 	const [videoStarted, setVideoStarted] = useState(false);
@@ -13,7 +14,7 @@ const SectionHero = ({ toggleBuy }) => {
 		    <div className={classNames(styles.title, {[styles.long]: true })}>
 			    <h1>{ t('sections.safe.title') }</h1>
 			    <p>{ t('sections.safe.description') }</p>
-			    <button onClick={toggleBuy}>{ t('buttons.buy-now') }</button>
+			    <Button onClick={toggleBuy} appearance='primary' theme='light'>{ t('buttons.buy-now') }</Button>
 				</div>
 				<div className={styles.phone}>
 					<picture>
@@ -23,9 +24,7 @@ const SectionHero = ({ toggleBuy }) => {
 						<source srcSet="/img/hero/phone-mobile@1x.avif 1x, /img/hero/phone-mobile@2x.avif 2x" type="image/avif" />
 						<source srcSet="/img/hero/phone-mobile@1x.webp 1x, /img/hero/phone-mobile@2x.webp 2x" type="image/webp" />
 						<img
-							loading='lazy'
-							decoding='async'
-							alt='Tangem hero image'
+							alt={t('sections.safe.title')}
 							src='/img/hero/phone-mobile@1x.png'
 							srcSet="/img/hero/phone-mobile@2x.png 2x"
 						/>
@@ -34,20 +33,6 @@ const SectionHero = ({ toggleBuy }) => {
 			</div>
 			<div className={styles.video}>
 				<div className={styles.frame}>
-					<picture>
-						<source media='(min-width: 768px)' srcSet="/img/hero/video-cover@1x.avif 1x, /img/hero/video-cover@2x.avif 2x" type="image/avif" />
-						<source media='(min-width: 768px)' srcSet="/img/hero/video-cover@1x.webp 1x, /img/hero/video-cover@2x.webp 2x" type="image/webp" />
-						<source media='(min-width: 768px)' srcSet="/img/hero/video-cover@1x.png 1x, /img/hero/video-cover@2x.png 2x" type="image/png" />
-						<source srcSet="/img/hero/video-cover-mobile@1x.avif 1x, /img/hero/video-cover-mobile@2x.avif 2x" type="image/avif" />
-						<source srcSet="/img/hero/video-cover-mobile@1x.webp 1x, /img/hero/video-cover-mobile@2x.webp 2x" type="image/webp" />
-						<img
-							loading='lazy'
-							decoding='async'
-							alt='Tangem hero image'
-							src='/img/hero/video-cover-mobile@1x.png'
-							srcSet="/img/hero/video-cover-mobile@2x.png 2x"
-						/>
-					</picture>
 					<button className={styles.play} onClick={() => setVideoStarted(true)}>
 						<img src='/svg/play.svg' alt='play' loading='lazy' />
 					</button>
@@ -58,4 +43,4 @@ const SectionHero = ({ toggleBuy }) => {
   )
 }
 
-export default SectionHero
+export default SectionHero;

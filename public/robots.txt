@@ -1,0 +1,11 @@
+User-agent: Yandex
+Disallow: /en
+Sitemap: https://tangem.com/sitemap.xml
+User-agent: *
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.gi
+Allow: /*.svg
+Sitemap: https://tangem.com/sitemap.xml

@@ -13,7 +13,7 @@
   },
   "sections": {
     "safe": {
-      "title": "The safest crypto wallet for everyone",
+      "title": "The safest crypto wallet\nfor everyone",
       "description": "Tangem Wallet lets you store your crypto assets secure and easily accessible while keeping private keys contained in your card."
     },
     "backup": {
@@ -91,7 +91,8 @@
     "world": {
       "title": "Bringing Crypto to\nthe world together",
       "description": "More than 500,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
-      "cards": "500,000 cards"
+      "cards": "cards",
+      "cards-number": "500,000"
     },
     "delivery": {
       "title": "Doesn’t matter\nwhere to buy",
