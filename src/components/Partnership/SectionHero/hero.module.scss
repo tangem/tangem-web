@@ -1,4 +1,5 @@
 @use "../../../styles/colors";
+@use "../../../styles/function" as *;
 
 .hero {
   position: relative;
@@ -36,28 +37,26 @@
     background: rgba(255, 255, 255, 0.1);
     border-radius: 100px;
     padding: 4px 15px;
-    font-size: 15px;
+    font-size: calc-clamp(0.9375rem, 1.25rem);
     line-height: 22px;
     display: inline-block;
     letter-spacing: 0;
 
     @media (min-width: 768px) {
-      font-size: 20px;
       padding: 9px 20px;
     }
   }
 
   h1 {
-    font-size: 46px;
     font-weight: 500;
     line-height: 0.95;
     margin: 16px 16px 24px;
     text-align: center;
     letter-spacing: 0;
+    font-size: calc-clamp(2.875rem, 5rem);
 
     @media (min-width: 768px) {
       margin: 24px 0;
-      font-size: 80px;
       font-weight: 400;
       max-width: 620px;
       text-align: start;
@@ -65,7 +64,7 @@
   }
 
   p {
-    font-size: 18px;
+    font-size: calc-clamp(1.125rem, 1.5rem);
     line-height: 1.3;
     color: rgba(255, 255, 255, 0.5);
     text-align: center;
@@ -74,7 +73,6 @@
 
     @media (min-width: 768px) {
       max-width: 420px;
-      font-size: 24px;
       margin-inline: 0;
       text-align: start;
     }
@@ -118,7 +116,6 @@
     height: 55%;
     top: 14%;
     left: 5.3%;
-
     background-image: url('/svg/business-hero-gradient.svg');
     background-size: 100%;
     background-position: center;
