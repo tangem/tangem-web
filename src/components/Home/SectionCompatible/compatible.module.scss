@@ -1,51 +1,48 @@
+@use "../../../styles/function" as *;
+
 .compatible {
   position: relative;
 }
 
 .title {
-  margin-top: 92px;
-  text-align: center;
   position: relative;
+  margin-top: calc-clamp(5.75rem, 9.0625rem);
+  text-align: center;
 
   @media (min-width: 768px) {
-    margin-top: 145px;
     max-width: 730px;
-
   }
 
   h2 {
+    width: 100%;
     margin-bottom: 24px;
+    color: rgb(9 14 19);
     font-weight: 400;
-    font-size: 46px;
+    font-size: calc-clamp(2.875rem, 5rem);
     line-height: 0.95;
     letter-spacing: -0.02em;
-    color: #090E13;
-    width: 100%;
     padding-inline: 35px;
 
     @media (min-width: 768px) {
+      color: rgb(0 0 0);
       font-weight: 500;
-      font-size: 80px;
       line-height: 0.9;
-      color: #000000;
       letter-spacing: 0;
       padding-inline: 0;
     }
   }
 
   p {
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.3;
-    color: #686868;
-    padding-inline: 35px;
     width: 100%;
-    margin-bottom: 56px;
+    margin-bottom: calc-clamp(3.5rem, 5rem);
+    color: rgb(104 104 104);
+    font-weight: 400;
+    font-size: calc-clamp(1.125rem, 1.5rem);
+    line-height: 1.3;
+    padding-inline: 35px;
 
     @media (min-width: 768px) {
       padding-inline: 0;
-      font-size: 24px;
-      margin-bottom: 80px;
     }
   }
 }
