@@ -24,7 +24,7 @@
   color: colors.$header-text-light;
   background: rgb(248 249 249 / 70%);
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     background: rgb(255 255 255 / 20%);
   }
 }
@@ -38,7 +38,7 @@
   height: 47px;
   padding-left: max(1rem, calc(50% - 620px));
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     justify-content: start;
     width: 100%;
     height: 60px;
@@ -48,7 +48,9 @@
 .menu {
   display: flex;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
+    justify-content: space-between;
+    width: 100%;
     height: 100%;
   }
 
@@ -61,30 +63,42 @@
     height: 28px;
     cursor: pointer;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       display: none;
     }
+
+    > span {
+      &::before {
+        top: -8px;
+        content: "";
+      }
+
+      &::after {
+        top: 8px;
+        content: "";
+      }
+
+      &,
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: colors.$header-text-light;
+
+        @include mixins.motion {
+          transition: 0.25s;
+        }
+
+        .dark & {
+          background-color: colors.$header-text-dark;
+        }
+      }
+    }
   }
 
-  label > span,
-  label > span::before,
-  label > span::after {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 2px;
-    background-color: colors.$header-text-light;
-
-    @include mixins.motion {
-      transition: 0.25s;
-    }
-
-    .dark & {
-      background-color: colors.$header-text-dark;
-    }
-  }
-
-  ul {
+  .items {
     position: fixed;
     top: 0;
     right: -100%;
@@ -98,6 +112,34 @@
     box-shadow: 1px 0 6px rgb(9 14 19 / 20%);
     visibility: hidden;
 
+    @media (min-width: 768px) {
+      position: relative;
+      right: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 0 50px;
+      background: transparent;
+      box-shadow: none;
+      visibility: visible;
+      transition-duration: unset;
+    }
+  }
+
+  ul {
+    display: block;
+    width: 10rem;
+    list-style: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      height: 100%;
+    }
+
     @include mixins.motion {
       transition: 0.25s;
     }
@@ -106,23 +148,10 @@
       background-color: colors.$header-bg-dark;
       box-shadow: 1px 0 6px rgb(255 255 255 / 20%);
 
-      @media (min-width: 768px) {
+      @include mixins.respond-to-medium {
         background: transparent;
         box-shadow: none;
       }
-    }
-
-    @media (min-width: 768px) {
-      position: relative;
-      right: auto;
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      padding: 0 50px;
-      background: transparent;
-      box-shadow: none;
-      visibility: visible;
-      transition-duration: unset;
     }
   }
 
@@ -143,7 +172,7 @@
       transition: 0.25s;
     }
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       align-items: center;
       height: 100%;
     }
@@ -170,7 +199,7 @@
   .toggle {
     opacity: 0;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       display: none;
     }
 
@@ -189,7 +218,7 @@
         }
       }
 
-      ~ ul {
+      ~ .items {
         right: 0;
         visibility: visible;
       }

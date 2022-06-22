@@ -4,11 +4,15 @@
   "menu": {
     "wallet": "Кошелек",
     "partnership": "Партнерство",
-    "developers": "Developers"
+    "developers": "Developers",
+    "company": "Компания"
   },
   "pages": {
     "partnership": {
       "title": "Партнерские программы - Tangem"
+    },
+    "company": {
+      "title": "Компания Tangem"
     }
   },
   "sections": {
@@ -97,6 +101,110 @@
     "delivery": {
       "title": "Безопасная покупка в любом месте",
       "description": "Надежность кошелька будет проверяться приложением при активации клиентом независимо от места покупки."
+    },
+    "company": {
+      "title": "Компания",
+      "description": "Tangem — высокотехнологичная компания в сфере блокчейнов, основанная в 2017 году. Наша штаб-квартира находится в Швейцарии, а филиалы расположены в Северной Америке, Восточной Европе и Азиатско-Тихоокеанском регионе.",
+      "quote": "Tangem Wallet — это последний шаг для 8 миллионов человек в крипто вселенную.",
+      "about-1": "Основная идея Tangem – принести криптовалюты в массы с помощью уникальной комбинации аппаратного кошелька на основе смарт-карты и мобильных приложений.",
+      "about-2": "Сегодня компания владеет и продвигает технологию аппаратного холодного кошелька для крипто активов с безопасным и простым UX в 108 странах. Скачайте, настройте и переходите к использованию вашего кошелька всего за 1 минуту. С нами ваши крипто активы всегда будут в безопасности. Храните ваши активы в надежном месте. Tangem предлагает мультиподдержку растущего числа токенов одним кошельком."
+    },
+    "team": {
+      "title": "Наша команда",
+      "persons": {
+        "kurennykh": {
+          "name": "Андрей Куреных",
+          "link": "",
+          "position": "Co-founder & CEO",
+          "description": "Более 20 лет опыта работы в сфере технологий и менеджмента."
+        },
+        "nikolyuk": {
+          "name": "Сергей Николюк",
+          "link": "",
+          "position": "Managing Co-Director",
+          "description": "Исполнительный директор с более чем 4-летним опытом руководства и увеличения роста инвестиций. Опыт работы в сфере комплаенс более 7 лет. Более лет опыта работы в сфере финансов."
+        },
+        "kharinov": {
+          "name": "Сергей Харинов",
+          "link": "",
+          "position": "Managing Co-Director, Business development",
+          "description": "Более 17 лет в индустрии рынков капитала, 11 лет опыта работы в качестве генерального директора/управляющего директора по инвестиционному бизнесу в крупнейшем брокерском бизнесе (Альфа-Банк, ВТБ, Сбер)."
+        },
+        "lazutkin": {
+          "name": "Андрей Лазуткин",
+          "link": "",
+          "position": "CTO",
+          "description": "Технический руководитель, ориентированный на результат. Опытный предприниматель с ключевыми ролями в стартапе от создания до успешного выхода на рынок. Опыт разработки программного обеспечения более 10 лет."
+        },
+        "govor": {
+          "name": "Евгения Говор",
+          "link": "",
+          "position": "COO",
+          "description": ""
+        },
+        "sondhi": {
+          "name": "Виджай Сондхи",
+          "link": "",
+          "position": "Board Of Directors member",
+          "description": "Более 27 лет в финансах и менеджменте, финансовый директор и генеральный директор в финансовых учреждениях, финансовых технологиях и платежах."
+        }
+      }
+    },
+    "partners": {
+      "technology": {
+        "title": "Партнеры по технологии",
+        "list": {
+          "samsung": "Samsung",
+          "nxp": "NXP",
+          "umc": "UMC",
+          "visa": "Visa",
+          "kudelski-security": "Kudelski Security",
+          "cortus": "Cortus",
+          "applus": "Applus"
+        }
+      },
+      "product": {
+        "title": "Партнеры по продукту",
+        "list": {
+          "swee-pay": "SweePay",
+          "cryptomaan": "cryptomaan",
+          "gbbc": "Global Blockchain business Council",
+          "stellar": "Stellar",
+          "digix": "Digix",
+          "geno-bank": "GenoBank.io",
+          "sbi-vc-trade": "SBI VC Trade",
+          "xumm": "Xumm",
+          "bitcoin": "Bitcoin",
+          "cardano": "Cardano",
+          "input": "Input",
+          "swiss-key": "Swiss Key",
+          "new-balance": "New Balance",
+          "cycle-bit": "Cycle bit",
+          "soramitsu": "Soramitsu",
+          "gimly": "Gimly",
+          "ducatus": "Ducatus",
+          "xrpl-labs": "XRPL labs",
+          "matterfi": "MateerFi",
+          "wallet-connect": "Wallet connect",
+          "g999": "G999",
+          "draper": "Draper",
+          "hyperledger": "Hyperledger",
+          "linxens": "Linxens",
+          "tavonni": "Tavonni",
+          "vault-logic": "Vault logic",
+          "ac-holdings": "AustriaCard Holdings",
+          "nodle": "Nodle",
+          "equip-ic": "EquipIc supply chain",
+          "bitcoin-hk": "Bitcoin Association Honk Kong",
+          "aurus": "Aurus",
+          "start2coin": "Start2Coin",
+          "cryptonist": "Cryptonist"
+        }
+      }
+    },
+    "hiring": {
+      "title": "Работа у нас",
+      "description": "Присоединяйтесь к нам, ведь мы несем технологию блокчейна миру."
     }
   },
   "buttons": {
@@ -106,7 +214,8 @@
     "assets-short": "Валюты",
     "how-it-works": "Видео",
     "contact-us": "Написать нам",
-    "submit": "Отправить"
+    "submit": "Отправить",
+    "join-us": "Присоединиться"
   },
   "faq": {
     "title": "Часто задаваемые вопросы",
