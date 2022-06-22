@@ -5,14 +5,14 @@
     "wallet": "Кошелек",
     "partnership": "Партнерство",
     "developers": "Developers",
-    "about": "About"
+    "company": "Компания"
   },
   "pages": {
     "partnership": {
-      "title": "Partnership program - Tangem"
+      "title": "Партнерские программы - Tangem"
     },
     "company": {
-      "title": ""
+      "title": "Компания Tangem"
     }
   },
   "sections": {
@@ -114,42 +114,92 @@
       "persons": {
         "kurennykh": {
           "name": "Андрей Куреных",
+          "link": "",
           "position": "Co-founder & CEO",
           "description": "Более 20 лет опыта работы в сфере технологий и менеджмента."
         },
         "nikolyuk": {
           "name": "Сергей Николюк",
+          "link": "",
           "position": "Managing Co-Director",
           "description": "Исполнительный директор с более чем 4-летним опытом руководства и увеличения роста инвестиций. Опыт работы в сфере комплаенс более 7 лет. Более лет опыта работы в сфере финансов."
         },
         "kharinov": {
           "name": "Сергей Харинов",
+          "link": "",
           "position": "Managing Co-Director, Business development",
           "description": "Более 17 лет в индустрии рынков капитала, 11 лет опыта работы в качестве генерального директора/управляющего директора по инвестиционному бизнесу в крупнейшем брокерском бизнесе (Альфа-Банк, ВТБ, Сбер)."
         },
         "lazutkin": {
-          "name": "Andrey Lazutkin",
+          "name": "Андрей Лазуткин",
+          "link": "",
           "position": "CTO",
-          "description": "Result-oriented Technical Lead. Experienced entrepreneur with key roles in a startup from inception to successful exit. More than 10 years of software development experience."
+          "description": "Технический руководитель, ориентированный на результат. Опытный предприниматель с ключевыми ролями в стартапе от создания до успешного выхода на рынок. Опыт разработки программного обеспечения более 10 лет."
         },
         "govor": {
-          "name": "Evgeniya Govor",
+          "name": "Евгения Говор",
+          "link": "",
           "position": "COO",
-          "description": "Result-oriented Technical Lead. Experienced entrepreneur with key roles in a startup from inception to successful exit. More than 10 years of software development experience."
+          "description": ""
         },
         "sondhi": {
-          "name": "Vijay Sondhi",
+          "name": "Виджай Сондхи",
+          "link": "",
           "position": "Board Of Directors member",
-          "description": "More than 27 years in Finance and Management, CFO & CEO in Financial Institutions, FinTech and Payments."
+          "description": "Более 27 лет в финансах и менеджменте, финансовый директор и генеральный директор в финансовых учреждениях, финансовых технологиях и платежах."
         }
       }
     },
     "partners": {
       "technology": {
-        "title": "Technology partners"
+        "title": "Партнеры по технологии",
+        "list": {
+          "samsung": "Samsung",
+          "nxp": "NXP",
+          "umc": "UMC",
+          "visa": "Visa",
+          "kudelski-security": "Kudelski Security",
+          "cortus": "Cortus",
+          "applus": "Applus"
+        }
       },
       "product": {
-        "title": "Product partners"
+        "title": "Партнеры по продукту",
+        "list": {
+          "swee-pay": "SweePay",
+          "cryptomaan": "cryptomaan",
+          "gbbc": "Global Blockchain business Council",
+          "stellar": "Stellar",
+          "digix": "Digix",
+          "geno-bank": "GenoBank.io",
+          "sbi-vc-trade": "SBI VC Trade",
+          "xumm": "Xumm",
+          "bitcoin": "Bitcoin",
+          "cardano": "Cardano",
+          "input": "Input",
+          "swiss-key": "Swiss Key",
+          "new-balance": "New Balance",
+          "cycle-bit": "Cycle bit",
+          "soramitsu": "Soramitsu",
+          "gimly": "Gimly",
+          "ducatus": "Ducatus",
+          "xrpl-labs": "XRPL labs",
+          "matterfi": "MateerFi",
+          "wallet-connect": "Wallet connect",
+          "g999": "G999",
+          "draper": "Draper",
+          "hyperledger": "Hyperledger",
+          "linxens": "Linxens",
+          "tavonni": "Tavonni",
+          "vault-logic": "Vault logic",
+          "ac-holdings": "AustriaCard Holdings",
+          "nodle": "Nodle",
+          "equip-ic": "EquipIc supply chain",
+          "bitcoin-hk": "Bitcoin Association Honk Kong",
+          "aurus": "Aurus",
+          "start2coin": "Start2Coin",
+          "cryptonist": "Cryptonist"
+        }
       }
     },
     "hiring": {
@@ -165,7 +215,7 @@
     "how-it-works": "Видео",
     "contact-us": "Написать нам",
     "submit": "Отправить",
-    "join-us": "Join Us"
+    "join-us": "Присоединиться"
   },
   "faq": {
     "title": "Часто задаваемые вопросы",

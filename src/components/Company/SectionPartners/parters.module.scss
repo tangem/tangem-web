@@ -1,0 +1,66 @@
+@use "../../../styles/function" as *;
+@use "../../../styles/mixins";
+
+.partners {
+  margin-bottom: calc-clamp(5rem, 12.5rem);
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-inline: max(1rem, calc(50% - 620px));
+
+  @include mixins.respond-to-medium {
+    letter-spacing: 0;
+    text-align: start;
+  }
+}
+
+.title {
+  margin-bottom: calc-clamp(2.5rem, 5rem);
+  color: rgb(0 0 0);
+  font-weight: 500;
+  font-size: calc-clamp(2.25rem, 3.75rem);
+  line-height: 1;
+}
+
+.grid {
+  display: grid;
+  grid-auto-rows: 111px;
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
+  gap: 13px;
+  margin-bottom: 80px;
+
+  @include mixins.respond-to-medium {
+    grid-auto-rows: 154px;
+    grid-template-columns: repeat(auto-fit, minmax(225px, 1fr));
+    gap: 23px;
+    margin-bottom: 85px;
+  }
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: rgb(255 255 255);
+  border-radius: 24px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 6%);
+
+  @include mixins.respond-to-medium {
+    border-radius: 32px;
+  }
+}
+
+.wrapper {
+  position: relative;
+  cursor: pointer;
+
+  &:hover .card,
+  &:focus .card {
+    position: relative;
+    transform: translateY(-4px);
+
+    @include mixins.motion {
+      transition: 0.25s;
+    }
+  }
+}

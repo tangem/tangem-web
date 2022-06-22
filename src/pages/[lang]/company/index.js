@@ -1,6 +1,6 @@
 import useModal from "../../../hooks/useModal";
 import Head from "next/head";
-import {t} from "i18next";
+import i18next, {t} from "i18next";
 import Header from "../../../components/Common/Header";
 import SectionHero from "../../../components/Company/SectionHero";
 import Modal from "../../../components/Home/Modal";
@@ -11,8 +11,10 @@ import React from "react";
 import SectionTeam from "../../../components/Company/SectionTeam";
 import SectionPartners from "../../../components/Company/SectionPartners";
 import SectionHiring from "../../../components/Company/SectionHiring";
+import * as styles from "./company.module.scss";
 
 const LangCompany = () => {
+	const { language } = i18next;
 	const { isShowing: isBuyShowing, toggle: toggleBuy } = useModal('pricing')
 
 	return (
@@ -30,16 +32,16 @@ const LangCompany = () => {
 				<meta property="og:image" content="https://tangem.com/img/hero/phone@1x.png" />
 				<meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
 				<meta property="og:locale" content="en_US" />
-				<title>{t('pages.partnership.title')}</title>
+				<title>{t('pages.company.title')}</title>
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
 			</Head>
-			<Header isDark={false} toggleBuy={toggleBuy} />
+			<Header isDark={false} toggleBuy={toggleBuy} className={styles.header} />
 			<main>
 				<SectionHero />
 				<SectionTeam />
 				<SectionPartners />
-				<SectionHiring />
+				{ language === 'ru' && <SectionHiring /> }
 				<Modal
 					isShowing={isBuyShowing}
 					hide={toggleBuy}

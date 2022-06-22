@@ -6,7 +6,7 @@
   padding-top: calc-clamp(5.25rem, 12.5rem);
   letter-spacing: -0.02em;
   text-align: center;
-  margin-inline: max(1rem, calc(50% - 620px));
+  margin-inline: max(35px, calc(50% - 620px));
 
   @include mixins.respond-to-medium {
     letter-spacing: 0;
