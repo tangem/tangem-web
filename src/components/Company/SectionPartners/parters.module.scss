@@ -19,6 +19,10 @@
   font-weight: 500;
   font-size: calc-clamp(2.25rem, 3.75rem);
   line-height: 1;
+
+  @include mixins.respond-to-medium {
+    line-height: 0.95;
+  }
 }
 
 .grid {
