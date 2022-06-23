@@ -45,7 +45,7 @@
     },
     "partnership": {
       "title": "Grow your business with Tangem",
-      "description": "Take your business to the next level by joining our growing network of partners",
+      "description": "Take your business to the next level by joining our growing network of partners.",
       "label": "Partner Programs"
     },
     "reseller": {
@@ -54,19 +54,19 @@
       "features": {
         "price" : {
           "title": "Best price",
-          "description": "The best deals on the market for you."
+          "description": "The best deals on the market for you"
         },
         "personal": {
           "title": "Personal account\nmanager",
-          "description": "Our specialist is always in touch and ready to help."
+          "description": "Our specialist is always in touch and ready to help"
         },
         "materials": {
           "title": "Marketing materials",
-          "description": "We provide full comprehensive  sales materials and product information."
+          "description": "We provide full comprehensive  sales materials and product information"
         },
         "delivery": {
           "title": "Free delivery to\nyour warehouse",
-          "description": "You do not need to pay anything, we will bring the product to the warehouse ourselves."
+          "description": "You do not need to pay anything, we will bring the product to the warehouse ourselves"
         }
       }
     },
@@ -76,30 +76,30 @@
       "features": {
         "promote" : {
           "title": "You promote",
-          "description": "Tell your audience about Tangem products."
+          "description": "Tell your audience about Tangem products"
         },
         "sell": {
           "title": "We sell",
-          "description": "Our team take care of the entire sales process."
+          "description": "Our team take care of the entire sales process"
         },
         "delivery": {
           "title": "We deliver",
-          "description": "We will control the whole process from packaging to receiving."
+          "description": "We will control the whole process from packaging to receiving"
         },
         "revenue": {
           "title": "Revenue shared",
-          "description": "Take your benefits from collaboration."
+          "description": "Take your benefits from collaboration"
         }
       }
     },
     "world": {
-      "title": "Bringing Crypto to the world together",
+      "title": "Bringing Crypto to\nthe world together",
       "description": "More than 500,000 cards have been produced and sold. Satisfied customers in 170 countries. And it does not stop there.",
       "cards": "cards",
       "cards-number": "500,000"
     },
     "delivery": {
-      "title": "Doesn’t matter where to buy",
+      "title": "Doesn’t matter\nwhere to buy",
       "description": "Cards are secure by design and nothing can be done to them before it reaches your customer. Tangem app further ensures product security at activation."
     },
     "company": {
@@ -140,10 +140,11 @@
           "name": "Evgeniya Govor",
           "link": "",
           "position": "COO",
-          "description": "Result-oriented Technical Lead. Experienced entrepreneur with key roles in a startup from inception to successful exit. More than 10 years of software development experience."
+          "description": "More than 10 years of experience in corporate finance, operational consulting, and startups. As a COO, Evgeniya is responsible for the financial and operational activity of the Group."
         },
         "sondhi": {
           "name": "Vijay Sondhi",
+          "link": "",
           "position": "Board Of Directors member",
           "description": "More than 27 years in Finance and Management, CFO & CEO in Financial Institutions, FinTech and Payments."
         }
