@@ -24,7 +24,7 @@ const networkIcons = {
 		icon: <FantomIcon />,
 		title: 'Fantom'
 	},
-	'binance': {
+	'binancecoin': {
 		icon: <BinanceIcon />,
 		title: 'Binance'
 	},
