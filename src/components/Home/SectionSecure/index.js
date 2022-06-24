@@ -17,17 +17,17 @@ const SectionSecure = () => {
 						<div className={styles.links} >
 							<Link href="https://apps.apple.com/ru/app/tangem/id1354868448?l=en">
 								<a rel="nofollow">
-									<img src='/img/secure/appstore-icon.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
+									<img src='/svg/appstore.svg' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
 								</a>
 							</Link>
 							<Link href="https://play.google.com/store/apps/details?id=com.tangem.wallet&hl=en&gl=US">
 								<a rel="nofollow">
-									<img src='/img/secure/google-play-icon.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
+									<img src='/svg/google-play.svg' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
 								</a>
 							</Link>
 							<Link href="https://github.com/tangem/tangem-binaries/raw/master/app-release.apk">
 								<a rel="nofollow">
-									<img src='/img/secure/android-apk-icon.png' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
+									<img src='/svg/android-apk.svg' alt='Tangem Mobile App image' loading='lazy' decoding='async' />
 								</a>
 							</Link>
 						</div>

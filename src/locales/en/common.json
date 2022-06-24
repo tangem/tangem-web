@@ -4,11 +4,15 @@
   "menu": {
     "wallet": "Wallet",
     "partnership": "Partnership",
-    "developers": "Developers"
+    "developers": "Developers",
+    "company": "Company"
   },
   "pages": {
     "partnership": {
       "title": "Partnership program - Tangem"
+    },
+    "company": {
+      "title": "The company - Tangem"
     }
   },
   "sections": {
@@ -97,6 +101,110 @@
     "delivery": {
       "title": "Doesn’t matter\nwhere to buy",
       "description": "Cards are secure by design and nothing can be done to them before it reaches your customer. Tangem app further ensures product security at activation."
+    },
+    "company": {
+      "title": "Company",
+      "description": "Tangem is a high-tech company in the blockchain sector was founded in 2017, headquartered in Zug, Switzerland, with branches in North America, Eastern Europe, and APAC.",
+      "quote": "Tangem Wallet is the last mile between 8 billion people and the Crypto World.",
+      "about-1": "Tangem started with the idea of bringing cryptocurrencies to the masses using a unique combination of a smartcard-based hardware wallet and mobile applications.",
+      "about-2": "Company owns and promotes the technology of hardware cold-wallet for crypto assets with secure and simple UX in 170 countries today. Our customers enjoy setup time within 1 minute with the ultimate security level for crypto assets on their wallet. Tangem solutions offer multi-support of a growing number of thousadns of tokens by a single wallet."
+    },
+    "team": {
+      "title": "Executive Team",
+      "persons": {
+        "kurennykh": {
+          "name": "Andrey Kurennykh",
+          "link": "",
+          "position": "Co-founder & CEO",
+          "description": "More than 20 years of experience in Technologies & Management."
+        },
+        "nikolyuk": {
+          "name": "Sergey Nikolyuk",
+          "link": "",
+          "position": "Managing Co-Director",
+          "description": "CEO with over 4 years experience leading and increasing growth in investments. 7+ years experience in compliance. 13+ years experience in finance."
+        },
+        "kharinov": {
+          "name": "Sergey Kharinov",
+          "link": "",
+          "position": "Managing Co-Director, Business development",
+          "description": "17+ years in the capital markets industry, 11 years experience in CEO / IB Managing Director roles in the largest Brokerage business (Alfa-Bank, VTB, Sber)."
+        },
+        "lazutkin": {
+          "name": "Andrey Lazutkin",
+          "link": "",
+          "position": "CTO",
+          "description": "Digital Products & Technology Expert with more than 15 years of insightful experience in the FinTech Industry."
+        },
+        "govor": {
+          "name": "Evgeniya Govor",
+          "link": "",
+          "position": "COO",
+          "description": "More than 10 years of experience in corporate finance, operational consulting, and startups. As a COO, Evgeniya is responsible for the financial and operational activity of the Group."
+        },
+        "sondhi": {
+          "name": "Vijay Sondhi",
+          "link": "",
+          "position": "Board Of Directors member",
+          "description": "More than 27 years in Finance and Management, CFO & CEO in Financial Institutions, FinTech and Payments."
+        }
+      }
+    },
+    "partners": {
+      "technology": {
+        "title": "Technology partners",
+        "list": {
+          "samsung": "Samsung",
+          "nxp": "NXP",
+          "umc": "UMC",
+          "visa": "Visa",
+          "kudelski-security": "Kudelski Security",
+          "cortus": "Cortus",
+          "applus": "Applus"
+        }
+      },
+      "product": {
+        "title": "Product partners",
+        "list": {
+          "swee-pay": "SweePay",
+          "cryptomaan": "cryptomaan",
+          "gbbc": "Global Blockchain business Council",
+          "stellar": "Stellar",
+          "digix": "Digix",
+          "geno-bank": "GenoBank.io",
+          "sbi-vc-trade": "SBI VC Trade",
+          "xumm": "Xumm",
+          "bitcoin": "Bitcoin",
+          "cardano": "Cardano",
+          "input-output": "Input Output",
+          "swiss-key": "Swiss Key",
+          "new-balance": "New Balance",
+          "cycle-bit": "Cycle bit",
+          "soramitsu": "Soramitsu",
+          "gimly": "Gimly",
+          "ducatus": "Ducatus",
+          "xrpl-labs": "XRPL labs",
+          "matterfi": "MateerFi",
+          "wallet-connect": "Wallet connect",
+          "g999": "G999",
+          "draper": "Draper",
+          "hyperledger": "Hyperledger",
+          "linxens": "Linxens",
+          "tavonni": "Tavonni",
+          "vault-logic": "Vault logic",
+          "ac-holdings": "AustriaCard Holdings",
+          "nodle": "Nodle",
+          "equip-ic": "EquipIc supply chain",
+          "bitcoin-hk": "Bitcoin Association Honk Kong",
+          "aurus": "Aurus",
+          "start2coin": "Start2Coin",
+          "cryptonist": "Cryptonist"
+        }
+      }
+    },
+    "hiring": {
+      "title": "We’re hiring",
+      "description": "Join us as we bring blockchain technology to the world."
     }
   },
   "buttons": {
@@ -106,7 +214,8 @@
     "assets-short": "Assets",
     "how-it-works": "How it works",
     "contact-us": "Contact Us",
-    "submit": "Submit"
+    "submit": "Submit",
+    "join-us": "Join Us"
   },
   "faq": {
     "title": "Frequently Asked Questions",

@@ -54,4 +54,31 @@
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
+    <url>
+        <loc>https://tangem.com/en/company/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/company/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/company/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/company/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://tangem.com/ru/company/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/company/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/company/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/company/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://tangem.com/es/company/</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://tangem.com/en/company/" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://tangem.com/ru/company/" />
+        <xhtml:link rel="alternate" hreflang="es" href="https://tangem.com/es/company/" />
+        <lastmod>2022-06-01T00:00:00.000Z </lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
 </urlset>

@@ -1,28 +1,32 @@
 @use "../../../styles/colors";
+@use "../../../styles/mixins";
 
 .button {
-  border-radius: 100px;
   font-weight: normal;
-  text-align: center;
   letter-spacing: 0;
-  transition: 0.25s;
+  text-align: center;
+  border-radius: 100px;
+
+  @include mixins.motion {
+    transition: 0.25s;
+  }
 
   &.small {
+    padding: 5.5px 11px;
     font-size: 15px;
     line-height: 1;
-    padding: 5.5px 11px;
 
     @media (min-width: 768px) {
-      font-size: 17px;
-      padding: 6px 14px;
       height: 30px;
+      padding: 6px 14px;
+      font-size: 17px;
     }
   }
 
   &.medium {
+    padding: 12px 30px;
     font-size: 17px;
     line-height: 22px;
-    padding: 12px 30px;
 
     @media (min-width: 768px) {
       padding: 15px 34px;
@@ -32,28 +36,30 @@
 
   &.primary {
     &.light {
-      color: #FFFFFF;
-      background: #000;
+      color: rgb(255 255 255);
+      background: rgb(0 0 0);
 
-      &:hover {
-        background: #333;
+      &:hover,
+      &:focus {
+        background: rgb(51 51 51);
       }
     }
 
     &.dark {
-      background: #FFFFFF;
-      color: #000;
+      color: rgb(0 0 0);
+      background: rgb(255 255 255);
     }
   }
 
   &.secondary {
-    color: #000;
-    border: 1px solid #000;
+    color: rgb(0 0 0);
     background: none;
+    border: 1px solid rgb(0 0 0);
 
-    &:hover {
-      background: #333;
-      color: #FFF;
+    &:hover,
+    &:focus {
+      color: rgb(255 255 255);
+      background: rgb(51 51 51);
     }
   }
 }

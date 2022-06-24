@@ -1,7 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
 import styles from './compatible.module.scss'
-import { useProgressiveImg } from '../../../hooks/useProgressiveImage'
 import {t} from "i18next";
 
 const SectionWebCompatible = () => {

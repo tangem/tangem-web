@@ -1,36 +1,43 @@
+@use "../../../styles/function" as *;
+
+.clear {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 2;
+  width: 22px;
+  height: 22px;
+  background-image: url("/svg/delete.svg");
+}
+
 .form {
   width: 100%;
-  padding-inline: 16px;
+  padding-inline: calc-clamp(1rem, 2.5rem);
 
   @media (min-width: 768px) {
     width: 680px;
-    padding-inline: 40px;
   }
 
   legend {
-    font-weight: normal;
-    color: #686868;
-    font-size: 15px;
-    line-height: 20px;
-    margin-bottom: 26px;
+    margin-bottom: calc-clamp(1.625rem, 2.5rem);
+    color: rgb(104 104 104);
+    font-size: calc-clamp(0.9375rem, 1.125rem);
+    line-height: 1.33;
 
     @media (min-width: 768px) {
-      font-size: 18px;
       line-height: 1.2;
-      margin-bottom: 40px;
     }
   }
 
   label {
-    display: flex;
     position: relative;
-    width: 100%;
+    display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: calc-clamp(1.25rem, 1.625rem);
 
     @media (min-width: 768px) {
       width: calc(50% - 10px);
-      margin-bottom: 26px;
     }
 
     &.full {
@@ -38,13 +45,12 @@
     }
 
     .label {
-      font-weight: 600;
-      font-size: 13px;
-      line-height: 1;
       margin-bottom: 10px;
+      font-weight: 600;
+      font-size: calc-clamp(0.8125rem, 1.125rem);
+      line-height: 1;
 
       @media (min-width: 768px) {
-        font-size: 18px;
         margin-bottom: 12px;
       }
     }
@@ -55,14 +61,14 @@
 
     .error {
       position: absolute;
+      bottom: -14px;
       font-size: 12px;
       line-height: 1;
-      bottom: -14px;
 
       @media (min-width: 768px) {
-        font-size: 16px;
         bottom: -18px;
-        color: #D80027;
+        color: rgb(216 0 39);
+        font-size: 16px;
       }
     }
 
@@ -75,8 +81,7 @@
 
   fieldset {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: space-between;
     width: 100%;
     max-width: 100%;
@@ -86,23 +91,46 @@
       margin-top: 40px;
     }
 
+    textarea {
+      height: 200px;
+      padding: 10px 12px;
+
+      @media (min-width: 768px) {
+        height: 218px;
+        padding: 8px 16px;
+      }
+
+      &:focus {
+        border: 1px solid rgb(134 134 134);
+        outline: 5px solid rgb(238 238 238);
+      }
+
+      &:valid ~ .error {
+        opacity: 0;
+      }
+
+      &:invalid {
+        border: 1px dashed rgb(216 0 39);
+      }
+    }
+
     .input {
-      background: #FFFFFF;
-      border: 1px solid #C4C4C4;
-      border-radius: 12px;
+      box-sizing: border-box;
+      width: 100%;
+      color: rgb(0 0 0);
       font-weight: normal;
       font-size: 15px;
       line-height: 30px;
-      color: #000000;
-      width: 100%;
-      box-sizing: border-box;
+      background: rgb(255 255 255);
+      border: 1px solid rgb(196 196 196);
+      border-radius: 12px;
 
       @media (min-width: 768px) {
         font-size: 18px;
       }
 
       &:invalid {
-        border: 1px dashed #D80027;
+        border: 1px dashed rgb(216 0 39);
       }
 
       &:valid ~ .error {
@@ -110,39 +138,16 @@
       }
 
       &:focus-within {
-        border: 1px solid #868686;
-        outline: 5px solid #EEEEEE;
-        box-shadow: 0 0 3px #ddd;
-      }
-    }
-
-    textarea {
-      height: 200px;
-      padding: 10px 12px;
-
-      @media (min-width: 768px) {
-        padding: 8px 16px;
-        height: 218px;
-      }
-
-      &:focus {
-        border: 1px solid #868686;
-        outline: 5px solid #EEEEEE;
-      }
-
-      &:invalid {
-        border: 1px dashed #D80027;
-      }
-
-      &:valid ~ .error {
-        opacity: 0;
+        border: 1px solid rgb(134 134 134);
+        outline: 5px solid rgb(238 238 238);
+        box-shadow: 0 0 3px rgb(221 221 221);
       }
     }
 
     input {
       height: 42px;
-      text-indent: 16px;
       padding-right: 40px;
+      text-indent: 16px;
 
       @media (min-width: 768px) {
         height: 46px;
@@ -152,40 +157,55 @@
 }
 
 .submit {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 12px 34px;
+  color: rgb(255 255 255);
   font-weight: normal;
   font-size: 17px;
   line-height: 22px;
-  background: #000000;
-  border-radius: 100px;
   text-align: center;
-  padding: 12px 34px;
-  color: #FFFFFF;
-  width: 100%;
-  margin-bottom: 16px;
+  background: rgb(0 0 0);
+  border-radius: 100px;
 
   @media (min-width: 768px) {
-    font-size: 20px;
-    line-height: 1.1;
     width: auto;
     margin-right: 16px;
-    margin-bottom: 0
+    margin-bottom: 0;
+    font-size: 20px;
+    line-height: 1.1;
   }
 
   &.loading {
-    color: #000000;
     position: relative;
+    color: rgb(0 0 0);
+
+    @media screen and (prefers-reduced-motion: reduce) {
+      &::after {
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 10px);
+        z-index: 522;
+        width: 20px;
+        height: 20px;
+        background: url("/img/business/spinner.png");
+        background-size: 20px;
+        animation: none;
+        content: "";
+      }
+    }
 
     &::after {
-      content: '';
-      width: 20px;
-      height: 20px;
       position: absolute;
       top: calc(50% - 10px);
       left: calc(50% - 10px);
       z-index: 522;
+      width: 20px;
+      height: 20px;
       background: url("/img/business/spinner.png");
       background-size: 20px;
       animation: rotate 1s linear infinite;
+      content: "";
     }
   }
 }
@@ -194,31 +214,22 @@
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(-360deg);
   }
 }
 
-.clear {
-  position: absolute;
-  width: 22px;
-  height: 22px;
-  background-image: url("/svg/delete.svg");
-  bottom: 12px;
-  right: 12px;
-  z-index: 2;
-}
-
 .success {
+  color: rgb(26 206 128);
   font-weight: normal;
   font-size: 18px;
   line-height: 30px;
-  color: #1ACE80;
 }
 
 .failure {
+  color: rgb(216 0 39);
   font-weight: normal;
   font-size: 18px;
   line-height: 30px;
-  color: #D80027;
 }

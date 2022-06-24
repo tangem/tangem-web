@@ -1,0 +1,85 @@
+@use "../../../styles/function" as *;
+@use "../../../styles/mixins";
+
+.hero {
+  margin-bottom: calc-clamp(5rem, 12.5rem);
+  padding-top: calc-clamp(5.25rem, 12.5rem);
+  letter-spacing: -0.02em;
+  text-align: center;
+  margin-inline: max(35px, calc(50% - 620px));
+
+  @include mixins.respond-to-medium {
+    letter-spacing: 0;
+    text-align: start;
+  }
+
+  .title {
+    margin-bottom: calc-clamp(1.5rem, 3.875rem);
+    color: rgb(0 0 0);
+    font-weight: 500;
+    font-size: calc-clamp(2.875rem, 5rem);
+    line-height: 0.95;
+  }
+
+  .description {
+    margin-bottom: 80px;
+    color: rgb(0 0 0);
+    font-size: calc-clamp(1.375rem, 1.875rem);
+    line-height: 1.3;
+
+    @include mixins.respond-to-medium {
+      max-width: 780px;
+      font-weight: 500;
+    }
+  }
+
+  .quote {
+    position: relative;
+    margin-bottom: 80px;
+    padding-top: 88px;
+    color: rgb(0 0 0);
+    font-weight: 500;
+    font-size: calc-clamp(1.875rem, 3.4375rem);
+    line-height: 1.16;
+
+    @include mixins.respond-to-medium {
+      display: flex;
+      align-items: center;
+      max-width: 1177px;
+      min-height: 149px;
+      padding-top: 0;
+      padding-left: 236px;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 64px;
+      background: url("/svg/quotes.svg") no-repeat center 0;
+      background-size: 77px 64px;
+      opacity: 0.1;
+      content: "";
+
+      @include mixins.respond-to-medium {
+        width: 176px;
+        height: 100%;
+        min-height: 149px;
+        background-position: 0 center;
+        background-size: auto;
+      }
+    }
+  }
+
+  .about {
+    margin-bottom: calc-clamp(1.125rem, 1.4375rem);
+    color: rgb(104 104 104);
+    font-size: calc-clamp(1.125rem, 1.5rem);
+    line-height: 1.3;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,65 +1,210 @@
 @use "../../../styles/colors";
+@use "../../../styles/mixins";
 @use "sass:color";
 
 .header {
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 50;
-  position: fixed;
-  backdrop-filter: blur(40px);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  backdrop-filter: blur(40px);
 }
 
 .dark {
-  background: rgba(colors.$header-bg-dark, 0.5);
   color: colors.$header-text-dark;
+  background: rgb(0 0 0 / 50%);
 }
 
 .light {
   color: colors.$header-text-light;
-  background: rgba(248, 249, 249, 0.7);
+  background: rgb(248 249 249 / 70%);
 
-  @media (min-width: 768px) {
-    background: rgba(colors.$header-bg-light, 0.2);
+  @include mixins.respond-to-medium {
+    background: rgb(255 255 255 / 20%);
   }
-
 }
 
 .nav {
-  width: 100%;
-  padding-left: max(1rem, calc(50% - 620px));
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 47px;
+  justify-content: space-between;
+  width: 100%;
   max-width: calc(100% - 2rem);
+  height: 47px;
+  padding-left: max(1rem, calc(50% - 620px));
 
-  @media (min-width: 768px) {
-    width: 100%;
+  @include mixins.respond-to-medium {
     justify-content: start;
+    width: 100%;
     height: 60px;
   }
 }
 
 .menu {
   display: flex;
-  @media (min-width: 768px) {
+
+  @include mixins.respond-to-medium {
+    justify-content: space-between;
+    width: 100%;
     height: 100%;
   }
 
-  input {
-    opacity: 0;
+  label {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+
+    @include mixins.respond-to-medium {
+      display: none;
+    }
+
+    > span {
+      &::before {
+        top: -8px;
+        content: "";
+      }
+
+      &::after {
+        top: 8px;
+        content: "";
+      }
+
+      &,
+      &::before,
+      &::after {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: colors.$header-text-light;
+
+        @include mixins.motion {
+          transition: 0.25s;
+        }
+
+        .dark & {
+          background-color: colors.$header-text-dark;
+        }
+      }
+    }
+  }
+
+  .items {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    display: block;
+    width: 10rem;
+    height: 100vh;
+    margin: 0;
+    padding: 3rem 0;
+    list-style: none;
+    background-color: colors.$header-bg-light;
+    box-shadow: 1px 0 6px rgb(9 14 19 / 20%);
+    visibility: hidden;
 
     @media (min-width: 768px) {
+      position: relative;
+      right: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      height: 100%;
+      padding: 0 50px;
+      background: transparent;
+      box-shadow: none;
+      visibility: visible;
+      transition-duration: unset;
+    }
+  }
+
+  ul {
+    display: block;
+    width: 10rem;
+    list-style: none;
+
+    @media (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      width: auto;
+      height: 100%;
+    }
+
+    @include mixins.motion {
+      transition: 0.25s;
+    }
+
+    .dark & {
+      background-color: colors.$header-bg-dark;
+      box-shadow: 1px 0 6px rgb(255 255 255 / 20%);
+
+      @include mixins.respond-to-medium {
+        background: transparent;
+        box-shadow: none;
+      }
+    }
+  }
+
+  li {
+    position: relative;
+    display: flex;
+    font-weight: 400;
+    font-size: 17px;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: unset;
+    text-decoration: none;
+    opacity: 0.5;
+    margin-inline: 16px 20px;
+    padding-block: 16px;
+
+    @include mixins.motion {
+      transition: 0.25s;
+    }
+
+    @include mixins.respond-to-medium {
+      align-items: center;
+      height: 100%;
+    }
+
+    &.active {
+      opacity: 1;
+
+      &::before {
+        position: absolute;
+        right: -6px;
+        bottom: -1px;
+        left: -6px;
+        height: 2px;
+        background: colors.$header-text-light;
+        content: "";
+
+        .dark & {
+          background: colors.$header-text-dark;
+        }
+      }
+    }
+  }
+
+  .toggle {
+    opacity: 0;
+
+    @include mixins.respond-to-medium {
       display: none;
     }
 
     &:checked {
-      & ~ label > span {
+      ~ label > span {
         transform: rotate(45deg);
 
         &::before {
@@ -73,123 +218,9 @@
         }
       }
 
-      & ~ ul {
-        visibility: visible;
+      ~ .items {
         right: 0;
-      }
-    }
-  }
-
-  label {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    z-index: 1;
-
-    @media (min-width: 768px) {
-      display: none;
-    }
-  }
-
-  label > span,
-  label > span::before,
-  label > span::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    height: 2px;
-    background-color: colors.$header-text-light;
-    transition-duration: .25s;
-
-    .dark & {
-      background-color: colors.$header-text-dark;
-    }
-  }
-  label > span::before {
-    content: '';
-    top: -8px;
-  }
-  label > span::after {
-    content: '';
-    top: 8px;
-  }
-
-  ul {
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    right: -100%;
-    width: 10rem;
-    height: 100vh;
-    margin: 0;
-    padding: 3rem 0;
-    list-style: none;
-    background-color: colors.$header-bg-light;
-    box-shadow: 1px 0 6px rgba(colors.$header-text-light, .2);
-    transition-duration: .25s;
-
-    .dark & {
-      background-color: colors.$header-bg-dark;
-      box-shadow: 1px 0 6px rgba(colors.$header-text-dark, .2);
-
-      @media (min-width: 768px) {
-        box-shadow: none;
-        background: transparent;
-      }
-    }
-
-    @media (min-width: 768px) {
-      height: 100%;
-      box-shadow: none;
-      position: relative;
-      right: auto;
-      background: transparent;
-      transition-duration: unset;
-      display: flex;
-      flex-direction: row;
-      visibility: visible;
-      padding: 0 50px;
-    }
-  }
-
-  li {
-    display: flex;
-    position: relative;
-    letter-spacing: unset;
-    margin-inline: 16px 20px;
-    padding-block: 16px;
-    font-size: 17px;
-    opacity: 0.5;
-    line-height: 1;
-    font-weight: 400;
-    font-style: normal;
-    text-decoration: none;
-    transition-duration: .25s;
-
-    @media (min-width: 768px) {
-      height: 100%;
-      align-items: center;
-    }
-
-    &.active {
-      opacity: 1;
-
-      &::before {
-        content: '';
-        position: absolute;
-        left: -6px;
-        right: -6px;
-        bottom: -1px;
-        background: colors.$header-text-light;
-        height: 2px;
-
-        .dark & {
-          background: colors.$header-text-dark;
-        }
+        visibility: visible;
       }
     }
   }
@@ -199,15 +230,16 @@
   margin-top: 3px;
 
   svg {
-    fill: #090E13;
+    fill: rgb(9 14 19);
   }
+
   .dark & svg {
-    fill: #FFFFFF;
+    fill: rgb(255 255 255);
   }
 }
 
 .buy {
-  backdrop-filter: blur(30px);
-  margin-left: 16px;
   margin-right: max(1rem, calc(50% - 620px));
+  margin-left: 16px;
+  backdrop-filter: blur(30px);
 }
