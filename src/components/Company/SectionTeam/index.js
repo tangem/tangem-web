@@ -26,9 +26,6 @@ const SectionTeam = () => {
 							</picture>
 							<figcaption>
 								<h4 className={styles.name}>{persons[id].name}</h4>
-								<a className={styles.link} href={persons[id].link} rel="nofollow">
-									<img alt={persons[id].name} src={'/svg/team-linkedin.svg'} />
-								</a>
 								<p className={styles.position}>{persons[id].position}</p>
 								<p className={styles.description}>{persons[id].description}</p>
 							</figcaption>
