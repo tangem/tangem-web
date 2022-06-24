@@ -12,6 +12,8 @@ import AvalancheIcon from '../../../../public/svg/avalanche.svg'
 import PolygonIcon from '../../../../public/svg/polygon.svg'
 import SolanaIcon from '../../../../public/svg/solana.svg'
 import BscIcon from '../../../../public/svg/bsc.svg'
+import TronIcon from '../../../../public/svg/tron.svg'
+import ArbitrumIcon from '../../../../public/svg/arbitrum.svg'
 import Network from '../../../../public/svg/network.svg'
 import {t} from "i18next";
 
@@ -47,7 +49,24 @@ const networkIcons = {
 	'blockchain': {
 		icon: <Network />,
 		title: ''
-	}
+	},
+	'arbitrum-one': {
+		icon: <ArbitrumIcon />,
+		title: "Arbitrum One"
+	},
+	// 'dogecoin': {},
+	// 'bitcoin': {},
+	// 'litecoin': {},
+	// 'xrp': {},
+	// 'cardano': {},
+	// 'stellar': {},
+	// 'ethereum-classic': {},
+	'tron': {
+		icon: <TronIcon />,
+		title: 'Tron'
+	},
+	//'tezos': {},
+	//'rootstock': {}
 }
 
 const Search = ({ hide }) => {
