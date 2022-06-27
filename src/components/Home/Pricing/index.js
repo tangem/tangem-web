@@ -71,9 +71,6 @@ const Pricing = ( { hide } ) => {
 									>
 										Buy now $69.90
 									</button>
-									<div className='text-[#DD1919] text-[1.063rem] lg:text-lg font-semibold mt-6 lg:mt-[1.125rem]'>
-										50% OFF <span className='text-[#757575] line-through'>$148.49</span>
-									</div>
 									<BuyNow iframeId="pack-3" id='6677839577154' />
 								</>
 							}
@@ -110,9 +107,6 @@ const Pricing = ( { hide } ) => {
 									>
 										Buy now $54.90
 									</button>
-									<div className='text-[#DD1919] text-[1.063rem] lg:text-lg font-semibold mt-6 lg:mt-[1.125rem]'>
-										50% OFF <span className='text-[#757575] line-through'>$104.99</span>
-									</div>
 									<BuyNow iframeID="pack-2" id="6677836693570" />
 								</>
 							}
