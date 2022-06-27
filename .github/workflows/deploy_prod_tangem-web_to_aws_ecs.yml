@@ -45,6 +45,13 @@ jobs:
           ${{ secrets.NGINX_NGINX_CONF }}
           EOF
 
+     - name: Create version file
+       run:
+          |
+          cat << EOF > version
+          ${{ github.sha }}
+          EOF
+
      - name: Create env file
        run:
           |

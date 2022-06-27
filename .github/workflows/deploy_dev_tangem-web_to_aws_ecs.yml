@@ -61,6 +61,13 @@ jobs:
           ${{ secrets.NGINX_DEV_SECRET }}
           EOF
 
+     - name: Create version file
+       run:
+          |
+          cat << EOF > version
+          ${{ github.sha }}
+          EOF
+
      - name: Install node v12
        uses: actions/setup-node@v2
        with:
