@@ -64,7 +64,7 @@ jobs:
      - name: Create version file
        run:
           |
-          cat << EOF > version
+          cat << EOF > version.htm
           ${{ github.sha }}
           EOF
 
