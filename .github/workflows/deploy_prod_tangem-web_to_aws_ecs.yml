@@ -33,6 +33,18 @@ jobs:
        id: login-ecr
        uses: aws-actions/amazon-ecr-login@v1
 
+     - name: Create nginx default.conf
+       run:
+          |
+          wget -O default.conf ${{ secrets.NGINX_CONF }}
+
+     - name: Create nginx nginx.conf
+       run:
+          |
+          cat << EOF > nginx.conf
+          ${{ secrets.NGINX_NGINX_CONF }}
+          EOF
+
      - name: Create env file
        run:
           |
