@@ -17,6 +17,9 @@ const ShopifyBuyButton = ({ id }) => {
         product: {
           buttonDestination: 'checkout'
         },
+	      templates: {
+		      title: '<h1 class=""> <span class="">NEW</span></h1>',
+	      },
         cart: {
           startOpen: false,
           popup: false,

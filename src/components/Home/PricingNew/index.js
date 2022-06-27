@@ -97,10 +97,12 @@ const PricingNew = ( ) => {
 				{ packs[currentPack].image }
 			</div>
 			<div className={styles.choice}>
-				<h3>{ t('pricing.buy.title')}</h3>
-				<p>{ t('pricing.buy.description')}</p>
-				<form>
-					<span>{t('pricing.choice')}</span>
+				<div>
+					<h3>{ t('pricing.buy.title')}</h3>
+					<p>{ t('pricing.buy.description')}</p>
+				</div>
+				<form className={styles.form}>
+					<span >{t('pricing.choice')}</span>
 					<fieldset>
 						{ packKeys.map((packKey) =>(
 							<React.Fragment key={packKey}>
@@ -123,15 +125,17 @@ const PricingNew = ( ) => {
 					</fieldset>
 				</form>
 				<span className={styles.stories}>{t('pricing.stores')}</span>
-				<ul className={styles.list}>
-					{ resellers.map((item) => (
-						<li key={item.id}>
-								{ item.icon }
-								<a target='_blank' href={item[currentPack]} rel="noreferrer">Buy</a>
-						</li>
-					))
-					}
-				</ul>
+				<div className={styles.scroll}>
+					<ul className={styles.list}>
+						{ resellers.map((item) => (
+							<li key={item.id}>
+									{ item.icon }
+									<a target='_blank' href={item[currentPack]} rel="noreferrer">{t('buttons.buy')}</a>
+							</li>
+						))
+						}
+					</ul>
+				</div>
 			</div>
 			<div className={styles.props}>
 				{ features.map(({id, icon, text}) => (
