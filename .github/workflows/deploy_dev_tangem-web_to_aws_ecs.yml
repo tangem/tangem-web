@@ -45,9 +45,7 @@ jobs:
      - name: Create nginx default.conf
        run:
           |
-          cat << EOF > default.conf
-          ${{ secrets.NGINX_DEV_CONF }}
-          EOF
+          wget -O default.conf ${{ secrets.NGINX_DEV_CONF }}
 
      - name: Create nginx nginx.conf
        run:
