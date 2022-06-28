@@ -20,6 +20,20 @@ const Pricing = ( { hide } ) => {
 				.getElementById(cardId)
 				.querySelector('iframe')
 				.contentDocument
+				.querySelector('.shopify-buy__quantity-increment')
+				.click();
+
+			const elem = document
+				.getElementById(cardId)
+				.querySelector('iframe')
+				.contentDocument
+				.querySelector('.shopify-buy__quantity');
+
+
+			document
+				.getElementById(cardId)
+				.querySelector('iframe')
+				.contentDocument
 				.querySelector('.shopify-buy__btn')
 				.click()
 		}

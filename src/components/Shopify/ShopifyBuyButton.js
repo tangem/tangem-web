@@ -10,23 +10,27 @@ const shopifyClient = ShopifyBuy.buildClient({
 const ui = ShopifyBuy.UI.init(shopifyClient)
 
 const ShopifyBuyButton = ({ id }) => {
-  useEffect(() => {
-    ui.createComponent('product', {
-      id,
-      options: {
-        product: {
-          buttonDestination: 'checkout'
-        },
-	      templates: {
-		      title: '<h1 class=""> <span class="">NEW</span></h1>',
-	      },
-        cart: {
-          startOpen: false,
-          popup: false,
-        }
-      },
-      node: document && document.getElementById(`buy-now-${id}`),
-    })
+  useEffect( () => {
+		ui.createComponent('product', {
+		  id,
+		  options: {
+			  product: {
+				  buttonDestination: 'checkout',
+				  contents: {
+					  quantity: true, // determines whether to show any quantity inputs at all
+					  quantityIncrement: true, // button to increase quantity
+					  quantityDecrement: true, // button to decrease quantity
+					  quantityInput: true, // input field to directly set quantity
+					  button: true,
+				  }
+			  },
+			  cart: {
+				  startOpen: false,
+				  popup: false,
+			  }
+		  },
+		  node: document && document.getElementById(`buy-now-${id}`),
+	  })
   })
 
   return (
