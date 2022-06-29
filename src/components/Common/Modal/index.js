@@ -15,7 +15,7 @@ function Modal({ isShowing, hide, children, title }) {
 			};
 		}
 		const focusedElementBeforeModal = document.activeElement;
-		const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+		const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), object, embed, [tabindex="0"], [contenteditable]';
 		const focusableElementsValues = node.querySelectorAll(focusableElementsString);
 		const elements = Array.prototype.slice.call(focusableElementsValues);
 		const firstTabStop = elements.length ? elements[0] : focusedElementBeforeModal;
@@ -23,6 +23,7 @@ function Modal({ isShowing, hide, children, title }) {
 		firstTabStop.focus();
 
 		function trapTabKey(e) {
+			console.log(document.activeElement);
 			// Check for TAB key press
 			if (e.keyCode === 9) {
 				// SHIFT + TAB
@@ -35,7 +36,7 @@ function Modal({ isShowing, hide, children, title }) {
 					// TAB
 				} else if (document.activeElement === lastTabStop) {
 					e.preventDefault();
-					firstTabStop.focus();
+					console.log(firstTabStop);
 				}
 			}
 

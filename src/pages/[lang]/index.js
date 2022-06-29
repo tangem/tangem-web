@@ -11,7 +11,7 @@ import Modal from "../../components/Home/Modal";
 import ModalNew from "../../components/Common/Modal";
 import Search from "../../components/Home/Search";
 import useModal from "../../hooks/useModal";
-import Pricing from "../../components/Home/PricingNew";
+import Pricing from "../../components/Common/Pricing";
 import i18next, {t} from 'i18next';
 import { getAllLanguageSlugs, getLanguage } from '../../lib/lang';
 import Footer from "../../components/Common/Footer";
