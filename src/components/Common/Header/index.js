@@ -13,16 +13,16 @@ const Header = ({isDark, toggleBuy, className }) => {
 
 	const router = useRouter();
 
-	const menu = [
-		[
+	const menu = {
+		start: [
 			{ name: t('menu.wallet'), slug: '', href: `/${language}/`},
 			{ name: t('menu.partnership'), slug: 'partnership', href: `/${language}/partnership/` },
 			...(language !== 'ru' ? [{ name: t('menu.developers'), slug: 'developers', href: 'https://developers.tangem.com'}]: []),
 		],
-		[
+		end: [
 			{ name: t('menu.company'), slug: 'company', href: `/${language}/company/` }
 		]
-	];
+	};
 
   return (
     <header
@@ -45,9 +45,9 @@ const Header = ({isDark, toggleBuy, className }) => {
 		      </label>
 					<div className={styles.items}>
 					{
-						menu.map((links) =>
-							<ul>
-								{ links.map(({name, href, slug}) => {
+						Object.keys(menu).map((key) =>
+							<ul key={key}>
+								{ menu[key].map(({name, href, slug}) => {
 									const [slugFromRouter = ''] = router.asPath.split('/').filter(i => !!i & i !== language).reverse();
 									return (
 										<li key={name} className={slugFromRouter === slug ? styles.active : null} >

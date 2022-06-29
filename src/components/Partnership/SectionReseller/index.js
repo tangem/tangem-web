@@ -36,8 +36,8 @@ const SectionReseller = () => {
 		<section className={styles.section}>
 			<div className={styles.reseller}>
 				<div className={styles.title}>
-					<h2>{ t('sections.reseller.title')}</h2>
-					<p>{ t('sections.reseller.description')}</p>
+					<h2>{ t('sections.resellers.title')}</h2>
+					<p>{ t('sections.resellers.description')}</p>
 					<button type="button" onClick={toggleForm}>{ t('buttons.contact-us')}</button>
 				</div>
 				<picture className={styles.image}>
@@ -68,7 +68,7 @@ const SectionReseller = () => {
 					}
 				</ul>
 			</div>
-			<ModalNew isShowing={isFormShowing} hide={toggleForm} title={t('contactUs.reseller.title')}>
+			<ModalNew isShowing={isFormShowing} hide={toggleForm} title={t('contactUs.resellers.title')}>
 				<ContactForm program='reseller' />
 			</ModalNew>
 		</section>
