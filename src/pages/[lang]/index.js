@@ -16,7 +16,6 @@ import i18next, {t} from 'i18next';
 import { getAllLanguageSlugs, getLanguage } from '../../lib/lang';
 import Footer from "../../components/Common/Footer";
 
-
 export const LangHome = ({ language }) => {
 	const { isShowing: isSearchShowing, toggle: toggleSearch } = useModal('search')
 	const { isShowing: isBuyShowing, toggle: toggleBuy } = useModal('pricing')

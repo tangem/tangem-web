@@ -93,13 +93,13 @@ const PricingNew = ( ) => {
 			id: 'yandexmarket',
 			title: 'Yandex Market',
 			popular: false,
-			[packKeys[0]]: 'https://market.yandex.ru/product--apparatnyi-multivaliutnyi-kriptokoshelek-tangem-wallet-kholodnyi-koshelek-dlia-kriptovaliuty-koshelek-dlia-kriptovaliut-kriptokoshelek-kholodnyi/1737017401?sku=101650591931&cpa=1',
+			[packKeys[0]]: 'https://market.yandex.ru/product--kriptokoshelek-tangem-wallet-nabor-iz-3-kart/1756706099?cpa=1',
 			[packKeys[1]]: 'https://market.yandex.ru/product--apparatnyi-multivaliutnyi-kriptokoshelek-tangem-wallet-kholodnyi-koshelek-dlia-kriptovaliuty-koshelek-dlia-kriptovaliut-kriptokoshelek-kholodnyi/1737017403?sku=101650591952&cpa=1',
 		},
 	]
 	const [currentPack, setCurrentPack] = useState(packKeys[0]);
 
-	return (
+return (
 		<div className={styles.card}>
 			<div className={styles.picture}>
 				{ packs[currentPack].image }

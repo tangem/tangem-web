@@ -1,23 +1,38 @@
 import React, {useEffect, useState} from 'react'
 import ShopifyForm from "./shopify-form";
 
-import ShopifyBuy from '@shopify/buy-button-js'
+// import ShopifyBuy from '@shopify/buy-button-js'
 import {SHOPIFY_DOMAIN, SHOPIFY_API_KEY} from "../../../config";
-
-const shopifyClient = ShopifyBuy.buildClient({
-	domain: SHOPIFY_DOMAIN,
-	storefrontAccessToken: SHOPIFY_API_KEY,
-});
-
-const ui = ShopifyBuy.UI.init(shopifyClient);
+import Script from "next/script";
 
 const Shopify = ( ) => {
+
+	const [loaded, setLoaded] = useState(false);
 
 	const [products, setProducts] = useState({});
 
 	const ids = {'pack2': 6677836693570, 'pack3': 6677839577154}
 
-	useEffect( () => {
+	useEffect(()=> {
+		if (typeof window !== 'undefined' && typeof ShopifyBuy !== 'undefined') {
+			setLoaded(true);
+		}
+	},[]);
+
+	useEffect(() => {
+		if(!loaded) {
+			return function empty() {
+				//
+			}
+		}
+
+		const shopifyClient = ShopifyBuy.buildClient({
+			domain: SHOPIFY_DOMAIN,
+			storefrontAccessToken: SHOPIFY_API_KEY,
+		});
+
+		const ui = ShopifyBuy.UI.init(shopifyClient);
+
 		async function init(id) {
 			return await ui.createComponent('product', {
 				id,
@@ -50,10 +65,17 @@ const Shopify = ( ) => {
 				setProducts((v) => ({ [key]: product.selectedVariant, ...v}))
 			});
 		}
-	}, []);
+
+	},[loaded]);
 
 	return (
 		<>
+			<Script
+				id="buy-button"
+				src="https://sdks.shopifycdn.com/buy-button/1.0.0/buybutton.js"
+				strategy="lazyOnload"
+				onLoad={() => setLoaded(true)}
+			/>
 			<ShopifyForm ids={ids} products={products}/>
 			{
 				Object.keys(ids).map((key) =>

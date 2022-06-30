@@ -23,7 +23,8 @@ const ShopifyForm = ({products, ids}) => {
 					src='/img/packs/pack3@1x.png'
 					srcSet="/img/packs/pack3@2x.png 2x"
 				/>
-			</picture>
+			</picture>,
+			defaultPrice: '69.90',
 		},
 		[packKeys[1]]: {
 			title: t('pricing.pack2.title'),
@@ -38,7 +39,8 @@ const ShopifyForm = ({products, ids}) => {
 					src='/img/packs/pack2@1x.png'
 					srcSet="/img/packs/pack2@2x.png 2x"
 				/>
-			</picture>
+			</picture>,
+			defaultPrice: '54.90',
 		}
 	};
 
@@ -113,7 +115,7 @@ const ShopifyForm = ({products, ids}) => {
 								<label htmlFor={packKey}>
 									<div className={styles['radio-title']}>
 										<h4>{ packs[packKey].title }</h4>
-										<span>{products[packKey] && `$${products[packKey].price}`}</span>
+										<span>{`$${ products[packKey] ? products[packKey].price : packs[packKey].defaultPrice }` }</span>
 									</div>
 									<p className={styles['radio-description']}>{ packs[packKey].description }</p>
 								</label>
@@ -138,8 +140,7 @@ const ShopifyForm = ({products, ids}) => {
 					<div>
 						<span className={styles.label}>{t('pricing.total')}</span>
 						<span className={styles.value}>{
-							products[currentPack]
-							&& `$${(quantity * products[currentPack].price).toLocaleString('en-US', {currency: 'usd', minimumFractionDigits: 2})}`
+						 `$${(quantity * (products[currentPack] ? products[currentPack].price : packs[currentPack].defaultPrice)).toLocaleString('en-US', {currency: 'usd', minimumFractionDigits: 2})}`
 						}</span>
 					</div>
 					<div>
