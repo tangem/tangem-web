@@ -97,7 +97,7 @@
   column-gap: max(2rem, 100% - 1140px);
 
   @include mixins.respond-to-medium {
-    grid-template-rows: calc(100% - 160px) 160px;
+    grid-template-rows: calc(100% - 180px) min-content;
     grid-template-columns: 650fr 490fr;
     max-width: 1260px;
     min-height: 540px;
@@ -135,6 +135,7 @@
   svg {
     margin-right: 24px;
   }
+
 
   @include mixins.respond-to-medium {
     flex-direction: column;
