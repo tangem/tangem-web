@@ -23,7 +23,6 @@ function Modal({ isShowing, hide, children, title }) {
 		firstTabStop.focus();
 
 		function trapTabKey(e) {
-			console.log(document.activeElement);
 			// Check for TAB key press
 			if (e.keyCode === 9) {
 				// SHIFT + TAB
