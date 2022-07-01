@@ -119,6 +119,14 @@
     align-self: start;
     flex: 0 1 520px;
   }
+
+  img {
+    max-width: 227px;
+
+    @media (min-width: 768px) {
+      max-width: 100%;
+    }
+  }
 }
 
 .youtube {
