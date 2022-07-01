@@ -212,7 +212,11 @@
 
   &:checked + label {
     border-color: rgb(0 0 0);
-    outline: 5px solid rgb(207 207 207);
+    box-shadow: 0 0 0 4px rgb(223 224 224);
+
+    @include mixins.respond-to-medium {
+      box-shadow: 0 0 0 6px rgb(0 0 0 / 10%);
+    }
   }
 }
 
