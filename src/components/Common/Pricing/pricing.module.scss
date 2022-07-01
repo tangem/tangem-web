@@ -94,7 +94,9 @@
   grid-template-columns: 1fr;
   justify-content: space-between;
   box-sizing: border-box;
+  margin-bottom: 60px;
   column-gap: max(2rem, 100% - 1140px);
+  margin-inline: calc-clamp(1rem, 5rem);
 
   @include mixins.respond-to-medium {
     grid-template-rows: calc(100% - 180px) min-content;
@@ -102,7 +104,7 @@
     max-width: 1260px;
     min-height: 540px;
     max-height: calc(100vh - 221px);
-    margin-inline: calc-clamp(1rem, 5rem);
+    margin-bottom: 0;
   }
 }
 
@@ -135,7 +137,6 @@
   svg {
     margin-right: 24px;
   }
-
 
   @include mixins.respond-to-medium {
     flex-direction: column;
@@ -231,6 +232,11 @@
   @include mixins.respond-to-medium {
     margin-bottom: -40px;
     overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 }
 
