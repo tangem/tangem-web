@@ -27,6 +27,8 @@ const SectionHero = ({ toggleBuy }) => {
 							alt={t('sections.safe.title')}
 							src='/img/hero/phone-mobile@1x.png'
 							srcSet="/img/hero/phone-mobile@2x.png 2x"
+							height={711}
+							width={520}
 						/>
 					</picture>
 				</div>

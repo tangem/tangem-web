@@ -41,6 +41,8 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
               alt='Tangem card image'
               src='/img/feature/feature-card-2x.png'
               className='w-full'
+              height={735}
+              width={799}
             />
           </picture>
         </div>
@@ -71,13 +73,17 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
         {/* Right Side */}
         <div className='md:w-1/2 lg:w-3/5 xl:w-[55%] overflow-hidden flex justify-center md:block'>
 	        <picture className='w-full ml-0 3xl:ml-0 min-w-[575px] max-w-[906px]'>
-		        <source srcSet="/img/feature/group@1x.avif 1x, /img/feature/group@2x.avif 2x" type="image/avif" />
+		        <source media='(min-width: 768px)' srcSet="/img/feature/group@1x.avif 1x, /img/feature/group@2x.avif 2x" type="image/avif" />
+		        <source media='(min-width: 768px)' srcSet="/img/feature/group@1x.png 1x, /img/feature/group@2x.png 2x" type="image/png" />
+		        <source srcSet="/img/feature/group-mobile@1x.avif 1x, /img/feature/group-mobile@2x.avif 2x" type="image/avif" />
 		        <img
+			        height={762}
+			        width={1026}
 			        loading='lazy'
 			        decoding='async'
 			        alt='Tangem card image'
-			        src='/img/feature/group@1x.png'
-			        srcSet="/img/feature/group@2x.png 2x"
+			        src='/img/feature/group-mobile@1x.png'
+			        srcSet="/img/feature/group-mobile@1x.png"
 			        className='w-full ml-0 3xl:ml-0 min-w-[575px] max-w-[906px]'
 		        />
 	        </picture>
