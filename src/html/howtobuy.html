@@ -1,0 +1,191 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <meta name="title" content='Tangem Wallet — Аппаратный кошелек для криптовалют' />
+    <meta name="description" content='Tangem Wallet позволяет хранить криптовалюту просто и безопасно. Ключи надежно хранятся на карте, а приложение Tangem открывает полный доступ ко всей криптовселенной!' />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tangem.com" />
+    <meta property="og:site_name" content='Tangem Wallet — Аппаратный кошелек для криптовалют' />
+    <meta property="og:title" content='Tangem Wallet — Аппаратный кошелек для криптовалют' />
+    <meta property="og:description" content='Tangem Wallet позволяет хранить криптовалюту просто и безопасно. Ключи надежно хранятся на карте, а приложение Tangem открывает полный доступ ко всей криптовселенной!' />
+    <meta property="og:image" content="https://tangem.com/img/hero/phone@1x.png" />
+    <meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
+    <meta property="og:locale" content="en_US" />
+    <title>Как купить криптовалюту в России (P2P-сервисы)</title>
+    <link rel='shortcut icon' href='/img/favicon/favicon.png' />
+    <link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
+    <style>
+        @font-face {
+            font-family: "SF Pro Display";
+            src: url("/fonts/sf-pro/SFProDisplay-Light.eot") format("embedded-opentype"), url("/fonts/sf-pro/SFProDisplay-Light.woff2") format("woff2"), url("/fonts/sf-pro/SFProDisplay-Light.woff") format("woff"), url("/fonts/sf-pro/SFProDisplay-Light.ttf") format("truetype");
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "SF Pro Display";
+            src: url("/fonts/sf-pro/SFProDisplay-Regular.eot") format("embedded-opentype"), url("/fonts/sf-pro/SFProDisplay-Regular.woff2") format("woff2"), url("/fonts/sf-pro/SFProDisplay-Regular.woff") format("woff"), url("/fonts/sf-pro/SFProDisplay-Regular.ttf") format("truetype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "SF Pro Display";
+            src: url("/fonts/sf-pro/SFProDisplay-Medium.eot") format("embedded-opentype"), url("/fonts/sf-pro/SFProDisplay-Medium.woff2") format("woff2"), url("/fonts/sf-pro/SFProDisplay-Medium.woff") format("woff"), url("/fonts/sf-pro/SFProDisplay-Medium.ttf") format("truetype");
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "SF Pro Display";
+            src: url("/fonts/sf-pro/SFProDisplay-Semibold.eot") format("embedded-opentype"), url("/fonts/sf-pro/SFProDisplay-Semibold.woff2") format("woff2"), url("/fonts/sf-pro/SFProDisplay-Semibold.woff") format("woff"), url("/fonts/sf-pro/SFProDisplay-Semibold.ttf") format("truetype");
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: "SF Pro Display";
+            src: url("/fonts/sf-pro/SFProDisplay-Bold.eot") format("embedded-opentype"), url("/fonts/sf-pro/SFProDisplay-Bold.woff2") format("woff2"), url("/fonts/sf-pro/SFProDisplay-Bold.woff") format("woff"), url("/fonts/sf-pro/SFProDisplay-Bold.ttf") format("truetype");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            padding: 0;
+            margin: 1rem;
+            color: rgb(0 0 0);
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        }
+        .label {
+            letter-spacing: -0.408px;
+            color: rgb(0 0 0 / 40%);
+            margin-bottom: 2px;
+        }
+        h1 {
+            font-weight: 700;
+            font-size: 30px;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-weight: 700;
+            font-size: 21px;
+            line-height: 33px;
+            letter-spacing: 0.337826px;
+            margin-top: 1.25rem;
+            margin-bottom: 1rem;
+        }
+        h4 {
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0.15px;
+            margin-bottom: 2px;
+        }
+        p {
+            font-size: 15px;
+            line-height: 20px;
+            letter-spacing: -0.24px;
+            margin-bottom: 1rem;
+        }
+        .quote {
+            background: #F4F5F5;
+            border-radius: 14px;
+            padding: 1rem;
+        }
+        ul {
+            list-style-type: none;
+        }
+        li {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1.25rem;
+        }
+        .desc {
+            font-size: 13px;
+            line-height: 16px;
+            letter-spacing: 0.3px;
+            color: #8A8A8D;
+            margin-bottom: 0;
+        }
+        img {
+            margin-right: 1rem;
+        }
+        a {
+            font-weight: 600;
+            font-size: 13px;
+            line-height: 1;
+            letter-spacing: 0.36px;
+            color: #FFFFFF;
+            background: #000000;
+            border-radius: 10px;
+            padding: 7px 12px 7px 10px;
+            text-decoration: none;
+            text-transform: capitalize;
+            margin-left: 12px;
+            margin-top: 1rem;
+            align-self: self-start;
+        }
+    </style>
+</head>
+
+<body>
+<div class="label">Tangem</div>
+<h1>Как купить криптовалюту в России (P2P-сервисы)</h1>
+<p>P2P-сервисы позволяют пользователям покупать и продавать криптовалюту друг у друга. Доступ к P2P-сервисам предоставляют крупнейшие криптобиржи, они же выступают в качестве гаранта сделки.</p>
+<p>Среди действующих в России бирж P2P-торговлю поддерживают <b>Binance, Bybit, Huobi, OKX.</b></p>
+<p class="quote">
+    <b>Внимание!</b> Tangem AG не является представителем данных криптобирж и не может гарантировать выгодность условий, уровень сервиса и безопасность ваших средств при работе с этими площадками.
+</p>
+<p>Фиатные деньги при P2P-сделках пересылаются напрямую от покупателя продавцу, а криптовалюта на время сделки замораживается на специальном счете, и пересылается покупателю после того, как продавец подтвердит получение денег. В спорных ситуациях помогает служба поддержки криптобиржи.</p>
+<p>Для P2P-торговли не требуется верифицировать личность, однако некоторые площадки накладывают ограничения на пользователей, не прошедших верификацию.</p>
+<h3>Где купить</h3>
+<ul>
+    <li>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAUVBMVEUAAADzui/vtzDvrzDzuy/0ui/yui/0ui/zui/zui70ui7zui7yui7yui7zui7yuTDyuS/zui/vvzDzuTDxuS7zui/////53Zf31H32y2P1x1bY4vFbAAAAFXRSTlMA/iAQ79/fz7+vn4+Ab19A3lAQgFAArhtAAAACeklEQVRo3uXa226rMBCF4RXOhwA5dEq63/9B90UqrSJRD2Jij0L/OxQpnxxIgrGxVj4NXV3JC6qadpiwrfyjKeSlFe24gT0XEqGyyxKz7BygP8hGqBx/G24vkevzNTerJXpltuKWEjHKDi5ls2uXc7rRq3OwXhLW0x0lade0J5iVOZ6dJXHn7wFL6ornkDtJGodcSvKKPP0lzQu7FYcaAIU4VOSYxKUJg7g0oBWXOjTiUo1KdjfPsrsSsrv589Mg74Dp7pANMN0dshGmu122w3S3y3aYriobYd3VZTtMV5WNsO7qsh2mq8t2WHd12Q7TtcuEDa4i22C6dpmw2aVsh3X38TDIkP2uiEGGxbXIMLgmGQZXl+3w15q7Ln/FGTFdyjFHTJku5ZjnmDJdyjGvasp0Kcf6HlOmu5TpGmFqj6X883Beyj8PZys8L6nFwZJaHOijh+ou5H9rUxi+RFeVobmU9SkMXV2G5lLWpzB0dRmaS1mfwtDVZWguZX0KQ1eXobiU1SkMXTa/E/ySj/q9Li771+n9fkBsP5nv+Sex/2/xfW8E/G99tt7sHeX2NnRD/xemMKFJ21Gmqdsn5sd5FLH14cuRHjdRDrqHeqRIOege6rEx5aB7qKUBykH3UMs/lIPuoZb4KAfdQy3jmheu3Zbq/TYn1OJSg05cat223PhtMrr5bKsC0IhDLYCrODQCLp91xf2gaesAnyFn8BnyHc9ulSTt8hxw+gt79N/YjVstybrkAMsSnGaeYAeZbjKZrodc0wW79RK3U59jvTHqoC9X/Fp2l1gV9xyhsi7GqE9kA41t8VL0VDRXsuGmoW2qTe+qdKm7YVpV/wOb0GmaUOyM1AAAAABJRU5ErkJggg=="
+             alt="Binance" width="60" height="60" />
+        <div>
+            <h4>Binance</h4>
+            <p class="desc">Является крупнейшей биржей в мире по ежедневному объему торгов криптовалютами. Компания была основана в 2017 году и зарегистрирована на Каймановых островах.</p>
+        </div>
+        <a href="https://p2p.binance.com/ru/trade/all-payments/BTC?fiat=RUB" target="_blank" rel="nofollow noopener noreferrer">ПЕРЕЙТИ</a>
+    </li>
+    <li>
+        <img src="data:image/png;base64,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"
+             alt="Bybit" width="60" height="60" />
+        <div>
+            <h4>Bybit</h4>
+            <p class="desc">Сингапурская биржа, которая открылась в марте 2018 года, она предлагает пользователям большой спектр услуг.</p>
+        </div>
+        <a href="https://www.bybit.com/fiat/trade/otc/" target="_blank" rel="nofollow noopener noreferrer">ПЕРЕЙТИ</a>
+    </li>
+    <li>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAt1BMVEUAAADu+P3v9//v/P/u+P3u+f3u+f3t9/vu+Pzu+P3u+f7t+P3u+P7r9/vv+f/s9/zv+v/u9v3s+fzu+Pzv9/vu+P3u9/3u+P0bIUMspuA1PFrU3eafp7dEsOTi8/vW7vkoL07h6/GFjKC94/aNz+9zxetdZH2l2fKSmqxqcYlPV3HG0NooLk9eu+hQteWstcOByu11xOs4q+K6ws6Z1PG5ws9CSWXH0Np3f5RqcohQV3HK6fex3vQTsl1UAAAAF3RSTlMA3yAQ76+fgG/ez4+/QH9gX1BQv0DOkDf173IAAAPGSURBVGjexZqJViIxEEUDDYgs7jOvF0BABhBR0HEd5/+/a8DtKUlg0lbC/YF7XlWlOjStTEQn1UqtAAEKjXL1RK2F1sNGCaKUygf/od2TtDJ5pRhYS/bWqI98aJn6wBb3JzxTj0zeYg3eKRQN3gI8QnN4L83hvbo5otc7tUiRnwhInd59BOUobINJ4b3YewjMzltghKb0GrmCoDBy2A4z8j62wOFCXMYWaCzEJeRkmMEd1voEeUnTb5ibqoq8pPE3zNVvtLgbx3+Ql4pqIC/xgjFyUst/irOleJq32AWFvNzFS4bISX7xLH7hN9bgRdxfajfMlxfxJH7lAna8iLtv4kfY8SG+iN+Y9mDDi7i1cG4aLy/i4Yf4HDa8iLsf4ils+BCz0vZaexGz0vaF7UOcUWttshfx02dxCiPCYgYmMCEtZmCSwYAPMQPb17UX8f2KeAYdH+JxvEILGj7EWbwdcS+lMWipubPsO9OHuE9f0HOse/Vrlw8xH0r22fIhnpm8aQ8awuKLbkwkbyB5vPzJOBqBSIozo5fXgF8JzZLijIvD/DBuJ8lfD2IuLMsj8SxJkptTefHQ7O2DlV7Q7kiL+2bvPd45TV6YC4szurSJZuAlZ7JiS4NnXwOz2FLilrXBDPzOQEpsDzyBFnjBTUdO3LI2mIHJrYzYHvgBAM8wuRQT31kbzKX1mTMp8ZPJOwQZJF8YSIm71gZzspxrrXJWuqUXmnRkxOMND/9RssqzjHi4odBtTTySEU/WFppHmAxkxKkeGKbJItcyYofAPsX2wOSXF7E9MBP76fEUIG3v4s1nmMz9nOMWyKVRfCsjflzzqiUxciYjnq2IoT2HPe3qnv0wDYzeKwiI9Z15v7HFcynx2Jr4ijYfN5Be1yY2ettyl73zL5F7G8QjOXFmO045AlPsHLm1XjySFGdd88ps5wlMseNgT9cep1NZMSbGN4hz91sPxe5vQB7tK3MOaTEe2Gb+m9i50ZaloFj/yTi2LOurjqhYN6cwRr528MLl44SHVD/KA6fHPymoH9DYPGEpu9x+L/MzXDjm11xOb536K4N9cws3yq6f3GQTDjaLfXUKR6qqCUfuJm+Rub7aHbjSVFEJrmStSfceYJud86KklGpgC5QX4kNsgQOlWOuAFNSSHQSnotR2IhfVdiLv8OvqoOy+Bg4/2AfqgzoCUlckqiEYu1Hoj/fZ4LBmekOb6Q1vrtGrSOR9tuuRMrPvNfTukbJS9Lc9SzuMa1RXmDqQlgUvl4Stx0fUrqdZLR+LJN/9Uak2jdZ/S3Lmw4nAlBoAAAAASUVORK5CYII="
+             alt="Hyobi" width="60" height="60" />
+        <div>
+            <h4>Hyobi</h4>
+            <p class="desc">Китайская биржа, основанная в 2013 году, которая за годы работы стала одной из самых популярных платформ.</p>
+        </div>
+        <a href="https://c2c.huobi.com/ru-ru/trade/buy-btc/" target="_blank" rel="nofollow noopener noreferrer">ПЕРЕЙТИ</a>
+    </li>
+    <li>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHgAAAB4CAMAAAAOusbgAAAAqFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD///8CAgIJCQloaGi/v79ISEj29vbm5ua3t7cYGBjn5+f+/v78/PxJSUkvLy/V1dVCQkIZGRkRERGvr6+qqqqkpKR2dnZOTk44ODjv7+/o6Ojf39/FxcWamppzc3NjY2NhYWFTU1M2NjYfHx9A7dhLAAAAE3RSTlMA3yAQ74Cvn29fQL9Qz4/OkL5PzCwItQAAAk1JREFUaN7t22mP2jAQgOFxnPvabScm3A4ssGfv6///s1J11dQm7EZK7Nlu/XxDivRq4IMtGKALT+OoYDgCloVxCv3wPPNxVH6Y9MgGPhrAIs9ythU8kc59NIgl58Yt0bCSQwevQOOY19FlaAHzCLptmaCrlzlDawoOrRItKttuglbldj/gFuOP4QAtCx4HRtv83yNHaFU7MkOb2pETJPD2GA6RQHYM+0jA55AiiRRiJBFDiCQiyJBEAQxJMEAiLnyOC7/usFBfiT7PjBL+Vqvu8cS2Vn05DA+L+0ZWivl31EyuKkXT3I4QrqWsVBuhh99XCtlMxeAw1pVudjLxutJM0YVd2IVd2IX/g7A4CctNj7AYHp5JNSvn247zWPNpjBvIdjP7y2bz8HC9VN2tZuozu4ORy961rBTy3R5VAo2El5VmvkKdC7uwCyO6sAu7sNWwfiy24VGPxYlG3M01Hyc6MUJ4+2GhWF/92K8U+8nNYr1Q1GjglilPb5mLSmPrq4jFa7pXu7ALu7ALu3DvsKib5tkvyvWwHON0+qqH5U6gQuink2yWw8PicDNV3QrUfZ6qljs08POP6HpGaK9GDvf3T//S9osLD0a3nFAgiQwiJBGSrdzQLRlxmrUqAMiQQHgM50ggASB5r1m7D2pXBEAzske1AkuwXa3ududoVQJ/XKJFJbR4gdYw/hKW90csv9A/SlD9NeTCgw78Es0SJYduidGhWQ5neQGa4gccnuJFJqYWWrZbEvqjRoX/JufQTxqHWa/JxTPYRRSnndWfunUMXwJQlXMAAAAASUVORK5CYII="
+             alt="OKX" width="60" height="60" />
+        <div>
+            <h4>OKX</h4>
+            <p class="desc">Сейшельская криптобиржа, ранее известная как OKEx, является одной из крупнейших крипто-спотовых и деривативных торговых бирж.</p>
+        </div>
+        <a href="https://www.okx.com/ru/p2p-markets/rub/buy-btc" target="_blank" rel="nofollow noopener noreferrer">ПЕРЕЙТИ</a>
+    </li>
+</ul>
+</body>
+</html>
