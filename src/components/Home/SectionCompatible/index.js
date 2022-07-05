@@ -14,7 +14,7 @@ const SectionWebCompatible = () => {
         <div>
           <div className='w-full lg:w-auto mx-auto mt-7 md:mt-0 lg:mx-0'>
 	          <picture>
-		          <source media='(min-width: 768px)' srcSet={`/img/compatible/compatible-mobile@1x.avif 1x, /img/compatible/compatible@2x.avif 2x`} type="image/avif" />
+		          <source media='(min-width: 768px)' srcSet={`/img/compatible/compatible@1x.avif 1x, /img/compatible/compatible@2x.avif 2x`} type="image/avif" />
 		          <source media='(min-width: 768px)' srcSet={`/img/compatible/compatible@1x.png 1x, /img/compatible/compatible@2x.png 2x`} type="image/png" />
 		          <source srcSet={`/img/compatible/compatible-mobile@1x.avif 1x, /img/compatible/compatible-mobile@2x.avif 2x`} type="image/avif" />
 		          <img
