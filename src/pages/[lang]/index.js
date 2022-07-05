@@ -8,13 +8,13 @@ import SectionFaq from '../../components/Home/SectionFaq'
 import SectionCommunity from '../../components/Home/SectionCommunity'
 import React from "react";
 import Modal from "../../components/Home/Modal";
+import ModalNew from "../../components/Common/Modal";
 import Search from "../../components/Home/Search";
 import useModal from "../../hooks/useModal";
-import Pricing from "../../components/Home/Pricing";
+import Pricing from "../../components/Common/Pricing";
 import i18next, {t} from 'i18next';
 import { getAllLanguageSlugs, getLanguage } from '../../lib/lang';
 import Footer from "../../components/Common/Footer";
-
 
 export const LangHome = ({ language }) => {
 	const { isShowing: isSearchShowing, toggle: toggleSearch } = useModal('search')
@@ -58,12 +58,13 @@ export const LangHome = ({ language }) => {
 				>
 					<Search hide={toggleSearch} />
 				</Modal>
-				<Modal
+				<ModalNew
 					isShowing={isBuyShowing}
 					hide={toggleBuy}
+					title={t('pricing.title')}
 				>
-					<Pricing hide={toggleBuy} />
-				</Modal>
+					<Pricing />
+				</ModalNew>
 			</main>
 			<Footer />
 		</>

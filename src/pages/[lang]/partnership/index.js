@@ -8,8 +8,8 @@ import SectionReseller from "../../../components/Partnership/SectionReseller";
 import SectionAffiliate from "../../../components/Partnership/SectionAffiliate";
 import SectionWorld from "../../../components/Partnership/SectionWorld";
 import Footer from "../../../components/Common/Footer";
-import Modal from "../../../components/Home/Modal";
-import Pricing from "../../../components/Home/Pricing";
+import Modal from "../../../components/Common/Modal";
+import Pricing from "../../../components/Common/Pricing";
 import useModal from "../../../hooks/useModal";
 
 const LangPartnership = () => {
@@ -43,8 +43,9 @@ const LangPartnership = () => {
 				<Modal
 					isShowing={isBuyShowing}
 					hide={toggleBuy}
+					title={t('pricing.title')}
 				>
-					<Pricing hide={toggleBuy} />
+					<Pricing />
 				</Modal>
 			</main>
 			<Footer />
