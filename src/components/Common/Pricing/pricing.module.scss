@@ -43,7 +43,7 @@
   @include mixins.respond-to-medium {
     grid-row: 1 / 3;
     min-height: 540px;
-    max-height: min(680px, calc(100vh - 221px));
+    max-height: min(680px, calc(100vh - 280px));
   }
 
   h3 {
