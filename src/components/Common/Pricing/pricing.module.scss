@@ -35,7 +35,8 @@
 }
 
 .choice {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   color: rgb(0 0 0);
   font-weight: normal;
 
@@ -344,13 +345,18 @@
   margin-bottom: 24px;
 }
 
+.counter-block {
+  width: 100%;
+  padding-bottom: 1rem;
+  border-bottom: solid 1px rgb(233 233 233);
+}
+
 .counter {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 120px;
-  margin-bottom: 1rem;
 }
 
 .total {
@@ -359,8 +365,8 @@
   align-items: center;
   align-self: end;
   justify-content: space-between;
-  padding-top: 32px;
-  border-top: solid 1px rgb(233 233 233);
+  padding-top: .5rem;
+  width: 100%;
 
   .label {
     color: rgb(104 104 104);

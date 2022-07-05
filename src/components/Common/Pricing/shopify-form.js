@@ -94,47 +94,49 @@ const ShopifyForm = ({products, ids}) => {
 			</div>
 			<div className={classNames(styles.choice)}>
 				<div>
-				<div>
-					<h3>{ t('pricing.buy.title')}</h3>
-					<p>{ t('pricing.buy.description')}</p>
-				</div>
-				<form className={styles.form}>
-					<span >{t('pricing.choice')}</span>
-					<fieldset className={styles['check-shopify']}>
-						{ packKeys.map((packKey) =>(
-							<React.Fragment key={packKey}>
-								<input
-									type="radio"
-									name="pack"
-									value={packKey}
-									id={packKey}
-									checked={packKey === currentPack}
-									onChange={ () => setCurrentPack(packKey)}
-									className={styles.radio}
-								/>
-								<label htmlFor={packKey}>
-									<div className={styles['radio-title']}>
-										<h4>{ packs[packKey].title }</h4>
-										<span>{`$${ products[packKey] ? products[packKey].price : packs[packKey].defaultPrice }` }</span>
-									</div>
-									<p className={styles['radio-description']}>{ packs[packKey].description }</p>
-								</label>
-							</React.Fragment>
-						))}
-					</fieldset>
-				</form>
-				<span className={styles['quantity-label']}>{t('pricing.quantity')}</span>
-				<div className={styles.counter}>
-					<button
-						className={classNames(styles.decrement, {[styles.disabled]: quantity < 2})}
-						onClick={()=>setQuantity(v => Math.max(v - 1, 1))}
-					></button>
-					<span className={styles.quantity}>{quantity}</span>
-					<button
-						className={styles.increment}
-						onClick={()=>setQuantity(v => v + 1)}
-					></button>
-				</div>
+					<div>
+						<h3>{ t('pricing.buy.title')}</h3>
+						<p>{ t('pricing.buy.description')}</p>
+					</div>
+					<form className={styles.form}>
+						<span >{t('pricing.choice')}</span>
+						<fieldset className={styles['check-shopify']}>
+							{ packKeys.map((packKey) =>(
+								<React.Fragment key={packKey}>
+									<input
+										type="radio"
+										name="pack"
+										value={packKey}
+										id={packKey}
+										checked={packKey === currentPack}
+										onChange={ () => setCurrentPack(packKey)}
+										className={styles.radio}
+									/>
+									<label htmlFor={packKey}>
+										<div className={styles['radio-title']}>
+											<h4>{ packs[packKey].title }</h4>
+											<span>{`$${ products[packKey] ? products[packKey].price : packs[packKey].defaultPrice }` }</span>
+										</div>
+										<p className={styles['radio-description']}>{ packs[packKey].description }</p>
+									</label>
+								</React.Fragment>
+							))}
+						</fieldset>
+					</form>
+					<span className={styles['quantity-label']}>{t('pricing.quantity')}</span>
+					<div className={styles['counter-block']}>
+						<div className={styles.counter}>
+							<button
+								className={classNames(styles.decrement, {[styles.disabled]: quantity < 2})}
+								onClick={()=>setQuantity(v => Math.max(v - 1, 1))}
+							></button>
+							<span className={styles.quantity}>{quantity}</span>
+							<button
+								className={styles.increment}
+								onClick={()=>setQuantity(v => v + 1)}
+							></button>
+						</div>
+					</div>
 				</div>
 				<div className={styles.total} >
 					<div>

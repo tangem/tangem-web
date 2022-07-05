@@ -99,13 +99,20 @@ const PricingNew = ( ) => {
 				[packKeys[0]]: 'https://market.yandex.ru/product--kriptokoshelek-tangem-wallet-nabor-iz-3-kart/1756706099?cpa=1',
 				[packKeys[1]]: 'https://market.yandex.ru/product--apparatnyi-multivaliutnyi-kriptokoshelek-tangem-wallet-kholodnyi-koshelek-dlia-kriptovaliuty-koshelek-dlia-kriptovaliut-kriptokoshelek-kholodnyi/1737017403?sku=101650591952&cpa=1',
 			},
+			{
+				id: 'cryptonist',
+				title: 'Cryptonist',
+				popular: false,
+				[packKeys[0]]: 'https://cryptonist.ru/catalog/tangem/tangem-wallet-3/',
+				[packKeys[1]]: 'https://cryptonist.ru/catalog/tangem/tangem-wallet-2/',
+			},
 		],
 		by: [
 			{
 				id: '5element',
 				title: '5 Element',
 				popular: false,
-				[packKeys[0]]: 'https://5element.by/products/744233-beskontaktnaya-smart-karta-tangem-wallet-tg115x3-nabor-iz-3-kart  ',
+				[packKeys[0]]: 'https://5element.by/products/744233-beskontaktnaya-smart-karta-tangem-wallet-tg115x3-nabor-iz-3-kart',
 				[packKeys[1]]: 'https://5element.by/products/744232-beskontaktnaya-smart-karta-tangem-wallet-tg115x2-nabor-iz-2-kart',
 			},
 		],
@@ -114,7 +121,7 @@ const PricingNew = ( ) => {
 
 	const list = resellers[language] ?? resellers['ru'];
 
-return (
+	return (
 		<div className={styles.card}>
 			<div className={styles.picture}>
 				{ packs[currentPack].image }
