@@ -8,7 +8,9 @@ import Shopify from "./shopify";
 const Pricing = () => {
 	const {language} = i18next;
 
-  const useShopify = language !== 'ru';
+	const resellersLocales = ['ru', 'by'];
+
+  const useShopify = !resellersLocales.includes(language)
 
 	return useShopify ? <Shopify /> : <Resellers />
 }
