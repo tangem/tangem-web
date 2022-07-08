@@ -46,6 +46,7 @@ const LangCompany = () => {
 					isShowing={isBuyShowing}
 					hide={toggleBuy}
 					title={t('pricing.title')}
+					anchor="pricing"
 				>
 					<Pricing />
 				</Modal>

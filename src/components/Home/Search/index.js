@@ -69,7 +69,7 @@ const networkIcons = {
 	//'rootstock': {}
 }
 
-const Search = ({ hide }) => {
+const Search = ({ hide, anchor }) => {
 
 	const searchRef = useRef(null)
 	const [isLoading, setLoading] = useState(false)
@@ -88,14 +88,23 @@ const Search = ({ hide }) => {
 		if (searchRef?.current) {
 			searchRef?.current.focus()
 		}
-	}, [])
+	}, []);
+
+	useEffect(() => {
+		const historyState = {...window.history.state };
+		window.history.pushState(null, null, `#${anchor}`);
+
+		return function deleteAnchor() {
+			window.history.pushState( historyState, null, '#');
+		}
+	}, [anchor]);
 
 	useEffect(() => {
 		if (tokenText?.length === 0) {
 			setHasMoreTokens(true)
 			fetchCoins(20, 0)
 		}
-	}, [tokenText])
+	}, [tokenText]);
 
 	const onSearchChange = (e) => {
 		setLoading(true)
