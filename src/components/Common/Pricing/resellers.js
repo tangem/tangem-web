@@ -1,10 +1,11 @@
 import React, {useEffect, useState} from 'react'
 import * as styles from './pricing.module.scss';
-import {t} from "i18next";
-import Features from "./features";
+import i18next, {t} from "i18next";
 import {TANGEM_RESELLERS_API_URI} from "../../../config";
+import Features from "./features";
 
 const Resellers = ( ) => {
+	const {language} = i18next;
 	const packKeys = ['pack3', 'pack2'];
 
 	const packs = {
@@ -48,7 +49,7 @@ const Resellers = ( ) => {
 		async function getResellers() {
 			setLoading(true);
 			try {
-				const response = await fetch(TANGEM_RESELLERS_API_URI);
+				const response = await fetch(`${TANGEM_RESELLERS_API_URI}?defaultCode=${language}`);
 				const data = await response.json()
 				setList(data.resellers);
 			} finally {

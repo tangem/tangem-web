@@ -56,12 +56,13 @@ export const LangHome = ({ language }) => {
 					isShowing={isSearchShowing}
 					hide={toggleSearch}
 				>
-					<Search hide={toggleSearch} />
+					<Search hide={toggleSearch}	anchor="search" />
 				</Modal>
 				<ModalNew
 					isShowing={isBuyShowing}
 					hide={toggleBuy}
 					title={t('pricing.title')}
+					anchor="pricing"
 				>
 					<Pricing />
 				</ModalNew>
