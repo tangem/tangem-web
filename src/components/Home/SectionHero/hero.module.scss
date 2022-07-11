@@ -133,7 +133,9 @@
   position: absolute;
   top: 0;
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 56.25vw;
+  max-width: 1680px;
+  max-height: 945px;
   z-index: 5;
 }
 
@@ -156,6 +158,8 @@
 .player {
   aspect-ratio: 16 / 9;
   width: 100%;
+  height: 56.25vw;
+  max-height: 945px;
   max-width: 1680px;
 }
 
@@ -190,14 +194,14 @@
 }
 
 .frame {
-  aspect-ratio: 16 / 9;
+  height: 56.25vw;
   width: 100%;
   max-width: 1680px;
-  margin: auto;
+  max-height: 945px;
   display: flex;
   justify-content: center;
   position: relative;
-  margin-bottom: 64px;
+  margin: auto auto 64px;
 
   &::before {
     content: "";
