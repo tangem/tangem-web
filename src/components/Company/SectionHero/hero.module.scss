@@ -2,11 +2,10 @@
 @use "../../../styles/mixins";
 
 .hero {
-  margin-bottom: calc-clamp(5rem, 12.5rem);
   padding-top: calc-clamp(5.25rem, 12.5rem);
   letter-spacing: -0.02em;
   text-align: center;
-  margin-inline: max(35px, calc(50% - 620px));
+  margin: 0 max(35px, calc(50% - 620px)) calc-clamp(5rem, 12.5rem);
 
   @include mixins.respond-to-medium {
     letter-spacing: 0;

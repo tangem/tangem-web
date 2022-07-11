@@ -2,10 +2,9 @@
 @use "../../../styles/mixins";
 
 .partners {
-  margin-bottom: calc-clamp(5rem, 12.5rem);
+  margin: 0 max(1rem, calc(50% - 620px)) calc-clamp(5rem, 12.5rem);
   letter-spacing: -0.02em;
   text-align: center;
-  margin-inline: max(1rem, calc(50% - 620px));
 
   @include mixins.respond-to-medium {
     letter-spacing: 0;

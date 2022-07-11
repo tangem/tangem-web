@@ -4,8 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: calc-clamp(5rem, 12.5rem);
-  margin-inline: max(1rem, calc(50% - 620px));
+  margin: calc-clamp(5rem, 12.5rem) max(1rem, calc(50% - 620px)) 0;
 
   h3 {
     color: rgb(0 0 0);
@@ -148,15 +147,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 52px;
   color: rgb(104 104 104);
   line-height: 20px;
   text-align: center;
-  padding-inline: 52px;
 
   @media (min-width: 768px) {
     display: inline;
     margin-bottom: 73px;
-    padding-inline: 0;
+    padding: 0;
   }
 }
 

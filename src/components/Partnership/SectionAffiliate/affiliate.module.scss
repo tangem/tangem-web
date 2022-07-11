@@ -2,9 +2,9 @@
 
 .section {
   width: 100%;
+  padding: calc-clamp(5rem, 9.375rem) 0;
   overflow: hidden;
   background: rgb(0 0 0);
-  padding-block: calc-clamp(5rem, 9.375rem);
 }
 
 .affiliate {
@@ -15,7 +15,7 @@
   justify-items: center;
   width: calc(100% - 2rem);
   row-gap: 60px;
-  margin-inline: max(1rem, calc(50% - 620px));
+  margin: 0 max(1rem, calc(50% - 620px));
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -159,11 +159,11 @@
   }
 
   h4 {
+    margin: 16px 0;
     color: rgb(255 255 255);
     font-size: 24px;
     line-height: 1.3;
     letter-spacing: 0;
-    margin-block: 16px;
   }
 
   p {
