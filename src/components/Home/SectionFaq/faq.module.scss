@@ -6,13 +6,12 @@ $white: rgb(255 255 255);
 $gray: rgb(236 237 237);
 
 .faq {
-  margin-inline: 16px;
-  margin-block: calc-clamp(5rem, 12.5rem);
+  margin: calc-clamp(5rem, 12.5rem) 16px;
 
   @media (min-width: 768px) {
     width: calc(100% - 32px);
     max-width: 1100px;
-    margin-inline: auto;
+    margin: calc-clamp(5rem, 12.5rem) auto;
   }
 }
 

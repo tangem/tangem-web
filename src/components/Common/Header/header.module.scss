@@ -158,6 +158,8 @@
   li {
     position: relative;
     display: flex;
+    margin: 0 20px 0 16px;
+    padding: 16px 0;
     font-weight: 400;
     font-size: 17px;
     font-style: normal;
@@ -165,8 +167,6 @@
     letter-spacing: unset;
     text-decoration: none;
     opacity: 0.5;
-    margin-inline: 16px 20px;
-    padding-block: 16px;
 
     @include mixins.motion {
       transition: 0.25s;

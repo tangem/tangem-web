@@ -28,10 +28,9 @@
     width: fit-content;
     max-width: min(1400px, 100% - 2rem);
     max-height: calc(100vh - 76px);
-    margin-top: 60px;
+    margin: 60px auto 0;
     border-radius: 20px;
     outline: 0;
-    margin-inline: auto;
 
     @media (min-height: 900px) {
       overflow: hidden;
