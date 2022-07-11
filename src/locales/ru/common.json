@@ -6,10 +6,11 @@
     "partnership": "Партнерство",
     "developers": "Developers",
     "company": "О компании",
-    "customerPart": "customerPart",
-    "termsOfUse": "termsOfUse",
-    "privacyPolicy": "privacyPolicy",
-    "companyPart": "Компания"
+    "legalPart": "Legal",
+    "termsOfUse": "Условия использования",
+    "privacyPolicy": "Политика конфиденциальности",
+    "companyPart": "Компания",
+    "about": "О компании"
   },
   "pages": {
     "partnership": {

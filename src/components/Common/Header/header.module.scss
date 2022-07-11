@@ -112,6 +112,14 @@
     box-shadow: 1px 0 6px rgb(9 14 19 / 20%);
     visibility: hidden;
 
+    .dark & {
+      background-color: colors.$header-bg-dark;
+    }
+
+    .light & {
+      background-color: colors.$header-bg-light;
+    }
+
     @media (min-width: 768px) {
       position: relative;
       right: auto;

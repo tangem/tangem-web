@@ -6,10 +6,11 @@
     "partnership": "Partnership",
     "developers": "Developers",
     "company": "Company",
-    "customerPart": "Customer Center",
+    "legalPart": "Legal",
     "termsOfUse": "Terms of Use",
     "privacyPolicy": "Privacy Policy",
-    "companyPart": "Компания"
+    "companyPart": "Company",
+    "about": "About Tangem"
   },
   "pages": {
     "partnership": {
