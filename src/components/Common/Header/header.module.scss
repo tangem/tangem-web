@@ -116,10 +116,6 @@
       background-color: colors.$header-bg-dark;
     }
 
-    .light & {
-      background-color: colors.$header-bg-light;
-    }
-
     @media (min-width: 768px) {
       position: relative;
       right: auto;
@@ -133,6 +129,10 @@
       box-shadow: none;
       visibility: visible;
       transition-duration: unset;
+
+      .dark & {
+        background: transparent;
+      }
     }
   }
 
