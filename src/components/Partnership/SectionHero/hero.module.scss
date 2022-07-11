@@ -93,11 +93,18 @@
     z-index: 1;
     height: 539px;
     width: 466px;
-    min-width: fit-content;
     overflow: hidden;
     margin-left: 39px;
     top: -56px;
-    aspect-ratio: 466 / 539;
+
+    @supports not (aspect-ratio: 466 / 539) {
+      min-width: 466px;
+    }
+
+    @supports (aspect-ratio: 466 / 539) {
+      aspect-ratio: 466 / 539;
+      min-width: min-content;
+    }
 
     @media (min-width: 768px) {
       width: auto;

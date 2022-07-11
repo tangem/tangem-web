@@ -34,10 +34,18 @@
     content: "";
     aspect-ratio: 1;
 
+    @supports not (aspect-ratio: 1) {
+      height: 432px;
+    }
+
     @media (min-width: 768px) {
       top: -290px;
       left: 55%;
       width: 632px;
+
+      @supports not (aspect-ratio: 1) {
+        height: 632px;
+      }
     }
   }
 
