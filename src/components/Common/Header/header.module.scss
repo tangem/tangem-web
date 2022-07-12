@@ -112,6 +112,10 @@
     box-shadow: 1px 0 6px rgb(9 14 19 / 20%);
     visibility: hidden;
 
+    .dark & {
+      background-color: colors.$header-bg-dark;
+    }
+
     @media (min-width: 768px) {
       position: relative;
       right: auto;
@@ -125,6 +129,10 @@
       box-shadow: none;
       visibility: visible;
       transition-duration: unset;
+
+      .dark & {
+        background: transparent;
+      }
     }
   }
 
@@ -158,6 +166,8 @@
   li {
     position: relative;
     display: flex;
+    margin: 0 20px 0 16px;
+    padding: 16px 0;
     font-weight: 400;
     font-size: 17px;
     font-style: normal;
@@ -165,8 +175,6 @@
     letter-spacing: unset;
     text-decoration: none;
     opacity: 0.5;
-    margin-inline: 16px 20px;
-    padding-block: 16px;
 
     @include mixins.motion {
       transition: 0.25s;

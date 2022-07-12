@@ -11,7 +11,7 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
   border-radius: 40px;
 
-  margin-inline: max(1rem, calc(50% - 620px));
+  margin: 0 max(1rem, calc(50% - 620px));
   width: calc(100% - 2rem);
 
   @media (min-width: 768px) {

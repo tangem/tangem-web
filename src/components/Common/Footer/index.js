@@ -1,26 +1,12 @@
-import React from 'react'
-import styles from './footer.module.scss'
-import dynamic from 'next/dynamic'
-
-const DynamicZendesk = dynamic(
-	() => import('../Zendesk'),
-	{ ssr: false }
-)
-
+import React from 'react';
+import FooterNew from "../FooterNew";
+import FooterOld from "../FooterOld";
+import i18next from "i18next";
 const Footer = () => {
-
-  return (
-    <footer className={styles.footer}>
-	    <span className={styles.madeIn}>
-		    From Switzerland
-	    </span>
-      <div className={styles['footer-copyright']}>
-        Copyright © {(new Date()).getFullYear()} Tangem. All Rights Reserved.{"\n"}
-        Global Headquarters, Tangem AG, Baarerstrasse 10, 6300 Zug, Switzerland
-      </div>
-	    <DynamicZendesk />
-    </footer>
-  )
+	const {language} = i18next;
+	return (
+		['ru', 'by'].includes(language) ? <FooterOld /> : <FooterNew />
+	)
 }
 
-export default Footer
+export default Footer;

@@ -12,7 +12,7 @@
 
 .form {
   width: 100%;
-  padding-inline: calc-clamp(1rem, 2.5rem);
+  padding: 0 calc-clamp(1rem, 2.5rem);
 
   @media (min-width: 768px) {
     width: 680px;

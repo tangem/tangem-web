@@ -5,7 +5,12 @@
     "wallet": "Кошелек",
     "partnership": "Партнерство",
     "developers": "Developers",
-    "company": "О компании"
+    "company": "О компании",
+    "legalPart": "Legal",
+    "termsOfUse": "Условия использования",
+    "privacyPolicy": "Политика конфиденциальности",
+    "companyPart": "Компания",
+    "about": "О компании"
   },
   "pages": {
     "partnership": {

@@ -5,7 +5,12 @@
     "wallet": "Wallet",
     "partnership": "Partnership",
     "developers": "Developers",
-    "company": "Company"
+    "company": "Company",
+    "legalPart": "Legal",
+    "termsOfUse": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "companyPart": "Company",
+    "about": "About Tangem"
   },
   "pages": {
     "partnership": {

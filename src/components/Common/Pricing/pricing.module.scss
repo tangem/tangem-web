@@ -123,11 +123,12 @@
 .props {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px 10px;
+  gap: 10px;
   margin-top: 20px;
 
   @include mixins.respond-to-medium {
     grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
   }
 }
 
@@ -291,15 +292,21 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 101px;
-      height: 46px;
+      width: 86px;
+      height: 36px;
       color: rgb(255 255 255);
       font-weight: normal;
-      font-size: 20px;
-      line-height: 1.1;
       text-align: center;
       background: rgb(0 0 0);
       border-radius: 100px;
+      font-size: 15px;
+      line-height: 22px;
+
+      @include mixins.respond-to-medium {
+        font-size: 20px;
+        width: 101px;
+        height: 46px;
+      }
     }
   }
 }
