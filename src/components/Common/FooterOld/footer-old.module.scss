@@ -4,13 +4,13 @@ $gray: rgb(110 114 117);
 
 .footer {
   margin: 80px 1rem 48px;
+}
 
-  &-copyright {
-    color: $gray;
-    font-weight: 400;
-    white-space: pre-line;
-    text-align: center;
-  }
+.copyright {
+  color: $gray;
+  font-weight: 400;
+  white-space: pre-line;
+  text-align: center;
 }
 
 .madeIn {

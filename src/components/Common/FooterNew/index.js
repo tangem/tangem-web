@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './footer.module.scss';
+import styles from './footer-new.module.scss';
 import dynamic from 'next/dynamic';
 import Logo from '../../../../public/svg/tangem-logo.svg';
 import i18next, {t} from "i18next";

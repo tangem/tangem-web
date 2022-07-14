@@ -1,0 +1,58 @@
+@use "../../styles/mixins";
+@use "../../styles/function" as *;
+
+.main {
+  padding-top: 200px;
+  text-align: center;
+
+  @include mixins.respond-to-medium {
+    min-height: calc(100vh - 510px);
+  }
+}
+
+.code {
+  margin-bottom: 40px;
+  color: rgb(0 0 0 / 6%);
+  font-weight: 700;
+  font-size: calc-clamp(7.8125rem, 15.625rem);
+  line-height: 1.1;
+
+  @include mixins.respond-to-medium {
+
+  }
+}
+
+.title {
+  margin-bottom: 24px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+
+  @include mixins.respond-to-medium {
+    letter-spacing: normal;
+  }
+}
+
+.text {
+  max-width: 454px;
+  margin: 0 auto 60px;
+  color: rgb(104 104 104);
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.02em;
+
+  @include mixins.respond-to-medium {
+    letter-spacing: normal;
+  }
+}
+
+.button {
+  padding: 12px 34px;
+  color: rgb(255 255 255);
+  font-size: 17px;
+  line-height: 22px;
+  text-align: center;
+  background: rgb(0 0 0);
+  border-radius: 100px;
+}
