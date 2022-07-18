@@ -1,17 +1,31 @@
 import i18next, {t} from "i18next";
 import Head from "next/head";
 import Link from "next/link";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import * as styles from "./404.module.scss";
-import {getAllLanguageSlugs, getLanguage} from "../../lib/lang";
-import Footer from "../../components/Common/Footer";
+import Footer from "../components/Common/Footer";
+import {useRouter} from "next/router";
+import {getLanguage} from "../lib/lang";
 
 export default function LangCustom404() {
 	const {language} = i18next;
+	const router = useRouter();
 
-	console.log(language);
+	const [lang, setLang] = useState(getLanguage(''));
+	const [isFind, setIsFind] = useState(false);
 
-	return (
+	useEffect(() => {
+		const [, lang] = router.asPath.split('/');
+		setLang(lang);
+
+	} ,[router.asPath]);
+
+	useEffect(()=> {
+		i18next.changeLanguage(lang)
+			.then(() => setIsFind(true));
+	}, [lang])
+
+	return isFind && (
 		<>
 			<Head>
 				<meta httpEquiv='X-UA-Compatible' content='IE=edge' />
@@ -41,21 +55,4 @@ export default function LangCustom404() {
 			<Footer />
 		</>
 	)
-}
-
-export async function getStaticPaths() {
-	const paths = getAllLanguageSlugs({slug: ['404']});
-	return {
-		paths,
-		fallback: false,
-	};
-}
-
-export async function getStaticProps({ params }) {
-	const language = getLanguage(params.lang);
-	return {
-		props: {
-			language,
-		},
-	};
 }

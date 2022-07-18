@@ -1,5 +1,5 @@
-@use "../../styles/mixins";
-@use "../../styles/function" as *;
+@use "../styles/mixins";
+@use "../styles/function" as *;
 
 .main {
   padding-top: 200px;
@@ -16,10 +16,6 @@
   font-weight: 700;
   font-size: calc-clamp(7.8125rem, 15.625rem);
   line-height: 1.1;
-
-  @include mixins.respond-to-medium {
-
-  }
 }
 
 .title {
