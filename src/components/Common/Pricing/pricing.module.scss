@@ -13,19 +13,27 @@
   max-height: 311px;
   padding: 2rem;
   background: rgb(0 0 0 / 3%);
-  border-radius: 20px;
+  border-radius: 14px;
 
   @include mixins.respond-to-medium {
     max-width: none;
     min-height: auto;
     max-height: none;
+    border-radius: 20px;
   }
 
   .img {
     display: flex;
     max-width: 100%;
     max-height: 100%;
-    aspect-ratio: 5 / 4;
+    aspect-ratio: 867 / 728;
+
+    @supports not (aspect-ratio: 5 / 4) {
+      height: 234px;
+      width: 279px;
+      max-height: 234px;
+      max-width: 279px;
+    }
 
     img {
       max-width: inherit;
@@ -73,19 +81,18 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-block: calc-clamp(0.875rem, 1.5rem);
+    margin: calc-clamp(0.875rem, 1.5rem) 0;
   }
 
   .check-shopify {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-block: calc-clamp(0.875rem, 1.5rem);
+    margin: calc-clamp(0.875rem, 1.5rem) 0;
 
     @include mixins.respond-to-medium {
       grid-template-columns: 1fr;
-      margin-block: calc-clamp(0.875rem, 1.5rem) 0;
-
+      margin: calc-clamp(0.875rem, 1.5rem) 0;
     }
   }
 
@@ -100,9 +107,8 @@
   grid-template-columns: 1fr;
   justify-content: space-between;
   box-sizing: border-box;
-  margin-bottom: 60px;
   column-gap: max(2rem, 100% - 1140px);
-  margin-inline: calc-clamp(1rem, 5rem);
+  margin: 0 1rem 60px;
 
   @include mixins.respond-to-medium {
     grid-template-rows: calc(100% - 180px) min-content;
@@ -110,7 +116,7 @@
     max-width: 1260px;
     min-height: 540px;
     max-height: calc(100vh - 141px);
-    margin-block: 40px;
+    margin: 40px calc-clamp(1rem, 5rem);
   }
 }
 
@@ -131,8 +137,7 @@
   flex-direction: row;
   align-items: center;
   width: 100%;
-  padding-block: 1.125rem;
-  padding-inline: 1.25rem;
+  padding: 1.125rem 1.25rem;
   color: rgb(0 0 0);
   font-weight: 500;
   font-size: 15px;
@@ -151,8 +156,7 @@
     width: 100%;
     min-height: 140px;
     font-size: calc-clamp(0.75rem, 1rem);
-    padding-block: calc-clamp(0.125rem, 2rem);
-    padding-inline: calc-clamp(0.125rem, 2rem);
+    padding: calc-clamp(0.125rem, 2rem) calc-clamp(0.125rem, 2rem);
 
     svg {
       flex-shrink: 0;
@@ -188,6 +192,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      text-align: center;
       justify-content: space-between;
       margin-bottom: 0.5rem;
       font-weight: 600;

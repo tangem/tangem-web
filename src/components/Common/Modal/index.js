@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import * as styles from './modal.module.scss';
 import ClientOnlyPortal from "../ClientOnlyPortal";
 
-function Modal({ isShowing, hide, children, title }) {
+function Modal({ isShowing, hide, children, title, anchor }) {
 	/* eslint-env browser */
 
 	const [node, setRef] = useState(null);
@@ -14,6 +14,8 @@ function Modal({ isShowing, hide, children, title }) {
 				//
 			};
 		}
+		const historyState = {...window.history.state };
+		window.history.pushState(null, null, `#${anchor}`);
 		const focusedElementBeforeModal = document.activeElement;
 		const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), object, embed, [tabindex="0"], [contenteditable]';
 		const focusableElementsValues = node.querySelectorAll(focusableElementsString);
@@ -50,8 +52,9 @@ function Modal({ isShowing, hide, children, title }) {
 		return function returnFocus() {
 			node.removeEventListener('keydown', trapTabKey);
 			focusedElementBeforeModal.focus();
+			window.history.pushState( historyState, null, '#');
 		};
-	}, [node, hide]);
+	}, [node, hide, anchor]);
 
 	return isShowing ?  (
 		<ClientOnlyPortal selector="#portal">
@@ -74,6 +77,7 @@ Modal.propTypes = {
 	isShowing: PropTypes.bool.isRequired,
 	hide: PropTypes.func.isRequired,
 	title: PropTypes.string,
+	anchor: PropTypes.string,
 };
 
 export default Modal;

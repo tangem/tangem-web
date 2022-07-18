@@ -2,7 +2,7 @@
 
 .section {
   width: 100%;
-  padding-block: calc-clamp(5rem, 9.375rem);
+  padding: calc-clamp(5rem, 9.375rem) 0;
   overflow: hidden;
 }
 
@@ -10,8 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-inline: max(1rem, calc(50% - 620px));
   width: calc(100% - 2rem);
+  margin: 0 max(1rem, calc(50% - 620px));
 
   @media (min-width: 768px) {
     flex-direction: row;
@@ -113,10 +113,10 @@
   line-height: 1.2;
 
   h4 {
+    margin: 16px 0;
     color: rgb(9 14 19);
     font-size: calc-clamp(1.5rem, 1.875rem);
     letter-spacing: 0;
-    margin-block: 16px;
   }
 
   p {
