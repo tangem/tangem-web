@@ -60,6 +60,12 @@ const Resellers = ( ) => {
 		getResellers();
 	}, []);
 
+	function handleClick(name) {
+		if (ga !== undefined) {
+			ga('send', 'event', 'button', 'click', name);
+		}
+	}
+
 	return (
 		<div className={styles.card}>
 			<div className={styles.picture}>
@@ -101,11 +107,11 @@ const Resellers = ( ) => {
 								<img
 									loading='lazy'
 									decoding='async'
-									alt={item.title}
+									alt={item.name}
 									src={`/img/resellers/${item.id}@1x.png`}
 									srcSet={`/img/resellers/${item.id}@2x.png 2x`}
 								/>
-								<a target='_blank' href={item[currentPack]} rel="noreferrer">{t('buttons.buy')}</a>
+								<a target='_blank' href={item[currentPack]} onClick={() => handleClick(item.name)} rel="noreferrer">{t('buttons.buy')}</a>
 							</li>
 						))
 						}
