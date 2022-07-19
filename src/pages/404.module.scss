@@ -1,13 +1,15 @@
 @use "../styles/mixins";
 @use "../styles/function" as *;
 
-.main {
-  padding-top: 200px;
-  text-align: center;
+.layout {
+  display: grid;
+  grid-template-rows: auto min-content;
+  min-height: 100vh;
+}
 
-  @include mixins.respond-to-medium {
-    min-height: calc(100vh - 510px);
-  }
+.main {
+  margin: calc-clamp(5rem, 12.5rem) 2rem 0;
+  text-align: center;
 }
 
 .code {
@@ -31,7 +33,7 @@
 }
 
 .text {
-  max-width: 454px;
+  max-width: 305px;
   margin: 0 auto 60px;
   color: rgb(104 104 104);
   font-size: 18px;
@@ -39,6 +41,7 @@
   letter-spacing: -0.02em;
 
   @include mixins.respond-to-medium {
+    max-width: 454px;
     letter-spacing: normal;
   }
 }
@@ -51,4 +54,9 @@
   text-align: center;
   background: rgb(0 0 0);
   border-radius: 100px;
+}
+
+.email {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
