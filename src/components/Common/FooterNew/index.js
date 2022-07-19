@@ -1,10 +1,11 @@
 import React from 'react';
-import styles from './footer.module.scss';
+import styles from './footer-new.module.scss';
 import dynamic from 'next/dynamic';
 import Logo from '../../../../public/svg/tangem-logo.svg';
 import i18next, {t} from "i18next";
 import classNames from "classnames";
 import Link from "next/link";
+import {getLanguage} from "../../../lib/lang";
 
 const DynamicZendesk = dynamic(
 	() => import('../Zendesk'),
@@ -13,6 +14,7 @@ const DynamicZendesk = dynamic(
 
 const Footer = () => {
 	const { language } = i18next;
+	const lang = getLanguage(language);
 
   return (
     <footer className={styles.footer}>
@@ -31,10 +33,10 @@ const Footer = () => {
 		    <div className={classNames(styles.company, styles.list)}>
 			    <span className={styles.head}>{t('menu.companyPart')}</span>
 
-			    <Link href={`/${language}/company/`}>
+			    <Link href={`/${lang}/company/`}>
 				    <a>{t('menu.about')}</a>
 			    </Link>
-			    <Link href={`/${language}/partnership/`}>
+			    <Link href={`/${lang}/partnership/`}>
 				    <a>{t('menu.partnership')}</a>
 			    </Link>
 		    </div>

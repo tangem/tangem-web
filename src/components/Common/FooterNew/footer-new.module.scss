@@ -1,7 +1,8 @@
 @use "../../../styles/mixins";
+@use "../../../styles/function" as *;
 
 .footer {
-  margin-top: 150px;
+  margin-top: calc-clamp(0rem, 9.375rem);
   padding: 60px 0 35px;
   margin-inline: max(1rem, calc(50% - 620px));
   overflow: hidden;
