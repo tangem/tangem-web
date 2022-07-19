@@ -20,6 +20,11 @@
       "title": "The company - Tangem"
     }
   },
+  "404": {
+    "title": "Oops, Page Not Found",
+    "description": "Either something went wrong or the page doesn’t exist anymore. Contact us at ",
+    "goHome": "Main page"
+  },
   "sections": {
     "safe": {
       "title": "The safest crypto wallet\nfor everyone",
