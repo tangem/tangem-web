@@ -62,8 +62,7 @@ const Resellers = ( ) => {
 
 	function handleClick(name) {
 		if (ga !== undefined) {
-			console.log(name);
-			// ga('send', 'event', 'button', 'click', name);
+			ga('send', 'event', 'button', 'click', name);
 		}
 	}
 
