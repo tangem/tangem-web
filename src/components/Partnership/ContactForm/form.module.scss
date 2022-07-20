@@ -12,10 +12,11 @@
 
 .form {
   width: 100%;
-  padding: 0 calc-clamp(1rem, 2.5rem);
+  padding: 18px 16px;
 
   @media (min-width: 768px) {
     width: 680px;
+    padding: 40px calc-clamp(1rem, 2.5rem);
   }
 
   legend {
