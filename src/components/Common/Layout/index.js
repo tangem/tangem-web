@@ -18,6 +18,7 @@ const Layout = ({title, description, children}) => {
 				<meta property="og:image" content="https://tangem.com/img/hero/phone@1x.png" />
 				<meta property="og:video" content="https://www.youtube.com/watch?v=ST4jvcaE_UU" />
 				<meta property="og:locale" content="en_US" />
+				<meta name="yandex-verification" content="d7ceaf19b3538bb6" />
 				<title>{ title }</title>
 				<link rel='shortcut icon' href='/img/favicon/favicon.png' />
 				<link rel='apple-touch-icon' href='/img/favicon/favicon-180.png' />
