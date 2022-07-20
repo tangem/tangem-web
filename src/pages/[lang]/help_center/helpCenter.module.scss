@@ -1,0 +1,48 @@
+.page {}
+
+.wrapper {
+  width: 100vw;
+  background-color: rgb(8 7 5);
+}
+
+.hero {
+  max-width: 1680px;
+  height: 600px;
+  margin: auto;
+  text-align: center;
+  background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero.jpg");
+
+  h1 {
+    margin-bottom: 40px;
+    padding-top: 200px;
+    color: rgb(255 255 255);
+    font-size: 80px;
+    line-height: 0.9;
+  }
+
+  button {
+    color: rgb(0 0 0);
+    background: rgb(255 255 255);
+    padding: 15px 34px;
+  }
+
+  a {
+    color: rgb(255 255 255);
+    background-image: linear-gradient(180deg, rgb(20 143 213) 0%, rgb(48 167 233) 100%), url("/img/help-center/telegram.png");
+    background-position: center center, 0 50%;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 6%);
+    padding: 15px 28px 15px 61px;
+  }
+}
+
+.button {
+
+  font-size: 20px;
+  line-height: 1.1;
+  border-radius: 100px;
+
+  &:not(:first-child) {
+    margin-left: 20px;
+  }
+}
