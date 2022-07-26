@@ -25,7 +25,7 @@ const LangHelpCenter = ({sections, language}) => {
 	];
 
 	return (
-		<Layout title={t('pages.partnership.title')} description={t('description') }>
+		<Layout title={t('pages.helpCenter.title')} description={t('description') }>
 			<Header isDark={true} />
 			<main className={styles.page}>
 				<div className={styles.wrapper} >
