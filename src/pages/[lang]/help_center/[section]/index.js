@@ -135,7 +135,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 	}
 
 	return (
-		<Layout title={t('pages.partnership.title')} description={t('description') }>
+		<Layout title={section.name} description={t('description') }>
 			<Header isDark={true} breadcrumbs={breadcrumbs} />
 			<div className={styles.wrapper}>
 				<aside>
@@ -157,7 +157,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 					</div>
 				</aside>
 				<main>
-					<h1 className={styles['visually-hidden']}>{section.title}</h1>
+					<h1 className={styles['visually-hidden']}>{section.name}</h1>
 					<ul className={styles.articles}>
 						{ articles.articles.map(({title, id, body}) => (
 							<li key={id}>
