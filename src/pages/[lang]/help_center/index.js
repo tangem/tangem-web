@@ -38,7 +38,7 @@ const LangHelpCenter = ({sections, language}) => {
 						>
 							{t('buttons.contact-support')}
 						</button>
-						<a href={t('socials.telegram')} className={styles.button}>Telegram chat</a>
+						<a href={t('socials.telegram')} target="_blank" className={styles.button} rel="nofollow noopener noreferrer">Telegram chat</a>
 					</section>
 				</div>
 				<section>

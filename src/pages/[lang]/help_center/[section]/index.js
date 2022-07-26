@@ -7,7 +7,6 @@ import * as styles from "./section.module.scss";
 import Footer from "../../../../components/Common/Footer";
 import React, {useEffect, useState} from "react";
 import classNames from "classnames";
-import {prefixes} from "next/dist/build/output/log";
 
 const LangHelpCenterSection = ({ language, articles, section}) => {
 	const breadcrumbs = [
@@ -23,13 +22,16 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 
 	useEffect(() => {
 		if ( window.location.hash) {
+      console.log(window.innerWidth)
 			setClickedArticleId(window.location.hash.slice(1));
 			return function empty() {}
 		}
-		const [first] = document.getElementsByClassName(styles.link);
-		if (first) {
-			setClickedArticleId(first.getAttribute('id'));
-		}
+    if (window.innerWidth >= 768) {
+      const [first] = document.getElementsByClassName(styles.link);
+      if (first) {
+        setClickedArticleId(first.getAttribute('id'));
+      }
+    }
 	}, [])
 
 	useEffect(() => {
