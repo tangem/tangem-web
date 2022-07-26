@@ -68,7 +68,7 @@ const SectionReseller = () => {
 					}
 				</ul>
 			</div>
-			<ModalNew isShowing={isFormShowing} hide={toggleForm} title={t('contactUs.resellers.title')}>
+			<ModalNew isShowing={isFormShowing} hide={toggleForm} title={t('contactUs.reseller.title')}>
 				<ContactForm program='reseller' />
 			</ModalNew>
 		</section>
