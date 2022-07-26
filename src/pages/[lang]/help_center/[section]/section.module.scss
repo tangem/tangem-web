@@ -1,0 +1,100 @@
+@use "../../../../styles/mixins";
+@use "../../../../styles/function" as *;
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 500px;
+  margin-top: 118px;
+  padding: 0 max(1rem, calc(50% - 620px));
+
+  @include mixins.respond-to-medium {
+    flex-direction: row;
+    margin-top: 160px;
+
+    aside {
+      flex: 0 1 240px;
+    }
+
+    main {
+      flex: 0 2 750px;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.scroll {
+  margin-bottom: 40px;
+
+  @include mixins.respond-to-medium {
+    position: sticky;
+    top: 160px;
+    max-height: calc(100vh - 160px);
+    margin-bottom: 0;
+    overflow-y: auto;
+  }
+}
+
+.current {
+  @include mixins.respond-to-medium {
+    color: rgb(0 0 0);
+    font-weight: 500;
+  }
+}
+
+.menu {
+  display: grid;
+  gap: calc-clamp(1rem, 1.5rem);
+  margin-bottom: 16px;
+  color: rgb(104 104 104);
+  font-size: calc-clamp(1rem, 1.25rem);
+  line-height: 1.3;
+}
+
+.articles {
+  display: grid;
+  row-gap: calc-clamp(2.5rem, 3.75rem);
+}
+
+.article {
+  position: relative;
+
+  h2 {
+    margin-bottom: calc-clamp(1rem, 1.5rem);
+    font-weight: 600;
+    font-size: calc-clamp(1.5rem, 2rem);
+    line-height: 1.1;
+  }
+
+  div {
+    color: rgb(104 104 104);
+    font-weight: 400;
+    font-size: calc-clamp(1rem, 1.25rem);
+    line-height: 1.3;
+  }
+}
+
+.link {
+  position: absolute;
+  top: -118px;
+
+  @include mixins.respond-to-medium {
+    position: absolute;
+    top: -155px;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}

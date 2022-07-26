@@ -10,7 +10,8 @@
     "termsOfUse": "Terms of Use",
     "privacyPolicy": "Privacy Policy",
     "companyPart": "Company",
-    "about": "About Tangem"
+    "about": "About Tangem",
+    "helpCenter": "Help Center"
   },
   "pages": {
     "partnership": {
@@ -18,6 +19,14 @@
     },
     "company": {
       "title": "The company - Tangem"
+    },
+    "helpCenter": {
+      "title": "Help center",
+      "search": {
+        "title": "Tangem search",
+        "results": "Search results for: {{query}}",
+        "noResults": "No results for: {{query}}"
+      }
     }
   },
   "404": {
@@ -215,6 +224,12 @@
     "hiring": {
       "title": "We’re hiring",
       "description": "Join us as we bring blockchain technology to the world."
+    },
+    "helpCenter": {
+      "title": "We’re here\n to help",
+      "usingTangem": "Using Tangem",
+      "search" : "Search for a topic or question",
+      "getStarted": "Get started"
     }
   },
   "buttons": {
@@ -225,7 +240,8 @@
     "how-it-works": "How it works",
     "contact-us": "Contact Us",
     "submit": "Submit",
-    "join-us": "Join Us"
+    "join-us": "Join Us",
+    "contact-support": "Contact Support"
   },
   "faq": {
     "title": "Frequently Asked Questions",

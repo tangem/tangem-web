@@ -1,26 +1,27 @@
-import React, {useEffect, useState} from 'react'
+import React, {useContext, useEffect} from 'react'
 import * as styles from "./zendesk.module.scss";
 import ChatIcon from '../../../../public/svg/chat.svg';
 import i18next, {t} from "i18next";
 import Script from "next/script";
+import {ZendeskContext} from "../../../context/zendesk-context";
+
 
 const Zendesk = () => {
 	const { language } = i18next;
-	const [loaded, setLoaded] = useState(false);
-	const [needLoad, setNeedLoad] = useState(false);
-	const [needOpen, setNeedOpen] = useState(false);
-
-	function handleClick() {
-		setNeedLoad(true);
-		setNeedOpen(true);
-		document.querySelector('#myLauncher').style.opacity = 0;
-	}
+	const { loaded, needLoad, needOpen, setLoaded, setNeedLoad, setNeedOpen} = useContext(ZendeskContext);
 
 	useEffect(()=> {
 		if (typeof window !== 'undefined' && typeof zE !== 'undefined') {
 			setLoaded(true);
 		}
 	},[]);
+
+	useEffect(() => {
+		if (needOpen) {
+			setNeedLoad(true);
+		}
+		document.querySelector('#myLauncher').style.opacity = needOpen ? 0 : 1;
+	}, [needOpen]);
 
 	useEffect(() => {
 		if(!loaded) {
@@ -40,7 +41,6 @@ const Zendesk = () => {
 					zE('webWidget', 'hide');
 					setNeedOpen(false);
 				}, 0);
-			document.querySelector('#myLauncher').style.opacity = 1;
 		});
 
 		window.zESettings = {
@@ -94,7 +94,7 @@ const Zendesk = () => {
 			<button
 				id='myLauncher'
 				className={styles.block}
-				onClick={handleClick}
+				onClick={() => setNeedOpen(true)}
 				onMouseOver={() => setNeedLoad(true)}
 			>
 				<ChatIcon />

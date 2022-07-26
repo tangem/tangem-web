@@ -1,8 +1,14 @@
 import React from 'react'
 import Head from "next/head";
 import Script from "next/script";
+import ModalNew from "../Modal";
+import {t} from "i18next";
+import Pricing from "../Pricing";
+import {BuyContext} from "../../../context/buy-context";
 
 const Layout = ({title, description, children}) => {
+	const { toggle, isShowing } = React.useContext(BuyContext);
+
 	return (
 		<>
 			<Head>
@@ -33,7 +39,15 @@ const Layout = ({title, description, children}) => {
 				}}
 			/>
 			{children}
-		</>
+				<ModalNew
+					isShowing={isShowing}
+					hide={toggle}
+					title={t('pricing.title')}
+					anchor="pricing"
+				>
+					<Pricing />
+				</ModalNew>
+			</>
 	)
 }
 

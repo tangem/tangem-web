@@ -37,7 +37,6 @@ function Modal({ isShowing, hide, children, title, anchor }) {
 					// TAB
 				} else if (document.activeElement === lastTabStop) {
 					e.preventDefault();
-					console.log(firstTabStop);
 				}
 			}
 
