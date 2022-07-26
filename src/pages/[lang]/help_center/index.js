@@ -57,7 +57,7 @@ const LangHelpCenter = ({sections, language}) => {
 				</section>
 				<section>
 					<ul className={styles.sections}>
-						{ sections.filter(({ id }) => sectionsConfig[id])
+						{ sections && sections.filter(({ id }) => sectionsConfig[id])
 							.map(({name, id, description}) => (
 							<li key={id}>
 								<Link href={`/${language}/help_center/${sectionsConfig[id].slug}`}>
