@@ -10,7 +10,8 @@
     "termsOfUse": "Условия использования",
     "privacyPolicy": "Политика конфиденциальности",
     "companyPart": "Компания",
-    "about": "О компании"
+    "about": "О компании",
+    "helpCenter": "Поддержка"
   },
   "pages": {
     "partnership": {
@@ -18,6 +19,14 @@
     },
     "company": {
       "title": "Компания Tangem"
+    },
+    "helpCenter": {
+      "title": "Поддержка",
+      "search": {
+        "title": "Tangem поиск",
+        "results": "Результаты для: {{query}}",
+        "noResults": "Нет результатов по запросу: {{query}}"
+      }
     }
   },
   "404": {
@@ -215,6 +224,12 @@
     "hiring": {
       "title": "Работа у нас",
       "description": "Присоединяйтесь к нам, ведь мы несем технологию блокчейна миру."
+    },
+    "helpCenter": {
+      "title": "Мы здесь\n чтобы помочь",
+      "usingTangem": "Использование Tangem",
+      "search" : "Поиск темы или вопроса",
+      "getStarted": "С чего начать"
     }
   },
   "buttons": {
@@ -225,7 +240,8 @@
     "how-it-works": "Видео",
     "contact-us": "Написать нам",
     "submit": "Отправить",
-    "join-us": "Присоединиться"
+    "join-us": "Присоединиться",
+    "contact-support": "Обратиться в поддержку"
   },
   "faq": {
     "title": "Часто задаваемые вопросы",

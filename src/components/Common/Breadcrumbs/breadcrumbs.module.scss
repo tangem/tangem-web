@@ -1,0 +1,37 @@
+.breadcrumbs {
+  display: flex;
+  height: 38px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+
+  a {
+    position: relative;
+    margin-right: 25px;
+    color: rgb(255 255 255 / 50%);
+    font-size: 14px;
+    line-height: 1;
+  }
+}
+
+.link {
+  &::before,
+  &::after {
+    position: absolute;
+    width: 7px;
+    height: 1px;
+    background: rgb(255 255 255 / 50%);
+    content: "";
+  }
+
+  &::before {
+    top: 10px;
+    right: -15px;
+    transform: rotate(135deg);
+  }
+
+  &::after {
+    top: 5px;
+    right: -15px;
+    transform: rotate(45deg);
+  }
+}

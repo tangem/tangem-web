@@ -1,5 +1,6 @@
 @use "../../../styles/colors";
 @use "../../../styles/mixins";
+@use "../../../styles/function" as *;
 @use "sass:color";
 
 .header {
@@ -9,10 +10,26 @@
   left: 0;
   z-index: 50;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   backdrop-filter: blur(40px);
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: auto min-content;
+  align-items: center;
+  width: 100%;
+  padding: 0 max(1rem, calc(50% - 620px));
+}
+
+.breadcrumbs {
+  grid-column: 1 / 3;
+  align-items: center;
+  width: 100%;
+  padding: 0 max(1rem, calc(50% - 620px));
+  border-top: 1px solid rgb(255 255 255 / 5%);
 }
 
 .dark {
@@ -34,9 +51,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: calc(100% - 2rem);
   height: 47px;
-  padding-left: max(1rem, calc(50% - 620px));
 
   @include mixins.respond-to-medium {
     justify-content: start;
@@ -124,7 +139,7 @@
       justify-content: space-between;
       width: 100%;
       height: 100%;
-      padding: 0 50px;
+      padding: 0 calc-clamp(-1rem, 3.125rem);
       background: transparent;
       box-shadow: none;
       visibility: visible;
@@ -247,7 +262,6 @@
 }
 
 .buy {
-  margin-right: max(1rem, calc(50% - 620px));
   margin-left: 16px;
   backdrop-filter: blur(30px);
 }

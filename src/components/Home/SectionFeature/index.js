@@ -1,9 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import * as styles from './feature.module.scss';
 import {t} from "i18next";
 import Button from "../../Common/Button";
+import {BuyContext} from "../../../context/buy-context";
+import useModal from "../../../hooks/useModal";
+import Modal from "../Modal";
+import Search from "../Search";
 
-const SectionFeature = ({ toggleSearch, toggleBuy }) => {
+const SectionFeature = () => {
+	const { toggle: toggleBuy } = useContext(BuyContext);
+	const { isShowing: isSearchShowing, toggle: toggleSearch } = useModal('search');
 
   return (
     <section className='max-w-[1680px] m-auto'>
@@ -89,6 +95,12 @@ const SectionFeature = ({ toggleSearch, toggleBuy }) => {
 	        </picture>
         </div>
       </div>
+	    <Modal
+		    isShowing={isSearchShowing}
+		    hide={toggleSearch}
+	    >
+		    <Search hide={toggleSearch}	anchor="search" />
+	    </Modal>
     </section>
   )
 }

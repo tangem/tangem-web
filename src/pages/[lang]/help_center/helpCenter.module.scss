@@ -1,48 +1,227 @@
-.page {}
+@use "../../../styles/mixins";
+@use "../../../styles/function" as *;
+
+.page {
+  max-width: 100vw;
+
+  h2 {
+    margin: calc-clamp(3.125rem, 5rem) 0 calc-clamp(2.625rem, 3.75rem);
+    font-size: calc-clamp(2.25rem, 3.75rem);
+    line-height: 0.9;
+    text-align: center;
+  }
+
+  section {
+    max-width: 1680px;
+    margin: 0 max(1rem, calc(50% - 620px));
+  }
+}
 
 .wrapper {
   width: 100vw;
   background-color: rgb(8 7 5);
+  background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero-mobile@1x.jpg");
+  background-position: center, center;
+  background-size: cover;
+
+  @include mixins.retina {
+    background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero-mobile@2x.jpg");
+  }
+
+  @include mixins.respond-to-medium {
+    height: 600px;
+    background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero@1x.jpg");
+
+    @include mixins.retina {
+      background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero@2x.jpg");
+    }
+  }
 }
 
 .hero {
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  justify-content: center;
   max-width: 1680px;
-  height: 600px;
+  height: 534px;
   margin: auto;
   text-align: center;
-  background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero.jpg");
 
   h1 {
+    width: 100%;
     margin-bottom: 40px;
-    padding-top: 200px;
+    padding-top: calc-clamp(9.8125rem, 12.5rem);
+    padding-right: 40px;
+    padding-left: 40px;
     color: rgb(255 255 255);
-    font-size: 80px;
-    line-height: 0.9;
+    font-weight: 500;
+    font-size: calc-clamp(2.875rem, 5rem);
+    letter-spacing: -0.02em;
+    white-space: pre-line;
+
+    @include mixins.respond-to-medium {
+      line-height: 0.9;
+      letter-spacing: 0;
+      white-space: normal;
+    }
   }
 
   button {
+    padding: 12px 30px;
     color: rgb(0 0 0);
     background: rgb(255 255 255);
-    padding: 15px 34px;
+
+    @include mixins.respond-to-medium {
+      padding: 15px 34px;
+    }
   }
 
   a {
+    position: relative;
+    padding: 12px 30px;
     color: rgb(255 255 255);
-    background-image: linear-gradient(180deg, rgb(20 143 213) 0%, rgb(48 167 233) 100%), url("/img/help-center/telegram.png");
-    background-position: center center, 0 50%;
+    background: linear-gradient(180deg, rgb(20 143 213) 0%, rgb(48 167 233) 100%);
     border-radius: 30px;
     box-shadow: 0 20px 60px rgb(0 0 0 / 6%);
-    padding: 15px 28px 15px 61px;
+
+    @include mixins.respond-to-medium {
+      padding: 15px 28px 15px 61px;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 61px;
+        height: 52px;
+        background-image: url("/img/help-center/telegram.jpg");
+        border-radius: 30px 0 0 30px;
+        content: "";
+      }
+    }
   }
 }
 
 .button {
-
-  font-size: 20px;
-  line-height: 1.1;
+  min-width: 178px;
+  margin-bottom: 14px;
+  font-size: 17px;
+  line-height: 22px;
+  letter-spacing: -0.02em;
   border-radius: 100px;
 
-  &:not(:first-child) {
-    margin-left: 20px;
+  @include mixins.respond-to-medium {
+    min-width: unset;
+    font-size: 20px;
+    letter-spacing: 0;
+
+    &:not(:first-child) {
+      margin-bottom: 0;
+      margin-left: 20px;
+    }
+  }
+}
+
+.sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto calc-clamp(5.625rem, 12.5rem);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 300px;
+  padding: 40px;
+  text-align: center;
+  background: rgb(255 255 255);
+  border-radius: 32px;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 6%);
+
+  @include mixins.respond-to-medium {
+    height: 350px;
+    padding: 50px 47px;
+  }
+
+  svg {
+    flex-shrink: 0;
+    order: -1;
+  }
+
+  h3 {
+    margin: 40px 0 16px;
+    font-weight: 500;
+    font-size: calc-clamp(1.25rem, 1.5rem);
+    line-height: 1;
+  }
+
+  p {
+    display: flex;
+    align-items: center;
+    color: rgb(104 104 104);
+    font-size: calc-clamp(1rem, 1.25rem);
+    line-height: 1.3;
+    text-align: center;
+  }
+}
+
+.search {
+  position: relative;
+  max-width: 630px;
+  margin: calc-clamp(2.625rem, 3.75rem) auto calc-clamp(2.5rem, 6.25rem);
+
+  svg {
+    position: absolute;
+    top: calc(50% - 10px);
+    left: 20px;
+  }
+
+  input {
+    width: 100%;
+    padding: 9px 0 9px 44px;
+    font-size: 17px;
+    line-height: 1.1;
+    background: rgb(236 237 238);
+    border-radius: 30px;
+
+    @include mixins.respond-to-medium {
+      padding: 15px 0 15px 48px;
+      font-size: 20px;
+    }
+
+    &::placeholder {
+      color: rgb(169 169 169);
+    }
+  }
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto calc-clamp(6.25rem, 12.5rem);
+
+  @include mixins.respond-to-medium {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  li {
+    position: relative;
+    height: 0;
+    padding-bottom: 56.25%;
+  }
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }

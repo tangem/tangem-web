@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import styles from './hero.module.scss';
 import {t} from 'i18next';
 import classNames from "classnames";
 import YouTubeVideo from "../../Common/YouTubeVideo";
 import Button from "../../Common/Button";
+import {BuyContext} from "../../../context/buy-context";
 
-const SectionHero = ({ toggleBuy }) => {
+const SectionHero = () => {
 	const [videoStarted, setVideoStarted] = useState(false);
+	const {toggle} = useContext(BuyContext);
 
 	return (
 		<section className={styles.hero}>
@@ -14,7 +16,7 @@ const SectionHero = ({ toggleBuy }) => {
 		    <div className={classNames(styles.title, {[styles.long]: true })}>
 			    <h1>{ t('sections.safe.title') }</h1>
 			    <p>{ t('sections.safe.description') }</p>
-			    <Button onClick={toggleBuy} appearance='primary' theme='light'>{ t('buttons.buy-now') }</Button>
+			    <Button onClick={toggle} appearance='primary' theme='light'>{ t('buttons.buy-now') }</Button>
 				</div>
 				<div className={styles.phone}>
 					<picture>
