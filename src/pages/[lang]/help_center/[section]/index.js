@@ -96,6 +96,10 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 	}, [clickedArticleId]);
 
 	useEffect(() => {
+    if (clickedArticleId !== '') {
+      return function empty() {}
+    }
+
 		if (currentArticleId === 'a0') {
 			return function empty() {}
 		}
@@ -120,7 +124,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 				behavior: "smooth"
 			});
 		}
-	}, [currentArticleId]);
+	}, [currentArticleId, clickedArticleId]);
 
 
 	useEffect(() => {
