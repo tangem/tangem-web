@@ -21,10 +21,17 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 	const [clickedArticleId, setClickedArticleId] = useState('');
 
 	useEffect(() => {
-		if ( window.location.hash) {
-      console.log(window.innerWidth)
-			setClickedArticleId(window.location.hash.slice(1));
-			return function empty() {}
+    const { hash } = window.location;
+		if (hash) {
+      try {
+        const elem = document.querySelector(hash);
+        if (elem) {
+          setClickedArticleId(hash.slice(1));
+          return function empty() {}
+        }
+      } catch (e) {
+
+      }
 		}
     if (window.innerWidth >= 768) {
       const [first] = document.getElementsByClassName(styles.link);
