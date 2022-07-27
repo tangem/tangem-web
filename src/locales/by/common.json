@@ -23,7 +23,7 @@
     "helpCenter": {
       "title": "Поддержка",
       "search": {
-        "title": "Tangem поиск",
+        "title": "Результаты поиска",
         "results": "Результаты для: {{query}}",
         "noResults": "Нет результатов по запросу: {{query}}"
       }

@@ -23,7 +23,7 @@
     "helpCenter": {
       "title": "Help center",
       "search": {
-        "title": "Tangem search",
+        "title": "Search results",
         "results": "Search results for: {{query}}",
         "noResults": "No results for: {{query}}"
       }
