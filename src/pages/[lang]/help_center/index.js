@@ -1,6 +1,6 @@
 import {t} from 'i18next';
 import Header from "../../../components/Common/Header";
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import Layout from "../../../components/Common/Layout";
 import Footer from "../../../components/Common/Footer";
 import {getAllLanguageSlugs, getLanguage} from "../../../lib/lang";
@@ -16,13 +16,17 @@ const LangHelpCenter = ({sections, language}) => {
 	const videos = [
 		{
 			id: 'How to setup your Tangem Wallet',
-			link: 'https://www.youtube.com/embed/9ZVsHAKaBgY'
+			link: '9ZVsHAKaBgY'
 		},
 		{
 			id: 'How to setup your Tangem Note',
-			link: 'https://www.youtube.com/embed/cR6phId05fc'
+			link: 'cR6phId05fc'
 		}
 	];
+
+  useEffect(() => {
+    setNeedLoad(true)
+  }, []);
 
 	return (
 		<Layout title={t('pages.helpCenter.title')} description={t('description') }>
@@ -34,7 +38,6 @@ const LangHelpCenter = ({sections, language}) => {
 						<button
 							className={styles.button}
 							onClick={() => setNeedOpen(true)}
-							onMouseOver={() => setNeedLoad(true)}
 						>
 							{t('buttons.contact-support')}
 						</button>
@@ -75,10 +78,10 @@ const LangHelpCenter = ({sections, language}) => {
 					<h2>{t('sections.helpCenter.getStarted')}</h2>
 					<ul className={styles.videos}>
 						{ videos.map(({id, link})=> (
-							<li key={id}>
+							<li key={link}>
 								<iframe
 									width="375" height="211"
-									src={link}
+									src={`https://www.youtube.com/embed/${link}?modestbranding=1&controls=0`}
 									title={id}
 									frameBorder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
