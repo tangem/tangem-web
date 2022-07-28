@@ -2,7 +2,6 @@ import {getAllLanguageSlugs, getLanguage} from "../../../../lib/lang";
 import Layout from "../../../../components/Common/Layout";
 import {t} from "i18next";
 import * as styles from "./search.module.scss";
-import SearchIcon from "../../../../../public/svg/help/search.svg";
 import React, {useEffect, useRef, useState} from "react";
 import Header from "../../../../components/Common/Header";
 import Footer from "../../../../components/Common/Footer";
@@ -45,7 +44,13 @@ const LangHelpCenterSearch = ({language}) => {
 		router.push(`/${language}/help_center/search?query=${text}`);
 	}
 
-	return (
+  function handleReset(e) {
+    e.preventDefault();
+    search.current.value = '';
+    search.current.focus();
+  }
+
+  return (
 		<Layout title={t('pages.helpCenter.search.title')} description={t('description')}>
 			<div className={styles.page}>
 				<Header />
@@ -53,7 +58,6 @@ const LangHelpCenterSearch = ({language}) => {
 					<section>
 						<h1>{t('pages.helpCenter.search.title')}</h1>
 						<form onSubmit={handleSubmit} className={styles.search} action={`/${language}/help_center/search`} >
-							<SearchIcon />
 							<input
 								required
 								minLength="1"
@@ -62,8 +66,10 @@ const LangHelpCenterSearch = ({language}) => {
 								name="query"
 								placeholder={t('sections.helpCenter.search')}
 								defaultValue={query}
+                autoComplete="off"
 								ref={search}
 							/>
+              <button type="reset" className={styles.reset} onClick={handleReset} />
 						</form>
 						<p className={styles.label}>
 							{ resultQuery !== '' ? (results.length

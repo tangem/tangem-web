@@ -79,6 +79,11 @@
     font-size: calc-clamp(1rem, 1.25rem);
     line-height: 1.3;
   }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
 }
 
 .link {

@@ -229,7 +229,15 @@
       "title": "We’re here\n to help",
       "usingTangem": "Using Tangem",
       "search" : "Search for a topic or question",
-      "getStarted": "Get started"
+      "getStarted": "Get started",
+      "questions": [
+        "How to get started?",
+        "How to create a backup?",
+        "What cryptocurrencies can a Tangem Card hold?",
+        "What can I do with a Tangem Card?",
+        "How do I top-up my card?",
+        "Are there any fees I should be aware of?"
+      ]
     }
   },
   "buttons": {
