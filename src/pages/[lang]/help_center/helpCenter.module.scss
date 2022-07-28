@@ -278,14 +278,14 @@
 
   input {
     width: 100%;
-    padding: 9px 0 9px 44px;
+    padding: 9px 44px;
     font-size: 17px;
     line-height: 1.1;
     background: rgb(236 237 238) url("/svg/help/search.svg") no-repeat 20px center;
     border-radius: 30px;
 
     @include mixins.respond-to-medium {
-      padding: 15px 0 15px 48px;
+      padding: 15px 48px;
       font-size: 20px;
     }
 
