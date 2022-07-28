@@ -33,7 +33,7 @@ const LangHelpCenter = ({sections, language}) => {
       setIsFormActive(false);
     }
 
-     window.addEventListener('click', hide);
+    window.addEventListener('click', hide);
     return function remove() {
       window.removeEventListener('click', hide);
       setIsFormActive(false);
