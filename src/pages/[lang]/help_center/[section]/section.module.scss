@@ -7,16 +7,15 @@
   flex-direction: column;
   justify-content: space-between;
   min-height: 500px;
-  margin-top: 118px;
-  padding: 0 16px;
+  margin: 118px 16px 0;
 
   @media (min-width: 1272px) {
-    padding-right: calc(50% - 620px);
-    padding-left: calc(50% - 620px);
+    margin-left: calc(50% - 620px);
   }
 
   @include mixins.respond-to-medium {
     flex-direction: row;
+    max-width: 1160px;
     margin-top: 160px;
 
     aside {
