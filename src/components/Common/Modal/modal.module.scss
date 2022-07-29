@@ -26,7 +26,7 @@
   @media (min-width: 768px) {
     bottom: auto;
     width: fit-content;
-    max-width: min(1400px, 100% - 2rem);
+    max-width: calc(100% - 2rem);
     max-height: calc(100vh - 76px);
     margin: 60px auto 0;
     border-radius: 20px;
@@ -35,6 +35,10 @@
     @media (min-height: 900px) {
       overflow: hidden;
     }
+  }
+
+  @media (min-width: 1432px) {
+    max-width: 1400px;
   }
 }
 

@@ -2,14 +2,29 @@
 @use "../../../styles/mixins";
 
 .hero {
+  margin: 0 35px calc-clamp(5rem, 12.5rem);
   padding-top: calc-clamp(5.25rem, 12.5rem);
   letter-spacing: -0.02em;
   text-align: center;
-  margin: 0 max(35px, calc(50% - 620px)) calc-clamp(5rem, 12.5rem);
+
+  @media (min-width: 1300px) {
+    margin-right: calc(50% - 620px);
+    margin-left: calc(50% - 620px);
+  }
+
+  @supports not(font-size: clamp(1px, 1vw, 2px)) {
+    margin: 0 35px 5rem;
+    padding-top: 5.25rem;
+  }
 
   @include mixins.respond-to-medium {
     letter-spacing: 0;
     text-align: start;
+
+    @supports not(font-size: clamp(1px, 1vw, 2px)) {
+      margin: 0.9375rem;
+      padding-top: 12.5rem;
+    }
   }
 
   .title {
@@ -18,6 +33,16 @@
     font-weight: 500;
     font-size: calc-clamp(2.875rem, 5rem);
     line-height: 0.95;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      margin-bottom: 1.5rem;
+      font-size: 2.875rem;
+
+      @include mixins.respond-to-medium {
+        margin-bottom: 3.875rem;
+        font-size: 5rem;
+      }
+    }
   }
 
   .description {
@@ -26,9 +51,17 @@
     font-size: calc-clamp(1.375rem, 1.875rem);
     line-height: 1.3;
 
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1.375rem;
+    }
+
     @include mixins.respond-to-medium {
       max-width: 780px;
       font-weight: 500;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 1.875rem;
+      }
     }
   }
 
@@ -41,6 +74,10 @@
     font-size: calc-clamp(1.875rem, 3.4375rem);
     line-height: 1.16;
 
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1.875rem;
+    }
+
     @include mixins.respond-to-medium {
       display: flex;
       align-items: center;
@@ -48,6 +85,10 @@
       min-height: 149px;
       padding-top: 0;
       padding-left: 236px;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 3.4375rem;
+      }
     }
 
     &::before {
@@ -76,6 +117,16 @@
     color: rgb(104 104 104);
     font-size: calc-clamp(1.125rem, 1.5rem);
     line-height: 1.3;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      margin-bottom: 1.125rem;
+      font-size: 1.125rem;
+
+      @include mixins.respond-to-medium {
+        margin-bottom: 1.4375rem;
+        font-size: 1.5rem;
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;

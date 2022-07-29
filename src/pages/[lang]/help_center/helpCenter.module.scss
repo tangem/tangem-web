@@ -9,11 +9,26 @@
     font-size: calc-clamp(2.25rem, 3.75rem);
     line-height: 0.9;
     text-align: center;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      margin: 3.125rem 0 2.625rem;
+      font-size: 2.25rem;
+
+      @include mixins.respond-to-medium {
+        margin: 5rem 0 3.75rem;
+        font-size: 3.75rem;
+      }
+    }
   }
 
   section {
     max-width: 1680px;
-    margin: 0 max(1rem, calc(50% - 620px));
+    margin: 0 16px;
+
+    @media (min-width: 1272px) {
+      margin-right: calc(50% - 620px);
+      margin-left: calc(50% - 620px);
+    }
   }
 }
 
@@ -60,6 +75,16 @@
     line-height: 0.95;
     letter-spacing: -0.02em;
     white-space: pre-line;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      padding-top: 9.8125rem;
+      font-size: 2.875rem;
+
+      @include mixins.respond-to-medium {
+        padding-top: 12.5rem;
+        font-size: 5rem;
+      }
+    }
 
     @include mixins.respond-to-medium {
       line-height: 0.9;
@@ -146,6 +171,14 @@
     font-weight: 500;
     font-size: calc-clamp(1.25rem, 1.5rem);
     line-height: 1;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1.25rem;
+
+      @include mixins.respond-to-medium {
+        font-size: 1.5rem;
+      }
+    }
   }
 
   p {
@@ -155,6 +188,14 @@
     font-size: calc-clamp(1rem, 1.25rem);
     line-height: 1.3;
     text-align: center;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1rem;
+
+      @include mixins.respond-to-medium {
+        font-size: 1.25rem;
+      }
+    }
   }
 }
 
@@ -165,6 +206,14 @@
   justify-content: space-between;
   max-width: 1240px;
   margin: 0 auto calc-clamp(5.625rem, 12.5rem);
+
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    margin: 0 auto 5.625rem;
+
+    @include mixins.respond-to-medium {
+      margin: 0 auto 12.5rem;
+    }
+  }
 
   li {
     position: relative;
@@ -199,8 +248,16 @@
   max-width: 1240px;
   margin: 0 auto calc-clamp(6.25rem, 12.5rem);
 
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    margin: 0 auto 6.25rem;
+  }
+
   @include mixins.respond-to-medium {
     grid-template-columns: repeat(2, 1fr);
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      margin: 0 auto 12.5rem;
+    }
   }
 
   li {
@@ -266,6 +323,14 @@
   position: relative;
   max-width: 630px;
   margin: calc-clamp(2.625rem, 3.75rem) auto calc-clamp(2.5rem, 6.25rem);
+
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    margin: 2.625rem auto 2.5rem;
+
+    @include mixins.respond-to-medium {
+      margin: 3.75rem auto 6.25rem;
+    }
+  }
 
   &:focus,
   &:focus-visible,

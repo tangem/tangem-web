@@ -1,4 +1,5 @@
 @use "../../../styles/function" as *;
+@use "../../../styles/mixins";
 
 .clear {
   position: absolute;
@@ -14,9 +15,13 @@
   width: 100%;
   padding: 18px 16px;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     width: 680px;
     padding: 40px calc-clamp(1rem, 2.5rem);
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      padding: 40px;
+    }
   }
 
   legend {
@@ -25,8 +30,16 @@
     font-size: calc-clamp(0.9375rem, 1.125rem);
     line-height: 1.33;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 0.9375rem;
+    }
+
+    @include mixins.respond-to-medium {
       line-height: 1.2;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 1.125rem;
+      }
     }
   }
 
@@ -37,8 +50,16 @@
     width: 100%;
     margin-bottom: calc-clamp(1.25rem, 1.625rem);
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1.125rem;
+    }
+
+    @include mixins.respond-to-medium {
       width: calc(50% - 10px);
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 1.625rem;
+      }
     }
 
     &.full {
@@ -51,8 +72,16 @@
       font-size: calc-clamp(0.8125rem, 1.125rem);
       line-height: 1;
 
-      @media (min-width: 768px) {
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 0.8125rem;
+      }
+
+      @include mixins.respond-to-medium {
         margin-bottom: 12px;
+
+        @supports not (font-size: clamp(1px, 1vw, 2px)) {
+          font-size: 1.125rem;
+        }
       }
     }
 
@@ -66,7 +95,7 @@
       font-size: 12px;
       line-height: 1;
 
-      @media (min-width: 768px) {
+      @include mixins.respond-to-medium {
         bottom: -18px;
         color: rgb(216 0 39);
         font-size: 16px;
@@ -88,7 +117,7 @@
     max-width: 100%;
     margin-top: 26px;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       margin-top: 40px;
     }
 
@@ -96,7 +125,7 @@
       height: 200px;
       padding: 10px 12px;
 
-      @media (min-width: 768px) {
+      @include mixins.respond-to-medium {
         height: 218px;
         padding: 8px 16px;
       }
@@ -126,7 +155,7 @@
       border: 1px solid rgb(196 196 196);
       border-radius: 12px;
 
-      @media (min-width: 768px) {
+      @include mixins.respond-to-medium {
         font-size: 18px;
       }
 
@@ -150,7 +179,7 @@
       padding-right: 40px;
       text-indent: 16px;
 
-      @media (min-width: 768px) {
+      @include mixins.respond-to-medium {
         height: 46px;
       }
     }
@@ -169,7 +198,7 @@
   background: rgb(0 0 0);
   border-radius: 100px;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     width: auto;
     margin-right: 16px;
     margin-bottom: 0;

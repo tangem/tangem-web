@@ -21,15 +21,25 @@
   grid-template-columns: auto min-content;
   align-items: center;
   width: 100%;
-  padding: 0 max(1rem, calc(50% - 620px));
+  padding: 0 1rem;
+
+  @media (min-width: 1272px) {
+    padding-right: calc(50% - 620px);
+    padding-left: calc(50% - 620px);
+  }
 }
 
 .breadcrumbs {
   grid-column: 1 / 3;
   align-items: center;
   width: 100%;
-  padding: 0 max(1rem, calc(50% - 620px));
+  padding: 0 1rem;
   border-top: 1px solid rgb(255 255 255 / 5%);
+
+  @media (min-width: 1272px) {
+    padding-right: calc(50% - 620px);
+    padding-left: calc(50% - 620px);
+  }
 }
 
 .dark {
@@ -144,6 +154,14 @@
       box-shadow: none;
       visibility: visible;
       transition-duration: unset;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        padding: 0;
+
+        @include mixins.respond-to-medium {
+          padding: 0 3.125rem;
+        }
+      }
 
       .dark & {
         background: transparent;

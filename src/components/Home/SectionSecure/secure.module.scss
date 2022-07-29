@@ -1,10 +1,24 @@
 @use "../../../styles/function" as *;
+@use "../../../styles/mixins";
 
 .secure {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: calc-clamp(5rem, 12.5rem) max(1rem, calc(50% - 620px)) 0;
+  margin: calc-clamp(5rem, 12.5rem) 1rem 0;
+
+  @media (min-width: 1272px) {
+    margin-right: calc(50% - 620px);
+    margin-left: calc(50% - 620px);
+  }
+
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    margin: 5rem 1rem 0;
+
+    @include mixins.respond-to-medium {
+      margin: 12.5rem 1rem 0;
+    }
+  }
 
   h3 {
     color: rgb(0 0 0);
@@ -14,12 +28,20 @@
     letter-spacing: -0.02em;
     text-align: center;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 2.25rem;
+    }
+
+    @include mixins.respond-to-medium {
       display: block;
       max-width: 690px;
       color: rgb(9 14 19);
       font-weight: 500;
       letter-spacing: 0;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 3.75rem;
+      }
     }
   }
 
@@ -30,7 +52,7 @@
     border-radius: 16px;
     box-shadow: 0 20px 60px rgb(0 0 0 / 6%);
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       border-radius: 40px;
     }
   }
@@ -42,11 +64,15 @@
   flex-direction: column;
   padding: 30px 19px 0;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     flex-direction: row;
     justify-content: space-between;
     min-height: 100%;
     padding: 80px min(110px, 6vw) 0 min(90px, 5vw);
+
+    @supports not (padding: min(110px, 6vw)) {
+      padding: 80px 110px 0 90px;
+    }
   }
 
   .title {
@@ -54,7 +80,7 @@
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       flex: 0 2 554px;
       align-items: flex-start;
       justify-content: space-between;
@@ -66,7 +92,7 @@
     flex-direction: column;
     align-items: center;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       align-items: flex-start;
       justify-content: space-between;
     }
@@ -92,7 +118,7 @@
       margin-top: 16px;
     }
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       flex-direction: row;
       justify-content: space-between;
       max-width: 100%;
@@ -110,7 +136,7 @@
     align-self: center;
     margin-top: 34px;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       align-self: flex-end;
       margin-left: 16px;
     }
@@ -119,7 +145,7 @@
   h3 {
     margin-bottom: 24px;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       max-width: 500px;
       text-align: start;
     }
@@ -134,11 +160,19 @@
     letter-spacing: -0.02em;
     text-align: center;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1rem;
+    }
+
+    @include mixins.respond-to-medium {
       max-width: 445px;
       margin-bottom: 50px;
       letter-spacing: 0;
       text-align: start;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 1.5rem;
+      }
     }
   }
 }
@@ -152,7 +186,7 @@
   line-height: 20px;
   text-align: center;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     display: inline;
     margin-bottom: 73px;
     padding: 0;
@@ -170,7 +204,7 @@
   font-size: 1.25rem;
   line-height: 30px;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     display: inline;
     margin-top: 0;
   }
@@ -182,7 +216,7 @@
     vertical-align: text-bottom;
     filter: brightness(0);
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       margin-left: 7px;
     }
   }
@@ -197,7 +231,7 @@
   position: relative;
 
   &::after {
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       position: absolute;
       top: -62px;
       right: -20px;
