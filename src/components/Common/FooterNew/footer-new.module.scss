@@ -4,17 +4,36 @@
 .footer {
   margin-top: calc-clamp(0rem, 9.375rem);
   padding: 60px 0 35px;
-  margin-inline: max(1rem, calc(50% - 620px));
+  margin-left: 1rem;
+  margin-right: 1rem;
   overflow: hidden;
+
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    margin-top: 0;
+
+    @include mixins.respond-to-medium {
+      margin-top: 9.375rem;
+    }
+  }
+
+  @media (min-width: 1272px) {
+    margin-left: calc(50% - 620px);
+    margin-right: calc(50% - 620px);
+  }
 }
 
 .copyright {
   margin-top: 32px;
-  margin-left: max(1rem, calc(50% - 620px));
+  margin-left: 1rem;
   color: rgb(110 114 117);
   font-size: 14px;
   line-height: 24px;
   white-space: pre-line;
+
+  @media (min-width: 1272px) {
+    margin-right: calc(50% - 620px);
+    margin-left: calc(50% - 620px);
+  }
 
   @include mixins.respond-to-medium {
     margin-top: 70px;

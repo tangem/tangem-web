@@ -1,80 +1,109 @@
 @use "../../../styles/colors";
+@use "../../../styles/mixins";
 @use "../../../styles/function" as *;
 
 .hero {
   position: relative;
-  min-height: 690px;
-  max-width: 100vw;
-  overflow: hidden;
-  background-color: colors.$header-bg-dark;
-  width: 100%;
-  color: colors.$header-text-dark;
   display: flex;
   flex-direction: row;
   box-sizing: border-box;
-  padding-left: max(1rem, calc(50% - 620px));
+  width: 100%;
+  max-width: 100vw;
+  min-height: 690px;
+  padding-left: 16px;
+  overflow: hidden;
+  color: colors.$header-text-dark;
+  background-color: colors.$header-bg-dark;
 
-  @media (min-width: 768px) {
-    min-height: 870px;
+  @media (min-width: 1272px) {
+    padding-left: calc(50% - 620px);
+  }
+
+  @include mixins.respond-to-medium {
     min-width: 100%;
+    min-height: 870px;
   }
 }
 
 .title {
-  box-sizing: border-box;
   z-index: 3;
+  box-sizing: border-box;
   padding-top: 366px;
-  text-align: center;
   white-space: pre-line;
+  text-align: center;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     padding-top: 220px;
     text-align: start;
   }
 
   span {
-    color: rgba(255, 255, 255, 0.6);
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 100px;
+    display: inline-block;
     padding: 4px 15px;
+    color: rgb(255 255 255 / 60%);
     font-size: calc-clamp(0.9375rem, 1.25rem);
     line-height: 22px;
-    display: inline-block;
     letter-spacing: 0;
+    background: rgb(255 255 255 / 10%);
+    border-radius: 100px;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 0.9375rem;
+    }
+
+    @include mixins.respond-to-medium {
       padding: 9px 20px;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 1.25rem;
+      }
     }
   }
 
   h1 {
-    font-weight: 500;
-    line-height: 0.95;
     margin: 16px 16px 24px;
-    text-align: center;
-    letter-spacing: 0;
+    font-weight: 500;
     font-size: calc-clamp(2.875rem, 5rem);
+    line-height: 0.95;
+    letter-spacing: 0;
+    text-align: center;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 2.875rem;
+    }
+
+    @include mixins.respond-to-medium {
+      max-width: 620px;
       margin: 24px 0;
       font-weight: 400;
-      max-width: 620px;
       text-align: start;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 5rem;
+      }
     }
   }
 
   p {
+    margin: 0 1rem;
+    color: rgb(255 255 255 / 50%);
     font-size: calc-clamp(1.125rem, 1.5rem);
     line-height: 1.3;
-    color: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    margin: 0 1rem;
     letter-spacing: 0;
+    text-align: center;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1.125rem;
+    }
+
+    @include mixins.respond-to-medium {
       max-width: 420px;
       margin: 0;
       text-align: start;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 1.5rem;
+      }
     }
   }
 }
@@ -83,56 +112,56 @@
   position: absolute;
   height: 483px;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     position: relative;
     height: auto;
   }
 
   img {
     position: relative;
-    z-index: 1;
-    height: 539px;
-    width: 466px;
-    overflow: hidden;
-    margin-left: 39px;
     top: -56px;
+    z-index: 1;
+    width: 466px;
+    height: 539px;
+    margin-left: 39px;
+    overflow: hidden;
 
     @supports not (aspect-ratio: 466 / 539) {
       min-width: 466px;
     }
 
     @supports (aspect-ratio: 466 / 539) {
-      aspect-ratio: 466 / 539;
       min-width: min-content;
+      aspect-ratio: 466 / 539;
     }
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
+      top: auto;
       width: auto;
       height: auto;
-      top: auto;
-      overflow: visible;
       margin-left: 93px;
+      overflow: visible;
     }
   }
 
   &::before {
-    filter: blur(75px);
-    content: '';
     position: absolute;
-    width: 83.6%;
-    height: 55%;
     top: 14%;
     left: 5.3%;
-    background-image: url('/svg/business-hero-gradient.svg');
-    background-size: 100%;
-    background-position: center;
+    width: 83.6%;
+    height: 55%;
+    background-image: url("/svg/business-hero-gradient.svg");
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    filter: blur(75px);
+    content: "";
 
-    @media (min-width: 768px) {
-      width: 105.2%;
-      height: 80.7%;
+    @include mixins.respond-to-medium {
       top: 5.75%;
       left: -20.3%;
+      width: 105.2%;
+      height: 80.7%;
       background-size: auto;
       filter: blur(100px);
     }
@@ -140,17 +169,16 @@
 
   &::after {
     position: absolute;
-    content:"";
-    height:100%;
-    width:100%;
-    top:0;
-    left:0;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 78.35%, #000000 100%);
+    top: 0;
+    left: 0;
     z-index: 2;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(0 0 0 / 0%) 78.35%, rgb(0 0 0) 100%);
+    content: "";
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       content: none;
     }
   }
 }
-

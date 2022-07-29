@@ -2,12 +2,17 @@
 @use "../../../styles/function" as *;
 
 .banner {
-  margin: 0 max(1rem, calc(50% - 620px));
+  margin: 0 16px;
   padding: calc-clamp(3.75rem, 6.25rem);
   letter-spacing: -0.02em;
   text-align: center;
   background: rgb(0 0 0);
   border-radius: 16px;
+
+  @media (min-width: 1272px) {
+    margin-right: calc(50% - 620px);
+    margin-left: calc(50% - 620px);
+  }
 
   @include mixins.respond-to-medium {
     letter-spacing: 0;

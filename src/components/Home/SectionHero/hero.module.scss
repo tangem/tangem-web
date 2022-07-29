@@ -1,5 +1,5 @@
-@use "../../../styles/colors" as *;
-@use "../../../styles/mixins" as *;
+@use "../../../styles/colors";
+@use "../../../styles/mixins";
 @use "../../../styles/function" as *;
 
 .hero {
@@ -25,7 +25,7 @@
     z-index: 2;
   }
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     min-width: 100%;
   }
 }
@@ -37,13 +37,17 @@
   margin-top: 47px;
   flex-direction: column-reverse;
 
-  @media (min-width: 768px) {
-    margin-left: max(1rem, calc(50% - 620px));
+  @include mixins.respond-to-medium {
+    margin-left: 1rem;
     max-width: 1240px;
     justify-content: space-between;
     align-items: start;
     margin-top: 60px;
     flex-direction: row;
+  }
+
+  @media (min-width: 1272px) {
+    margin-left: calc(50% - 620px);
   }
 }
 
@@ -53,14 +57,14 @@
   text-align: center;
   position: relative;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     padding-top: 160px;
     text-align: start;
     flex: 0 1 500px;
   }
 
   &.long {
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       flex-basis: 590px;
     }
   }
@@ -76,7 +80,11 @@
     padding: 0 35px;
     white-space: pre-line;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 2.875rem;
+    }
+
+    @include mixins.respond-to-medium {
       font-weight: 500;
       line-height: 0.9;
       color: #000000;
@@ -94,15 +102,23 @@
     width: 100%;
     margin-bottom: 40px;
 
-    @media (min-width: 768px) {
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 1.125rem;
+    }
+
+    @include mixins.respond-to-medium {
       padding: 0;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 1.5rem;
+      }
     }
   }
 
   button {
     margin-bottom: 60px;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       margin-bottom: 100px;
     }
   }
@@ -113,7 +129,7 @@
   padding-top: 43px;
   min-height: 293px;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     padding-top: 88px;
     padding-bottom: 131px;
     align-self: start;
@@ -123,7 +139,7 @@
   img {
     max-width: 227px;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       max-width: 100%;
     }
   }
@@ -149,7 +165,7 @@
   top: 32px;
   bottom: 40px;
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     background-size: 1771px 987px;
     background-position: center;
   }
@@ -171,11 +187,11 @@
   width: 64px;
   height: 64px;
 
-  @include motion {
+  @include mixins.motion {
     transition: 0.5s;
   }
 
-  @media (min-width: 768px) {
+  @include mixins.respond-to-medium {
     width: 100px;
     height: 100px;
     top: calc(50% - 50px);
@@ -186,7 +202,7 @@
     width: 64px;
     height: 64px;
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       width: 100px;
       height: 100px;
     }
@@ -213,15 +229,15 @@
     background-repeat: no-repeat no-repeat;
     background-image: linear-gradient(180deg, #F8F7F8 5.72%, rgba(255, 255, 255, 0) 49.09%, rgba(250, 251, 251, 0.662519) 70.33%, #F8F9F9 90.68%), url('/img/hero/video-cover-mobile@1x.jpg');
 
-    @include retina {
+    @include mixins.retina {
       background-image: linear-gradient(180deg, #F8F7F8 5.72%, rgba(255, 255, 255, 0) 49.09%, rgba(250, 251, 251, 0.662519) 70.33%, #F8F9F9 90.68%), url('/img/hero/video-cover-mobile@2x.jpg');
     }
 
-    @media (min-width: 768px) {
+    @include mixins.respond-to-medium {
       left: calc(50% - 50vw);
       max-height: 987px;
       background-image: linear-gradient(180deg, #F8F7F8 5.72%, rgba(255, 255, 255, 0) 49.09%, rgba(250, 251, 251, 0.662519) 70.33%, #F8F9F9 90.68%), url('/img/hero/video-cover@1x.jpg');
-      @include retina {
+      @include mixins.retina {
         background-image: linear-gradient(180deg, #F8F7F8 5.72%, rgba(255, 255, 255, 0) 49.09%, rgba(250, 251, 251, 0.662519) 70.33%, #F8F9F9 90.68%), url('/img/hero/video-cover@2x.jpg');
       }
     }
@@ -233,4 +249,3 @@
     }
   }
 }
-

@@ -9,7 +9,7 @@ const SectionPartners = () => {
 				const list = t(`sections.partners.${item}.list`);
 
 				return (
-					<>
+					<React.Fragment key={item}>
 						<h2 className={styles.title}>{t(`sections.partners.${item}.title`)}</h2>
 						<div className={styles.grid}>
 							{ Object.keys(list).map((id) =>
@@ -28,7 +28,7 @@ const SectionPartners = () => {
 								)
 							}
 						</div>
-					</>
+					</React.Fragment>
 				)
 			})}
 

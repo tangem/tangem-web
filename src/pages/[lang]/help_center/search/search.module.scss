@@ -7,6 +7,14 @@
   min-height: 100vh;
   padding: calc-clamp(5.5625rem, 9.375rem) max(1rem, calc(50% - 500px)) 0;
 
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    padding: 5.5625rem 1rem 0;
+
+    @include mixins.respond-to-medium {
+      padding: 9.375rem calc(50% - 500px) 0;
+    }
+  }
+
   h1 {
     font-weight: 500;
     font-size: calc-clamp(2.25rem, 3.75rem);
@@ -14,9 +22,17 @@
     letter-spacing: -0.02em;
     text-align: center;
 
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      font-size: 2.25rem;
+    }
+
     @include mixins.respond-to-medium {
       line-height: 0.9;
       letter-spacing: 0;
+
+      @supports not (font-size: clamp(1px, 1vw, 2px)) {
+        font-size: 3.75rem;
+      }
     }
   }
 }
@@ -25,8 +41,16 @@
   margin-bottom: calc-clamp(1.25rem, 1.5rem);
   text-align: center;
 
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    margin-bottom: 1.25rem;
+  }
+
   @include mixins.respond-to-medium {
     text-align: start;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      margin-bottom: 1.5rem;
+    }
   }
 }
 
@@ -44,6 +68,14 @@
   position: relative;
   max-width: 630px;
   margin: calc-clamp(2.625rem, 3.75rem) auto calc-clamp(1.25rem, 2.25rem);
+
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    margin: 2.625rem auto 1.25rem;
+
+    @include mixins.respond-to-medium {
+      margin: 3.75rem auto 2.25rem;
+    }
+  }
 
   &:focus,
   &:focus-visible,
@@ -76,19 +108,43 @@
 .articles {
   display: grid;
   gap: calc-clamp(1rem, 1.25rem);
+
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    gap: 1rem;
+
+    @include mixins.respond-to-medium {
+      gap: 1.25rem;
+    }
+  }
 }
 
 .article {
   padding: calc-clamp(1.25rem, 1.875rem);
   background: rgb(255 255 255);
-  border-radius: calc-clamp(1.5rem, 2rem);
+  border-radius: 1.5rem;
   box-shadow: 0 8px 18px rgb(0 0 0 / 6%);
 
+  @supports not (font-size: clamp(1px, 1vw, 2px)) {
+    padding: 1.25rem;
+  }
+
+  @include mixins.respond-to-medium {
+    border-radius: 2rem;
+
+    @supports not (font-size: clamp(1px, 1vw, 2px)) {
+      padding: 1.875rem;
+    }
+  }
+
   h2 {
-    margin-bottom: calc-clamp(0.75rem, 0.9375rem);
+    margin-bottom: 12px;
     font-weight: 500;
     font-size: 20px;
     line-height: 1;
+
+    @include mixins.respond-to-medium {
+      margin-bottom: 15px;
+    }
   }
 
   div {
