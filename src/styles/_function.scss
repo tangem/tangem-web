@@ -16,6 +16,5 @@
     $diff
   );
 
-  @return
-    clamp(#{$min-size + 0rem}, calc(#{$rem-part} + #{$vw-part}), #{$max-size + 0rem});
+  @return clamp(#{$min-size + 0rem}, calc(#{$rem-part} + #{$vw-part}), #{$max-size + 0rem});
 }
