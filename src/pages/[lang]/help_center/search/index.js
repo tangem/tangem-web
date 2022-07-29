@@ -7,6 +7,7 @@ import Header from "../../../../components/Common/Header";
 import Footer from "../../../../components/Common/Footer";
 import {useRouter} from "next/router";
 import {getCodeByLanguage, sectionsConfig} from "../../../../config/faq";
+import ReactHtmlParser from "react-html-parser";
 
 const LangHelpCenterSearch = ({language}) => {
 	const search = useRef();
@@ -85,7 +86,7 @@ const LangHelpCenterSearch = ({language}) => {
 								<li key={id}>
 									<article className={styles.article}>
 										<h2>{title}</h2>
-										<div dangerouslySetInnerHTML={{__html: body }} />
+                    <div>{ReactHtmlParser(body)}</div>
 									</article>
 								</li>
 							)) }

@@ -7,6 +7,7 @@ import * as styles from "./section.module.scss";
 import Footer from "../../../../components/Common/Footer";
 import React, {useEffect, useState} from "react";
 import classNames from "classnames";
+import ReactHtmlParser from "react-html-parser";
 
 const LangHelpCenterSection = ({ language, articles, section}) => {
 	const breadcrumbs = [
@@ -176,7 +177,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 							<li key={id}>
 								<article className={styles.article}>
 									<h2>{title}</h2>
-									<div dangerouslySetInnerHTML={{__html: body }} />
+                  <div>{ReactHtmlParser(body)}</div>
 									<div className={styles.link} id={`a${id}`}></div>
 								</article>
 							</li>
