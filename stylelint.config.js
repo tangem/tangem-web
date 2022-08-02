@@ -18,7 +18,8 @@ module.exports = {
     },
 
     "plugin/no-unsupported-browser-features": [true, {
-      "severity": "warning"
+      "severity": "warning",
+      "ignore": ["css-clip-path", "css-masks"],
     }]
   },
 };

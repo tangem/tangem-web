@@ -5,9 +5,41 @@ import Layout from "../../../../components/Common/Layout";
 import Header from "../../../../components/Common/Header";
 import * as styles from "./section.module.scss";
 import Footer from "../../../../components/Common/Footer";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import classNames from "classnames";
 import ReactHtmlParser from "react-html-parser";
+
+const Accordion = ({ id, title, body }) => {
+
+  const [isActive, setIsActive] = useState(false);
+  const ref = useRef();
+
+  useEffect(()=> {
+    if (id === parseInt(window.location.hash.slice(2), 10)) {
+      setIsActive(true);
+    }
+  }, [id]);
+
+  useEffect(() => {
+    if(!ref.current) {
+      return function empty() {
+        //
+      }
+    }
+    ref.current.style.maxHeight = isActive ? ref.current.scrollHeight + "px" : null;
+  }, [isActive]);
+
+  return (
+    <li onClick={() => setIsActive((v) => !v)}>
+      <article className={classNames(styles.article, {[styles.active]: isActive})} >
+        <h2>{title}</h2>
+        <button className={styles.button}></button>
+        <div className={styles.body} ref={ref}>{ReactHtmlParser(body)}</div>
+        <div className={styles.link} id={`a${id}`}></div>
+      </article>
+    </li>
+  );
+};
 
 const LangHelpCenterSection = ({ language, articles, section}) => {
 	const breadcrumbs = [
@@ -27,7 +59,11 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
       try {
         const elem = document.querySelector(hash);
         if (elem) {
-          setClickedArticleId(hash.slice(1));
+          if (window.innerWidth >= 768) {
+            setClickedArticleId(hash.slice(1));
+          } else {
+            setCurrentArticleId(hash.slice(1))
+          }
           return function empty() {}
         }
       } catch (e) {
@@ -43,6 +79,9 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 	}, [])
 
 	useEffect(() => {
+    if (window.innerWidth < 768) {
+      return function empty() {}
+    }
 		let startPosition = 0;
 		const [first, ...rest] = document.getElementsByClassName(styles.link);
 
@@ -174,13 +213,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 					<h1 className={styles['visually-hidden']}>{section.name}</h1>
 					<ul className={styles.articles}>
 						{ articles.articles.map(({title, id, body}) => (
-							<li key={id}>
-								<article className={styles.article}>
-									<h2>{title}</h2>
-                  <div>{ReactHtmlParser(body)}</div>
-									<div className={styles.link} id={`a${id}`}></div>
-								</article>
-							</li>
+              <Accordion key={id} id={id} title={title} body={body} />
 						))}
 					</ul>
 				</main>

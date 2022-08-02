@@ -13,12 +13,17 @@
     margin-left: calc(50% - 620px);
   }
 
+  aside {
+    display: none;
+  }
+
   @include mixins.respond-to-medium {
     flex-direction: row;
     max-width: 1160px;
     margin-top: 160px;
 
     aside {
+      display: flex;
       flex: 0 1 240px;
     }
 
@@ -74,7 +79,24 @@
 
 .articles {
   display: grid;
-  row-gap: calc-clamp(2.5rem, 3.75rem);
+
+  li {
+    padding: 30px 0;
+    border-bottom: 1px solid rgb(233 233 233);
+
+    @include mixins.respond-to-medium {
+      border: none;
+    }
+  }
+
+  li:first-child {
+    padding-top: 0;
+  }
+
+  li:last-child {
+    padding-bottom: 0;
+    border: none;
+  }
 
   @supports not (font-size: clamp(1px, 1vw, 2px)) {
     row-gap: 2.5rem;
@@ -87,9 +109,12 @@
 
 .article {
   position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
 
   h2 {
-    margin-bottom: calc-clamp(1rem, 1.5rem);
+    max-width: calc(100% - 38px);
     font-weight: 600;
     font-size: calc-clamp(1.5rem, 2rem);
     line-height: 1.1;
@@ -123,6 +148,82 @@
   a {
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+}
+
+.button {
+  position: relative;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+  @include mixins.respond-to-medium {
+    display: none;
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: calc(50% - 1px);
+    left: calc(50% - 8px);
+    display: block;
+    width: 16px;
+    height: 2px;
+    background-color: rgb(0 0 0);
+    content: "";
+
+    @include mixins.motion {
+      transition: 0.25s;
+    }
+
+    @include mixins.respond-to-medium {
+      display: none;
+    }
+  }
+
+  &::before {
+    transform: rotate(90deg);
+  }
+
+  @include mixins.motion {
+    transition: all 0.3s ease;
+  }
+
+  .active & {
+    background: rgb(233 233 233);
+
+    &::before {
+      background-color: rgb(233 233 233);
+
+      @include mixins.motion {
+        transition: 0.25s;
+      }
+    }
+  }
+}
+
+.body {
+  max-height: 0;
+  margin-top: 0;
+  overflow: hidden;
+
+  @include mixins.motion {
+    transition: all 0.3s ease;
+  }
+
+  @include mixins.respond-to-medium {
+    max-height: none;
+    margin-top: 1.5rem;
+    overflow: auto;
+  }
+
+  .active & {
+    margin-top: 30px;
+
+    @include mixins.respond-to-medium {
+      margin-top: 1.5rem;
+    }
   }
 }
 
