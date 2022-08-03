@@ -40,6 +40,7 @@
   @include mixins.respond-to-medium {
     position: sticky;
     top: 160px;
+    height: min-content;
     max-height: calc(100vh - 160px);
     margin-bottom: 0;
     overflow-y: auto;
