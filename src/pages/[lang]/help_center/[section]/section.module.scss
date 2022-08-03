@@ -144,15 +144,11 @@
   div {
     color: rgb(104 104 104);
     font-weight: 400;
-    font-size: calc-clamp(1rem, 1.25rem);
+    font-size: 1rem;
     line-height: 1.3;
 
-    @supports not (font-size: clamp(1px, 1vw, 2px)) {
-      font-size: 1rem;
-
-      @include mixins.respond-to-medium {
-        font-size: 1.25rem;
-      }
+    @include mixins.respond-to-medium {
+      font-size: 1.25rem;
     }
   }
 
@@ -226,7 +222,7 @@
   @include mixins.respond-to-medium {
     max-height: none;
     margin-top: 1.5rem;
-    overflow: auto;
+    overflow: visible;
   }
 
   .active & {
