@@ -38,7 +38,7 @@
   background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero-mobile@1x.jpg");
   background-repeat: no-repeat;
   background-position: center, center;
-  background-size: contain;
+  background-size: cover;
 
   @include mixins.retina {
     background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero-mobile@2x.jpg");
@@ -47,6 +47,7 @@
   @include mixins.respond-to-medium {
     height: 600px;
     background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero@1x.jpg");
+    background-size: 1680px 600px;
 
     @include mixins.retina {
       background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero@2x.jpg");
