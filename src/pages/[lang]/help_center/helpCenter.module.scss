@@ -36,8 +36,9 @@
   width: 100vw;
   background-color: rgb(8 7 5);
   background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero-mobile@1x.jpg");
+  background-repeat: no-repeat;
   background-position: center, center;
-  background-size: cover;
+  background-size: contain;
 
   @include mixins.retina {
     background-image: linear-gradient(0deg, rgb(0 0 0 / 25%), rgb(0 0 0 / 25%)), url("/img/help-center/hero-mobile@2x.jpg");

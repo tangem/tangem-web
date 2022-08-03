@@ -52,6 +52,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 		}];
 	const [currentArticleId, setCurrentArticleId] = useState('a0');
 	const [clickedArticleId, setClickedArticleId] = useState('');
+  const [isScrollBlocked, setIsScrollBlocked] = useState(false);
 
 	useEffect(() => {
     const { hash } = window.location;
@@ -97,7 +98,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 		let scrollTimeout;
 
 		function handleScroll() {
-			if (!first) {
+			if (!first || isScrollBlocked) {
 				return function empty() {}
 			}
 			if (clickedArticleId) {
@@ -133,7 +134,7 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 		return function removeListener() {
 			window.removeEventListener('scroll', handleScroll, passiveSupported ? { passive: true } : false);
 		}
-	}, [clickedArticleId]);
+	}, [clickedArticleId, isScrollBlocked]);
 
 	useEffect(() => {
     if (clickedArticleId !== '') {
@@ -166,7 +167,6 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 		}
 	}, [currentArticleId, clickedArticleId]);
 
-
 	useEffect(() => {
 		if (['a0', ''].includes(clickedArticleId)) {
 			return function empty() {}
@@ -187,12 +187,16 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 		setClickedArticleId(elem.id);
 	}
 
-	return (
+  return (
 		<Layout title={section.name} description={t('description') }>
 			<Header isDark={true} breadcrumbs={breadcrumbs} />
 			<div className={styles.wrapper}>
 				<aside>
-					<div className={styles.scroll}>
+					<div
+            className={styles.scroll}
+            onMouseEnter={() => setIsScrollBlocked(true)}
+            onMouseLeave={() => setIsScrollBlocked(false)}
+          >
 						<ul className={styles.menu}>
 							{ articles.articles.map(({title, id}) => (
 								<li key={id}>
