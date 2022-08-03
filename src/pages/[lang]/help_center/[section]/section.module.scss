@@ -20,7 +20,7 @@
   @include mixins.respond-to-medium {
     flex-direction: row;
     max-width: 1160px;
-    margin-top: 160px;
+    margin-top: 0;
 
     aside {
       display: flex;
@@ -30,6 +30,7 @@
     main {
       flex: 0 2 750px;
       margin-left: 1rem;
+      padding-top: 160px;
     }
   }
 }
@@ -39,10 +40,11 @@
 
   @include mixins.respond-to-medium {
     position: sticky;
-    top: 160px;
+    top: 0;
     height: min-content;
-    max-height: calc(100vh - 160px);
+    max-height: 100vh;
     margin-bottom: 0;
+    padding-top: 160px;
     overflow-y: auto;
     scrollbar-width: none;
 
@@ -75,6 +77,10 @@
       gap: 1.5rem;
       font-size: 1.25rem;
     }
+  }
+
+  li {
+    position: relative;
   }
 }
 
@@ -119,6 +125,10 @@
     font-weight: 600;
     font-size: calc-clamp(1.5rem, 2rem);
     line-height: 1.1;
+
+    @include mixins.respond-to-medium {
+      max-width: 100%;
+    }
 
     @supports not (font-size: clamp(1px, 1vw, 2px)) {
       margin-bottom: 1rem;
@@ -236,6 +246,13 @@
     position: absolute;
     top: -155px;
   }
+}
+
+.anchor {
+  position: absolute;
+  top: -160px;
+  bottom: 0;
+  height: calc(100% + 160px);
 }
 
 .visually-hidden {

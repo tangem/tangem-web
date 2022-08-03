@@ -95,12 +95,15 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 			const { top } = elem.getBoundingClientRect();
 			positions = [...positions, { top: top - startPosition, id: elem.id }];
 		}
+    const [last] = positions.slice(-1);
+
 		let scrollTimeout;
 
 		function handleScroll() {
 			if (!first || isScrollBlocked) {
 				return function empty() {}
 			}
+      const topPage = window.scrollY || document.documentElement.scrollTop;
 			if (clickedArticleId) {
 				clearTimeout(scrollTimeout);
 				scrollTimeout = setTimeout(() => {
@@ -109,7 +112,6 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 					setClickedArticleId('');
 					}, 100);
 			} else {
-				const topPage = window.pageYOffset || document.documentElement.scrollTop;
 				let currentId = first.id;
 				for (const {top, id} of positions) {
 					if (topPage < top) {
@@ -121,6 +123,13 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 				}
 				setCurrentArticleId(currentId);
 			}
+      if (topPage + window.innerHeight > last.top) {
+        const scroll = document.querySelector(`.${styles.scroll}`);
+        scroll.scrollTo({
+          top: scroll.scrollTop + scroll.clientHeight,
+          behavior: "smooth"
+        });
+      }
 		}
 		let passiveSupported = false;
 		try {
@@ -204,10 +213,10 @@ const LangHelpCenterSection = ({ language, articles, section}) => {
 										onClick={handleClick}
 										className={classNames({[styles.current]: `a${id}` === currentArticleId })}
 										href={`#a${id}`}
-										id={`link-a${id}`}
 									>
 										{title}
 									</a>
+                  <div className={styles.anchor} id={`link-a${id}`}></div>
 								</li>
 							))}
 						</ul>
